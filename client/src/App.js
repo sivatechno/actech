@@ -1,9 +1,11 @@
 import React from 'react';
+import * as AiIcons from 'react-icons/all';
 
 function App() {
   return (
    <div>
-      <h1>Testing</h1>
+      <AiIcons.MdMenuOpen />
+      <AiIcons.FaUserGraduate />
    </div>
   );
 }
