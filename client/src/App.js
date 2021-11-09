@@ -1,9 +1,9 @@
 import React from 'react';
-
+import AdminHeader from './components/header/AdminHeader'
 function App() {
   return (
    <div>
-      <h1>Testing</h1>
+      <AdminHeader/>
    </div>
   );
 }
