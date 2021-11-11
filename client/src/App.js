@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import Header from './components/header/Header';
 
 
