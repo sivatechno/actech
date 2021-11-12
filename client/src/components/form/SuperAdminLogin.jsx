@@ -1,10 +1,17 @@
-import React from 'react';
-import './login.css';
+import './SuperAdminLogin.scss';
+import React, {useEffect} from 'react';
+import axios from 'axios';
 
-const SuperAdminLogin = () => {
-    return (
-        
-<div className="container">
+export default function SuperAdminLogin() {
+  useEffect(()=>{
+    axios.get("http://localhost:5000/users").then((response)=>
+    {
+      console.log(response.data);
+    })
+  })
+  return (
+    <div>
+            <div className="container">
   <div className="forms-container">
     <div className="signin-signup">
       <form action className="sign-in-form">
@@ -51,8 +58,8 @@ const SuperAdminLogin = () => {
     </div>
   </div>
 </div>
-
-    )
+    </div>
+  )
 }
 
-export default SuperAdminLogin;
+

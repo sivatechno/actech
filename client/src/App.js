@@ -1,11 +1,14 @@
 import React from 'react';
-
-import AdminHeader from './components/header/AdminHeader'
-
+import Login from './pages/Login';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 function App() {
   return (
    <div>
-      <AdminHeader />
+     <Router>
+       <Routes>
+            <Route path="/" element={<Login />} />
+       </Routes>
+     </Router>
    </div>
   );
 }
