@@ -1,28 +1,78 @@
-.box1{
-    // border:1px solid black;
-    padding-bottom: 3.5rem;
-    margin-top: 4.5%;
-    margin-left: 20%;
-    margin-right: 5%;
-    border-radius: 2rem;
-    box-shadow: 9px 3px 18px 2px rgba(83, 82, 82, 0.719);
-
-    h1{
-        display:inline-block;
-        font-size:large;
-        // border: 1px solid black;
-        margin-top: 1%;
-        margin-left: 7%;
-        color: darkblue;
+   *{
+     padding: 0px;
+     margin: 0px;
+     background-color:transparent;
     }
- .box2{
-     background-color:whitesmoke;
-    // border:1px solid black;
-    padding-bottom: 33rem;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-radius: 1rem;
-    // box-shadow: 1px 1px 6px 4px rgba(167, 166, 166, 0.849);
-    
- }   
-}
+ .container{
+     background-color:rgb(253, 251, 251);
+     border: 1px solid black;
+     margin: 70px 0px 0px 350px;
+     width: 820px;
+     height: 650px;
+     overflow-y: scroll;
+
+     .inner_container{
+        // display: flex;
+         border: 1px solid red;
+         height: 768px;
+         width: 800px;
+         //margin: 15px 100px 0px 175px;
+         h1{
+             margin: 20px 0px 0px 0px;
+             text-align: center;
+             color: rgba(5, 5, 73, 0.89);
+         }
+         .box1{
+             margin: 30px 0px 0px 50px;
+             display: flex;
+             border: 1px solid darkgreen;
+             width:700px;
+             height:70px ;
+         .name{
+             border:1px solid black;
+             display:inline-block;
+             margin:0px 30px 0px 30px;
+             float:left;
+             p1{
+                 margin: 0px 0px 0px 35px;
+                 color: rgba(7, 7, 107, 0.822);
+                 font-weight: 600;
+             }
+             .ph1{
+                 border-radius: 20px;
+                 padding:5px 10px 5px 10px;
+                 border: 1px solid #2424; 
+                 margin:0px 5px 0px 0px ;
+                 .us{
+                     background:transparent;
+                     border:none;
+                     outline:none;
+                     padding: 0px 80px 0px 0px;
+                     margin: 0px 0px 0px 15px ;
+                    }
+                    
+                }
+                            }
+            .email{
+                border:1px solid black;
+                display:inline-block;
+                //margin:50px 60px 10px 100px;
+                float:right;
+                .ph2{
+                    border-radius: 20px;
+                 padding:5px 10px 5px 10px;
+                 border: 1px solid #2424; 
+                 margin:0px 5px 0px 0px ;
+                    .em{
+                        background:transparent;
+                     border:none;
+                     outline:none;
+                     padding: 0px 80px 0px 0px;
+                     margin: 0px 0px 0px 15px ;
+                       }
+                   }
+            }
+        }
+        }
+
+    }
