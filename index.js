@@ -21,3 +21,7 @@ db.sequelize.sync().then(() =>
         console.log("server is running on port 5000");
     })
 })
+// const express = require('express');
+// const app = express();
+
+// app.listen(3001);
