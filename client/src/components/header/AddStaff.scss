@@ -1,0 +1,623 @@
+//  *{
+//      padding: 0px;
+//      margin: 0px;
+//      background-color:whitesmoke;
+//  }
+p{
+    background: white;
+   //background-color: white;
+    margin: 0px 0px 0px 2px;
+    color: rgba(7, 7, 107, 0.822);
+    font-size: 16px;
+   }
+    .container-one{
+       background-color:white;
+       border: 1px solid whitesmoke;
+       border-radius: 20px;
+       margin: 70px 0px 0px 350px;
+       width: 820px;
+       height: 650px;
+       overflow-y: scroll;
+
+       .inner_container{
+           //border: 1px solid red;
+           height: 1180px;
+           width: 800px;
+           background-color: white;
+           //margin: 15px 100px 0px 175px;
+           .close_icon{
+               background-color:transparent;
+               margin: 20px 0px 0px 760px;
+               
+                            
+           }
+           .inner_heading{
+            background: white;
+           //background-color: white;
+            margin: 0px 0px 0px 2px;
+            color: rgba(7, 7, 107, 0.822);
+            font-size: 16px;
+           }
+           span{
+              font-size: 12px;
+              color: red;
+              margin: 0px 0px 0px 10px ;
+           }
+           .textbox_one{
+            background-color: whitesmoke;
+            border-radius: 20px;
+             padding:5px 10px 5px 10px;
+             border: 1px solid #2424; 
+            margin:0px 5px 0px 0px ;
+           }
+           .user{
+            // background:transparent;
+            // border:none;
+            // outline:none;
+            //font-size: 16px;
+             padding: 0px 60px 0px 10px;
+            margin: 0px 10px 0px 15px ;
+        }
+        .user_icon{
+            color: #232323;
+            background-color: whitesmoke;
+        }
+
+         .inner_heading:active{
+            color: red;
+        }
+        .textbox_one :active{
+            color: red;
+        }
+         p14{
+             background-color: white;
+             margin: 20px 0px 0px 60px;
+             text-align: center;
+             color: #0C50A3;
+             font-size: 18px;
+            }
+                    //   ***FIRST CONTAINER START***
+         .first_container {
+             background-color: white;
+             margin: 30px 0px 0px 50px;
+             display: flex;
+             //border: 1px solid darkgreen;
+             width:700px;
+             height:70px ;
+         .name{
+             //border:1px solid black;
+             background-color: white;
+             display:inline-block;
+    
+             margin:0px 30px 0px 30px;
+             
+             // .textbox_one{
+                    // background-color: whitesmoke;
+                    //  border-radius: 20px;
+                    //   padding:5px 10px 5px 10px;
+                    //   border: 1px solid #2424; 
+                    //  margin:0px 5px 0px 0px ;
+                //  .user{
+                //         // background:transparent;
+                //         // border:none;
+                //         // outline:none;
+                //         //font-size: 16px;
+                //          padding: 0px 60px 0px 10px;
+                //         margin: 0px 10px 0px 15px ;
+                //     }
+                //     .user_icon{
+                //         color: #232323;
+                //         background-color: whitesmoke;
+                //     }
+                    
+               // }
+            }
+              .email{
+                background-color: white;
+                  // border:1px solid black;
+                   display:inline-block;
+                   //margin:50px 60px 10px 100px;
+
+                //    p2{
+                //     background-color: white;
+                //     margin: 0px 0px 0px 2px;
+                //     color: rgba(7, 7, 107, 0.822);
+                //     font-size: 16px;
+                //    }
+
+                   .textbox_two{
+                    background-color: whitesmoke;
+                       border-radius: 20px;
+                       padding:5px 10px 5px 10px;
+                       border: 1px solid #2424; 
+                       margin:0px 5px 0px 0px ;
+                     .mail{
+                         background:transparent;
+                         border:none;
+                         outline:none;
+                         padding: 0px 80px 0px 0px;
+                         margin: 0px 0px 0px 15px ;
+                        }
+                        .mail_icon{
+                    background-color: whitesmoke;
+                        }
+                    }
+                }
+            }
+
+                        //   ***FIRST CONTAINER END***
+
+                       //***SECOND CONTAINER START***
+                        .second_container {
+                            background-color: white;
+                            margin: 30px 0px 0px 50px;
+                            display: flex;
+                            //border: 1px solid darkgreen;
+                            width:700px;
+                            height:70px ;
+                        .phone_no{
+                            background-color: white;
+                            //border:1px solid black;
+                            display:inline-block;
+                   
+                            margin:0px 30px 0px 30px;
+                            
+                            // p3{
+                            //     background-color: white;
+                            //     margin: 0px 0px 0px 2px;
+                            //     color: rgba(7, 7, 107, 0.822);
+                            //     font-size:16px;
+                            //    }
+                               .textbox_three{
+                                background-color: whitesmoke;
+                                    border-radius: 20px;
+                                     padding:5px 10px 5px 10px;
+                                     border: 1px solid #2424; 
+                                    margin:0px 5px 0px 0px ;
+                                .phone{
+                                       background:transparent;
+                                       border:none;
+                                       outline:none;
+                                       padding: 0px 80px 0px 0px;
+                                       margin: 0px 0px 0px 15px ;
+                                   }
+                                   .phone_icon{
+                                    background-color: whitesmoke;
+                                   }
+                                   
+                               }
+                           }
+                             .pasword{
+                                background-color: white;
+                                  //border:1px solid black;
+                                  display:inline-block;
+                                  //margin:50px 60px 10px 100px;
+                                   
+                                  p4{
+                                    background-color: white;
+                                    margin: 0px 0px 0px 2px;
+                                    color: rgba(7, 7, 107, 0.822);
+                                    font-weight: 600;
+                                   }
+               
+                                  .textbox_four{
+                                    background-color: whitesmoke;
+                                      border-radius: 20px;
+                                      padding:5px 10px 5px 10px;
+                                      border: 1px solid #2424; 
+                                      margin:0px 5px 0px 0px ;
+                                    .pass{
+                                        background:transparent;
+                                        border:none;
+                                        outline:none;
+                                        padding: 0px 80px 0px 0px;
+                                        margin: 0px 0px 0px 15px ;
+                                       }
+                                       .eye_icon{
+                                        background-color: whitesmoke;
+                                       }
+                                   }
+                               }
+                           }
+
+                           //***    SECOND CONTAINER END***
+
+                           //***    THIRD CONTAINER START***
+
+
+                           .third_container {
+                            background-color: white;
+                            margin: 30px 0px 0px 50px;
+                            display: flex;
+                           // border: 1px solid darkgreen;
+                            width:700px;
+                            height:70px ;
+                        .Fname{
+                            background-color: white;
+                            //border:1px solid black;
+                            display:inline-block;
+                   
+                            margin:0px 30px 0px 30px;
+                            
+                            p5{
+                                background-color: white;
+                                margin: 0px 0px 0px 2px;
+                                color: rgba(7, 7, 107, 0.822);
+                                font-weight: 600;
+                               }
+                               .textbox_five{
+                                background-color: whitesmoke;
+                                    border-radius: 20px;
+                                     padding:5px 10px 5px 10px;
+                                     border: 1px solid #2424; 
+                                    margin:0px 5px 0px 0px ;
+                                .firstname{
+                                       background:transparent;
+                                       border:none;
+                                       outline:none;
+                                       padding: 0px 80px 0px 0px;
+                                       margin: 0px 0px 0px 15px ;
+                                   }
+                                   .fname_icon{
+                                    background-color: whitesmoke;
+                                   }
+                                   
+                               }
+                           }
+                             .Lname{
+                                background-color: white;
+                                 // border:1px solid black;
+                                  display:inline-block;
+                                  //margin:50px 60px 10px 100px;
+                                   
+                                  p6{
+                                    background-color: white;
+                                    margin: 0px 0px 0px 2px;
+                                    color: rgba(7, 7, 107, 0.822);
+                                    font-weight: 600;
+                                   }
+               
+                                  .textbox_six{
+                                    background-color: whitesmoke;
+                                      border-radius: 20px;
+                                      padding:5px 10px 5px 10px;
+                                      border: 1px solid #2424; 
+                                      margin:0px 5px 0px 0px ;
+                                    .lastname{
+                                        background:transparent;
+                                        border:none;
+                                        outline:none;
+                                        padding: 0px 80px 0px 0px;
+                                        margin: 0px 0px 0px 15px ;
+                                       }
+                                       .lname_icon{
+                                        background-color: whitesmoke;
+                                       }
+                                   }
+                               }
+                           }
+
+
+                           //***    THIRD CONTAINER END***
+
+                           //***    FOURTH CONTAINER START***
+
+
+                           .fourth_container {
+                            background-color: white;
+                            margin: 30px 0px 0px 50px;
+                            display: flex;
+                           // border: 1px solid darkgreen;
+                            width:700px;
+                            height:70px ;
+                        .cuntry{
+                            background-color: white;
+                            //border:1px solid black;
+                            display:inline-block;
+                   
+                            margin:0px 30px 0px 30px;
+                            
+                            p7{
+                                background-color: white;
+                                margin: 0px 0px 0px 2px;
+                                color: rgba(7, 7, 107, 0.822);
+                                font-weight: 600;
+                               }
+                               .textbox_seven{
+                                background-color: whitesmoke;
+                                    border-radius: 20px;
+                                     padding:5px 10px 5px 10px;
+                                     border: 1px solid #2424; 
+                                    margin:0px 5px 0px 0px ;
+                                .country{
+                                       background-color: whitesmoke;
+                                       border:none;
+                                       outline:none;
+                                       padding: 0px 80px 0px 0px;
+                                       margin: 0px 0px 0px 15px ;
+                                   }
+                                         //***DROP DOWN 
+                                   .country_list{
+                                       background-color: whitesmoke;
+                                       color:rgba(54, 54, 54, 0.781);
+                                       //background:transparent;
+                                       outline: none;
+                                       margin: 0px 30px 0px 30px;
+                                       padding: 0px 45px 0px 45px;
+                                       border: none;
+                                   }
+                                   .list{
+                                    background-color: whitesmoke;
+                                     }
+                                     .world_icon{
+                                        background-color: whitesmoke;
+                                     }
+                                   
+                               }
+                           }
+                             .cty{
+                                background-color: white;
+                                 // border:1px solid black;
+                                  display:inline-block;
+                                  //margin:50px 60px 10px 100px;
+                                   
+                                  p8{
+                                    background-color: white;
+                                    margin: 0px 0px 0px 2px;
+                                    color: rgba(7, 7, 107, 0.822);
+                                    font-weight: 600;
+                                   }
+               
+                                  .textbox_eight{
+                                    background-color: whitesmoke;
+                                      border-radius: 20px;
+                                      padding:5px 10px 5px 10px;
+                                      border: 1px solid #2424; 
+                                      margin:0px 5px 0px 0px ;
+                                    .city{
+                                        background:transparent;
+                                        border:none;
+                                        outline:none;
+                                        padding: 0px 80px 0px 0px;
+                                        margin: 0px 0px 0px 15px ;
+                                       }
+                                       .city_icon{
+                                        background-color: whitesmoke;
+                                       }
+                                   }
+                               }
+                           }
+
+
+                           //***    FOURTH CONTAINER END***
+
+                           //***    FIFTH CONTAINER START***
+
+
+                           .fifth_container {
+                            background-color: white;
+                            margin: 30px 0px 0px 50px;
+                            display: flex;
+                           // border: 1px solid darkgreen;
+                            width:700px;
+                            height:70px ;
+                        .postalcode{
+                            background-color: white;
+                            //border:1px solid black;
+                            display:inline-block;
+                   
+                            margin:0px 30px 0px 30px;
+                            
+                            p9{
+                                background-color: white;
+                                margin: 0px 0px 0px 2px;
+                                color: rgba(7, 7, 107, 0.822);
+                                font-weight: 600;
+                               }
+                               .textbox_nine{
+                                background-color: whitesmoke;
+                                    border-radius: 20px;
+                                     padding:5px 10px 5px 10px;
+                                     border: 1px solid #2424; 
+                                    margin:0px 5px 0px 0px ;
+                                .zipcode{
+                                       background:transparent;
+                                       border:none;
+                                       outline:none;
+                                       padding: 0px 80px 0px 0px;
+                                       margin: 0px 0px 0px 15px ;
+                                   }
+                                   .pin_icon{
+                                    background-color: whitesmoke;
+                                   }
+                                   
+                               }
+                           }
+                             .profile{
+                                background-color: white;
+                                 // border:1px solid black;
+                                  display:inline-block;
+                                  //margin:50px 60px 10px 100px;
+                                   
+                                  p10{
+                                    background-color: white;
+                                    margin: 0px 0px 0px 2px;
+                                    color: rgba(7, 7, 107, 0.822);
+                                    font-weight: 600;
+                                   }
+               
+                                  .textbox_ten{
+                                    background-color: whitesmoke;
+                                      border-radius: 20px;
+                                      padding:5px 10px 5px 10px;
+                                      border: 1px solid #2424; 
+                                      margin:0px 5px 0px 0px ;
+                                    
+                                       .browse_button{
+                                           color: white;
+                                           border-width: 5px 10px 5px 10px;
+                                           border-color: blue;
+                                           border-radius: 20px;
+                                           background-color: blue;
+                                           margin: 0px 10px 0px 182px;
+                                       }
+                                       .prof_picture_icon{
+                                        background-color: whitesmoke;
+                                       }
+                                   }
+                               }
+                           }
+
+
+                           //***    FIFTH CONTAINER END***
+
+                           //***SIXTH CONTAINER START***
+                        .sixth_container {
+                            background-color: white;
+                            margin: 30px 0px 0px 50px;
+                            display: flex;
+                            //border: 1px solid darkgreen;
+                            width:700px;
+                            height:70px ;
+                        .adres{
+                            background-color: white;
+                            //border:1px solid black;
+                            display:inline-block;
+                   
+                            margin:0px 30px 0px 30px;
+                            
+                            p11{
+                                background-color: white;
+                                margin: 0px 0px 0px 2px;
+                                color: rgba(7, 7, 107, 0.822);
+                                font-weight: 600;
+                               }
+                               .textbox_eleven{
+                                    background-color: whitesmoke;
+                                    border-radius: 20px;
+                                     padding:5px 10px 5px 10px;
+                                     border: 1px solid #2424; 
+                                    margin:0px 5px 0px 0px ;
+                                .address{
+                                       background:transparent;
+                                       border:none;
+                                       outline:none;
+                                       padding: 0px 80px 0px 0px;
+                                       margin: 0px 0px 0px 15px ;
+                                   }
+                                   .address_icon{
+                                    background-color: whitesmoke;
+                                   }
+                                   
+                               }
+                           }
+                             .stat{
+                                background-color: white;
+                                  //border:1px solid black;
+                                  display:inline-block;
+                                  //margin:50px 60px 10px 100px;
+                                   
+                                  p12{
+                                    background-color: white;
+                                    margin: 0px 0px 0px 2px;
+                                    color: rgba(7, 7, 107, 0.822);
+                                    font-weight: 600;
+                                   }
+               
+                                  .textbox_twele{
+                                    background-color: whitesmoke;
+                                      border-radius: 20px;
+                                      padding:5px 10px 5px 10px;
+                                      border: 1px solid #2424; 
+                                      margin:0px 5px 0px 0px ;
+                                    .state{
+                                        background:transparent;
+                                        border:none;
+                                        outline:none;
+                                        padding: 0px 80px 0px 0px;
+                                        margin: 0px 0px 0px 15px ;
+                                       }
+                                       .dualpin_icon{
+                                        background-color: whitesmoke;
+                                       }
+                                   }
+                               }
+                           }
+                        
+
+                           //***    SIXTH CONTAINER END***
+
+                           h2{
+                            background-color: white;
+                               text-align: center;
+                               margin: 30px 0px 0px 0px;
+                               padding: 20px 0px 0px 0px;
+                               border-top: 1px solid rgba(78, 75, 75, 0.151);
+                           }
+
+                           //***SEVENTH CONTAINER START***
+                           .seventh_container{
+                            background-color: white;
+                              // border: 1px solid black;
+
+                            .aces_level{
+                                background-color: white;
+                                margin: 20px 0px 0px 80px;
+                                //border: 1px solid black;
+                               
+                                .label1{
+                                    background-color: white;
+                                    color: rgba(10, 10, 146, 0.822);
+                                    font-weight: 500;
+                                    font-size: medium;
+                                }
+                                p13{
+                                    background-color: white;
+                                    color: rgba(65, 63, 63, 0.459);
+                                    font-size: small;
+
+                                }
+                                .textarea{
+                                    background-color: whitesmoke;
+                                }
+                              } 
+                      }
+                                    //***SEVENTH CONTAINER END***
+
+                                    //***EIGHTH CONTAINER START***
+                         .eighth_container{
+                                 background-color: white;       
+                                 //border: 1px solid black;
+                                 .final_buttons{
+                                             background-color: white;
+                                               display:inline-flex;
+                                              margin: 50px 0px 0px 0px;
+                                              padding: 0px 0px 20px 0px;
+                                             // border: 1px solid black;
+                                              .cancel_staff{
+                                                background-color: white;
+                                                  margin: 20px 70px 0px 450px;
+                                                  border-width: 9px;
+                                                  border-color: rgba(68, 68, 70, 0.795);
+                                                  background-color: rgba(68, 68, 70, 0.747);
+                                                  color: white;
+                                                  border-radius: 20px;
+                                              
+                                                 }
+                                                 .add_staff{
+                                                    margin: 20px 50px 0px 30px;
+                                                    border-width: 9px;
+                                                    border-color: blue;
+                                                    background-color: rgba(0, 0, 255, 0.479);
+                                                    color: white;
+                                                    border-radius: 20px;
+                                                 }
+                                            }
+
+                             }
+
+                                                 //***EIGHTH CONTAINER END
+                           
+        }
+
+    }

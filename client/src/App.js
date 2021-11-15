@@ -1,16 +1,20 @@
 import React from 'react';
 import Login from './pages/Login';
+import AddStaff from './components/header/AddStaff';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 function App() {
   return (
    <div>
-     <Router>
-       <Routes>
-            <Route path="/" element={<Login />} />
+      <Router>
+       <Routes> 
+         {/* <AdminHeader/> */}
+             <Route path="/" element={<AddStaff />} />
        </Routes>
-     </Router>
+     </Router> 
+     
    </div>
   );
 }
+
 
 export default App;
