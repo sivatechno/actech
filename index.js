@@ -1,7 +1,27 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+const http = require('http');
 
-app.listen(5000,() =>
+app.use(express.json());
+app.use(cors());
+const db=require('./models');
+
+
+//Routers
+const userRouter = require('./routes/Users');
+app.use('/users', userRouter);
+
+
+
+db.sequelize.sync().then(() =>
 {
-    console.log("server is running on port 5000");
+    app.listen(5000,() =>
+    {
+        console.log("server is running on port 5000");
+    })
 })
+// const express = require('express');
+// const app = express();
+
+// app.listen(3001);
