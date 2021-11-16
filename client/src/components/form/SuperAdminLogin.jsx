@@ -1,5 +1,7 @@
 import React from 'react';
-import './login.css';
+import './SuperAdminLogin.scss';
+import * as AiIcon from 'react-icons/all';
+
 
 const SuperAdminLogin = () => {
     return (
@@ -8,9 +10,9 @@ const SuperAdminLogin = () => {
   <div className="forms-container">
     <div className="signin-signup">
       <form action className="sign-in-form">
-        <h2 className="title">Login</h2>
+        <h2 className="title"><AiIcon.AiOutlineUser/>Login</h2>
         <div className="input-field">
-          <i className="fas fa-user" />
+          <i className="fas fa-User" />
           <input type="text" placeholder="Username" />
         </div>
         <div className="input-field">

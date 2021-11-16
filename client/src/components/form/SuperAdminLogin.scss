@@ -17,20 +17,20 @@ input {
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
-  .forms-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-   
-  }
-  form.sign-up-form {
-    opacity: 0;
-    z-index: 1;
-  }
+ 
 }
-
+form.sign-up-form {
+  opacity: 0;
+  z-index: 1;
+}
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+ 
+}
 .signin-signup {
   position: absolute;
   top: 50%;
@@ -80,7 +80,7 @@ form.sign-in-form {
   position: relative;
 }
 
-.input-field i {
+.input-field i{
   text-align: center;
   line-height: 55px;
   color: #acacac;
