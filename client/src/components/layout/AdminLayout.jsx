@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../header/Header';
+import Header from '../header/AdminHeader';
 import Sidebar from '../sidebar/Navbar';
 export default function AdminLayout({children}) {
     return (

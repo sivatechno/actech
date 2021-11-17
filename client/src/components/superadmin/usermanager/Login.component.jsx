@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../header/Header';
+import Header from '../../header/AdminHeader';
 import SuperAdminLogin from '../../form/SuperAdminLogin';
 export default function Login() {
     return (
