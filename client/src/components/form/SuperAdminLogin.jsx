@@ -1,8 +1,5 @@
-import React from 'react';
 import './SuperAdminLogin.scss';
 import * as AiIcon from 'react-icons/all';
-
-import './SuperAdminLogin.scss';
 import React, {useEffect} from 'react';
 import axios from 'axios';
 

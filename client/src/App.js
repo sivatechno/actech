@@ -1,27 +1,29 @@
 import React from 'react';
 import './App.css';
-import{ BrowserRouter as Router,Routes} from 'react-router-dom';
-import Student from './components/Studentstab/Student';
- import Navbar from './components/header/Navbar';
-// import "../node_modules/bootstrap/dist/css/bootstrap.css";
-// import Usermanager from './pages/Usermanager';
-// import Staff from './pages/Staff';
+import{ BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import AdminLayout from './components/layout/AdminLayout';
+import Student from './pages/Student';
+import Staff from './pages/Staff';
+import UserManager from './pages/Usermanager';
+import Login from './pages/Login';
+import Test from './components/superadmin/Viewstaffmentor';
 
-//  import SuperAdminLogin from './components/form/SuperAdminLogin';
 function App() {
   return (
-   <>
      <Router>
-        <Navbar/>  
-         {/* <SuperAdminLogin/>  */}
-          <Student/>  
-        
        <Routes>
-          {/* <Route path='/usermanager' exact component={Usermanager}/> 
-         <Route path='/staff'  exact component={Staff}/>*/}
+         <Route exact path="/" element={<Login />} />
+         <Route path="/test" element={<Test />} />
        </Routes>
-      </Router>
-  </>
+       {/* <AdminLayout>
+         <Routes>
+           <Route path="/staff" element={<Staff />} />
+           <Route path="/student" element={<Student />} />
+           <Route path="/usermanager" element={<UserManager />} />
+         </Routes>
+       </AdminLayout> */}
+
+     </Router>
   );
 }
 
