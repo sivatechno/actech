@@ -1,13 +1,9 @@
 import React from 'react'
 
-function Staff() {
+export default function AddMentee() {
     return (
         <div>
-            
+            AddMentee
         </div>
     )
 }
-
-export default Staff
-
-

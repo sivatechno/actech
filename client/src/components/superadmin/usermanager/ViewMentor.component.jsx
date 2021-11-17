@@ -1,8 +1,8 @@
 import React from 'react'
-import './Viewstaffmentor.scss'
+import './ViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
 
-function Viewstaffmentor() {
+function ViewMentor() {
     return (
         <div className="parent_container">
             <div className="view_header">
@@ -63,4 +63,4 @@ function Viewstaffmentor() {
     )
 }
 
-export default Viewstaffmentor
+export default ViewMentor;

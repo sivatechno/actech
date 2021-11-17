@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
-import Sidebar from '../header/Navbar';
-
+import Sidebar from '../sidebar/Navbar';
 export default function AdminLayout({children}) {
     return (
         <div>

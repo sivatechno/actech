@@ -1,8 +1,8 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/all';
-import './AddStaff.scss';
+import './AddMentor.component.scss';
 
-export default function AdminHeader() {
+export default function AddMentor() {
     return (
         
          <div className="container-one">
