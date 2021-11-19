@@ -1,8 +1,18 @@
 import React from 'react'
 import './ViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
+import axios from 'axios';
+import { useEffect , useState } from 'react';
+
 
 function ViewMentor() {
+    const [listofMentors,setListOfMentors] = useState([]);
+
+    useEffect(() =>{
+        axios.get("http://localhost:5000/mentors").then((response) =>{
+            setListOfMentors(response.data);
+        });
+    });
     return (
         <div className="parent_container">
             <div className="view_header">
@@ -13,51 +23,37 @@ function ViewMentor() {
                     <button className="button_click">Add Mentor</button>
                 </div>
             </div>
-            <div className="table_container">                
-                   <table cellSpacing="10px" >
-                       <tr className="table_row">
-                           <th>Name</th>
-                           <th>Email</th>
-                           <th>Access Level</th>
-                           <th>Contact Number</th>
-                           <th>Actions</th>
-                       </tr>
-                       <tr>
-                           <td>manoj</td>
-                           <td>manoj@123gmail.commm</td>
-                           <td>role</td>
-                           <td>9876543210</td>
-                           <td>
-                               <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
-                               <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"/></div>
-                               <div className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
-                           </td>
-                       </tr>
-                       <tr>
-                           <td>ragav</td>
-                           <td>ragav@123gmail.commm</td>
-                           <td>power ranges</td>
-                           <td>789643201</td>
-                           <td>
-                               <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
-                               <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"/></div>
-                               <div className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
-                           </td>
-                       </tr>
-                       <tr>
-                           <td>santo</td>
-                           <td>santo@123gmail.commm</td>
-                           <td>shinchan</td>
-                           <td>6369125054</td>
-                           <td>
-                               <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
-                               <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"/></div>
-                               <div className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
-                           </td>
-                       </tr>
+            {listofMentors.map((value,key) =>{
+                               return(
+                                   <div>
+                                       <div className="table_container">                
+                                            <table cellSpacing="10px" >
+                                                <tr className="table_row">
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Access Level</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>{value.first_name} {value.last_name}</td>
+                                                    <td>{value.email}</td>
+                                                    <td>{value.role}</td>
+                                                    <td>{value.role}</td>
+                                                    <td>
+                                                        <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
+                                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"/></div>
+                                                        <div className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
+                                                    </td>
+                                                </tr>
 
-                   </table>
-            </div>
+                                            </table>
+                                        </div>
+                                   </div>
+                                   
+                               )
+                           })}
+            
             
         </div>
     )

@@ -9,10 +9,13 @@ const db=require('./models');
 
 
 //Routers
+
+
 const userRouter = require('./routes/Users');
 app.use('/auth', userRouter);
 
-
+const mentorRouter = require('./routes/Mentors');
+app.use('/mentors',mentorRouter);
 
 db.sequelize.sync().then(() =>
 {
