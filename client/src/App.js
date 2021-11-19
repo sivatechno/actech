@@ -24,7 +24,7 @@ function App({children}) {
            <Route path="/profileviewmentor" element={<ProfileViewMentor />} />
          </Routes>
           <Routes>
-            <Route exact path="/login" element={<AdminLogin />} />
+            <Route exact path="/" element={<AdminLogin />} />
           </Routes>
      </Router>
      </>

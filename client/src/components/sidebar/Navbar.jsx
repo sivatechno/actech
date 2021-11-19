@@ -20,6 +20,7 @@ import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import * as AiIcons from 'react-icons/all';
 import './Navbar.scss'
+import {Link} from 'react-router-dom';
 
 export default function Navbar() {
     return (
@@ -27,8 +28,8 @@ export default function Navbar() {
             <ProSidebar>
                 <Menu iconShape="square">
                     <SubMenu title="Usermanager" icon={<AiIcons.FiUsers />}>
-                        <MenuItem icon={<AiIcons.FiUsers />}>Mentor</MenuItem>
-                        <MenuItem icon={<AiIcons.FiUsers />}>Mentee</MenuItem>
+                        <MenuItem icon={<AiIcons.FiUsers />}><Link to="/viewmentor"/>Mentor</MenuItem>
+                        <MenuItem icon={<AiIcons.FiUsers />}><Link to="/viewmentee"/>Mentee</MenuItem>
                         <MenuItem icon={<AiIcons.BsChatDots />}>Password Reset</MenuItem>
                     </SubMenu>
                     <SubMenu title="Course Exams" icon={<AiIcons.ImFilesEmpty />}>
