@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/AdminHeader';
 import Sidebar from '../sidebar/Navbar';
+import './AdminLayout.scss'
 export default function AdminLayout({children}) {
     return (
         <div>

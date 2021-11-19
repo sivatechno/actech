@@ -1,11 +1,11 @@
 import React from 'react'
 import ProfileViewMentorComponent from '../components/superadmin/usermanager/ProfileViewMentor.component';
-
+import AdminLayout from '../components/layout/AdminLayout';
 const ProfileViewMentor = ({classes,children}) => {
     return(
-        <div>
+        <AdminLayout>
             <ProfileViewMentorComponent />
-        </div>
+        </AdminLayout>
     )
 }
 export default ProfileViewMentor;

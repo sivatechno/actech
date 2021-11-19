@@ -9,26 +9,25 @@ import ProfileViewMentee from './pages/ProfileViewMentee';
 import ProfileViewMentor from './pages/ProfileViewMentor';
 import ViewMentee from './pages/ViewMentee';
 import ViewMentor from './pages/ViewMentor';
+import UserLayout from './components/layout/DefaultLayout';
 
-function App() {
+function App({children}) {
   return (
+    <>
      <Router>
-       <Routes>
-         <Route exact path="/" element={<AdminLogin />} />
-
-       </Routes>
-       <AdminLayout>
          <Routes>
            <Route path="/viewmentee" element={<ViewMentee />} />
            <Route path="/viewmentor" element={<ViewMentor />} />
            <Route path="/addmentee" element={<AddMentee />} />
            <Route path="/addmentor" element={<AddMentor />} />
            <Route path="/profileviewmentee" element={<ProfileViewMentee />} />
-           <Route path="/profileviewmentee" element={<ProfileViewMentor />} />
+           <Route path="/profileviewmentor" element={<ProfileViewMentor />} />
          </Routes>
-       </AdminLayout>
-
+          <Routes>
+            <Route exact path="/login" element={<AdminLogin />} />
+          </Routes>
      </Router>
+     </>
   );
 }
 

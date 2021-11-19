@@ -1,11 +1,11 @@
 import React from 'react'
 import ProfileViewMenteeComponent from '../components/superadmin/usermanager/ProfileViewMentee.component';
-
+import AdminLayout from '../components/layout/AdminLayout';
 const ProfileViewMentee = ({classes,children}) => {
     return (
-        <div>
+        <AdminLayout>
             <ProfileViewMenteeComponent />
-        </div>
+        </AdminLayout>
     )
 }
 export default ProfileViewMentee;

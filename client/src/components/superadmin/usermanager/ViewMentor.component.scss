@@ -4,19 +4,16 @@
     box-sizing: border-box;
 }
 .parent_container{
-    height: 600px;
-    width: 99.9%;
+    // height: 600px;
+    // width: 100%;
     //border: solid 2px red;
-    position: fixed;
+    // position: fixed;
 
     .view_header{
         height:60px;
-        width: 1100px;
+        width: 100%;
        // border: solid 2px black;
         position: relative;
-        margin: 0px auto;
-        margin-top: 2rem;
-
         .view_title{
            // border: solid 2px blue;
             height: 60px;
@@ -45,26 +42,25 @@
                background-color: royalblue;
                color: white;
                display: flex;
-               margin: 0px auto;
                margin-top: 10px;
             }
         }
     }
 
     .table_container{
-        margin: 0 auto;
-        height: 400px;
-        width: 80%;
-        border: solid 2px black;
+        margin:10px 20px;
+        // height: 400px;
+        // border: solid 2px black;
         border-radius: 15px;
         background-color: transparent;
         //position: relative;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+        background-color: #fff;
+        padding: 10px 20px;
         
 
         table{
-            margin-left: 4px;
-            margin-top: 5px;
-            position: fixed;
+            width: 100%;
 
             tr{
                 border:solid 1px red;
