@@ -14,7 +14,7 @@ function ViewMentor() {
         });
     });
     return (
-        <div className="parent_container">
+        <div className="viewmentor_container">
             <div className="view_header">
                 <div className="view_title">
                     <h3>View Mentor</h3>
