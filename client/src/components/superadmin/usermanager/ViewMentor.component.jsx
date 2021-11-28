@@ -3,7 +3,7 @@ import './ViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect , useState } from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Modal from 'react-modal';
 import AddMentor from './AddMentor.component';
 
@@ -18,9 +18,9 @@ const customStyles = {
     },
   };
 function ViewMentor() {
-    const [listofMentors,setListOfMentors] = useState([]);
+    const [listOfMentors,setListOfMentors] = useState([]);
 
-    const history=useNavigate(); 
+
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -32,20 +32,18 @@ function ViewMentor() {
         setIsOpen(false);
       }
 
-      function handleClick(){
-        history.push(`/profileviewmentor`)
-      }
+
 
     const deleteMentor = (id)=>{
-        axios.delete(`http://localhost/mentorsOne/${id}`).then((response)=>{
+        axios.delete(`http://localhost/mentors/${id}`).then((response)=>{
             response.json("deleted successfully")
         })
     }
 
     useEffect(() =>{
-        axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) =>{
-            setListOfMentors(response.data);
-        });
+        axios.get("http://localhost:5000/mentors/viewmentors").then((response) =>{
+            setListOfMentors(response.data);   
+        }, []);
     });
     return (
         <div className="viewmentor_container">
@@ -75,7 +73,10 @@ function ViewMentor() {
                         <th>Actions</th>
                     </tr>
                 </table>
-                    {listofMentors.map((value,key) =>{
+                {/* {listOfMentors.map((value,key) =>{
+                    return <div>{value.username}</div>
+                })} */}
+                    {listOfMentors.map((value,key) =>{
                                return(
                                    <div>
                                         <table cellSpacing="10px">
@@ -83,7 +84,7 @@ function ViewMentor() {
                                                 <td>{value.first_name} {value.last_name}</td>
                                                 <td>{value.email}</td>
                                                 <td>{value.role}</td>
-                                                <td>{value.role}</td>
+                                                <td>{value.phonenumber}</td>
                                                 <td>
                                                     <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
                                                     <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"

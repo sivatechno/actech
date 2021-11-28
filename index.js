@@ -4,7 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 // const http = require('http');
 app.use(bodyParser.json());
-// app.use(express.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,            //access-control-allow-credentials:true
@@ -23,7 +24,7 @@ app.use('/auth', userRouter);
 const mentorRouter = require('./routes/Mentors');
 app.use('/mentors',mentorRouter);
 
-app.delete(`/mentorsOne/:id`,mentorRouter);
+app.delete(`/mentors/:id`,mentorRouter);
 db.sequelize.sync().then(() =>
 {
     app.listen(5000,() =>

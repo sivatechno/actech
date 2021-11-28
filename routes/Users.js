@@ -40,13 +40,6 @@ router.post("/login",async(req,res) =>{
             }else{
             var userToken =await jwt.sign({id:user.id},'try to get someting happen');
             res.json(userToken);
-            // update({
-            //     accesstoken:userToken
-            // });
-            // await Users.up({
-            //     accesstoken:res.userToken
-            // });
-            // res.setHeader('auth',userToken).send(userToken);
             }
             
         });

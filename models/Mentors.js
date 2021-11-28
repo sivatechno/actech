@@ -45,8 +45,13 @@ module.exports = (sequelize , DataTypes) => {
             type: DataTypes.STRING,
            
         },
-        accesstoken:{
-            type:DataTypes.STRING,
+        postalcode:{
+            type: DataTypes.STRING,
+           
+        },
+        phonenumber:{
+            type: DataTypes.STRING,
+           
         },
         
 

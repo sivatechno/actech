@@ -9,10 +9,7 @@ export default function SuperAdminLogin() {
     const [username,setUsername] = useState();
 
     const history=useNavigate();
-    function handleClick(){
-      history.push(`/viewmentor`)
-    }
-    const [authendicate,setAuthendicate] = useState(false);
+
     const [password,setPassword] = useState();
 
   const login = event =>{

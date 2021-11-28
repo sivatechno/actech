@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
-import{ BrowserRouter as Router,Routes,Route,Navigate} from 'react-router-dom';
-import AdminLogin from './components/form/SuperAdminLogin';
+import{ BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+// import AdminLogin from './components/form/SuperAdminLogin';
 import ProfileViewMentee from './pages/ProfileViewMentee';
 import ProfileViewMentor from './pages/ProfileViewMentor';
 import ViewMentee from './pages/ViewMentee';
