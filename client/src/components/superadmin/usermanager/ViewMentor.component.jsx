@@ -96,7 +96,6 @@ function ViewMentor() {
                                     </div>   
                                )
                            })}
-            
             </div>
         </div>
     )
