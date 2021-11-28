@@ -9,6 +9,10 @@ module.exports = (sequelize , DataTypes) => {
             type: DataTypes.STRING,
                        
         },
+        password:{
+            type: DataTypes.STRING,
+                       
+        },
         role:{
             type: DataTypes.STRING,
            
@@ -40,6 +44,9 @@ module.exports = (sequelize , DataTypes) => {
         state:{
             type: DataTypes.STRING,
            
+        },
+        accesstoken:{
+            type:DataTypes.STRING,
         },
         
 

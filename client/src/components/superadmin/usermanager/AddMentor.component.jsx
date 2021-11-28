@@ -3,6 +3,13 @@ import * as AiIcons from 'react-icons/all';
 import './AddMentor.component.scss';
 
 export default function AddMentor() {
+
+  // const [username,setUsername] = useState("");
+
+  // const [email,setEmail] = useState("");
+
+
+
     return (
         
          <div className="container-one">
