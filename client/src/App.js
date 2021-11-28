@@ -9,6 +9,7 @@ import ViewMentor from './pages/ViewMentor';
 import PageNotFound from './components/PageNotFound';
 import ProtectedRoute from './ProtectedRoutes';
 import LoginProtect from './LoginProtect';
+import ViewCourse from './pages/ViewCourse';
 
 
 function App({children}) {
@@ -18,7 +19,11 @@ function App({children}) {
      <Router>
        <Fragment>
          <Routes>
-           <Route exact path="/viewmentee" element={<ProtectedRoute/>}>
+            <Route exact path="/viewcourse" element={<ProtectedRoute/>}>
+             <Route exact path="/viewcourse" element={<ViewCourse/>}/>
+            </Route>
+
+            <Route exact path="/viewmentee" element={<ProtectedRoute/>}>
              <Route exact path="/viewmentee" element={<ViewMentee/>}/>
             </Route>
 
