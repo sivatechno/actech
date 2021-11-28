@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import{ BrowserRouter as Router,Routes,Route} from 'react-router-dom';
-import AdminLayout from './components/layout/AdminLayout';
+//import AdminLayout from './components/layout/AdminLayout';
 import AddMentee from './pages/AddMentee';
 import AddMentor from './pages/AddMentor';
 import AdminLogin from './pages/AdminLogin';
@@ -9,7 +9,8 @@ import ProfileViewMentee from './pages/ProfileViewMentee';
 import ProfileViewMentor from './pages/ProfileViewMentor';
 import ViewMentee from './pages/ViewMentee';
 import ViewMentor from './pages/ViewMentor';
-import UserLayout from './components/layout/DefaultLayout';
+import ViewCourse from './pages/ViewCourse';
+//import UserLayout from './components/layout/DefaultLayout';
 
 function App({children}) {
   return (
@@ -22,6 +23,7 @@ function App({children}) {
            <Route path="/addmentor" element={<AddMentor />} />
            <Route path="/profileviewmentee" element={<ProfileViewMentee />} />
            <Route path="/profileviewmentor" element={<ProfileViewMentor />} />
+           <Route path="/ViewCourse" element={<ViewCourse />} />
          </Routes>
           <Routes>
             <Route exact path="/" element={<AdminLogin />} />

@@ -1,0 +1,104 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.parent-contain{
+    height: 500px;
+    width: 99.9%;
+    position: fixed;
+
+  .head{
+    height: 60px;
+    //border: solid 2px black;
+    width: 70%; 
+    position: relative;
+    align-self: center;
+   .viewmentee{
+      height: 60px;
+      width:180px;
+      float:left;
+     h3{
+        color:royalblue;
+        text-align: center;
+        font-size: large;
+        padding-top: 15px;
+      }
+    }
+  .addmentee{
+    // border:solid 2px blue;
+    height: 58px;
+    width:170px;
+    float :right;
+    .btn-clck{
+        padding: 10px 10px;
+        font-size: 16px;
+        background-color: #0C50A3;
+        color: #ffff;
+        border-radius: 25px;
+        margin: 0px auto;
+        margin-top: 0.5rem;
+        
+        // .button--icon{
+        //      display: inline-flex;
+        //      align-items: center;
+        //      padding: 0px 5px ;
+        //      height: 10%;
+        // }     
+          
+    }
+    .btn-clck:hover{
+        background-color:#fff;
+        color: #0C50A3;
+        border: solid 2px #0C50A3;
+        transition: 0.4s;
+     } 
+    
+  }
+ }
+ .tab-contain{
+   margin: 0 auto;
+   height: 400px;
+   width: 80%;
+   border-radius: 15px;
+   background-color: transparent;
+   table{
+     margin-left:1px;
+     margin-top: 5px;
+     position: fixed;
+   }
+   tr{
+    border:solid 1px red;
+  }
+  tr th{
+    padding:0 6.3rem 0.5rem 0;
+}
+tr{
+    padding:5px;
+}
+ td.tab-icon1{
+  height: 35px;
+  width:35px;
+  float:left;
+  margin-right:7px;
+  .icon-edit{
+    font-size: 25px;
+    padding-top:5px;
+    padding-left:5px;
+  }
+  .icon-eye{
+    font-size: 25px;
+    padding-top:5px;
+    color: grey;
+    padding-left:5px;
+  }
+  .icon-delete{
+    color:red;
+    font-size:25px;
+    padding-top:5px;
+    padding-left:5px;
+  }
+ }  
+ }
+
+}
