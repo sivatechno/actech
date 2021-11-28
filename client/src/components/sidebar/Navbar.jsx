@@ -33,7 +33,7 @@ export default function Navbar() {
                         <MenuItem icon={<AiIcons.BsChatDots />}>Password Reset</MenuItem>
                     </SubMenu>
                     <SubMenu title="Course Exams" icon={<AiIcons.ImFilesEmpty />}>
-                        <MenuItem icon={<AiIcons.RiFileCopy2Line />}>Manage Courses</MenuItem>
+                        <MenuItem icon={<AiIcons.RiFileCopy2Line />}><Link to="/viewcourse"/>Manage Courses</MenuItem>
                         <MenuItem icon={<AiIcons.RiFileListLine />}>Manage Exams</MenuItem>
                         <MenuItem icon={<AiIcons.AiOutlineFolderOpen />}>Manage Question</MenuItem>
                         <MenuItem icon={<AiIcons.AiOutlineFileAdd />}>Add Question</MenuItem>

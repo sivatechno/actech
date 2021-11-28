@@ -1,37 +1,62 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 import{ BrowserRouter as Router,Routes,Route} from 'react-router-dom';
-//import AdminLayout from './components/layout/AdminLayout';
-import AddMentee from './pages/AddMentee';
-import AddMentor from './pages/AddMentor';
-import AdminLogin from './pages/AdminLogin';
+// import AdminLogin from './components/form/SuperAdminLogin';
 import ProfileViewMentee from './pages/ProfileViewMentee';
 import ProfileViewMentor from './pages/ProfileViewMentor';
 import ViewMentee from './pages/ViewMentee';
 import ViewMentor from './pages/ViewMentor';
+import PageNotFound from './components/PageNotFound';
+import ProtectedRoute from './ProtectedRoutes';
+import LoginProtect from './LoginProtect';
 import ViewCourse from './pages/ViewCourse';
-//import UserLayout from './components/layout/DefaultLayout';
+
 
 function App({children}) {
+
   return (
     <>
      <Router>
+       <Fragment>
          <Routes>
-           <Route path="/viewmentee" element={<ViewMentee />} />
-           <Route path="/viewmentor" element={<ViewMentor />} />
-           <Route path="/addmentee" element={<AddMentee />} />
-           <Route path="/addmentor" element={<AddMentor />} />
-           <Route path="/profileviewmentee" element={<ProfileViewMentee />} />
-           <Route path="/profileviewmentor" element={<ProfileViewMentor />} />
-           <Route path="/ViewCourse" element={<ViewCourse />} />
+            <Route exact path="/viewcourse" element={<ProtectedRoute/>}>
+             <Route exact path="/viewcourse" element={<ViewCourse/>}/>
+            </Route>
+
+            <Route exact path="/viewmentee" element={<ProtectedRoute/>}>
+             <Route exact path="/viewmentee" element={<ViewMentee/>}/>
+            </Route>
+
+            <Route exact path="/viewmentor" element={<ProtectedRoute/>}>
+             <Route exact path="/viewmentor" element={<ViewMentor/>}/>
+            </Route>
+
+            <Route exact path="/profileviewmentee" element={<ProtectedRoute/>}>
+             <Route exact path="/profileviewmentee" element={<ProfileViewMentee/>}/>
+            </Route>
+
+            <Route exact path="/profileviewmentor" element={<ProtectedRoute/>}>
+             <Route exact path="/profileviewmentor" element={<ProfileViewMentor/>}/>
+            </Route>
+
+            {/* <Route exact path="/profileviewmentor/:id" element={<ProtectedRoute/>}>
+             <Route exact path="/profileviewmentor/:id" element={<ProfileViewMentor/>}/>
+            </Route> */}
+
          </Routes>
           <Routes>
-            <Route exact path="/" element={<AdminLogin />} />
+            
+             <Route exact path="/"  element={<LoginProtect/>}>
+             <Route exact path="/" element={<ViewMentor/>}/>
+             </Route>
+             
+            <Route path="/:pathname" element={<PageNotFound/>}/>
           </Routes>
+      </Fragment>
+          
      </Router>
      </>
   );
 }
-
-
 export default App;
+

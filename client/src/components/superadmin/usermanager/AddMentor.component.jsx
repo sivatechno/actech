@@ -1,8 +1,54 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/all';
 import './AddMentor.component.scss';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function AddMentor() {
+
+  const [username,setUsername] = useState("");
+
+  const [email,setEmail] = useState("");
+
+  const [password,setPassword] = useState("");
+
+  const [role,setRole] = useState("");
+
+  const [firstname,setFirstname] = useState("");
+
+  const [lastname,setLastname] = useState("");
+
+  const [country,setCountry] = useState("");
+
+  const [city,setCity] = useState("");
+
+  const [address,setAddress] = useState("");
+
+  const [state,setState] = useState("");
+
+  const [postalcode,setPostalcode] = useState("");
+
+  const [phonenumber,setPhonenumber] = useState("");
+
+const addMentor = (e) =>{
+
+  axios.post("http://localhost:5000/mentors/create",
+  {
+    username:username , password:password, role:role,
+    email:email,
+    firs_tname:firstname,
+    last_name:lastname,
+    country:country,
+    city:city,
+    address:address,
+    state:state,
+    phonenumber:phonenumber,
+    postalcode:postalcode
+  }).then(() =>{    
+    console.log("success");
+  })
+}
+
     return (
         
          <div className="container-one">
@@ -22,18 +68,29 @@ export default function AddMentor() {
                     {/* ---------------------------------------------------------------------------------------------- */}
                                        
                                                                    {/* FIRST CONTAINER START */}
+                      <form onSubmit={addMentor}>  
                         <div className="inner_container_two">
                             <div className="sub_container_one">
                                         <p className="sub_heading">USERNAME *</p>
                                             <div className="sub_textbox">
-                                              <AiIcons.AiOutlineUser className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                              <AiIcons.AiOutlineUser className="inner_icon"/> 
+                                              <input className="textfield" type="text" placeholder="" required 
+                                              onChange={(e)=>{
+                                                setUsername(e.target.value);
+                                              }}
+                                              />
                                             </div>
                                             <span className="error">* This is required field</span>
                               </div>
                                 <div className="sub_container_one">
                                            <p className="sub_heading">E-MAIL *</p>
                                               <div className="sub_textbox">
-                                                 <AiIcons.AiOutlineMail className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                                 <AiIcons.AiOutlineMail className="inner_icon"/> 
+                                                 <input className="textfield" type="text" placeholder="" required
+                                                 onChange={(e)=>{
+                                                  setEmail(e.target.value);
+                                                }}
+                                                 />
                                                  </div>
                                                  <span className="error">* This is required field</span>
                                  </div>
@@ -45,14 +102,23 @@ export default function AddMentor() {
                             <div className="sub_container_one">
                                         <p className="sub_heading">PHONE NUMBER *</p>
                                             <div className="sub_textbox">
-                                              <AiIcons.BsPhone className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                              <AiIcons.BsPhone className="inner_icon"/>
+                                               <input className="textfield" type="text" placeholder="" required 
+                                               onChange={(e)=>{
+                                                setPhonenumber(e.target.value);
+                                              }}
+                                               />
                                             </div>
                                             <span className="error">* This is required field</span>
                               </div>
                                 <div className="sub_container_one">
                                            <p  className="sub_heading">PASSWORD *</p>
                                               <div className="sub_textbox">
-                                                 <input className="textfield" type="password" placeholder="" required /> <AiIcons.AiOutlineEye className="inner_icon"/>
+                                                 <input className="textfield" type="password" placeholder="" required 
+                                                 onChange={(e)=>{
+                                                  setPassword(e.target.value);
+                                                }}
+                                                 /> <AiIcons.AiOutlineEye className="inner_icon"/>
                                                  </div>
                                                  <span className="error">* This is required field</span>
                                  </div>
@@ -65,14 +131,25 @@ export default function AddMentor() {
                             <div className="sub_container_one">
                                         <p  className="sub_heading">FIRST NAME *</p>
                                             <div className="sub_textbox">
-                                              <AiIcons.RiUser6Fill className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                              <AiIcons.RiUser6Fill className="inner_icon"/> 
+                                              <input className="textfield" type="text" placeholder="" required 
+                                              onChange={(e)=>{
+                                                setFirstname(e.target.value);
+                                              }}
+                                              />
                                             </div>
                                             <span className="error">* This is required field</span>
                               </div>
                                 <div className="sub_container_one">
                                            <p  className="sub_heading">LAST NAME *</p>
                                               <div className="sub_textbox">
-                                                 <AiIcons.RiUser6Line className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                                 <AiIcons.RiUser6Line className="inner_icon"/> 
+                                                 
+                                                 <input className="textfield" type="text" placeholder="" required 
+                                                 onChange={(e)=>{
+                                                  setLastname(e.target.value);
+                                                }}
+                                                 />
                                                  </div>
                                                  <span className="error">* This is required field</span>
                                  </div>
@@ -87,13 +164,18 @@ export default function AddMentor() {
                                             <div className="sub_textbox">
                                               <AiIcons.BiWorld className="inner_icon"/> 
                                                                           {/* DROP DOWN */}
-                                                    <select className="drop_down" >
+                                                                          <input className="textfield" type="text" placeholder="" required 
+                                                 onChange={(e)=>{
+                                                  setCountry(e.target.value);
+                                                }}
+                                                 />
+                                                    {/* <select className="drop_down" >
                                                             <option className="list" value="COUNTRY">---COUNTRY---</option>
                                                                          <option className="list"  value="india">INDIA</option>
                                                                           <option className="list" value="usa">USA</option>
                                                                            <option className="list" value="uae">UAE</option>
                                                                             <option className="list" value="uk">UK</option>
-                                                     </select>
+                                                     </select> */}
   
                                             </div>
                                             <span className="error">* This is required field</span>
@@ -101,7 +183,12 @@ export default function AddMentor() {
                                 <div className="sub_container_one">
                                            <p  className="sub_heading">CITY *</p>
                                               <div className="sub_textbox">
-                                                 <AiIcons.FaCity className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                                 <AiIcons.FaCity className="inner_icon"/> 
+                                                 <input className="textfield" type="text" placeholder="" required 
+                                                 onChange={(e)=>{
+                                                  setCity(e.target.value);
+                                                }}
+                                                 />
                                                  </div>
                                                  <span className="error">* This is required field</span>
                                  </div>
@@ -114,7 +201,12 @@ export default function AddMentor() {
                             <div className="sub_container_one">
                                         <p  className="sub_heading">POSTAL/ZIP CODE *</p>
                                             <div className="sub_textbox">
-                                              <AiIcons.FaMapPin className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                              <AiIcons.FaMapPin className="inner_icon"/> 
+                                              <input className="textfield" type="text" placeholder="" required 
+                                              onChange={(e)=>{
+                                                setPostalcode(e.target.value);
+                                              }}
+                                              />
                                             </div>
                                             <span className="error">* This is required field</span>
                               </div> 
@@ -135,14 +227,24 @@ export default function AddMentor() {
                             <div className="sub_container_one">
                                         <p  className="sub_heading">ADDRESS *</p>
                                             <div className="sub_textbox">
-                                              <AiIcons.FaRegAddressCard className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                              <AiIcons.FaRegAddressCard className="inner_icon"/> 
+                                              <input className="textfield" type="text" placeholder="" required 
+                                              onChange={(e)=>{
+                                                setAddress(e.target.value);
+                                              }}
+                                              />
                                             </div>
                                             <span className="error">* This is required field</span>
                               </div>
                                 <div className="sub_container_one">
                                            <p  className="sub_heading">PROVINCE/STATE *</p>
                                               <div className="sub_textbox">
-                                                 <AiIcons.RiPinDistanceLine className="inner_icon"/> <input className="textfield" type="text" placeholder="" required />
+                                                 <AiIcons.RiPinDistanceLine className="inner_icon"/> 
+                                                 <input className="textfield" type="text" placeholder="" required 
+                                                 onChange={(e)=>{
+                                                  setState(e.target.value);
+                                                }}
+                                                 />
                                                  </div>
                                                  <span className="error">* This is required field</span>
                                  </div>
@@ -159,10 +261,18 @@ export default function AddMentor() {
                                  <div className="sub_container_two"> 
                                      {/* RADIO BUTTON START */}
                                      <div className="radio_div">
-                                 <input className="radio_one" type="radio" name="access_level"/>
+                                 <input className="radio_one" type="radio" name="access_level" value="Admin"
+                                 onChange={(e)=>{
+                                  setRole(e.target.value);
+                                }}
+                                 />
                                   <label className="label_one">ADMIN</label> 
                                 
-                                  <input className="radio_two" type="radio" name="access_level"/>
+                                  <input className="radio_two" type="radio" name="access_level" value="Staff"
+                                  onChange={(e)=>{
+                                    setRole(e.target.value);
+                                  }}
+                                  />
                                   <label className="label_two">STAFF</label><br/>
                                     </div>
                                     
@@ -186,6 +296,7 @@ export default function AddMentor() {
                               <button className="add_staff">ADD STAFF</button>
                         </div>
                     </div> 
+                    </form>
                                                                             {/* EIGHTH CONTAINER START */}
 
             </div>    </div>

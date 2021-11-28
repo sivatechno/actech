@@ -1,31 +1,54 @@
 import './SuperAdminLogin.scss';
 import * as AiIcon from 'react-icons/all';
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function SuperAdminLogin() {
-  useEffect(()=>{
-    axios.get("http://localhost:5000/users").then((response)=>
-    {
-      console.log(response.data);
-    })
-  })
+
+    const [username,setUsername] = useState();
+
+    const history=useNavigate();
+
+    const [password,setPassword] = useState();
+
+  const login = event =>{
+    const data={username:username , password:password}
+    axios.post("http://localhost:5000/auth/login",data).then((response)=>{
+      console.log(data);
+      // response.header("auth",JSON.stringify(response.data));
+      localStorage.setItem("auth", JSON.stringify(response.data));
+      history("/viewmentor");
+    });
+  };
   return (
     <div>
             <div className="container">
   <div className="forms-container">
     <div className="signin-signup">
-      <form action className="sign-in-form">
+      <form onSubmit={login} className="sign-in-form">
         <h2 className="title"><AiIcon.AiOutlineUser/>Login</h2>
         <div className="input-field">
           <i className="fas fa-User" />
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" 
+            onChange={(event)=>{
+              setUsername(event.target.value);
+            }}
+          />
         </div>
         <div className="input-field">
           <i className="fas fa-lock" />
-          <input type="password" placeholder="password" />
+          <input type="password" placeholder="password" 
+          onChange={(event)=>{
+            setPassword(event.target.value);
+          }}
+          />
         </div>
-        <input type="submit" defaultValue="Login" className="btn solid" />
+        <input type="submit" defaultValue="Login" className="btn solid" 
+        onClick={() =>{
+          history.push("/viewmentor");
+        }}
+        />
         <p className="social-text">Or Login with social platforms</p>
         
       </form>

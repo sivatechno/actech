@@ -9,6 +9,10 @@ module.exports = (sequelize , DataTypes) => {
             type: DataTypes.STRING,
                        
         },
+        password:{
+            type: DataTypes.STRING,
+                       
+        },
         role:{
             type: DataTypes.STRING,
            
@@ -38,6 +42,14 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         state:{
+            type: DataTypes.STRING,
+           
+        },
+        postalcode:{
+            type: DataTypes.STRING,
+           
+        },
+        phonenumber:{
             type: DataTypes.STRING,
            
         },
