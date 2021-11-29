@@ -21,8 +21,11 @@ const db=require('./models');
 const userRouter = require('./routes/Users');
 app.use('/auth', userRouter);
 
+const menteeRouter = require('./routes/Mentee');
+app.use('/mentee',menteeRouter);
+
 const mentorRouter = require('./routes/Mentors');
-app.use('/mentors',mentorRouter);
+app.use('/mentorsOne',mentorRouter);
 
 app.delete(`/mentors/:id`,mentorRouter);
 db.sequelize.sync().then(() =>

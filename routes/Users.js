@@ -32,14 +32,15 @@ router.post("/login",async(req,res) =>{
 
         const user = await Users.findOne({where:{username: username}});
     
-        if(!user) res.json({error: "User donsen't exist"});
+        if(!user) await res.json({error: "User donsen't exist"});
     
-        bcrypt.compare(password, user.password).then(async(match) =>{
-            if(!match) {
-               res.json({error:"Wrong username and password combination"});
+        await bcrypt.compare(password, user.password).then(async(match) =>{
+            if(match) {
+                var userToken =await jwt.sign({id:user.id},'try to get someting happen');
+                res.json(userToken);
             }else{
-            var userToken =await jwt.sign({id:user.id},'try to get someting happen');
-            res.json(userToken);
+            
+            res.json({error:"Wrong username and password combination"});
             }
             
         });

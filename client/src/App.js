@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import{ BrowserRouter as Router,Routes,Route} from 'react-router-dom';
-// import AdminLogin from './components/form/SuperAdminLogin';
+import AdminLogin from './components/form/SuperAdminLogin';
 import ProfileViewMentee from './pages/ProfileViewMentee';
 import ProfileViewMentor from './pages/ProfileViewMentor';
 import ViewMentee from './pages/ViewMentee';
@@ -47,7 +47,7 @@ function App({children}) {
           <Routes>
             
              <Route exact path="/"  element={<LoginProtect/>}>
-             <Route exact path="/" element={<ViewMentor/>}/>
+             <Route exact path="/" element={<AdminLogin/>}/>
              </Route>
              
             <Route path="/:pathname" element={<PageNotFound/>}/>

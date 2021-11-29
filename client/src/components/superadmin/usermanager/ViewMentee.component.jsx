@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useEffect , useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Modal from 'react-modal';
-import AddMentor from './AddMentor.component';
+import AddMentee from './AddMentee.component';
 
 
 const customStyles = {
@@ -23,7 +23,7 @@ function ViewMentee() {
 
     const history=useNavigate(); 
     
-    const [listofMentors,setListOfMentors] = useState([]);
+    const [listofMentees,setListOfMentees] = useState([]);
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -35,13 +35,11 @@ function ViewMentee() {
         setIsOpen(false);
       }
 
-      function handleClick(){
-        history.push(`/profileviewmentor`)
-      }
+
 
     useEffect(() =>{
-        axios.get("http://localhost:5000/mentors").then((response) =>{
-            setListOfMentors(response.data);
+        axios.get("http://localhost:5000/mentee/viewmentee").then((response) =>{
+            setListOfMentees(response.data);
         });
     });
     return (
@@ -60,7 +58,7 @@ function ViewMentee() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddMentor />
+                <AddMentee />
           </Modal>
             <div className="table_container">                
                 <table cellSpacing="10px" >
@@ -73,7 +71,7 @@ function ViewMentee() {
                         <th>Actions</th>
                     </tr>
                 </table>
-                    {listofMentors.map((value,key) =>{
+                    {listofMentees && listofMentees.map((value,key) =>{
                                return(
                                    <div>
                                         <table cellSpacing="10px">
@@ -85,7 +83,7 @@ function ViewMentee() {
                                                 <td>
                                                     <div className="table_icons"><AiIcons.GrEdit className="icons_align"/></div>
                                                     <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"/></div>
-                                                    <div className="table_icons" onClick={handleClick}><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
+                                                    <div className="table_icons" ><AiIcons.BsFillEyeSlashFill className="icons_align"/></div>
                                                 </td>
                                             </tr>
                                         </table>

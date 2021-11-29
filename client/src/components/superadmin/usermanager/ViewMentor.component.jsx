@@ -41,9 +41,9 @@ function ViewMentor() {
     }
 
     useEffect(() =>{
-        axios.get("http://localhost:5000/mentors/viewmentors").then((response) =>{
+        axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) =>{
             setListOfMentors(response.data);   
-        }, []);
+        });
     });
     return (
         <div className="viewmentor_container">
@@ -76,12 +76,12 @@ function ViewMentor() {
                 {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
-                    {listOfMentors.map((value,key) =>{
+                    {listOfMentors && listOfMentors.map((value,key) =>{
                                return(
                                    <div>
                                         <table cellSpacing="10px">
                                             <tr className="table_row">
-                                                <td>{value.first_name} {value.last_name}</td>
+                                                <td>{value.firstname} {value.lastname}</td>
                                                 <td>{value.email}</td>
                                                 <td>{value.role}</td>
                                                 <td>{value.phonenumber}</td>
