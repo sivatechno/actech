@@ -9,22 +9,23 @@
     justify-content: space-between;
     .left{
       img{
-        width: 100px;
+        width: 60px;
+        height: 55px;
       }
     }
     .right{
       padding: 10px;
       display: flex;
       .messages{
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         border-radius: 20px;
         background-color: $--primary-badge;
         padding: 16px;
         position: relative;
         margin: 0 10px;
         .icon{
-          font-size: 25px;
+          font-size: 20px;
           color: $--primary;
         }
       }
@@ -34,29 +35,29 @@
         border-radius: 50px;
         background-color: $--primary-badge;
         position:absolute;
-        top: -7px;
-        left: 40px;
+        top: -6px;
+        left: 30px;
         .in-notify{
           width: 10px;
           height: 10px;
           border-radius: 50px;
           background-color: $--primary;
           top: 7px;
-          left: 7px;
+          left: 10px;
           position: relative;
         }
       }
     }
     .notifications{
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 45px;
       border-radius: 20px;
       background-color: $--primary-badge;
       padding: 16px;
       position: relative;
       margin: 0 10px;
       .icon{
-        font-size: 25px;
+        font-size: 20px;
         color: $--primary;
       }
       .notify{
@@ -65,8 +66,8 @@
         border-radius: 50px;
         background-color: $--primary-badge;
         position:absolute;
-        top: -7px;
-        left: 40px;
+        top: -6px;
+        left: 30px;
         .in-notify{
           width: 10px;
           height: 10px;
@@ -79,7 +80,7 @@
       }
     }
     .profile{
-      width: 60px;
+      width: 30px;
       overflow: hidden;
       object-fit: cover;
       margin: 0 10px;

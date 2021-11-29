@@ -1,5 +1,4 @@
 import React from 'react'
-import './ViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect , useState } from 'react';

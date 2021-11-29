@@ -1,0 +1,99 @@
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.parent-container{
+    height: 600px;
+    width:99.9%;
+    position:fixed;
+
+  .header{
+      height: 60px;
+    //border: solid 2px black;
+      width: 80%;
+      position: relative;
+      align-items: center;
+        
+  .title{
+      height: 60px;
+      width: 180px;
+      float: left ;
+      h3{
+        color: royalblue;
+        text-align: center;
+        font-size: large;
+        padding-top: 20px;
+      }
+  } 
+  .addcourse{
+    //border: solid 2px blue;
+      height: 60px;
+      width: 180px;
+      float: right;
+
+       .btn-click{
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 25px;
+        border: blue;
+        background-color: #0C50A3;
+        color: white;
+        margin: 0px auto;
+        margin-top: 0.5rem;  
+      }
+      .btn-click:hover{
+        background-color:#fff;
+        color: #0C50A3;
+        border: solid 2px #0C50A3;
+        transition: 0.4s;
+     } 
+  }
+}
+.tab-container{
+    margin: 0 auto;
+    height:400px;
+    width: 80%;
+    border-radius: 15px;
+    background-color: transparent;
+    table{
+        margin-left: 4px;
+        margin-top: 5px;
+        position: fixed;
+    }
+    tr{
+        border:solid 1px red;
+    }
+    tr th{
+        padding:0 6.3rem 0.5rem 0;
+    }
+    tr{
+        padding:5px;
+    }
+    td .tab-icons{
+        height: 35px;
+        width:35px;
+        float:left;
+        margin-right:7px;
+        
+        .icons-align{
+            font-size: 25px;
+            padding-top:5px;
+            padding-left:5px;
+        }
+        .icons-align1{
+            font-size: 25px;
+            padding-top:5px;
+            color: grey;
+            padding-left:5px;
+        }
+        .icons_delete{
+            color:red;
+            font-size:25px;
+            padding-top:5px;
+            padding-left:5px;
+        }
+    }
+}
+}
