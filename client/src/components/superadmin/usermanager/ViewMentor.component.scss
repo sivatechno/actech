@@ -1,100 +1,70 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin:0px;
+    padding:0px;
     box-sizing: border-box;
 }
-.parent_container{
-    // height: 600px;
-    // width: 100%;
 .viewmentor_container{
-    height: 600px;
+    height: 50%;
     width: 99.9%;
-    //border: solid 2px red;
-    // position: fixed;
+    position: fixed;
 
-    .view_header{
-        height:60px;
-        width: 100%;
-       // border: solid 2px black;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .view_title{
-           // border: solid 2px blue;
-            height: 60px;
-            width:180px;
-            float: left;
-
-            h3{
-                color: royalblue;
-                text-align: center;
-                font-size: large;
-                padding-top: 20px;
-            }
+   .view_header{
+    height:60px;
+    width: 70%;
+ 
+    position: relative;
+    align-items: center;
+    .view_title{
+        height: 60px;
+        width: 180px;
+        float: left;
+        h3{
+            color: royalblue;
+            text-align: center;
+            font-size: large;
+            padding-top: 18px;
         }
-
-        .add_staff{
-           // border: solid 2px blue;
-            height: 60px;
-            width:180px;
-            float: right;
-
-            .button_click{
-               padding: 10px 17px;
-               font-size: 16px;
-               border-radius: 20px;
-               border: blue;
-               background-color: royalblue;
-               color: white;
-               display: flex;
-               margin-top: 10px;
-            }
-        }
-    }
-
-    .table_container{
-        margin:10px 20px;
-        // height: 400px;
-        // border: solid 2px black;
-        border-radius: 15px;
-        background-color: transparent;
-        //position: relative;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-        background-color: #fff;
-        padding: 10px 20px;
-        
-        table{
-            width: 50%;
-
-            tr{
-                border:solid 1px red;
-            }
-            tr th{
-                // padding: 0 6.3rem 0.5rem 0;
-            }
-            tr{
-                padding: 5px;
-            }
-            td .table_icons{
-                height: 35px;
-                width: 35px;
-               // border: solid 2px red;
-                float: left;
-                margin-right: 7px;
+     }
+     .add_staff{
     
-                .icons_align{
-                    
-                    font-size: 25px;
-                    padding-top: 5px;
-                    padding-left: 5px;
-                }
-                .icons_align_delete{
-                    color: red;
-                    font-size: 25px;
-                    padding-top: 5px;
-                    padding-left: 5px;
-                }
-            }
-        }
-    }}}
+      height: 60px;
+      width: 180px;
+      float: right;
+     }
+     .button_click{
+         padding: 10px 15px;
+         font-size: 16px;
+         border: blue;
+         border-radius: 23px;
+         background-color: #0c50a3;
+         color: white;
+         margin: 0px auto;
+         margin-top: 0.5rem;
+     }
+     .button_click:hover{
+        background-color:#fff;
+        color: #0C50A3;
+        border: solid 2px #0C50A3;
+        transition: 0.4s;
+     }
+    }
+}
+.table_container{
+    margin: 0 auto;
+    height: 400px;
+    width: 80%;
+    border: 15px;
+    background-color: transparent;
+    table{
+        margin-left: 4px;
+        margin-top:5px;
+        position: fixed;
+    }
+    tr th{
+        padding: 23px;
+        align-items: center;
+    }
+    
+    
+    
+}

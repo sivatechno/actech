@@ -1,6 +1,6 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/all';
-import * as FiIcons from 'react-icons/all';
+// import * as FiIcons from 'react-icons/all';
 import "./ViewMentee.component.scss";
 ;
 function ViewMentee() {

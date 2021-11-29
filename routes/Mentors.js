@@ -7,15 +7,15 @@ const saltRounds = 10
 const db = require('../models');
 const Promise = require('promise');
 
-// router.get('/viewmentors',async (req,res) =>{
-//     try{
-//         const listofMentors = Mentors.findAll([]);
-//         res.json(listofMentors);   
+router.get('/viewmentors',async (req,res) =>{
+    try{
+        const listofMentors = Mentors.findAll([]);
+        res.json(listofMentors);   
         
-//     }catch(err){
-//         res.json(err);
-//     }
-// });
+    }catch(err){
+        res.json(err);
+    }
+});
 
 const validUser = (req,res,next) => {
     var token = req.header('auth');
@@ -23,17 +23,17 @@ const validUser = (req,res,next) => {
     next();
 }
 
-router.get("/viewmentors",validUser, async (req , res) =>{
-    jwt.verify(req.token,'try to get someting happen',async (err,data) =>{
-        if(err){
-            res.json("not viewewd")
-        }else{
-            const listOfMentors = await Mentors.findAll({ limit: 10 });
-            res.json(listOfMentors);
-        }
-    })
+// router.get("/viewmentors",validUser, async (req , res) =>{
+//     jwt.verify(req.token,'try to get someting happen',async (err,data) =>{
+//         if(err){
+//             res.json("not viewewd")
+//         }else{
+//             const listOfMentors = await Mentors.findAll({ limit: 10 });
+//             res.json(listOfMentors);
+//         }
+//     })
     
-    });
+//     });
 
 
 

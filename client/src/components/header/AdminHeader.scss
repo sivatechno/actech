@@ -21,11 +21,12 @@
         height: 45px;
         border-radius: 20px;
         background-color: $--primary-badge;
-        padding: 16px;
+        padding: 15px;
         position: relative;
         margin: 0 10px;
         .icon{
           font-size: 20px;
+          padding-bottom: 10px;
           color: $--primary;
         }
       }
@@ -49,7 +50,7 @@
       }
     }
     .notifications{
-      width: 50px;
+      width: 45px;
       height: 45px;
       border-radius: 20px;
       background-color: $--primary-badge;
