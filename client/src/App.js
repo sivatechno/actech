@@ -49,8 +49,7 @@ function App({children}) {
           <Route exact path="/login" element={<AdminLogin/>} />
             
              <Route exact path="/"  element={<LoginProtect/>}>
-               
-             <Route exact path="/" element={<ViewMentor/>}/>
+             <Route exact path="/" element={<AdminLogin/>}/>
              </Route>
              
             <Route path="/:pathname" element={<PageNotFound/>}/>

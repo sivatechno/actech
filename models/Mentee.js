@@ -1,5 +1,5 @@
 module.exports = (sequelize , DataTypes) => {
-    const Mentors = sequelize.define("Mentors",
+    const Mentee = sequelize.define("Mentee",
     {
         user_id:{
             type: DataTypes.STRING,
@@ -12,10 +12,6 @@ module.exports = (sequelize , DataTypes) => {
         password:{
             type: DataTypes.STRING,
                        
-        },
-        role:{
-            type: DataTypes.STRING,
-           
         },
         email:{
             type: DataTypes.STRING,
@@ -30,6 +26,14 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         country:{
+            type: DataTypes.STRING,
+           
+        },
+        company:{
+            type: DataTypes.STRING,
+           
+        },
+        technology:{
             type: DataTypes.STRING,
            
         },
@@ -56,5 +60,5 @@ module.exports = (sequelize , DataTypes) => {
         
 
     })
-    return Mentors;
+    return Mentee;
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import {Navigate} from 'react-router-dom';
+import {Navigate,Route,Outlet} from 'react-router-dom';
+import AdminLogin from './pages/AdminLogin';
 const ProtectedRoute = ()=>{
     const hasToken = JSON.parse(localStorage.getItem('auth'));
     
@@ -14,6 +15,7 @@ const ProtectedRoute = ()=>{
     //     />
     // )
 
-    return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/viewmentor" /> : <Navigate to="/" />;
+    return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/viewmentor" /> : <Outlet />;
+    // return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/viewmentor" /> : <Route exact path="/" element={<AdminLogin/>}/>;
 };
 export default ProtectedRoute;
