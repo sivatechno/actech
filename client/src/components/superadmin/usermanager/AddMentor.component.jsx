@@ -46,8 +46,7 @@ const addMentor = (e) =>{
     state:state,
     phonenumber:phonenumber,
     postalcode:postalcode
-  }).then((response) =>{    
-    console.log(response);
+  }).then((response) =>{        
   })
 }
 

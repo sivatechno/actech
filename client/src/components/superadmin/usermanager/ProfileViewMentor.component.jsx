@@ -4,6 +4,7 @@ import * as AiIcons from 'react-icons/all';
 import Photo from '../../assets/images/profile.png';
 
 export default function ProfileViewMentor() {
+    
     return (
         <div className="profileviewmentor_container">
             <div className="viewpart_left">

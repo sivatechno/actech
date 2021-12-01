@@ -12,6 +12,7 @@ import LoginProtect from './LoginProtect';
 import ViewCourse from './pages/ViewCourse';
 
 
+
 function App({children}) {
 
   return (
@@ -31,22 +32,20 @@ function App({children}) {
              <Route exact path="/viewmentor" element={<ViewMentor/>}/>
             </Route>
 
-            <Route exact path="/profileviewmentee" element={<ProtectedRoute/>}>
-             <Route exact path="/profileviewmentee" element={<ProfileViewMentee/>}/>
+            <Route exact path="/profileviewmentee/:id" element={<ProtectedRoute/>}>
+             <Route exact path="/profileviewmentee/:id" element={<ProfileViewMentee/>}/>
             </Route>
 
-            <Route exact path="/profileviewmentor" element={<ProtectedRoute/>}>
+            {/* <Route exact path="/profileviewmentor" element={<ProtectedRoute/>}>
              <Route exact path="/profileviewmentor" element={<ProfileViewMentor/>}/>
-            </Route>
-
-            {/* <Route exact path="/profileviewmentor/:id" element={<ProtectedRoute/>}>
-             <Route exact path="/profileviewmentor/:id" element={<ProfileViewMentor/>}/>
             </Route> */}
+
+            <Route exact path="/profileviewmentor/:id" element={<ProtectedRoute/>}>
+             <Route exact path="/profileviewmentor/:id" element={<ProfileViewMentor/>}/>
+            </Route>
 
          </Routes>
           <Routes>
-
-          <Route exact path="/login" element={<AdminLogin/>} />
             
              <Route exact path="/"  element={<LoginProtect/>}>
              <Route exact path="/" element={<AdminLogin/>}/>

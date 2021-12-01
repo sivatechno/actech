@@ -5,44 +5,57 @@ const jwt = require('jsonwebtoken');
 const saltRounds = 10
 const db = require('../models');
 const Promise = require('promise');
-const Mentee = require('../models/Mentee');
+const {Mentee} = require('../models');
 
-router.get('/viewmentee',async (req,res,next) =>{
-    const listOfMentees = await Mentee.findAll({});
-    res.json(listOfMentees);
-    
+router.get('/viewmentee', async (req, res, next) => {
+    const list = await Mentee.findAll({});
+    res.send(list);
+
 });
 
-router.post('/create',async (req,res) =>{
+router.post('/create', async (req, res) => {
     try {
-        const {postalcode,phonenumber,username ,password, company,technology , email , firstname, lastname , country , city , address ,state} = req.body;
-        const userAlreadyExist = await Mentee.findOne({where:{username: username}});
-        const passwordHash = await bcrypt.hash(password,10);
-        if(!userAlreadyExist)
-        {
+        const { postalcode, phonenumber, username, password, company, technology, email, firstname, lastname, country, city, address, state } = req.body;
+        const userAlreadyExist = await Mentee.findOne({ where: { username: username } });
+        const passwordHash = await bcrypt.hash(password, 10);
+        if (!userAlreadyExist) {
             await Mentee.create({
-            username:username,
-            password:passwordHash,
-            company:company,
-            technology:technology,
-            email:email,
-            phonenumber:phonenumber,
-            firstname:firstname,
-            lastname:lastname,
-            country:country,
-            postalcode:postalcode,
-            city:city,
-            address:address,
-            state:state
+                username: username,
+                password: passwordHash,
+                company: company,
+                technology: technology,
+                email: email,
+                phonenumber: phonenumber,
+                firstname: firstname,
+                lastname: lastname,
+                country: country,
+                postalcode: postalcode,
+                city: city,
+                address: address,
+                state: state
             });
             res.json("success");
-        
-        }else{
+
+        } else {
             res.json("user already exists");
         }
-        
+
     } catch (error) {
         res.json(error)
     }
-    });
+});
+
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    let data = []
+    let vals = {}
+    const mentees = await Mentee.findByPk(id);
+    if (mentees) {
+        data.push(mentees)
+        vals.data = data
+        res.send(data);
+    }
+    res.send("error")
+
+});
 module.exports = router;

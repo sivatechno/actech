@@ -43,8 +43,10 @@ function ViewMentor() {
     useEffect(() =>{
         axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) =>{
             setListOfMentors(response.data);   
+            console.log(response.data);
         });
-    });
+    },[]);
+    
     return (
         <div className="viewmentor_container">
             <div className="view_header">
@@ -72,14 +74,14 @@ function ViewMentor() {
                         <th>Contact Number</th>
                         <th>Actions</th>
                     </tr>
-                </table>
+                
                 {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
                     {listOfMentors && listOfMentors.map((value,key) =>{
                                return(
-                                   <div>
-                                        <table cellSpacing="10px">
+                                  
+                                        
                                             <tr className="table_row">
                                                 <td>{value.firstname} {value.lastname}</td>
                                                 <td>{value.email}</td>
@@ -93,10 +95,11 @@ function ViewMentor() {
                                                     <Link to={`/profileviewmentor/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align"/></Link>
                                                 </td>
                                             </tr>
-                                        </table>
-                                    </div>   
+                                        
+                                      
                                )
                            })}
+                           </table>
             </div>
         </div>
     )

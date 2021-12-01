@@ -1,21 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const { Mentors} = require("../models");
+const { Mentors } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const saltRounds = 10
 const db = require('../models');
 const Promise = require('promise');
 
-router.get('/viewmentors',async (req,res,next) =>{
-    const listOfMentors = await Mentors.findAll({});
-    res.json(listOfMentors);
-    
+router.get('/viewmentors', async (req, res, next) => {
+try {
+    const mentor = await Mentors.findAll();
+    if(mentor){
+        
+        res.send(mentor);
+    }
+} catch (error) {
+    res.send(error);
+}
+
 });
 
-const validUser = (req,res,next) => {
+const validUser = (req, res, next) => {
     var token = req.header('auth');
-    req.token=token;
+    req.token = token;
     next();
 }
 
@@ -29,7 +36,7 @@ const validUser = (req,res,next) => {
 //             console.log("success");
 //         }
 //     })
-    
+
 //     });
 
 
@@ -50,48 +57,57 @@ const validUser = (req,res,next) => {
 //             res.json("success");
 // });
 
-router.delete('/delete' , async(req,res) =>{
-    const deleteMentor = await Mentors.findOne({id:req.body.id},{headers: {
-        "Content-type": "application/json"}
-      });
+router.delete('/delete', async (req, res) => {
+    const deleteMentor = await Mentors.findOne({ id: req.body.id }, {
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
     deleteMentor.destroy();
 });
 
-router.post('/create',validUser,async (req,res) =>{
+router.post('/create', validUser, async (req, res) => {
     try {
-        const {postalcode,phonenumber,username ,password, role , email , firstname, lastname , country , city , address ,state} = req.body;
-        const userAlreadyExist = await Mentors.findOne({where:{username: username}});
-        const passwordHash = await bcrypt.hash(password,10);
-        if(!userAlreadyExist)
-        {
+        const { postalcode, phonenumber, username, password, role, email, firstname, lastname, country, city, address, state } = req.body;
+        const userAlreadyExist = await Mentors.findOne({ where: { username: username } });
+        const passwordHash = await bcrypt.hash(password, 10);
+        if (!userAlreadyExist) {
             await Mentors.create({
-            username:username,
-            password:passwordHash,
-            role:role,
-            email:email,
-            phonenumber:phonenumber,
-            firstname:firstname,
-            lastname:lastname,
-            country:country,
-            postalcode:postalcode,
-            city:city,
-            address:address,
-            state:state
+                username: username,
+                password: passwordHash,
+                role: role,
+                email: email,
+                phonenumber: phonenumber,
+                firstname: firstname,
+                lastname: lastname,
+                country: country,
+                postalcode: postalcode,
+                city: city,
+                address: address,
+                state: state
             });
             res.json("success");
-        
-        }else{
+
+        } else {
             res.json("user already exists");
         }
-        
+
     } catch (error) {
         res.json(error)
     }
-    });
-router.post('/:id', async(req,res) =>{
-    const id=req.params.id;
+});
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    let data = []
+    let vals = {}
     const mentors = await Mentors.findByPk(id);
-    res.json(mentors);
+    if (mentors) {
+        data.push(mentors)
+        vals.data = data
+        res.send(data);
+    }
+    res.send("error")
+
 });
 
 module.exports = router;
