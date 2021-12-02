@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
-import Photo from '../../assets/images/profile.png';
+// import Photo from '../../assets/images/profile.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ export default function ProfileViewMentor() {
                     <div>
                         <div className="viewpart_left">
                             <div className="profile_view">
-                                <img src={Photo} alt="" className="profile_align" />
+                                {/* <img src={Photo} alt="" className="profile_align" /> */}
                             </div>
                             <div className="about_profile">
                                 <div className="about_box_1">
@@ -54,7 +54,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.FaUserTie className="icon_align" />
-                                        <p className="profile_field">{values.username}</p>
+                                        <p className="profile_fields">{values.username}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -62,8 +62,8 @@ export default function ProfileViewMentor() {
                                         <label>EMAIL :</label>
                                     </div>
                                     <div className="txtboxes">
-                                        <AiIcons.SiMinutemailer className="icon_align" />
-                                        <p className="profile_field">{values.email}</p>
+                                  
+                                        <p className="profile_fields">{values.email}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -72,7 +72,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.IoMdPhonePortrait className="icon_align" />
-                                        <p className="profile_field">{values.phonenumber}</p>
+                                        <p className="profile_fields">{values.phonenumber}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -81,7 +81,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.FaUserTie className="icon_align" />
-                                        <p className="profile_field">{values.firstname}</p>
+                                        <p className="profile_fields">{values.firstname}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -90,7 +90,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.FaUserTie className="icon_align" />
-                                        <p className="profile_field">{values.lastname}</p>
+                                        <p className="profile_fields">{values.lastname}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -99,7 +99,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.AiOutlineGlobal className="icon_align" />
-                                        <p className="profile_field">{values.country}</p>
+                                        <p className="profile_fields">{values.country}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -108,7 +108,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.AiFillFlag className="icon_align" />
-                                        <p className="profile_field">{values.city}</p>
+                                        <p className="profile_fields">{values.city}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -117,7 +117,7 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.TiCode className="icon_align" />
-                                        <p className="profile_field">{values.postalcode}</p>
+                                        <p className="profile_fields">{values.postalcode}</p>
                                     </div>
                                 </div>
                                 <div className="field">
@@ -126,15 +126,15 @@ export default function ProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.TiCode className="icon_align" />
-                                        <p className="profile_field">{values.state}</p>
+                                        <p className="profile_fields">{values.state}</p>
                                     </div>
                                 </div>
                                 <div className="field">
                                     <div className="label_box">
-                                        <label>STATUS</label>
+                                        <label>STATUS:</label>
                                     </div>
                                     <div className="txtboxes">
-                                        <p className="profile_field">{values.role}</p>
+                                        <p className="profile_fields">{values.role}</p>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ export default function ProfileViewMentor() {
                                 </div>
                                 <div className="address_area">
                                     <AiIcons.ImAddressBook className="icon_align" />
-                                    <p className="profile_field">{values.address}</p>
+                                    <p className="profile_fields">{values.address}</p>
                                 </div>
                             </div>
                         </div>
