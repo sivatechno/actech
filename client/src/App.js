@@ -51,12 +51,12 @@ function App({ children }) {
 
           </Routes>
           <Routes>
-
-            <Route exact path="/" element={<LoginProtect />}>
-              <Route exact path="/" element={<AdminLogin />} />
-            </Route>
-
-            <Route path="/:pathname" element={<PageNotFound />} />
+            
+             <Route exact path="/"  element={<LoginProtect/>}>
+             <Route exact path="/" element={<AdminLogin/>}/>
+             </Route>
+             
+            {/* <Route path="/:pathname" element={<PageNotFound/>}/> */}
           </Routes>
         </Fragment>
 

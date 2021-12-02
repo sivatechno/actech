@@ -69,8 +69,8 @@ function ViewMentor() {
             <div className="table_container">
                 <table cellSpacing="10px" >
                     <tr className="table_row">
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th className="namehead">Name</th>
+                        <th className="emailhead">Email</th>
                         <th>Access Level</th>
                         <th>Contact Number</th>
                         <th>Actions</th>
