@@ -89,7 +89,9 @@ function ViewMentor() {
                                 <td>{value.role}</td>
                                 <td>{value.phonenumber}</td>
                                 <td>
-                                    <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
+                                    <Link to={`/editprofileviewmentor/${value.id}`}>
+                                        <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
+                                    </Link>
                                     <Link to={"/"}>
                                         <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
                                             onClick={(e) => deleteMentor(value.id, e)}
