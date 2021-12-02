@@ -8,23 +8,23 @@ const db = require('../models');
 const Promise = require('promise');
 
 router.get('/viewmentors', async (req, res, next) => {
-try {
-    const mentor = await Mentors.findAll();
-    if(mentor){
-        
-        res.send(mentor);
+    try {
+        const mentor = await Mentors.findAll();
+        if (mentor) {
+
+            res.send(mentor);
+        }
+    } catch (error) {
+        res.send(error);
     }
-} catch (error) {
-    res.send(error);
-}
 
 });
 
-const validUser = (req, res, next) => {
-    var token = req.header('auth');
-    req.token = token;
-    next();
-}
+// const validUser = (req, res, next) => {
+//     var token = req.header('auth');
+//     req.token = token;
+//     next();
+// }
 
 // router.get("/viewmentors",validUser, async (req , res) =>{
 //     jwt.verify(req.token,'try to get someting happen',async (err,data) =>{
@@ -57,16 +57,22 @@ const validUser = (req, res, next) => {
 //             res.json("success");
 // });
 
-router.delete('/delete', async (req, res) => {
-    const deleteMentor = await Mentors.findOne({ id: req.body.id }, {
-        headers: {
-            "Content-type": "application/json"
-        }
-    });
-    deleteMentor.destroy();
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const deleteMentor = await Mentors.findByPk(id);
+        // const deleteMentor = await Mentors.findOne({ id: req.body.id }, {
+        //     headers: {
+        //         "Content-type": "application/json"
+        //     }
+        // });
+        deleteMentor.destroy();
+    } catch (error) {
+        res.send(error)
+    }
 });
 
-router.post('/create', validUser, async (req, res) => {
+router.post('/create', async (req, res) => {
     try {
         const { postalcode, phonenumber, username, password, role, email, firstname, lastname, country, city, address, state } = req.body;
         const userAlreadyExist = await Mentors.findOne({ where: { username: username } });
@@ -97,17 +103,27 @@ router.post('/create', validUser, async (req, res) => {
     }
 });
 router.get('/:id', async (req, res) => {
-    const id = req.params.id;
-    let data = []
-    let vals = {}
-    const mentors = await Mentors.findByPk(id);
-    if (mentors) {
-        data.push(mentors)
-        vals.data = data
-        res.send(data);
-    }
-    res.send("error")
+    try {
+        // const id = req.params.id;
+        // const profile = await Mentors.findByPk(id);
+        // res.send(profile);
+        // console.log(profile);
+        const id = req.params.id;
+        let data = []
+        let vals = {}
+        const mentors = await Mentors.findByPk(id);
+        console.log(mentors)
+        if (mentors) {
+            data.push(mentors)
+            vals.data = data
+            res.send(data);
+        } else {
+            res.send("no data");
+        }
 
+    } catch (error) {
+        res.send(error);
+    }
 });
 
 module.exports = router;
