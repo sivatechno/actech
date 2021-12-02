@@ -10,7 +10,7 @@ const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
-    exposedHeaders: ['x-auth-token'],
+    //exposedHeaders: ['x-auth-token'],
 }
 app.use(cors(corsOptions));
 const db=require('./models');

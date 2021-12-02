@@ -51,7 +51,7 @@ function App({children}) {
              <Route exact path="/" element={<AdminLogin/>}/>
              </Route>
              
-            <Route path="/:pathname" element={<PageNotFound/>}/>
+            {/* <Route path="/:pathname" element={<PageNotFound/>}/> */}
           </Routes>
       </Fragment>
           

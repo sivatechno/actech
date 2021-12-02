@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.addmentee{
+    background-color:white;
+    height: 700px;
+    width: 800px;
+    border-radius:20px;
+    margin:25px auto;
+    overflow-y:scroll;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .headercontent{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+    input[type=text],input[type=number],input[type=password],input[type=email]{
+        height:50px;
+        width: 300px;
+        border:solid 2px #2424;
+        border-radius: 20px;
+        background-color: transparent;
+        padding-left: 40px;
+        font-size: 16px; 
+    }
+    .inputfeilds-postalfeild{margin: 25px 50px;}
+    .feild{
+        position: relative;
+        margin-top: 10px;
+    }
+    p,input[type=radio],input[type=checkbox]{
+        margin: 10px 0px 5px 30px;
+    }
+    .accesslvltxt{
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .inputfeilds{
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+    }
+    .left-inputfeilds i,.right-inputfeilds i{
+        position: absolute;
+    }
+    i{
+        margin: 13px 15px;
+    }
+    .close{
+        margin-right: 25px;
+    }
+    .notes{
+        padding-bottom: 10px;
+        padding-left:25px;
+        textarea{
+            width: 700px;
+            height: 90px;
+            font-size: 16px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+    }
+    .buttons{
+        padding:40px;
+        float: right;
+        .cancel{
+            width:100px;
+            height: 40px;
+            margin-right: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            color:black;
+        }
+        .Addstaff{
+            margin-top: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: white;
+            background-color:#0C50A3;
+        }        
+    }
+}

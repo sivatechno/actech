@@ -34,9 +34,6 @@ function ViewMentee() {
     function closeModal() {
         setIsOpen(false);
     }
-
-
-
     useEffect(() => {
         axios.get("http://localhost:5000/mentee/viewmentee").then((response) => {
             setListOfMentees(response.data);
@@ -77,8 +74,8 @@ function ViewMentee() {
                         return (
 
                             <tr className="table_row">
-                                <td>{value.firstname} {value.lastname}</td>
-                                <td>{value.email}</td>
+                                <td className="namecol">{value.firstname} {value.lastname}</td>
+                                <td className="emailcol">{value.email}</td>
                                 <td>{value.company}</td>
                                 <td>{value.technology}</td>
                                 <td>{value.phonenumber}</td>

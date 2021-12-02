@@ -15,7 +15,9 @@ export default function SuperAdminLogin() {
   const login = event =>{
     const data={username:username , password:password}
     axios.post("http://localhost:5000/auth/login",data).then((response)=>{
-      // response.header("auth",JSON.stringify(response.data));
+    //  response.header("auth",JSON.stringify(response.data));
+      console.log("/////")
+      console.log(response)
       localStorage.setItem("auth", JSON.stringify(response.data));
       history("/viewmentor");
     });

@@ -3,18 +3,19 @@
     padding:0px;
     box-sizing: border-box;
 }
-.parent-contain{
-    height: 500px;
-    width: 99.9%;
-    position: fixed;
-
-  .head{
+.parent_container{
+  margin: 30px 30px;
+  height: 80%;
+  width: 98%;
+  position: fixed;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+  .view_header{
     height: 60px;
-    //border: solid 2px black;
-    width: 70%; 
+    width: 84%; 
     position: relative;
     align-self: center;
-   .viewmentee{
+   .view_title{
       height: 60px;
       width:180px;
       float:left;
@@ -22,83 +23,64 @@
         color:royalblue;
         text-align: center;
         font-size: large;
-        padding-top: 15px;
+        padding-top: 18px;
       }
     }
-  .addmentee{
-    // border:solid 2px blue;
-    height: 58px;
-    width:170px;
-    float :right;
-    .btn-clck{
-        padding: 10px 10px;
-        font-size: 16px;
-        background-color: #0C50A3;
-        color: #ffff;
-        border-radius: 25px;
-        margin: 0px auto;
-        margin-top: 0.5rem;
-        
-        // .button--icon{
-        //      display: inline-flex;
-        //      align-items: center;
-        //      padding: 0px 5px ;
-        //      height: 10%;
-        // }     
-          
-    }
-    .btn-clck:hover{
+    .add_staff{
+      height: 60px;
+      width: 180px;
+      float: right;
+     }
+     .button_click{
+         padding: 10px 15px;
+         font-size: 16px;
+         border: blue;
+         border-radius: 23px;
+         background-color: #0c50a3;
+         color: white;
+         margin: 0px auto;
+         margin-top: 0.5rem;
+     }
+     .button_click:hover{
         background-color:#fff;
         color: #0C50A3;
         border: solid 2px #0C50A3;
         transition: 0.4s;
-     } 
-    
+     }
   }
- }
- .tab-contain{
-   margin: 0 auto;
-   height: 400px;
-   width: 80%;
-   border-radius: 15px;
-   background-color: transparent;
-   table{
-     margin-left:1px;
-     margin-top: 5px;
-     position: fixed;
+  table{
+    width: 78%;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-collapse: collapse;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  td,tr{
+      padding: 6px; 
+      text-align: center;
+  }
+  .namecol,.emailcol
+  {  
+    text-align: left; 
+    padding-left:20px ;
    }
-   tr{
-    border:solid 1px red;
-  }
-  tr th{
-    padding:0 6.3rem 0.5rem 0;
-}
-tr{
-    padding:5px;
-}
- td.tab-icon1{
-  height: 35px;
-  width:35px;
-  float:left;
-  margin-right:7px;
-  .icon-edit{
-    font-size: 25px;
-    padding-top:5px;
-    padding-left:5px;
-  }
-  .icon-eye{
-    font-size: 25px;
-    padding-top:5px;
-    color: grey;
-    padding-left:5px;
-  }
-  .icon-delete{
-    color:red;
-    font-size:25px;
-    padding-top:5px;
-    padding-left:5px;
-  }
- }  
+  .table_row{box-shadow: rgba(185, 183, 183, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;}
+   th{padding: 12px;}
+   td .table_icons{
+        height: 35px;
+        width: 13%;
+        display: inline-block;
+        margin-right: 10px;
+        .icons_align{
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+        .icons_align_delete{
+            color: red;
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+      }
+    }
  }
-
-}

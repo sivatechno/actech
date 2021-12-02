@@ -30,14 +30,15 @@ router.post("/login",async(req,res) =>{
     try {
         const {username , password} = req.body;
 
+        
         const user = await Users.findOne({where:{username: username}});
-    
         if(!user) await res.json({error: "User donsen't exist"});
     
         await bcrypt.compare(password, user.password).then(async(match) =>{
             if(match) {
                 var userToken =await jwt.sign({id:user.id},'try to get someting happen');
-                res.json(userToken);
+                console.log(userToken)
+                res.json({token:userToken});
             }else{
             
             res.json({error:"Wrong username and password combination"});
