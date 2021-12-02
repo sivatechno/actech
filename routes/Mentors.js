@@ -102,6 +102,36 @@ router.post('/create', async (req, res) => {
         res.json(error)
     }
 });
+router.put('/update/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const { newPostalcode, newPhonenumber, username, password, role, newEmail, newFirstname, newLastname, newCountry, newCity, newAddress, newState } = req.body;
+        const user = await Mentors.findByPk(id);
+        if (user) {
+            await Mentors.update({
+                username: username,
+                password: passwordHash,
+                role: role,
+                email: newEmail,
+                phonenumber: newPhonenumber,
+                firstname: newFirstname,
+                lastname: newLastname,
+                country: newCountry,
+                postalcode: newPostalcode,
+                city: newCity,
+                address: newAddress,
+                state: newState
+            });
+            res.json("success");
+
+        } else {
+            res.json("user not there");
+        }
+
+    } catch (error) {
+        res.json(error)
+    }
+});
 router.get('/:id', async (req, res) => {
     try {
         // const id = req.params.id;
