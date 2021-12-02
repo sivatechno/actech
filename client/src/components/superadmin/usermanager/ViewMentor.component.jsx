@@ -84,8 +84,8 @@ function ViewMentor() {
 
 
                             <tr className="table_row">
-                                <td>{value.firstname} {value.lastname}</td>
-                                <td>{value.email}</td>
+                                 <td className="namecol">{value.firstname} {value.lastname}</td>
+                                <td className="emailcol">{value.email}</td>
                                 <td>{value.role}</td>
                                 <td>{value.phonenumber}</td>
                                 <td>
