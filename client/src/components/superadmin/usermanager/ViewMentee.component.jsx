@@ -3,7 +3,7 @@ import * as AiIcons from 'react-icons/all';
 import "./ViewMentee.component.scss";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddMentee from './AddMentee.component';
 
@@ -35,7 +35,13 @@ function ViewMentee() {
         setIsOpen(false);
     }
 
-
+    const deleteMentee = (id, e) => {
+        console.log(id);
+        axios.delete(`http://localhost:5000/mentee/delete/${id}`).then((response) => {
+            response.json("deleted successfully");
+            history.push("/viewmentee");
+        });
+    };
 
     useEffect(() => {
         axios.get("http://localhost:5000/mentee/viewmentee").then((response) => {
@@ -84,8 +90,12 @@ function ViewMentee() {
                                 <td>{value.phonenumber}</td>
                                 <td>
                                     <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
-                                    <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" /></div>
-                                    <div className="table_icons" ><AiIcons.BsFillEyeSlashFill className="icons_align" /></div>
+                                    <Link to={"/viewmentee"}>
+                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
+                                            onClick={(e) => deleteMentee(value.id, e)}
+                                        /></div>
+                                    </Link>
+                                    <Link to={`/profileviewmentee/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
                                 </td>
                             </tr>
                         )

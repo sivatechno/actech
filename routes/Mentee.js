@@ -8,8 +8,14 @@ const Promise = require('promise');
 const {Mentee} = require('../models');
 
 router.get('/viewmentee', async (req, res, next) => {
-    const list = await Mentee.findAll({});
-    res.send(list);
+    try {
+        const list = await Mentee.findAll({});
+        if(list) {
+            res.send(list);
+        }
+    } catch (error) {
+        res.send(error);
+    }
 
 });
 
@@ -46,7 +52,8 @@ router.post('/create', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const id = req.params.id;
+    try {
+        const id = req.params.id;
     let data = []
     let vals = {}
     const mentees = await Mentee.findByPk(id);
@@ -54,8 +61,28 @@ router.get('/:id', async (req, res) => {
         data.push(mentees)
         vals.data = data
         res.send(data);
+    }else{
+        res.send("no data")
     }
-    res.send("error")
+    } catch (error) {
+        res.send("error")
+    }
+    
 
+});
+
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const deleteMentee = await Mentee.findByPk(id);
+        // const deleteMentor = await Mentors.findOne({ id: req.body.id }, {
+        //     headers: {
+        //         "Content-type": "application/json"
+        //     }
+        // });
+        deleteMentee.destroy();
+    } catch (error) {
+        res.send(error)
+    }
 });
 module.exports = router;
