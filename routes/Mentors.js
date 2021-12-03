@@ -7,7 +7,7 @@ const saltRounds = 10
 const db = require('../models');
 const Promise = require('promise');
 
-router.get('/viewmentors', async (req, res, next) => {
+router.get('/viewmentors', async (req, res) => {
     try {
         const mentor = await Mentors.findAll();
         if (mentor) {

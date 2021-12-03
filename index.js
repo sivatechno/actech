@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'http://localhost:3001'],
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
     exposedHeaders: ['x-auth-token'],
@@ -15,7 +15,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 const db = require('./models');
 
-
+console.log(corsOptions);
 //Routers
 
 const userRouter = require('./routes/Users');

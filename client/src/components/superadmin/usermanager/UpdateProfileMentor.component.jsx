@@ -52,7 +52,6 @@ export default function UpdateProfileViewMentor() {
                 setNewProfileData(response.data);
             });
     };
-
     return (
         <div className="profileviewmentor_container">
             {profiledata.length > 0 && profiledata.map((values, key) => {
@@ -97,7 +96,7 @@ export default function UpdateProfileViewMentor() {
                                     </div>
                                     <div className="txtboxes">
                                         <AiIcons.SiMinutemailer className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewEmail(e.target.value); }} value={values.email}/>
+                                        <input className="profile_field" onChange={(e) => { setNewEmail(e.target.value); }} value={values.email} />
                                     </div>
                                 </div>
                                 <div className="field">
