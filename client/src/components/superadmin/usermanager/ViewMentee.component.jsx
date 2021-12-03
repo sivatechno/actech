@@ -70,7 +70,7 @@ function ViewMentee() {
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
-                    <tr className="table_row">
+                    <tr className="table_row_head">
                         <th>Name</th>
                         <th>Email</th>
                         <th>Company</th>

@@ -68,7 +68,7 @@ function ViewMentor() {
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
-                    <tr className="table_row">
+                    <tr className="table_row_head">
                         <th className="namehead">Name</th>
                         <th className="emailhead">Email</th>
                         <th>Access Level</th>
@@ -84,8 +84,8 @@ function ViewMentor() {
 
 
                             <tr className="table_row">
-                                <td>{value.firstname} {value.lastname}</td>
-                                <td>{value.email}</td>
+                                 <td className="namecol">{value.firstname} {value.lastname}</td>
+                                <td className="emailcol">{value.email}</td>
                                 <td>{value.role}</td>
                                 <td>{value.phonenumber}</td>
                                 <td>
