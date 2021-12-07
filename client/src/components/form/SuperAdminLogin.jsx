@@ -21,7 +21,7 @@ export default function SuperAdminLogin() {
       // response.header("auth",JSON.stringify(response.data));
       try {
         localStorage.setItem("auth", JSON.stringify(response.data.token));
-        console.log(response);
+        // console.log(response);
         history.push("/viewmentor");
       } catch (error) {
         console.log(error);
