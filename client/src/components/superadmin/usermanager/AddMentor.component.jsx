@@ -3,8 +3,10 @@ import * as AiIcons from 'react-icons/all';
 import './AddMentor.component.scss';
 import { useState } from 'react';
 import axios from 'axios';
+import config from '../../config/config';
 
 export default function AddMentor() {
+    const apiURL=config.API_URL;
 
     const [username, setUsername] = useState("");
 
@@ -32,7 +34,7 @@ export default function AddMentor() {
 
     const addMentor = (e) => {
 
-        axios.post("http://localhost:5000/mentorsOne/create",
+        axios.post(`${apiURL}/mentorsOne/create`,
             {
                 username: username,
                 password: password,

@@ -4,14 +4,16 @@ import * as AiIcons from 'react-icons/all';
 // import Photo from '../../assets/images/profile.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import config from '../../config/config';
 
 export default function ProfileViewMentor() {
+    const apiURL=config.API_URL;
     const [profiledata, setProfileData] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
 
-        axios.get(`http://localhost:5000/mentorsOne/${id}`).then((response) => {
+        axios.get(`${apiURL}/mentorsOne/${id}`).then((response) => {
             setProfileData(response.data);
             // console.log(response);
         });

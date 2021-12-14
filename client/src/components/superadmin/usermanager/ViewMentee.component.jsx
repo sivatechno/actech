@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddMentee from './AddMentee.component';
+import config from '../../config/config';
 
 
 const customStyles = {
@@ -20,6 +21,7 @@ const customStyles = {
 };
 
 function ViewMentee() {
+    const apiURL=config.API_URL;
 
     const history = useNavigate();
 
@@ -37,14 +39,14 @@ function ViewMentee() {
 
     const deleteMentee = (id, e) => {
         console.log(id);
-        axios.delete(`http://localhost:5000/mentee/delete/${id}`).then((response) => {
+        axios.delete(`${apiURL}/mentee/delete/${id}`).then((response) => {
             response.json("deleted successfully");
             history.push("/viewmentee");
         });
     };
 
     useEffect(() => {
-        axios.get("http://localhost:5000/mentee/viewmentee").then((response) => {
+        axios.get(`${apiURL}/mentee/viewmentee`).then((response) => {
             setListOfMentees(response.data);
 
         });

@@ -3,8 +3,11 @@ import * as AiIcons from 'react-icons/all';
 import './AddMentee.component.scss';
 import { useState } from 'react';
 import axios from 'axios';
+import config from '../../config/config';
 
 export default function AddMentee() {
+
+  const apiURL=config.API_URL;
 
   const [username,setUsername] = useState("");
 
@@ -34,7 +37,7 @@ export default function AddMentee() {
 
 const addMentee = (e) =>{
 
-  axios.post("http://localhost:5000/mentee/create",
+  axiosInstance.post(`${apiURL}/mentee/create`,
   {
     username:username , 
     password:password, 

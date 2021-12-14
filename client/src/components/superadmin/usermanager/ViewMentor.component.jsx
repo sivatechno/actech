@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddMentor from './AddMentor.component';
+import config from '../../config/config';
 
 const customStyles = {
     content: {
@@ -18,6 +19,9 @@ const customStyles = {
     },
 };
 function ViewMentor() {
+
+    const apiURL=config.API_URL;
+
     const [listOfMentors, setListOfMentors] = useState([]);
 
     let history = useNavigate();
@@ -35,14 +39,14 @@ function ViewMentor() {
 
     const deleteMentor = (id, e) => {
         console.log(id);
-        axios.delete(`http://localhost:5000/mentorsOne/delete/${id}`).then((response) => {
+        axios.delete(`${apiURL}/mentorsOne/delete/${id}`).then((response) => {
             response.json("deleted successfully");
             history.push("/viewmentors")
         });
     };
 
     useEffect(() => {
-        axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) => {
+        axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
             setListOfMentors(response.data);
             // console.log(response.data);
         });

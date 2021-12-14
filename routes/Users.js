@@ -30,7 +30,7 @@ router.get("/viewuser", async (req, res) => {
 
 router.post("/login", async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password } = await req.body;
 
         const user = await Users.findOne({ where: { username: username } });
 
@@ -39,8 +39,7 @@ router.post("/login", async (req, res) => {
         await bcrypt.compare(password, user.password).then(async (match) => {
             if (match) {
                 var userToken = await jwt.sign({ id: user.id }, 'try to get someting happen');
-                res.json({ token: userToken });
-                console.log(userToken);
+                await res.json({ token: userToken });
 
             } else {
 

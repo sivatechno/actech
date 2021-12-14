@@ -4,8 +4,10 @@ import * as AiIcons from 'react-icons/all';
 import Photo from '../../assets/images/profile.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import config from '../../config/config';
 
 export default function UpdateProfileViewMentor() {
+    const apiURL=config.API_URL;
     const [profiledata, setProfileData] = useState([]);
 
     const [newEmail, setNewEmail] = useState();
@@ -32,12 +34,12 @@ export default function UpdateProfileViewMentor() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mentorsOne/${id}`).then((response) => {
+        axios.get(`${apiURL}/mentorsOne/${id}`).then((response) => {
             setProfileData(response.data);
         });
     }, []);
     const update = (e) => {
-        axios.put(`http://localhost:5000/mentorsOne/update/${id}`,
+        axios.put(`${apiURL}/mentorsOne/update/${id}`,
             {
                 email: newEmail,
                 phonenumber: newPhonenumber,
