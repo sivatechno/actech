@@ -3,7 +3,7 @@
     "username": "dbu1492764",
     "password": "2@Actechnode",
     "database": "dbs5039391",
-    "host": "db5006016487.hosting-data.io:3306",
+    "host": "db5006016487.hosting-data.io",
     "dialect": "mysql"
   },
   "test": {
