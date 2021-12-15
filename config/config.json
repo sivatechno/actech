@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "actech",
-    "password": "2@Actech",
-    "database": "actech",
-    "host": "localhost",
+    "username": "dbu1492764",
+    "password": "2@Actechnode",
+    "database": "dbs5039391",
+    "host": "db5006016487.hosting-data.io:3306",
     "dialect": "mysql"
   },
   "test": {
