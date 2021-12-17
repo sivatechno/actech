@@ -15,12 +15,14 @@ const cookie = require('cookie-parser');
 router.get("/viewuser", async (req, res) => {
     jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
         if (err) {
-            res.json("not viewewd")
+            res.json("not viewewd");
         } else {
             const listOfUsers = await Users.findAll({ limit: 10 });
             res.json(listOfUsers);
         }
     })
+    // const listOfUsers = await Users.findAll({ limit: 10 });
+    // res.json(listOfUsers);
 
 });
 
@@ -28,7 +30,7 @@ router.get("/viewuser", async (req, res) => {
 
 router.post("/login", async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password } = await req.body;
 
         const user = await Users.findOne({ where: { username: username } });
 
@@ -37,8 +39,7 @@ router.post("/login", async (req, res) => {
         await bcrypt.compare(password, user.password).then(async (match) => {
             if (match) {
                 var userToken = await jwt.sign({ id: user.id }, 'try to get someting happen');
-                res.json({ token: userToken });
-                console.log(userToken);
+                await res.json({ token: userToken });
 
             } else {
 
@@ -56,7 +57,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/register", async (req, res) => {
     try {
-        const { username, password, email, role } = req.body;
+        const { username, password, email } = req.body;
         const user = await Users.findOne({ where: { username: username } });
         const passwordHash = await bcrypt.hash(password, 10);
         if (!user) {
@@ -64,7 +65,7 @@ router.post("/register", async (req, res) => {
                 username: username,
                 password: passwordHash,
                 email: email,
-                role: role,
+
             });
             res.json("Success");
         }

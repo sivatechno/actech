@@ -3,9 +3,13 @@ import * as AiIcon from 'react-icons/all';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import config from '../config/config'
+
 
 export default function SuperAdminLogin() {
 
+
+  const apiURL=config.API_URL;
   const [username, setUsername] = useState();
 
   const [api, setApi] = useState();
@@ -17,12 +21,12 @@ export default function SuperAdminLogin() {
   const login = event => {
     const data = { username: username, password: password }
     console.log(data);
-    axios.post("http://localhost:5000/auth/login", data).then((response) => {
+    axios.post(`${apiURL}/auth/login`, data).then((response) => {
       // response.header("auth",JSON.stringify(response.data));
       try {
-        localStorage.setItem("auth", JSON.stringify(response.data.token));
-        console.log(response);
-        history.push("/viewmentor");
+        if(response!=null || response != undefined){
+          localStorage.setItem("auth", JSON.stringify(response.data.token));
+        }
       } catch (error) {
         console.log(error);
       }

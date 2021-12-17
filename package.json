@@ -5,20 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "client": "cd client && yarn start",
+    "rmss": "cd rms && yarn start",
     "client-all": "cd client && yarn install",
-    "install-all": "concurrently \"yarn install\" \"yarn run client-all \"",
-    "dev": "concurrently \"yarn start\" \"yarn run client \""
+    "rms-all": "cd rms && yarn install",
+    "install-all": "concurrently \"yarn install\" \"yarn run client-all \" \"yarn run rms-all \"",
+    "dev": "concurrently \"yarn start\" \"yarn run client \" \"yarn run rmss \"",
+    "rms": "concurrently \"yarn start\" \"yarn run rmss \""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.6",
     "concurrently": "^6.4.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "http": "^0.0.1-security",
