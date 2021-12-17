@@ -28,12 +28,12 @@ const mentorRouter = require('./routes/Mentors');
 app.use('/mentorsOne', mentorRouter);
 
 app.delete(`/mentors/:id`, mentorRouter);
-// db.sequelize.sync().then(() => {
-//     app.listen(process.env.PORT || 5000, () => {
-//         console.log("server is running on port 5000");
-//     });
-// });
+db.sequelize.sync().then(() => {
+    app.listen(process.env.PORT || 5000, () => {
+        console.log("server is running on port 5000");
+    });
+});
 // const express = require('express');
 // const app = express();
 
-app.listen(5000);
+// app.listen(5000);
