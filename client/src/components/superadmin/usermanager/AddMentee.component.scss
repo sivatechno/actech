@@ -10,7 +10,7 @@
     border-radius:20px;
     margin:25px auto;
     overflow-y:scroll;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     .headercontent{
         display: flex;
         justify-content: space-between;
@@ -25,7 +25,9 @@
         padding-left: 40px;
         font-size: 16px; 
     }
-    .inputfeilds-postalfeild{margin: 25px 50px;}
+    .inputfeilds-postalfeild{
+        margin: 25px 50px;
+    }
     .feild{
         position: relative;
         margin-top: 10px;
