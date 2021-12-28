@@ -9,26 +9,29 @@ import config from '../config/config'
 export default function SuperAdminLogin() {
 
 
-  const apiURL=config.API_URL;
+  const apiURL = config.API_URL;
   const [username, setUsername] = useState();
 
   const [api, setApi] = useState();
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState();
 
-  const login = event => {
+  const login = async (event) => {
+    event.preventDefault();
     const data = { username: username, password: password }
-    console.log(data);
     axios.post(`${apiURL}/auth/login`, data).then((response) => {
       // response.header("auth",JSON.stringify(response.data));
       try {
-        if(response!=null || response != undefined){
+        if (response != null || response != undefined) {
           localStorage.setItem("auth", JSON.stringify(response.data.token));
+          // console.log(response);
+          navigate('homepage');
+
         }
       } catch (error) {
-        console.log(error);
+        console.log("login error", error);
       }
     });
   };
@@ -39,7 +42,7 @@ export default function SuperAdminLogin() {
       <div className="container">
         <div className="forms-container">
           <div className="signin-signup">
-            <form onSubmit={login} className="sign-in-form">
+            <form className="sign-in-form" >
               <h2 className="title"><AiIcon.AiOutlineUser />Login</h2>
               <div className="input-field">
                 <i className="fas fa-User" />
@@ -57,10 +60,7 @@ export default function SuperAdminLogin() {
                   }}
                 />
               </div>
-              <input type="submit" defaultValue="Login" className="btn solid"
-                onClick={() => {
-                  history.push("/viewmentor");
-                }}
+              <input type="submit" defaultValue="Login" className="btn solid" onClick={login}
               />
               <p className="social-text">Or Login with social platforms</p>
 

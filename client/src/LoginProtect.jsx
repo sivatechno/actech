@@ -15,7 +15,7 @@ const ProtectedRoute = ()=>{
     //     />
     // )
 
-    return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/viewmentor" /> : <Outlet />;
+    return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/homepage" /> : <Outlet />;
     // return hasToken!==null && hasToken!=='undefind' ? <Navigate to="/viewmentor" /> : <Route exact path="/" element={<AdminLogin/>}/>;
 };
 export default ProtectedRoute;

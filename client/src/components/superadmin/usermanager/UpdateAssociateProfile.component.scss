@@ -1,0 +1,165 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.profileviewmentor_container{
+    height: 100%;
+    // width: 100%;
+    // position: absolute;
+    .viewpart_left{
+        height: 500px;
+        width: 300px;
+        border-right: solid 1px #232323;
+        margin: 10px 0 0 0;
+        float: left;
+        .profile_view{
+            height: 150px;
+            width: 150px;
+            border: solid 2px #2323;
+            // box-shadow: 3px 3px 3px 3px;
+            border-radius: 10rem;
+            margin: 20px 0 0 70px;
+            .profile_align{
+                height: 145px;
+                width: 145px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: center;
+                border-radius: 10rem;
+            }
+        }
+        .about_profile{
+            height: 130px;
+            width: 350px;
+            //border: solid 2px #232323;
+            margin: 30px 0 0 20px;
+            .about_box_1{
+                height: 40px;
+                width: 300px;
+               // border: solid 2px green;
+                .label{
+                    margin-left: 0px;
+                }
+                .profile_field{
+                    margin-left: 5px;
+                    padding-top: 5px;
+                    font-size: 16px;
+                    display: inline;
+                    border: none;
+                    outline: none;                
+                } 
+            }
+            
+        }
+    }
+    .viewpart_right{
+        height: 500px;
+        width: 1150px;
+      //  border: solid 2px red;
+      //  background-color: white;
+        border-radius: 15px;
+       // box-shadow: 0px 3px 3px 3px;
+        float: left;
+        margin: 10px 0 0 20px;
+        .viewtitle{
+            height: 40px;
+            width: 70%;
+            border-bottom: solid 1px #2424;
+            p{
+                font-size: 18px;
+                font-family: 'poppins';
+                margin: 20px 15px;
+                color: #0c50A3;
+            }
+        }
+        .right_container_1{
+            height: 350px;
+            width: 90%;
+            //border: solid 2px #242424;
+            position: relative;
+            padding-top: 10px;
+            .field{
+                height: 60px;
+                width: 330px;
+               // border: solid 2px blue;
+                float: left;
+                margin: 1px 8px 0 0;
+                .label_box{
+                    height: 30px;
+                    width: 105px;
+                   // border: solid 2px black;
+                    margin: 15px 0 0 5px;
+                    text-align: center;
+                    font-size: 16px;
+                    float: left;
+                    label{
+                        font-size: 15px;
+                        color: #232323;
+                    }
+                }
+                .txtboxes{
+                    height: 40px;
+                    width: 210px;
+                    border: solid 1px #2424;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    // margin: 5px 0 0 5px;
+                    // float: left;
+                    display: flex;
+                    align-items: center;
+    
+                    .icon_align{
+                    //  margin: 12px 0 0 5px;
+                    margin:12px 9px 6px 5px;
+                     color: #2424;
+                    }
+                    .inputfields{
+                        margin-left: 100px;
+                        padding: 8px 50px 0 0;
+                        outline: none;
+                        border: none;
+                    }
+                    .radiobutton{
+                        margin: 10px 5px 0 10px;
+                    }
+                }
+            }
+        }
+        .address_info{
+            height: 70px;
+            width: 100%;
+            //border: solid 2px yellow;
+            .address_label{
+                height: 30px;
+                width: 100px;
+                //border: solid 2px black;
+                margin: 20px 0 0 15px;  
+                float: left;  
+            }
+            .address_area{
+                height: 50px;
+                width: 450px;
+                border: solid 1px #2424;
+                border-radius: 10px;
+                // margin: 10px 0 0 10px;
+                // float: left;
+                display:flex;
+                align-items: center;
+                .icon_align{
+                    margin:12px 9px 6px 5px;
+                    color:#2424;
+                }
+                textarea{
+                    padding-right: 15rem;
+                    margin-left: 15px;
+                    border: none;
+                    outline: none;  
+                }
+            }
+        }
+        .submitbtn{
+            float: right;
+        }
+    }
+}

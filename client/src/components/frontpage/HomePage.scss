@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.homepage{
+    display: flex;
+    justify-content: center;
+    margin: 10rem  0rem 0rem 10rem;
+    .rmsbutton,.lmsbutton{
+        margin-right: 7rem;
+        padding: 5rem;
+        background-color: rgb(21, 179, 241);
+        border-radius: 5rem;
+        font-size: 2rem;
+    }
+    .rmsbutton a , .lmsbutton a{
+        text-decoration: none;
+        color: white;
+    }
+    .rmsbutton:hover ,.lmsbutton:hover{
+        padding: 7rem;
+        font-size: 3rem;
+    }
+}

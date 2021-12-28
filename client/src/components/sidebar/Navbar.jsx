@@ -1,20 +1,3 @@
-// import React from 'react'
-// import { SidebarData } from './SidebarData'
-// import SubMenu from './SubMenu'
-
-// export default function Navbar() {
-//     return (
-//         <div>
-//             {SidebarData.map((item,index) =>{
-//                 return(
-//                     <div>
-//                         <SubMenu item={item} key={index}/>
-//                     </div>
-//                 )
-//             })}
-//         </div>
-//     )
-// }
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
@@ -41,10 +24,10 @@ export default function Navbar() {
                     </SubMenu>
                     <SubMenu title="Course Exams" icon={<AiIcons.ImFilesEmpty />}>
                         <MenuItem icon={<AiIcons.RiFileCopy2Line />}><Link to="/viewcourse" />Manage Courses</MenuItem>
-                        <MenuItem icon={<AiIcons.RiFileListLine />}>Manage Exams</MenuItem>
-                        <MenuItem icon={<AiIcons.AiOutlineFolderOpen />}>Manage Question</MenuItem>
-                        <MenuItem icon={<AiIcons.AiOutlineFileAdd />}>Add Question</MenuItem>
-                        <MenuItem icon={<AiIcons.HiOutlineTrendingUp />}>Results</MenuItem>
+                        <MenuItem icon={<AiIcons.RiFileListLine />}><Link to="/exam" />Manage Exams</MenuItem>
+                        <MenuItem icon={<AiIcons.AiOutlineFolderOpen />}><Link to="/viewquestion" />Manage Question</MenuItem>
+                        <MenuItem icon={<AiIcons.AiOutlineFileAdd />}><Link to="/addquestion" />Add Question</MenuItem>
+                        <MenuItem icon={<AiIcons.HiOutlineTrendingUp />}><Link to="/result" />Results</MenuItem>
                     </SubMenu>
                     <SubMenu title="Enrollment" icon={<AiIcons.FaBuffer />}>
                         <MenuItem icon={<AiIcons.TiArrowShuffle />}>Enroll</MenuItem>

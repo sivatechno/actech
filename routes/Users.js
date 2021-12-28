@@ -29,17 +29,21 @@ router.get("/viewuser", async (req, res) => {
 
 
 router.post("/login", async (req, res) => {
+    // console.log("test1");
     try {
         const { username, password } = await req.body;
-
+        // console.log("test2");
         const user = await Users.findOne({ where: { username: username } });
-
+        // console.log("test3");
         if (!user) await res.json({ error: "User donsen't exist" });
 
         await bcrypt.compare(password, user.password).then(async (match) => {
             if (match) {
+                // console.log("test4");
                 var userToken = await jwt.sign({ id: user.id }, 'try to get someting happen');
+                // console.log("test5");
                 await res.json({ token: userToken });
+                // console.log("test6");
 
             } else {
 

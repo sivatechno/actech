@@ -1,0 +1,61 @@
+@import '../../assets/stylesheets/common.scss';
+.delete_popup_overall{
+    border: 1px solid #2424;
+    width: 35%;
+    height: 130px;
+    border-radius: 10px;
+    margin: -22% 0 0 30%;
+    background-color: white;
+    background: white;
+    backface-visibility: hidden;
+    box-shadow: 0px 3px 8px 0px rgba(39, 39, 39, 0.527);
+    .delete_popup_head{
+        border-bottom: 2px solid #2424;
+        width: 80%;
+        //border-radius: 10px;
+        padding: 3% 0 3% 0;
+        margin: 0 0 0 10%;
+        background-color: white;
+        backface-visibility: hidden;
+        .delete_popup_header{
+            background-color: white;
+            backface-visibility: hidden;
+            color: rgb(56, 126, 190);
+            //border: 1px solid red;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            
+        }
+    }
+    .delete_popup_buttons{
+        background-color: white;
+        backface-visibility: hidden;
+        //border: 1px solid blue;
+        margin: 5% 0 0 0;
+        .delete_calcel_btn{
+            border: 1.8px solid rgb(53, 216, 3);
+            padding: 2% 10% 2% 10%;
+            margin: 0 20% 0 7.6%;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 525;
+            color:rgb(53, 216, 3) ;
+            background-color: white;
+            backface-visibility: hidden;
+        }
+        .delete_btn{
+            border: 1.8px solid red;
+            padding: 2% 10% 2% 10%;
+            border-radius: 10px;
+            margin: 0 0 0 2%;
+            background-color: white;
+            backface-visibility: hidden;
+            font-size: 16px;
+            font-weight: 525;
+            color:red;
+        }
+    }
+
+}

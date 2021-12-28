@@ -1,0 +1,149 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.updateprofilementor{
+    background-color:white;
+    height: 518px;
+    width: 750px;
+    border-radius:20px;
+    margin:-12% auto;
+    overflow-y:scroll;
+    box-shadow: rgba(56, 55, 55, 0.39) 1px 2px 8px 1px;
+    .headercontent{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        img{
+            height: 50px;
+            width: 50px;
+        } 
+        .member_align{
+             margin-right: 28rem;
+        } 
+        
+    }
+    label{
+       font-weight: bold; 
+    }
+    input[type=text],input[type=number],input[type=password],input[type=email]{
+        height:50px;
+        width: 300px;
+        border:solid 2px #2424;
+        border-radius: 20px;
+        background-color: transparent;
+        padding-left: 40px;
+        outline: none;
+        font-size: 16px;
+    }
+    .feild{
+        position: relative;
+        margin-top: 10px;  
+        .browse_btn{
+            color:white;
+        } 
+        input[type=file]{
+            color: white;
+            cursor:pointer;
+        }
+        .avatar_box{
+            width: 5rem;
+            height: 90px;
+        }     
+       
+    }
+    p,input[type=radio]{
+        margin: 10px 0px 5px 30px;
+        color: #0C50A3;
+    }
+    .accesslvl-container{
+        .checkbox-label,.notify{
+            font-weight: normal;
+            margin-left: 10px;
+        }
+        .accesslvltxt{
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;    
+        }
+    }
+    .inputfeilds{
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+    }
+    .left-inputfeilds i,.right-inputfeilds i,.right-inputfeilds button{
+        position: absolute;
+        color: #2424;            
+    }
+    button{
+        margin:2px 200px ;
+        //color:white;
+        background-color: blue;
+        border-radius: 20px;
+        height:45px;
+        width:100px;
+    }
+    
+    i{
+        margin: 13px 15px;
+    }
+    .close{
+        //border: 1px solid red;
+        font-size: 16px;
+        font-weight: bold;
+        color: red;
+        margin: 0 0 0 0;
+        width: 5%;
+        height: 5%;
+        background-color: white;
+        border: none;
+    }
+    .notes{
+        padding-bottom: 10px;
+        padding-left:25px;
+        textarea{
+            width: 700px;
+            height: 90px;
+            font-size: 16px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+    }
+    .buttons{
+        padding:40px;
+        float: right;
+        .cancel{
+            width:100px;
+            height: 40px;
+            margin-right: 50px;
+            border-radius: 10px;
+            font-size: 16px;
+            color:#2986d3;
+            border: 2px solid #2986d3;
+            background-color: white;
+        }
+        .editstaff{
+            border:1px solid white;
+            margin-top: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 16px;
+            color:white;
+            background-color:#2986d3;
+        }        
+    }
+    .cancel:hover
+    {
+         width: 102px;
+         height: 41px;
+         
+    }
+    .editstaff:hover
+    {
+         width: 102px;
+         height: 41px;
+    }
+}

@@ -1,0 +1,88 @@
+@import '../../assets/stylesheets/common.scss';
+.dashboard_overall-contain{
+    //border: 1px solid #2424;
+    height: 100%;
+    width: 100%;
+    .dashboard_inner_contain{
+        border: 1px  solid transparent;
+        height: 100%;
+        width: 95%;
+        margin: 0% auto;
+        .dashboard_inner_card_contain{
+            margin: 2.5% 3% 0 0;
+           //border: 1px solid green;
+           height: 27%;
+           width: 100%;
+            display: flex;
+
+            .dashboard_inner_cards:hover{
+                transform: scale(1.05);
+                width:101;
+                box-shadow: 0px 4px 6px 1px rgba(65, 65, 65, 0.589);
+            }
+
+        .dashboard_inner_cards{
+            border: 2px solid #2424;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            margin: 0% 0 0 2%;
+            display: flex;
+            // box-shadow: 0px 4px 6px 1px rgba(65, 65, 65, 0.589);
+           .dashboard_inner_side_head{
+               border-right: 1.5px solid #2424;
+               width: 60%;
+               margin: 5% 0 5% 0;
+               .dashboard_inner_side_heading{
+                   //border: 1px solid red;
+                   font-size: 18px;
+                   font-weight: bold;
+                   text-align: center;
+                   text-transform: uppercase;
+                   margin: 20% 0 0 0;
+               }
+           }
+           .dashboard_inner_side_count{
+               //border: 1px solid violet;
+               width: 40%;
+               height: 100%;
+               .dashboard_inner_side_heading_count{
+                   //border: 1px solid red;
+                   height: 15%;
+                   width: 100%;
+                   color: rgb(48, 119, 252);
+                   margin: 20% 0 0 0 ;
+                   .dashboard_inner_count{
+                       font-size: 18px;
+                       font-weight: bold;
+                       margin-top: 0;
+                       text-align: center;
+                   }
+               }
+               .dashboard_innercounting{
+                   //border: 1px solid darkmagenta;
+                   font-size: 40px;
+                   font-weight: bolder;
+                   text-align: center;
+                   margin: 10% 0 0 0;
+                   color: #031846;
+               }
+
+               .dashboard_inner_icon{
+                   //border: 1px solid darkblue;
+                   height: 15%;
+                   width: 100%;
+                   margin: 8% 0 0 0;
+                   .dashboard_icons{
+                       //border: 1px solid red;
+                       margin: 1% 0 0 80%;
+                       font-size: 20px;
+                   }
+               }
+           }
+
+           //----------------------------------------------------------------------------//
+      }
+    }
+    }
+}

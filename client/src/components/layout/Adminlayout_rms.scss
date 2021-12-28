@@ -1,0 +1,17 @@
+.admin_layout{
+    box-sizing: border-box;
+}
+.main_body{
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    .left{
+        width: auto;
+    }
+    .right{
+        width: 100%;
+        border: solid 2px #2424;
+        border-top-left-radius: 10px;
+        
+    }
+}

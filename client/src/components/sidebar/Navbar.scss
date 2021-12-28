@@ -10,11 +10,23 @@
 .pro-sidebar{
     height: calc(100vh - 105px);
     color: $--primary2;
-}
+
+}  
+//.pro-menu-item:hover
+//{
+    //background: rgb(143, 141, 141);
+    //color: $--primary;
+    ////border: 2px solid black;
+    //box-shadow: rgba(0, 0, 0, 0.5) 3px 2px 4px 0px;
+    //color: black;
+//}       
+                                         
 .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item{
     background-color: transparent;
 }
-.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus{
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover{
     color: $--primary;
     border-left: 3px solid $--primary;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 2px 0px;
 }

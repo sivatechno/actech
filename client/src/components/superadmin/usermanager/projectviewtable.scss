@@ -1,0 +1,39 @@
+@import '../../assets/stylesheets/common.scss';
+  .project_profile_table_container{
+      //border: 1px solid blue;
+      width: 90%;
+      height: 350px;
+      border-radius: 15px;
+      margin: 2% 0 0 5%;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      .project_profile_table{
+        //border: 1px solid red;
+        border-collapse: collapse;
+        text-align: center;
+        width: 90%;
+        margin:2% 0 0 4.5% ;
+        .project_profile_table_head{
+          //border: 1px solid green;
+          padding-top: 100px;
+          border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+          th{
+            font-size: 16px;
+            padding:2% 4.5% 1% 0;
+          }
+        }
+        .project_profile_table_body{
+          //border: 1px solid green;
+          td{
+            padding:1% 4.5% 1% 0;
+            border-bottom: 1.5px solid rgba(216, 216, 216, 0.411);
+          }
+          .prof_eye_icon{
+            color: rgba(134, 17, 134, 0.842);
+            font-size: 18px;
+            margin: 0 6% 0 7%;
+          }
+          
+        }
+      }
+  
+  }

@@ -1,0 +1,144 @@
+@import '../../assets/stylesheets/common.scss';
+
+.editprof_overall_div{
+    //border: 1px solid green;
+    background-color: white;
+    backface-visibility: hidden;
+    height: 442px;
+    width: 63%;
+    margin: -37% 0 0 17%;
+    border-radius:20px;
+    box-shadow: rgba(44, 44, 44, 0.452) 0px 2px 8px 2px;
+
+    //background: white;
+.edit_project_overall{
+    background: white;
+    background-color:white;
+    height: 100%;
+    width: 100%px;
+    border-radius:20px;
+    //border: 1px solid red;
+   
+    //overflow-y:scroll;
+    overflow-x: hidden;
+    
+    .edit_project_inner{
+        background-color: white;
+        //border: 1px solid blue;
+        justify-content: space-between;
+        margin: 20px;
+        font-weight: bolder;
+        background:white;
+        enable-background: white;
+        .edit_project_head{
+            border-bottom: 2px solid rgba(223, 223, 223, 0.418);
+            height: 5%;
+            display: flex;
+            padding-bottom: 2%;
+            background-color: white;
+            .edit_project_header{
+                font-size: 18px;
+                font-weight: bold;
+                background-color: white;
+            }
+            .edit_close{
+                //border: 1px solid red;
+                margin:0.8% 0 0 80%;
+                font-weight: bolder;
+                font-size: 18px;
+                color: red;
+                background-color: white;
+            }
+        }
+        .edit_project_inner_body{
+            //border: 1px solid blue;
+            margin: 3% 0 0 1%;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+
+            .edit_project_content{
+                background-color: white;
+                //border: 1px solid green;
+                .edit_project_text{
+                    background-color: white;
+                    //border: 1px solid red;
+                    text-align: left;
+                    font-size: 15px;
+                    font-weight:600;
+                   
+                }
+                .edit_project_field_contain{
+                    background-color: white;
+                    //border: 1px solid red;
+                    margin-top: -6%;
+                .edit_project_feild{
+                    border:solid 2px #2424;
+                    border-radius: 20px;
+                    display: inline-block;
+                    height: 50px;
+                    width: 300px;
+                    background-color:white;
+                    margin-top: 0%;
+                    input[type=text],input[type=date],input[type=password],input[type=email]{
+                        height:90%;
+                        width: 80%;
+                        border:none ;
+                        margin:1% 0 0 2%;
+                        outline: none;
+                        padding-left: 4%;
+                        background-color: transparent;
+                        font-size: 16px; 
+                        border-radius: 10px;
+                    }    
+                }
+            }
+         }
+        }
+        .edit_project_buttons{
+            background-color:white;
+            //border: 1px solid greenyellow;
+            margin: 6% 0 0 0;
+            padding: 0 0 0 40%;
+            height: 10%;
+            .cancel_btn,.confirm_btn{
+                font-size: 15px;
+                font-weight: 500;
+                border-radius: 10px;
+            }
+            .cancel_btn{
+                border: 2px solid rgb(14, 152, 216);
+                background-color: white;
+                padding: 1.5% 6% 1.5% 6%;
+                color: rgb(14, 152, 216);
+                margin: 0 0 0 38%;           
+             }
+        
+            .confirm_btn{
+                border: 2px solid white;
+                padding: 1.5% 6% 1.5% 6%;
+                background-color: rgb(14, 152, 216);
+                color: white;
+                margin: 0 0 0 5%;
+            }
+        }
+    }
+    .errormsg{
+        font-size: 11px;
+        color: red;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 1% 50% 0 0;
+        background-color: white;
+    }
+}
+i{
+    background-color: none;
+}
+.icons{
+    margin: 0 0 0 3%;
+    border-color: none;
+    background: none;
+}
+
+}

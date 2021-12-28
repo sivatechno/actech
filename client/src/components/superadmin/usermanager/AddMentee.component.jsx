@@ -37,7 +37,7 @@ export default function AddMentee() {
 
 const addMentee = (e) =>{
 
-  axiosInstance.post(`${apiURL}/mentee/create`,
+  axios.post(`${apiURL}/mentee/create`,
   {
     username:username , 
     password:password, 

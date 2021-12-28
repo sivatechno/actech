@@ -1,0 +1,84 @@
+@import '../../assets/stylesheets/common.scss';
+
+.project_profile_top{
+  border: 1px solid #2424;
+  width: 97%;
+  height: 50px;
+  margin: 2.5% 0 0 1.5%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  //display: flex;
+  .project_profile_headind_text{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 1% 63% 0 4%;
+    display: inline-flex;
+    color: #242424;
+    //text-shadow: 1px 2px rgba(88, 88, 88, 0.267) ;
+
+  }
+  .add_proj_btn{
+    
+    padding: 0.5% 2.5% 0.5% 2.5% ;
+    border: 2px solid rgb(14, 152, 216);
+    border-radius: 10px;
+    background-color: rgb(14, 152, 216);
+    color: white;
+    text-shadow: 2px 2px rgba(66, 66, 66, 0.267) ;
+    box-shadow: rgba(109, 109, 109, 0.411) 2px 2px 3px 1px;
+  }
+}
+.project_profile_table_container{
+    border: 1px solid #2424;
+    width: 97%;
+    height: 500px;
+    border-radius: 15px;
+    margin: 1% 0 0 1.5%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .project_profile_table{
+      //border: 1px solid red;
+      border-collapse: collapse;
+      text-align: center;
+      width: 90%;
+      margin:2% 0 0 4.5% ;
+      .project_profile_table_head{
+        //border: 1px solid green;
+        padding-top: 100px;
+        border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+        th{
+          color: #242424;
+          font-size: 16px;
+          padding:2% 4.5% 1% 0;
+        }
+      }
+      .project_profile_table_body{
+        //border: 1px solid green;
+        td{
+          padding:1% 4.5% 1% 0;
+          border-bottom: 1.5px solid rgba(216, 216, 216, 0.411);
+        }
+        .prof_edit_icon{
+          margin: 0 6% 0 0;
+          color: blue;
+          font-size: 18px;
+        }
+        .prof_tash_icon,.prof_eye_icon{
+           margin: 0 6% 0 7%;
+        }
+        .prof_tash_icon{
+          color: red;
+          font-size: 14px;
+        }
+        .prof_eye_icon{
+          color: rgba(116, 116, 116, 0.842);
+          font-size: 18px;
+        }
+       
+        
+      }
+    }
+    .project_profile_table_body:hover{
+      background-color: rgba(172, 172, 172, 0.178);
+      }
+
+}

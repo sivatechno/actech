@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.addassociate{
+    background-color:white;
+    border-radius:20px;
+    margin:25px auto;
+    .profile_view{
+            height: 150px;
+            width: 150px;
+            border: solid 2px #2323;
+            // box-shadow: 3px 3px 3px 3px;
+            border-radius: 5rem;
+            margin: 20px 0 0 70px;
+        .profile_align{
+            height: 145px;
+            width: 145px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: center;
+            border-radius: 5rem;
+            object-fit: cover;
+        }
+    }
+    .Tabitems{
+        display: flex;
+        margin: 5px 20px;
+       .Certificatetab,  .Experiencetab,  .Educationtab , .profiletab{
+            background-color: rgb(43, 173, 233);
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 10px;
+            transition: 0.3s;
+            font-size: 18px;  
+            width: 500px; 
+            margin: 2px;
+            border-radius: 5px;
+        }
+    }
+    .Experiencetab:hover,.Certificatetab:hover,.Educationtab:hover,.profiletab:hover
+    {
+        background-color: rgb(49, 127, 245);
+        width: 600px; 
+    }
+    .toptxtfeild{
+        outline: none ;
+        background-color: transparent ;
+        resize: none;
+        border: none ;
+    }
+    .textfeild-container{
+        text-align: left;
+        i{
+            margin: 13px 15px;
+        }
+        input[type=text],input[type=number],input[type=password],input[type=email]{
+            height:50px;
+            width: 300px;
+            border:solid 2px #2424;
+            border-radius: 20px;
+            padding-left: 40px;
+            font-size: 16px; 
+            margin-bottom: 20px;
+        }
+        .feild{
+            position: relative;
+            margin-top: 10px;
+        }
+        .inputfeilds{
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        .left-inputfeilds i,.right-inputfeilds i{
+            position: absolute;
+        }
+        .radiobutton{
+            margin: 15px 60px;
+            display: flex;
+        }
+        .Qualificationlbl{
+            margin-right: 15px;
+        }
+        label{
+            font-size: 17px;
+        }
+        .radiobtn-txt,.genderlbl{ margin-right: 15px;}
+        .btn{
+            margin: 30px 30px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nexticon{
+            margin-top: 10px;
+            float: right;
+            font-size: 25px;
+            color: rgb(40, 96, 250);
+        }
+        .Addprofile{
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(40, 96, 250);;
+        }    
+   
+    }
+}
