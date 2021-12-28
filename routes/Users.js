@@ -58,6 +58,18 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// router.get('/count', async (req, res) => {
+//     const counting = await Users.findAndCountAll();
+//     res.send(counting);
+//     console.log(counting)
+// })
+router.get('/count', (req, res) => {
+    Users.findAndCountAll({})
+  .then(result => {
+    res.json(result.count);
+  });
+})
+
 
 router.post("/register", async (req, res) => {
     try {

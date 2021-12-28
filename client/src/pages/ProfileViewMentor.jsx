@@ -3,9 +3,9 @@ import ProfileViewMentorComponent from '../components/superadmin/usermanager/Pro
 import AdminLayout from '../components/layout/AdminLayout';
 const ProfileViewMentor = ({classes,children}) => {
     return(
-        <AdminLayout>
+        
             <ProfileViewMentorComponent />
-        </AdminLayout>
+        
     )
 }
 export default ProfileViewMentor;

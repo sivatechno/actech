@@ -3,9 +3,9 @@ import ProfileViewMenteeComponent from '../components/superadmin/usermanager/Pro
 import AdminLayout from '../components/layout/AdminLayout';
 const ProfileViewMentee = ({classes,children}) => {
     return (
-        <AdminLayout>
+        
             <ProfileViewMenteeComponent />
-        </AdminLayout>
+        
     )
 }
 export default ProfileViewMentee;

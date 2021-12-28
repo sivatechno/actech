@@ -14,7 +14,7 @@ export default function UpdateProfileViewMentor() {
 
     const [newPhonenumber, setNewPhonenumber] = useState();
 
-    const [newFirstname, setNewFirstname] = useState();
+    var [newFirstname, setNewFirstname] = useState();
 
     const [newLastname, setNewLastname] = useState();
 

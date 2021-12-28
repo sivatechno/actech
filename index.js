@@ -23,7 +23,7 @@ const userRouter = require('./routes/Users');
 app.use('/auth', userRouter);
 
 const projectsRouter = require('./routes/Project');
-app.use('/project',projectsRouter);
+app.use('/project', projectsRouter);
 
 app.delete(`/projects/:id`, projectsRouter);
 
