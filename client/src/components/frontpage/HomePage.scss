@@ -25,6 +25,8 @@
         width: 38%;
         height: 100%;   
         border: 1px solid #2424;
+        text-decoration: none;
+        color: #fff;
         
     }
     .img_lms img{
@@ -33,33 +35,47 @@
     }
     .title_lms{
         text-align: center;
+        color: #fff;
        
     }
     .desc{
         text-align: center;
         padding: 4px;
         .lmsbutton{
+            background-color: #eba452;
             margin-top: 20px;
             margin-bottom: 15px;
-            background-color: #eba452;
-            border: 3px solid #ffff;
+            border: 2px solid #fff;
             color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            width: 30%;      
+            padding: 5px 35px;
+            border-radius: 35px;
+            width: auto;
+                 
         }
         .lmsbutton:hover{
             background-color: #fff;
             color: #eba452;
             transition: 0s;
             cursor: pointer;
+            .link-lms{
+                color: #eba452;
+            }
         }
     }
-    .link{
+    .link-lms{
         text-decoration: none;
         font-size: 16px;
         font-weight: bolder;
+        color: #eba452;
+        color: #fff;
     }
+    .link-rms{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #fff;
+    }
+
     .card2:hover{
         transform: scale(1.05);
         width:38.5%;
@@ -71,6 +87,8 @@
         border-top-right-radius:40px ;
         width: 38%;
         height: 100%;   
+        text-decoration: none;
+        color: #fff;
     }
     .img_rms img{
         width: 100%;
@@ -86,17 +104,20 @@
             margin-top: 20px;
             margin-bottom: 15px;
             background-color: #5254cf;
-            border: 3px solid #fff;
+            border: 2px solid #fff;
             color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            width: 30%; 
+            padding: 5px 35px;
+            border-radius: 35px;
+            width: auto;
         }
         .rmsbutton:hover{
             background-color: #fff;
             color: #5254cf;
             transition: 0s;
             cursor: pointer;
+            .link-rms{
+                color: #5254cf;
+            }
         }
     } 
 }

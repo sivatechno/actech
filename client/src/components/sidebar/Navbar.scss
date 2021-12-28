@@ -12,6 +12,12 @@
     color: $--primary2;
 
 }  
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus{
+    color: $--primary;
+    border-left: 3px solid $--primary;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 2px 0px;
+}
 //.pro-menu-item:hover
 //{
     //background: rgb(143, 141, 141);

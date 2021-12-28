@@ -3,41 +3,41 @@ import { Link } from 'react-router-dom';
 import './HomePage.scss';
 import img1 from "../assets/images/LMS.jpg"
 import img2 from "../assets/images/RMS.jpg"
-export default function HomePage() { 
+export default function HomePage() {
     return (
         <div className='main_card' >
-           
+
             <div className='homepage'>
-                 <div className='card'>
-                <div className='img_lms'>
-                    <img src={img1} alt=''/>
-                    <div className='title_lms'>
-                        <h1>LMS</h1>
+                <Link className='card' to="/viewmentor">
+                    <div className='img_lms'>
+                        <img src={img1} alt='' />
+                        <div className='title_lms'>
+                            <h1>LMS</h1>
+                        </div>
+                        <div className='desc'>
+                            <p>Learning Management System</p>
+                            <button className='lmsbutton' >
+                                <Link className='link-lms' to="/viewmentor">LMS</Link>
+                            </button>
+                        </div>
                     </div>
-                     <div className='desc'>
-                      <p>Learning Management System</p>
-                      <button className='lmsbutton' >
-                       <Link className='link' to="/viewmentor">LMS</Link>
-                      </button>
-                     </div>
-                </div>
-                </div>
-               <div className='card2'>
-                  <div className='img_rms'>
-                      <img src={img2} alt=''/>
-                      <div className='title_rms'>
-                       <h1>RMS</h1>
-                      </div>
-                      <div className='desc1'>
-                         <p>Resource Managemnet System</p>
-                         <button className='rmsbutton'>
-                           <Link className='link' to="/dashboard">RMS</Link>
-                         </button> 
-                       </div>
-                  </div>
-              </div>
+                </Link>
+                <Link className='card2' to="/dashboard">
+                    <div className='img_rms'>
+                        <img src={img2} alt='' />
+                        <div className='title_rms'>
+                            <h1>RMS</h1>
+                        </div>
+                        <div className='desc1'>
+                            <p>Resource Managemnet System</p>
+                            <button className='rmsbutton'>
+                                <Link className='link-rms' to="/dashboard">RMS</Link>
+                            </button>
+                        </div>
+                    </div>
+                </Link>
             </div>
-            </div>
-        
+        </div>
+
     )
 }
