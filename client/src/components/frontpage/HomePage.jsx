@@ -1,14 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './HomePage.scss';
-
-export default function HomePage() {
+import img1 from "../assets/images/LMS.jpg"
+import img2 from "../assets/images/RMS.jpg"
+export default function HomePage() { 
     return (
-        <div>
+        <div className='main_card' >
+           
             <div className='homepage'>
-            <button className='lmsbutton' ><Link to="/viewmentor">LMS</Link></button>
-            <button className='rmsbutton'><Link to="/dashboard">RMS</Link></button>
+                 <div className='card'>
+                <div className='img_lms'>
+                    <img src={img1} alt=''/>
+                    <div className='title_lms'>
+                        <h1>LMS</h1>
+                    </div>
+                     <div className='desc'>
+                      <p>Learning Management System</p>
+                      <button className='lmsbutton' >
+                       <Link className='link' to="/viewmentor">LMS</Link>
+                      </button>
+                     </div>
+                </div>
+                </div>
+               <div className='card2'>
+                  <div className='img_rms'>
+                      <img src={img2} alt=''/>
+                      <div className='title_rms'>
+                       <h1>RMS</h1>
+                      </div>
+                      <div className='desc1'>
+                         <p>Resource Managemnet System</p>
+                         <button className='rmsbutton'>
+                           <Link className='link' to="/dashboard">RMS</Link>
+                         </button> 
+                       </div>
+                  </div>
+              </div>
             </div>
-        </div>
+            </div>
+        
     )
 }
