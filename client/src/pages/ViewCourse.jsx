@@ -4,8 +4,10 @@ import ViewCourses from '../components/superadmin/courses/VewCourse';
 
 export default function ViewCourse() {
     return (
-        
+        <AdminLayout>
             <ViewCourses/>
+        </AdminLayout>
+            
         
     )
 }

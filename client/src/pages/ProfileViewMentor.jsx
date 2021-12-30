@@ -3,8 +3,10 @@ import ProfileViewMentorComponent from '../components/superadmin/usermanager/Pro
 import AdminLayout from '../components/layout/AdminLayout';
 const ProfileViewMentor = ({classes,children}) => {
     return(
-        
-            <ProfileViewMentorComponent />
+        <AdminLayout>
+             <ProfileViewMentorComponent />
+        </AdminLayout>
+           
         
     )
 }

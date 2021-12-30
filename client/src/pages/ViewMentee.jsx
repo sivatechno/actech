@@ -4,8 +4,10 @@ import AdminLayout from '../components/layout/AdminLayout';
 
 const ViewMentee = ({classes,children}) => {
     return(
-        
-            <ViewMenteeComponents />
+        <AdminLayout>
+             <ViewMenteeComponents />
+        </AdminLayout>
+           
         
     )
 }

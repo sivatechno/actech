@@ -15,7 +15,7 @@ export default function AdminLayout({ children }) {
                         <Sidebar />
                     </div>
                     <div className="right">
-                        <Outlet/>
+                        <main>{children}</main>
                     </div>
                 </div>
             </div>
