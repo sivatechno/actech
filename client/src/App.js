@@ -3,25 +3,25 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/form/SuperAdminLogin';
 
-import Projectprofileview from './pages/ProjectProfileView';
-import ProfileViewMentee from './pages/ProfileViewMentee';
-import ProfileViewMentor from './pages/ProfileViewMentor';
-import ViewMentee from './pages/ViewMentee';
-import ViewCourse from './pages/ViewCourse';
-import UpdateProfileViewMentor from './components/superadmin/usermanager/UpdateProfileMentor.component';
-import AdminLayout from './components/layout/AdminLayout';
-import ViewMentor from './pages/ViewMentor';
-import PageNotFound from './components/PageNotFound';
+import Projectprofileview from './pages/rms/ProjectProfileView';
+import ProfileViewMentee from './pages/lms/ProfileViewMentee';
+import ProfileViewMentor from './pages/lms/ProfileViewMentor';
+import ViewMentee from './pages/lms/ViewMentee';
+import ViewCourse from './pages/lms/ViewCourse';
+import UpdateProfileViewMentor from './components/lms/superadmin/usermanager/UpdateProfileMentor.component';
+// import AdminLayout from './components/layout/AdminLayout';
+import ViewMentor from './pages/lms/ViewMentor';
+// import PageNotFound from './components/PageNotFound';
 import ProtectedRoute from './ProtectedRoutes';
 import LoginProtect from './LoginProtect';
 import HomePage from './components/frontpage/HomePage';
-import Dashboard from './pages/Dashboardview';
-import Viewassociateprofile from './pages/ViewAssociateProfile';
-import UpdateAssociateProfile from './components/superadmin/usermanager/UpdateAssociateProfile.component'
-import Exam from './pages/exam';
-import ViewQuestion from './pages/ViewQuestion';
-import Result from './pages/Result';
-import AddQuestion from './pages/AddQuestion';
+import Dashboard from './pages/rms/Dashboardview';
+import Viewassociateprofile from './pages/rms/ViewAssociateProfile';
+import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
+import Exam from './pages/lms/exam';
+import ViewQuestion from './pages/lms/ViewQuestion';
+import Result from './pages/lms/Result';
+import AddQuestion from './pages/lms/AddQuestion';
 import { LmsRoutes } from './components/layout/LmsRoutes';
 
 

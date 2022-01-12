@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../header/AdminHeader';
-import Sidebar from '../sidebar/Navbar';
+import Header from '../lms/header/AdminHeader';
+import Sidebar from '../lms/sidebar/Navbar';
 import './AdminLayout.scss';
 import {Outlet} from 'react-router-dom'
 export default function AdminLayout({ children }) {

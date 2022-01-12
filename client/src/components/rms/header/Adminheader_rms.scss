@@ -1,0 +1,98 @@
+@import '../../assets/stylesheets/common.scss';
+
+.topbar{
+  height: 70px;
+  width: 100%;
+  .topbar_wrapper{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left{
+      img{
+        width: 60px;
+        height: 55px;
+      }
+    }
+    .right{
+      padding: 10px;
+      display: flex;
+      .message_bar{
+        width: 45px;
+        height: 45px;
+        border-radius: 20px;
+        background-color: $--primary-badge;
+        padding: 16px;
+        position: relative;
+        margin: 0 10px;
+        .icon{
+          font-size: 20px;
+          color: $--primary;  
+        }
+      }
+      .notification_badge{
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        background-color: $--primary-badge;
+        position:absolute;
+        top: -6px;
+        left: 30px;
+        .in-notify{
+          width: 10px;
+          height: 10px;
+          border-radius: 50px;
+          background-color: $--primary;
+          top: 7px;
+          left: 10px;
+          position: relative;
+        }
+      }
+    }
+    .notifications{
+      width: 50px;
+      height: 45px;
+      border-radius: 20px;
+      background-color: $--primary-badge;
+      padding: 16px;
+      position: relative;
+      margin: 0 10px;
+      .icon{
+        font-size: 20px;
+        color: $--primary;
+      }
+      .notify{
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        background-color: $--primary-badge;
+        position:absolute;
+        top: -6px;
+        left: 30px;
+        .in-notify{
+          width: 10px;
+          height: 10px;
+          border-radius: 50px;
+          background-color: $--primary;
+          top: 7px;
+          left: 7px;
+          position: relative;
+        }
+      }
+    }
+    .profile{
+      width: 30px;
+      overflow: hidden;
+      object-fit: cover;
+      margin: 0 10px;
+      position: relative;
+      top: 7px;
+      img{
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+  }
+}

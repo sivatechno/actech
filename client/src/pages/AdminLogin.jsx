@@ -3,8 +3,8 @@ import React from 'react'
 import Login from '../components/form/SuperAdminLogin';
 
 
-const AdminLogin = ({classes,children}) => {
-    return(
+const AdminLogin = ({ classes, children }) => {
+    return (
         <>
             <Login />
         </>

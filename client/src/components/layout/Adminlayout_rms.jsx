@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../header/Adminheader_rms';
-import Sidebar from '../sidebar/Sidebar';
+import Header from '../rms/header/Adminheader_rms';
+import Sidebar from '../rms/sidebar/Sidebar';
 import './Adminlayout_rms.scss';
 export default function Adminlayout_rms({children}) {
     return (

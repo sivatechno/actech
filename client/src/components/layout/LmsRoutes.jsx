@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import ProfileViewMentee from '../../pages/ProfileViewMentee';
-import ProfileViewMentor from '../../pages/ProfileViewMentor';
-import ViewMentee from '../../pages/ViewMentee';
-import ViewCourse from '../../pages/ViewCourse';
-import UpdateProfileViewMentor from '../../components/superadmin/usermanager/UpdateProfileMentor.component';
+import ProfileViewMentee from '../../pages/lms/ProfileViewMentee';
+import ProfileViewMentor from '../../pages/lms/ProfileViewMentor';
+import ViewMentee from '../../pages/lms/ViewMentee';
+import ViewCourse from '../../pages/lms/ViewCourse';
+import UpdateProfileViewMentor from '../lms/superadmin/usermanager/UpdateProfileMentor.component';
 import AdminLayout from './AdminLayout';
-import ViewMentor from '../../pages/ViewMentor';
+import ViewMentor from '../../pages/lms/ViewMentor';
 import ProtectedRoute from '../../ProtectedRoutes';
 export const LmsRoutes = () => {
     return (
