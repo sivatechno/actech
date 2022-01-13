@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileView from '../../components/rms/project/Project_profile_view';
+import ProfileView from '../../components/rms/Project_profile/Project_profile_view';
 import Adminlayout_rms from '../../components/layout/Adminlayout_rms'
 
 const ProjectProfileView = ({classes,children}) => 

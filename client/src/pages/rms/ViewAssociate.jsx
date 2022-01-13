@@ -2,7 +2,7 @@ import React from 'react'
 import AdminLayout from '../../components/layout/Adminlayout_rms';
 import ViewAssociateProfile from '../../components/rms/associate/ViewAssociateProfile.component'
 
-const Viewassociateprofile = ({classes,children}) => {
+const ViewAssociate = ({classes,children}) => {
     return(
         <AdminLayout>
             <ViewAssociateProfile/>
@@ -10,4 +10,4 @@ const Viewassociateprofile = ({classes,children}) => {
     )
 }
 
-export default Viewassociateprofile;
+export default ViewAssociate;

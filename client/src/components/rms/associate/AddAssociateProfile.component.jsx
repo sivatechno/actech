@@ -125,7 +125,7 @@ export default function AddAssociateprofile() {
   const formData = new FormData()
   formData.append("myuploadimage" , uploadimage)
 
-  axios.post(`${apiURL}/associateprofile/upload` , formData,{
+  axios.post("http://localhost:5000/associateprofile/upload" , formData,{
       headers : {
           "enc-type" : "multipart/form-data",
       },
@@ -135,7 +135,7 @@ export default function AddAssociateprofile() {
  }
   const addAssociateProfile = (e) =>{
     upload();
-    axios.post(`${apiURL}/associateprofile/create`,
+    axios.post("http://localhost:5000/associateprofile/create",
     {
       firstname:firstname,
       lastname:lastname,

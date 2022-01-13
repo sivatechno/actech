@@ -1,0 +1,100 @@
+@import '../../assets/stylesheets/common.scss';
+
+.client_profile_top{
+  //border: 1px solid #2424;
+  width: 97%;
+  height: 50px;
+  margin: 2.5% 0 0 1.5%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  .client_profile_headind_text{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 1% 63% 0 8%;
+    display: inline-flex;
+    color: #3253e2;
+  }
+
+  .add_client_btn{
+    padding: 0.5% 2.5% 0.5% 2.5% ;
+    border: 2px solid rgb(7, 78, 170);
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(7, 78, 170);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .add_client_btn:hover{
+    box-shadow: rgba(109, 109, 109, 0.411) 2px 2px 3px 1px;
+    border: 2px solid rgb(7, 78, 170);
+    background-color: rgb(7, 78, 170);
+    color: white;
+  }
+}
+
+
+.client_profile_table_container{
+  border: 1px solid transparent;
+  width: 97%;
+  height: 500px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 0 0 0 1.5%;
+  box-shadow: white 0px 2px 8px 0px;
+   
+  .client_profile_table{
+    //border: 1px solid red;
+    border-collapse: collapse;
+    text-align: center;
+    width: 90%;
+    margin:2% 0 0 4.5% ;
+
+    .client_profile_table_head{
+      border:1px solid #2424;
+      padding-top: 100px;
+      border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+
+      th{
+        color: #242424;
+        font-size: 16px;
+        padding:2% 4.5% 1% 0;
+      }
+    }
+      
+    .client_profile_table_body{
+      border: 1px solid #2424;
+
+      td{
+        padding:1% 4.5% 1% 0;
+        }
+
+      .prof_edit_icon{
+        margin: 0 6% 0 0;
+        color: blue;
+        font-size: 18px;
+      }
+
+      .prof_tash_icon,.prof_eye_icon{
+       margin: 0 6% 0 7%;
+      }
+
+      .prof_tash_icon{
+        color: red;
+        font-size: 14px;
+      }
+    }
+  }
+  
+  .client_profile_table_body:hover{
+    background-color: rgba(172, 172, 172, 0.178);
+    border-left: 2px solid rgb(7, 78, 170);
+    border-right: 2.5px solid rgb(7, 78, 170);
+    font-weight:550;
+  }
+}

@@ -1,11 +1,10 @@
 import React from 'react'
 import './Table_data_delete.scss'
 import axios from 'axios'
-import { Link, useNavigate} from 'react-router-dom';
+import { useNavigate,useParams} from 'react-router-dom';
 import {useState,useEffect } from 'react';
+//import { request } from 'express';
 import config from '../../config/config'
-
-
 function Table_data_delete({closeDeletePopup}) {
     const [listOfProject,setUser] = useState([])
 
@@ -13,22 +12,34 @@ function Table_data_delete({closeDeletePopup}) {
 
     let history = useNavigate();
 
-    const deleteProject = (id, e) => {
+    const deleteProject = (id,e) => {
           //alert(id)
         console.log(id);
-        axios.delete(`${apiURL}/project/deleteproject/${id}`).then((response) => {
-             response.send("success");
+        axios.delete(`http://localhost:5000/project/deleteproject/${id}`).then((res) => {
+             //res.send("success");
             history.push("/viewproject")
         });
         
     };
-    // alert(listOfProject)
+
+    const {id}=useParams();
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/project/${id}`).then((response) => {
+            setUser(response.data);
+            //  console.log(response.data);
+        });
+    }, []);
+
+
+
+    //alert(listOfProject)
     
     // useEffect(()=>{
     //     fetch(`http://localhost:5000/project/deleteproject`).then((result)=>{
     //         result.json("success").then((resp)=>{
     //             setUser(resp)
-    //             history.push("/viewmentors")
+    //             history.push("/viewproject")
     //         })
     //     })
     // },[])
@@ -47,11 +58,16 @@ function Table_data_delete({closeDeletePopup}) {
                 
                  <button className='delete_calcel_btn'onClick={()=>closeDeletePopup(false)}>Cancel</button>
                 
-                 
+                 {/* {listOfProject&&listOfProject.map((values)=>{
+                     return( */}
                         
-                        <Link to={'/'}>
-                        <button className='delete_btn' onClick={(e) => deleteProject(e)}>Delete</button> 
-                        </Link>
+                        <button className='delete_btn'>Delete</button> 
+                        
+                     {/* )
+                 })} */}
+                        
+                       
+                        
                     
              </div>
             </div>

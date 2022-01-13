@@ -1,0 +1,38 @@
+table{
+    width: 78%;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-collapse: collapse;
+  td,tr{
+      padding: 6px; 
+      text-align: center;
+  }
+  .table_row:hover {
+    background-color: #f1f4ff;
+  }
+  .namecol,.emailcol
+  {  
+    text-align: left; 
+    padding-left:20px ;
+   }
+  .table_row_head,.table_row{box-shadow: rgba(185, 183, 183, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;}
+  th{padding: 12px;}
+   td .table_icons{
+        height: 35px;
+        width: 13%;
+        display: inline-block;
+        margin-right: 10px;
+        
+        .icons_align{
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+        .icons_align_delete{
+            color: red;
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+    }
+}

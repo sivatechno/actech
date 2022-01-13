@@ -22,7 +22,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </Link>
-                <Link className='card2' to="/dashboard">
+                <Link className='card2' to="/Dashboardview">
                     <div className='img_rms'>
                         <img src={img2} alt='' />
                         <div className='title_rms'>
@@ -31,7 +31,7 @@ export default function HomePage() {
                         <div className='desc1'>
                             <p>Resource Managemnet System</p>
                             <button className='rmsbutton'>
-                                <Link className='link-rms' to="/dashboard">RMS</Link>
+                                <Link className='link-rms' to="/Dashboardview">RMS</Link>
                             </button>
                         </div>
                     </div>
