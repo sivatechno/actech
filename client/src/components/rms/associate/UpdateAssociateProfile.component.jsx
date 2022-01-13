@@ -86,12 +86,12 @@ export default function UpdateProfileViewMentor() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`${apiURL}/associateprofile/${id}`).then((response) => {
+        axios.get(`http://localhost:5000/associateprofile/${id}`).then((response) => {
             setProfileData(response.data);
         });
     }, []);
     const update = (e) => {
-        axios.put(`${apiURL}/associateprofile/update/${id}`,
+        axios.put(`http://localhost:5000/associateprofile/update/${id}`,
             {
                 firstname:newFirstname,
                 lastname:newLastname,

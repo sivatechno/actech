@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/form/SuperAdminLogin';
-
 import Projectprofileview from './pages/rms/ProjectProfileView';
 import ProfileViewMentee from './pages/lms/ProfileViewMentee';
 import ProfileViewMentor from './pages/lms/ProfileViewMentor';
@@ -16,7 +15,8 @@ import ProtectedRoute from './ProtectedRoutes';
 import LoginProtect from './LoginProtect';
 import HomePage from './components/frontpage/HomePage';
 import Dashboard from './pages/rms/Dashboardview';
-import Viewassociateprofile from './pages/rms/ViewAssociateProfile';
+import Viewassociateprofile from './pages/rms/ViewAssociate';
+import ClientView from './pages/rms/Clientview';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
 import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
@@ -78,21 +78,21 @@ function App({ children }) {
             </Route>
 
 
-            <Route exact path="/dashboard" element={<ProtectedRoute />}>
-              <Route exact path="/dashboard" element={<Dashboard />} />
+            <Route exact path="/Dashboardview" element={<ProtectedRoute />}>
+              <Route exact path="/Dashboardview" element={<Dashboard />} />
             </Route>
-
-
 
 
             <Route exact path="/projectprofileview" element={<ProtectedRoute />}>
               <Route exact path="/projectprofileview" element={<Projectprofileview />} />
             </Route>
 
-            <Route exact path="/viewassociateprofile" element={<ProtectedRoute />}>
-              <Route exact path="/viewassociateprofile" element={<Viewassociateprofile />} />
+            <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
+              <Route exact path="/ViewAssociate" element={<Viewassociateprofile />} />
             </Route>
-
+            <Route exact path="/ClientView" element={<ProtectedRoute />}>
+              <Route exact path="/ClientView" element={<ClientView />} />
+            </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>
               <Route exact path="/editprofileviewmentee/:id" element={<UpdateProfileViewMentee />} />

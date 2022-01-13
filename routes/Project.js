@@ -29,6 +29,13 @@ router.get('/count', (req, res) => {
 });
 });
 
+router.get('/count', (req, res) => {
+  Project.findAndCountAll({})
+.then(result => {
+  res.json(result.count);
+});
+});
+
 
 
 router.post('/addproject',

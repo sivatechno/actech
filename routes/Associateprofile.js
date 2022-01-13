@@ -158,6 +158,15 @@ router.put('/update/:id', async (req, res) => {
         res.json(error)
     }
 });
+
+
+router.get('/count', (req, res) => {
+    AssociateProfile.findAndCountAll({})
+  .then(result => {
+    res.json(result.count);
+  });
+  });
+
 router.get('/:id', async (req, res) => {
     try {
         // const id = req.params.id;

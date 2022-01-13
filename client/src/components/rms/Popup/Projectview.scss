@@ -1,0 +1,73 @@
+.projectprofiletablecontainer{
+    border: 1px solid #2424;
+    width: 97%;
+    height: 400px;
+    border-radius: 15px;
+    // border-top-left-radius: 0px;
+    // border-top-right-radius: 0px;
+    // border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: white;
+    margin: 0 0 0 1.5%;
+    box-shadow: white 0px 2px 8px 0px;
+    overflow-y: scroll;
+
+    .close_icon{
+        height: 20px;
+        width: 20px;
+        margin: 1% 0 0 96%;
+        //border: solid 1px #242424;
+        background-color: white;
+        color: red;
+          
+    }
+   
+    .project_profile_table{
+      border: 1px solid red;
+      border-collapse: collapse;
+      text-align: center;
+      width: 90%;
+      margin:2% 0 0 4.5% ;
+      .project_profile_table_head{
+        border:1px solid #2424;
+        padding-top: 100px;
+        border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+        th{
+          color: #242424;
+          font-size: 16px;
+          padding:2% 4.5% 1% 0;
+        }
+      }
+      .project_profile_table_body{
+        border: 1px solid #2424;
+        td{
+          padding:1% 4.5% 1% 0;
+        }
+        .prof_edit_icon{
+          margin: 0 6% 0 0;
+          color: blue;
+          font-size: 18px;
+        }
+        .prof_tash_icon,.prof_eye_icon{
+           margin: 0 6% 0 7%;
+        }
+        .prof_tash_icon{
+          color: red;
+          font-size: 14px;
+        }
+        // .prof_eye_icon{
+        //   color: rgba(116, 116, 116, 0.842);
+        //   font-size: 18px;
+        // }
+       
+        
+      }
+    }
+    .project_profile_table_body:hover{
+      background-color: rgba(172, 172, 172, 0.178);
+      border-left: 2px solid rgb(7, 78, 170);
+      border-right: 2.5px solid rgb(7, 78, 170);
+      font-weight:550;
+      }
+
+}

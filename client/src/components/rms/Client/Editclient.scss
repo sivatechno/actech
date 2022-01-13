@@ -1,0 +1,149 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    //background-color: white;
+    //background-color:red;
+}
+.addedit_overall_div{
+   // border: 1px solid green;
+    background-color: white;
+    backface-visibility: hidden;
+    // height: 70px;
+    width: 790px;
+    // margin: 10% 0 0 24%;
+    border-radius:20px;
+    box-shadow: rgba(54, 54, 54, 0.37) 0px 2px 8px 2px;
+    //background: white;
+.add_edit_overall{
+    background: white;
+    background-color:white;
+    height: 450px;
+    width: 790px;
+    border-radius:20px;
+   
+    //overflow-y:scroll;
+    overflow-x: hidden;
+    
+    .add_edit_inner{
+        background-color: white;
+        //border: 1px solid blue;
+        justify-content: space-between;
+        margin: 20px;
+        font-weight: bolder;
+        background:white;
+        enable-background: white;
+        .add_edit_head{
+            border-bottom: 2px solid rgba(223, 223, 223, 0.418);
+            height: 5%;
+            display: flex;
+            padding-bottom: 2%;
+            background-color: white;
+            .add_edit_header{
+                font-size: 18px;
+                font-weight: bold;
+                background-color: white;
+            }
+            .close{
+                //border: 1px solid red;
+                margin:0.8% 0 0 80%;
+                font-weight: bolder;
+                font-size: 18px;
+                color: red;
+                background-color: white;
+            }
+        }
+        .add_edit_inner_body{
+            //border: 1px solid blue;
+            margin: 3% 0 0 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+
+            .add_edit_content{
+                background-color: white;
+                //border: 1px solid green;
+                .add_edit_text{
+                    background-color: white;
+                    //border: 1px solid red;
+                    text-align: left;
+                    font-size: 15px;
+                    font-weight:600;
+                   
+                }
+                .add_edit_field_contain{
+                    background-color: white;
+                    //border: 1px solid red;
+                    margin-top: -6%;
+                .add_edit_feild{
+                    border:solid 2px #2424;
+                    border-radius: 20px;
+                    display: inline-block;
+                    height: 50px;
+                    width: 300px;
+                    background-color: white;
+                    margin-top: 0%;
+                    input[type=text],input[type=date],input[type=password],input[type=email]{
+                        height:90%;
+                        width: 80%;
+                        border:none ;
+                        margin:1% 0 0 2%;
+                        outline: none;
+                        padding-left: 4%;
+                        background-color: white;
+                        font-size: 16px; 
+                    }    
+                }
+            }
+         }
+        }
+        .add_edit_buttons{
+            background-color: white;
+            //border: 1px solid greenyellow;
+            margin: 6% 0 0 0;
+            padding: 0 0 0 40%;
+            height: 10%;
+            .edit_cancel_btn,.edit_add_btn{
+                font-size: 15px;
+                font-weight: 500;
+                border-radius: 10px;
+            }
+            .edit_cancel_btn{
+                border: 2px solid rgb(14, 152, 216);
+                background-color: white;
+                padding: 1.5% 6% 1.5% 6%;
+                color: rgb(14, 152, 216);
+                margin: 0 0 0 38%;           
+             }
+        
+            .edit_add_btn{
+                border: 2px solid white;
+                padding: 1.5% 6% 1.5% 6%;
+                background-color: rgb(14, 152, 216);
+                color: white;
+                margin: 0 0 0 5%;
+            }
+        }
+    }
+    .errormsg{
+        font-size: 11px;
+        color: red;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 1% 50% 0 0;
+        background-color: white;
+    }
+}
+i{
+    background-color: white;
+}
+.icons{
+    border-color: white;
+    background: white;
+}
+form{
+    background-color: white;
+    //border:1px solid blue;
+}
+
+}
