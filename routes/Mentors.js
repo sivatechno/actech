@@ -3,9 +3,12 @@ const router = express.Router();
 const { Mentors } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const saltRounds = 10
+// const saltRounds = 10
 const db = require('../models');
 const Promise = require('promise');
+
+const {body,validationResult} = require('express-validator');
+
 
 router.get('/viewmentors', async (req, res) => {
     try {
@@ -72,7 +75,18 @@ router.delete('/delete/:id', async (req, res) => {
     }
 });
 
-router.post('/create', async (req, res) => {
+router.post('/create',
+body('username').isLength({min:2}),
+body('email').isEmail(),
+body('firstname').isLength({min:2}),
+body('lastname').isLength({min:2}),
+body('password').isLength({min:5}),
+
+async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+    return res.status(400).json({errors:errors.array()});
+    }
     try {
         const { postalcode, phonenumber, username, password, role, email, firstname, lastname, country, city, address, state } = req.body;
         const userAlreadyExist = await Mentors.findOne({ where: { username: username } });
@@ -81,7 +95,7 @@ router.post('/create', async (req, res) => {
             await Mentors.create({
                 username: username,
                 password: passwordHash,
-                role: role,
+                //role: role,
                 email: email,
                 phonenumber: phonenumber,
                 firstname: firstname,
@@ -111,7 +125,7 @@ router.put('/update/:id', async (req, res) => {
             await Mentors.update({
                 username: username,
                 password: passwordHash,
-                role: role,
+               // role: role,
                 email: newEmail,
                 phonenumber: newPhonenumber,
                 firstname: newFirstname,

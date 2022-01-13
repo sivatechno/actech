@@ -7,6 +7,8 @@ const db = require('../models');
 const Promise = require('promise');
 const {Mentee} = require('../models');
 
+const {body,validationResult} = require('express-validator');
+
 router.get('/viewmentee', async (req, res, next) => {
     try {
         const list = await Mentee.findAll({});
@@ -19,7 +21,18 @@ router.get('/viewmentee', async (req, res, next) => {
 
 });
 
-router.post('/create', async (req, res) => {
+router.post('/create',
+body('username').isLength({min:2}),
+body('email').isEmail(),
+body('firstname').isLength({min:2}),
+body('lastname').isLength({min:2}),
+body('password').isLength({min:5}),
+async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+    return res.status(400).json({errors:errors.array()});
+    }
+    
     try {
         const { postalcode, phonenumber, username, password, company, technology, email, firstname, lastname, country, city, address, state } = req.body;
         const userAlreadyExist = await Mentee.findOne({ where: { username: username } });
