@@ -1,25 +1,3 @@
-
-// export  function validation(values) {
-//     let errors={};
-//     if(!values.username){
-//         errors.username="Username is required"
-//     }
-//     if(!values.email){
-//         errors.email="email is required"
-//     }
-//     else if(!/\s+@\s+\.\s+/+test(values.email)){
-//         errors.email="email is required"
-//     }
-//     if(!values.password){
-//         errors.password="password is required"
-//     }
-//     else if(values.password.length>5){
-//         errors.password="password is must be more then 5 character"
-//     }
-//     return errors;
-// };
-// export default validation
-
 const Validate = (values) => {
     let errors={};
     
@@ -63,6 +41,13 @@ const Validate = (values) => {
     if(!values.uploadimage){
         errors.uploadimage="* Please Enter uploadimage"
     }
+    if(!values.technology){
+        errors.technology="* Please Enter Technology"
+    }
+    if(!values.company){
+        errors.company="* Please Enter company"
+    }
+
     return errors;
 };
 

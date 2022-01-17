@@ -22,6 +22,12 @@ router.get('/viewproject',async(req,res)=>{
 
     }
 });
+router.get('/count', (req, res) => {
+  Project.findAndCountAll({})
+.then(result => {
+  res.json(result.count);
+});
+});
 
 router.get('/count', (req, res) => {
   Project.findAndCountAll({})

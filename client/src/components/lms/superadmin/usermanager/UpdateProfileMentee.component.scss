@@ -3,43 +3,46 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.addmentor{
+.updateprofilementor{
     background-color:white;
-    height: 500px;
+    height: 600px;
     width: 750px;
     border-radius:20px;
-    margin:25px auto;
+    margin:-12% auto;
     overflow-y:scroll;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(56, 55, 55, 0.39) 1px 2px 8px 1px;
     .headercontent{
-        display:flex;
-        justify-content:space-between;
-        margin:20px;
-        .logoalign{
-            width:50px;
-            height:50px;
-        }
-        p{
-            margin-right:28rem;
-        }
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        img{
+            height: 50px;
+            width: 50px;
+        } 
+        .member_align{
+             margin-right: 28rem;
+        } 
+        
     }
     label{
-       font-weight:bold; 
+       font-weight: bold; 
     }
     input[type=text],input[type=number],input[type=password],input[type=email]{
         height:50px;
         width: 300px;
-        
+        border:solid 2px #2424;
         border-radius: 20px;
         background-color: transparent;
         padding-left: 40px;
-        border: solid 2px #2424;
         outline: none;
         font-size: 16px;
     }
     .feild{
         position: relative;
-        margin-top: 10px;       
+        margin-top: 10px;  
+        .browse_btn{
+            color:white;
+        } 
         input[type=file]{
             color: white;
             cursor:pointer;
@@ -47,9 +50,10 @@
         .avatar_box{
             width: 5rem;
             height: 90px;
-        }
+        }     
+       
     }
-    p,input[type=radio],input[type=checkbox]{
+    p,input[type=radio]{
         margin: 10px 0px 5px 30px;
         color: #0C50A3;
     }
@@ -61,7 +65,7 @@
         .accesslvltxt{
             text-align: center;
             font-size: 18px;
-            font-weight: bold; 
+            font-weight: bold;    
         }
     }
     .inputfeilds{
@@ -69,22 +73,32 @@
         justify-content: space-around;
         margin: 20px;
     }
-    .left-inputfeilds i ,.right-inputfeilds i,.right-inputfeilds button {
+    .left-inputfeilds i,.right-inputfeilds i,.right-inputfeilds button{
         position: absolute;
-        color: #2424;
+        color: #2424;            
     }
     button{
-        margin:20px 90px;
+        margin:2px 200px ;
+        //color:white;
+        background-color: blue;
+        border-radius: 20px;
+        height:45px;
+        width:100px;
     }
+    
     i{
         margin: 13px 15px;
     }
     .close{
-        margin-right: 25px;
-        width: 20px;
-        margin-top: 20px;
-        color:red;
+        //border: 1px solid red;
+        font-size: 16px;
         font-weight: bold;
+        color: red;
+        margin: 0 0 0 0;
+        width: 5%;
+        height: 5%;
+        background-color: white;
+        border: none;
     }
     .notes{
         padding-bottom: 10px;
@@ -106,30 +120,28 @@
             margin-right: 50px;
             border-radius: 10px;
             font-size: 16px;
-            color:black;
-            border: solid 2px #0C50A3 ;
-            background-color: #fff;
-            cursor: pointer;
+            color:#2986d3;
+            border: 2px solid #2986d3;
+            background-color: white;
         }
-        .Addstaff{
+        .editstaff{
             border:1px solid white;
             margin-top: 10px;
             width: 100px;
             height: 40px;
             border-radius: 10px;
             font-size: 16px;
-            color: white;
-            background-color:#0C50A3;
-            border: none;
-            cursor: pointer;
+            color:white;
+            background-color:#2986d3;
         }        
     }
     .cancel:hover
     {
          width: 102px;
          height: 41px;
+         
     }
-    .Addstaff:hover
+    .editstaff:hover
     {
          width: 102px;
          height: 41px;

@@ -7,21 +7,64 @@ import { useNavigate, Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddMentee from './AddMentee.component';
 import config from '../../../config/config';
+import UpdateProfileViewMentee from './UpdateProfileMentee.component'
+import DeletePopupMentee from './DeletePopupMentee.component';
 
 
 const customStyles = {
     content: {
         top: '50%',
-        left: '50%',
+        left: '60%',
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        
+        outline:'none',
+        border:'none',
     },
+};
+
+const Styles = {
+    content: {
+        top: '55%',
+        left: '60%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        height:'95%',
+        background:'transparent',
+        outline:'none',
+        border:'none',
+        
+    },
+   
+};
+const custstyles= {
+    content: {
+        top: '40%',
+        left: '60%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        background:'transparent',
+        outline:'none',
+        border:'none',
+        width:'80%',
+        overflow:'hidden',
+        
+    },
+   
 };
 
 function ViewMentee() {
     const apiURL=config.API_URL;
+
+    const [editpopup,setEditpopup]= useState(false);
+
+    const [deletepopup,setDeletepopup] = useState(false);
 
     const history = useNavigate();
 
@@ -39,14 +82,14 @@ function ViewMentee() {
 
     const deleteMentee = (id, e) => {
         console.log(id);
-        axios.delete(`${apiURL}/mentee/delete/${id}`).then((response) => {
+        axios.delete(`http://localhost:5000/mentee/delete/${id}`).then((response) => {
             response.json("deleted successfully");
             history.push("/viewmentee");
         });
     };
 
     useEffect(() => {
-        axios.get(`${apiURL}/mentee/viewmentee`).then((response) => {
+        axios.get("http://localhost:5000/mentee/viewmentee").then((response) => {
             setListOfMentees(response.data);
 
         });
@@ -67,11 +110,12 @@ function ViewMentee() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddMentee closeModel={setIsOpen} />
+                {listofMentees  && <AddMentee closeModule={setIsOpen} />}
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
                     <tr className="table_row_head">
+                        {/* <th>Avatar</th> */}
                         <th>Name</th>
                         <th>Email</th>
                         <th>Company</th>
@@ -84,18 +128,41 @@ function ViewMentee() {
                         return (
 
                             <tr className="table_row">
+                                {/* <td className="avatarcol"></td> */}
                                 <td className="namecol">{value.firstname} {value.lastname}</td>
                                 <td className="emailcol">{value.email}</td>
                                 <td>{value.company}</td>
                                 <td>{value.technology}</td>
                                 <td>{value.phonenumber}</td>
                                 <td>
-                                    <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
-                                    <Link to={"/viewmentee"}>
+                                  {/* <Link to={`/editprofileviewmentee/${value.id}`}> */}
+                                    <div className="table_icons"><AiIcons.GrEdit className="icons_align" onClick={()=>{setEditpopup(true);}}/></div>
+                                    <Modal
+                                             isOpen={editpopup}
+                                            onRequestClose={closeModal}
+                                            style={Styles}
+                                            contentLabel="Example Modal"
+                                            >                
+                                            {  <UpdateProfileViewMentee closeModule={setEditpopup} />}
+                                        </Modal>
+                                    {/* </Link> */}
+                                    
+                                    {/* <Link to={"/viewmentee"}>
                                         <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
                                             onClick={(e) => deleteMentee(value.id, e)}
                                         /></div>
-                                    </Link>
+                                    </Link> */}
+                                    <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
+                                            
+                                            /></div>
+                                            <Modal
+                                                 isOpen={deletepopup}
+                                                onRequestClose={closeModal}
+                                                style={custstyles}
+                                                contentLabel="Example Modal"
+                                                >                
+                                                {  <DeletePopupMentee closeModule={setDeletepopup} />}
+                                            </Modal>
                                     <Link to={`/profileviewmentee/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
                                 </td>
                             </tr>

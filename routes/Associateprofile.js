@@ -190,4 +190,12 @@ router.get('/:id', async (req, res) => {
         res.send(error);
     }
 });
+
+router.get('/count', (req, res) => {
+    Associateprofile.findAndCountAll({})
+  .then(result => {
+    res.json(result.count);
+  });
+  });
+
 module.exports = router;
