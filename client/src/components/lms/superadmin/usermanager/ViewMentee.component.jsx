@@ -63,12 +63,11 @@ function ViewMentee() {
                 </div>
             </div>
             <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                isOpen={modalIsOpen}       
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddMentee />
+                <AddMentee closeModel={setIsOpen} />
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >

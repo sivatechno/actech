@@ -5,7 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import config from '../../../config/config';
 
-export default function AddMentor() {
+export default function AddMentor({closeModel}) {
     const apiURL=config.API_URL;
 
     const [username, setUsername] = useState("");
@@ -57,7 +57,7 @@ export default function AddMentor() {
             <div className="addmentor">
                 <div className="headercontent">
                     <p>Member Information</p>
-                    < AiIcons.IoMdClose className="close" />
+                    < AiIcons.IoMdClose className="close" onClick={()=> closeModel(false)}/>
                 </div> <hr />
                 <div className="textfeild-container">
                     <div className="inputfeilds">
@@ -172,7 +172,7 @@ export default function AddMentor() {
                             <textarea placeholder="notes" col="5" row="5" />
                         </div>
                         <div className="buttons">
-                            <input type="button" className="cancel" value="cancel" />
+                            <input type="button" className="cancel" value="cancel" onClick={()=> closeModel(false)} />
                             <input type="button" className="Addstaff" value="Addstaff" onClick={addMentor} />
                         </div>
                     </div>

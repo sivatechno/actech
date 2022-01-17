@@ -5,8 +5,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import config from '../../../config/config';
 
-export default function AddMentee() {
-
+export default function AddMentee({closeModel}) {
+ 
   const apiURL=config.API_URL;
 
   const [username,setUsername] = useState("");
@@ -35,7 +35,7 @@ export default function AddMentee() {
 
   const [phonenumber,setPhonenumber] = useState("");
 
-const addMentee = (e) =>{
+const addMentee = () =>{
 
   axios.post(`${apiURL}/mentee/create`,
   {
@@ -62,7 +62,7 @@ const addMentee = (e) =>{
         <div className="addmentee">
            <div className="headercontent">
                         <p>Member Information</p>
-                       < AiIcons.IoMdClose className="close"/>        
+                       < AiIcons.IoMdClose className="close" onClick={()=> closeModel(false)} />        
                 </div> <hr />
                 <div className="textfeild-container">
                     <div className="inputfeilds">
@@ -187,12 +187,13 @@ const addMentee = (e) =>{
                             <textarea placeholder="notes" col="5" row="5"/>
                         </div>
                         <div className="buttons">
-                            <input type="button" className="cancel" value="cancel"/>
+                            <input type="button" className="cancel" value="cancel" onClick={()=> closeModel(false)}/>
                             <input type="button" className="Addstaff" value="Addstaff" onClick={addMentee}/>
                        </div> 
                    </div>
                 </div>
                 </div>
+                
       </div>
     )
 }

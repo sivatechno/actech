@@ -75,6 +75,9 @@
             border-radius: 20px;
             font-size: 16px;
             color:black;
+            border: solid 2px #0C50A3 ;
+            background-color: #fff;
+            cursor: pointer;
         }
         .Addstaff{
             margin-top: 10px;
@@ -84,6 +87,8 @@
             font-size: 16px;
             color: white;
             background-color:#0C50A3;
+            border: none;
+            cursor: pointer;
         }        
     }
 }

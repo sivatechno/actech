@@ -64,11 +64,10 @@ function ViewMentor() {
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddMentor />
+                <AddMentor closeModel={setIsOpen}/>
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
