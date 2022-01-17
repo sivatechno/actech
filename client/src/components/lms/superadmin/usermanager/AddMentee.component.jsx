@@ -236,31 +236,9 @@ export default function AddMentee({closeModule}) {
                              <input type="button" className="Addstaff" value="Addstaff" onClick={addMentee}/>
                         </div> 
                     </div>
-<<<<<<< HEAD
-                    <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
-                        <input type="checkbox" className="checkbox"/>
-                        <label className="notify">NOTIFY USER</label>
-                        <p>Sent welcome  mail to this user</p>
-                        <br/>
-                        <div className="notes">
-                            <textarea placeholder="notes" col="5" row="5"/>
-                        </div>
-                        <div className="buttons">
-                            <input type="button" className="cancel" value="cancel" onClick={()=> closeModel(false)}/>
-                            <input type="button" className="Addstaff" value="Addstaff" onClick={addMentee}/>
-                       </div> 
-                   </div>
-                </div>
-                </div>
-                
-      </div>
-    )
-}
-=======
                  </div>
                  </div>
        </div>
      )
  }
  
->>>>>>> 18738a7dab01860c5623bb89c8f2c1b291fe7a78

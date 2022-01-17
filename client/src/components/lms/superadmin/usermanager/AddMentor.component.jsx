@@ -245,29 +245,6 @@ export default function AddMentor({ closeModule }) {
                                 <input type="button" className="cancel" value="cancel" onClick={() => closeModule(false)} />
                                 <input type="button" className="Addstaff" value="Addstaff" onClick={addMentor} />
                             </div>
-<<<<<<< HEAD
-                        </div>
-                    </div><hr />
-                    <div className="accesslvl-container">
-                        <p className="accesslvltxt">ACCESS LEVEL</p>
-                        <div className="radiobutton">
-                            <input type="radio" className="radiobtnstaff" name="radio" />
-                            <label className="checkbox-label">ADMIN</label><br />
-                            <input type="radio" className="radiobtnadmin" name="radio" />
-                            <label className="checkbox-label">STAFF</label>
-                        </div>
-                        <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
-                        <input type="checkbox" className="checkbox" />
-                        <label className="notify">NOTIFY USER</label>
-                        <p>Sent welcome  mail to this user</p><br />
-                        <div className="notes">
-                            <textarea placeholder="notes" col="5" row="5" />
-                        </div>
-                        <div className="buttons">
-                            <input type="button" className="cancel" value="cancel" onClick={()=> closeModel(false)} />
-                            <input type="button" className="Addstaff" value="Addstaff" onClick={addMentor} />
-=======
->>>>>>> 18738a7dab01860c5623bb89c8f2c1b291fe7a78
                         </div>
                     </div>
                 </form>
