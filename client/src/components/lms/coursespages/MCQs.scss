@@ -1,0 +1,57 @@
+.MultipleQues
+{
+    display: flex;
+    flex-direction: column;
+
+    .multiQues_txt-box1{
+        width: 100%;
+    }
+    .multipleQues-txt_box
+{
+    padding: 30px;
+    flex-basis: 500px;
+    border: 1px solid lightslategrey;
+    border-radius: 8px;
+}
+.input-multiple-answer
+{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+}
+.multiple-addbutton
+{
+    width: auto;
+    margin-right: 50px;
+}
+.ima-input
+{
+    text-align: left;
+    display: inline;
+}
+.input_textfield
+{
+   border: none;
+   border-bottom: 2px solid lightslategrey;
+   outline: none;
+   padding: 10px;
+   margin: 5px;
+}
+.multiQues_inputfields
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+
+}
+.multiple-addbutton
+{
+    margin-left: 80px;
+   margin-top: 20px;
+   padding: 10px 30px;
+   border-radius: 10px;
+   border-color: #2874A6;
+   color: rgb(17, 26, 37);
+}
+} 

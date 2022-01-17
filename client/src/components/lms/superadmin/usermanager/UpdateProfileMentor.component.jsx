@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
-import Photo from '../../../assets/images/profile.png';
+import image from '../../../assets/images/updatementor.png';
+
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import config from '../../../config/config';
 
-export default function UpdateProfileViewMentor() {
-    const apiURL=config.API_URL;
+export default function UpdateProfileViewMentor({closeModule}) {
+    const apiURL = config.API_URL;
+    const imageHandler = (event) => {
+        const selectedImage = event.target.files[0]
+        setUploadimage(selectedImage)
+        const imagePreview = URL.createObjectURL(selectedImage)
+        setPreview(imagePreview)
+    }
+
+    const [uploadimage, setUploadimage] = useState(image);
+
+    const [preview, setPreview] = useState(image);
+
     const [profiledata, setProfileData] = useState([]);
+
+    const [newUsername, setNewUsername] = useState();
+
+    const [newPassword, setNewPassword] = useState();
 
     const [newEmail, setNewEmail] = useState();
 
     const [newPhonenumber, setNewPhonenumber] = useState();
 
-    var [newFirstname, setNewFirstname] = useState();
+    const [newFirstname, setNewFirstname] = useState();
 
     const [newLastname, setNewLastname] = useState();
 
@@ -31,6 +47,10 @@ export default function UpdateProfileViewMentor() {
     const [newProfileData, setNewProfileData] = useState([]);
 
 
+
+
+
+
     const { id } = useParams();
 
     useEffect(() => {
@@ -41,6 +61,8 @@ export default function UpdateProfileViewMentor() {
     const update = (e) => {
         axios.put(`${apiURL}/mentorsOne/update/${id}`,
             {
+
+
                 email: newEmail,
                 phonenumber: newPhonenumber,
                 firstname: newFirstname,
@@ -52,14 +74,18 @@ export default function UpdateProfileViewMentor() {
                 state: newState
             }).then((response) => {
                 setNewProfileData(response.data);
+                alert("Submitted")
             });
     };
+
+
+
     return (
         <div className="profileviewmentor_container">
-            {profiledata.length > 0 && profiledata.map((values, key) => {
-                return (
-                    <div>
-                        <div className="viewpart_left">
+            {/* {newProfileData.length > 0 && newProfileData.map((values, key) => {
+                return ( */}
+            <div>
+                {/* <div className="viewpart_left">
                             <div className="profile_view">
                                 <img src={Photo} alt="" className="profile_align" />
                             </div>
@@ -75,118 +101,168 @@ export default function UpdateProfileViewMentor() {
                                 <div className="about_box_1">
                                     <label>CONTACT :</label>
                                     <p className="profile_field">{values.phonenumber}</p>
+                                    
+                                </div>
+                            </div>
+                        </div> */}
+                <div className="updateprofilementor">
+                    <div className="headercontent">
+                        <img src={image} alt="" className="profile_align" />
+                        <p className="member_align">Member Information</p>
+                        < AiIcons.GrClose className="close" onClick={() => closeModule(false)} />
+
+                    </div> <hr />
+
+                    <div className="textfeild-container">
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>Username</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.FaUser className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="username" onChange={(e) => { setNewUsername(e.target.value); }} />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>Password</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.BsLockFill className="icons" /></i>
+                                    <input type="password" className="textfield" placeholder="password" onChange={(e) => { setNewPassword(e.target.value); }} />
                                 </div>
                             </div>
                         </div>
-                        <div className="viewpart_right">
-                            <div className="viewtitle">
-                                <p>Basic Info</p>
-                            </div>
-                            <div className="right_container_1">
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>USERNAME :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.FaUserTie className="icon_align" />
-                                        <p className="profile_field">{values.username}</p>
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>EMAIL :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.SiMinutemailer className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewEmail(e.target.value); }} value={values.email} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>PHONE NO :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.IoMdPhonePortrait className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewPhonenumber(e.target.value); }} value={values.phonenumber} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>FIRST NAME :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.FaUserTie className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewFirstname(e.target.value); }} value={values.firstname} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>LAST NAME :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.FaUserTie className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewLastname(e.target.value); }} value={values.lastname} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>COUNTRY :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.AiOutlineGlobal className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewCountry(e.target.value); }} value={values.country} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>CITY :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.AiFillFlag className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewCity(e.target.value); }} value={values.city} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>ZIP CODE :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.TiCode className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewPostalcode(e.target.value); }} value={values.postalcode} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>STATE :</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <AiIcons.TiCode className="icon_align" />
-                                        <input className="profile_field" onChange={(e) => { setNewState(e.target.value); }} value={values.state} />
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="label_box">
-                                        <label>STATUS</label>
-                                    </div>
-                                    <div className="txtboxes">
-                                        <p className="profile_field">{values.role}</p>
-                                    </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>Technology</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.GrTechnology className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="technology" /><br />
                                 </div>
                             </div>
-                            <div className="address_info">
-                                <div className="address_label">
-                                    <label>ADDRESS  :</label>
-                                </div>
-                                <div className="address_area">
-                                    <AiIcons.ImAddressBook className="icon_align" />
-                                    <input className="profile_field" onChange={(e) => { setNewAddress(e.target.value); }} value={values.address} />
+                            <div className="right-inputfeilds">
+                                <label>Company</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.HiOutlineOfficeBuilding className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="company" /><br />
                                 </div>
                             </div>
-                            <input type="submit" onClick={(e) => update(values.id, e)} />
+                        </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>Email</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.AiOutlineMail className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="Email" onChange={(e) => { setNewEmail(e.target.value); }} /><br />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>Phone Number</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.BsPhone className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="Phone number" onChange={(e) => { setNewPhonenumber(e.target.value); }} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>First Name</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.FaUser className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="firstname" onChange={(e) => { setNewFirstname(e.target.value); }} />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>Last Name</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.FaUser className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="lastname" onChange={(e) => { setNewLastname(e.target.value); }} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>country</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.BiWorld className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="country" onChange={(e) => { setNewCountry(e.target.value); }} />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>City</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.FaCity className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="city" onChange={(e) => { setNewCity(e.target.value); }} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>Postal code</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.BiMapPin className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="postalcode" onChange={(e) => { setNewPostalcode(e.target.value); }} /><br />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>Proviance/state</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.GiModernCity className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="proviance/state" onChange={(e) => { setNewState(e.target.value); }} />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className="inputfeilds">
+                            <div className="left-inputfeilds" >
+                                <label>address</label><br />
+                                <div className="feild">
+                                    <i><AiIcons.FiMapPin className="icons" /></i>
+                                    <input type="text" className="textfield" placeholder="address" onChange={(e) => { setNewAddress(e.target.value); }} />
+                                </div>
+                            </div>
+                            <div className="right-inputfeilds">
+                                <label>Avatar</label><br />
+                                <div className="feild">
+                                    {uploadimage && <img alt={uploadimage.name} src={preview} className="avatar_box" />}<br />
+                                    <input type="file" placeholder='Upload' accept="image/*" onChange={(e) => imageHandler(e)} />
+                                </div>
+                            </div>
+                        </div><hr />
+                        <div className="accesslvl-container">
+                            <p className="accesslvltxt">ACCESS LEVEL</p>
+                            <div className="radiobutton">
+                                <input type="radio" className="radiobtnstaff" name="radio" />
+                                <label className="checkbox-label">ADMIN</label><br />
+                                <input type="radio" className="radiobtnadmin" name="radio" />
+                                <label className="checkbox-label">STAFF</label>
+                            </div>
+                            <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
+
+                            <div className="notes">
+                                <textarea placeholder="notes" col="5" row="5" />
+                            </div>
+                            <div className="buttons">
+                                <input type="button" className="cancel" value="cancel" onClick={() => closeModule(false)} />
+
+                                <input type="submit" className="editstaff" value="submit" onClick={(e) => update(e)} />
+
+
+                            </div>
                         </div>
                     </div>
-                )
-            })}
+
+                </div>
+
+
+            </div>
+
+
+            {/* ) */}
+            {/* }
+            )}  */}
         </div>
+
+
     )
+
+
 }

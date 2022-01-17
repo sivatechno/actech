@@ -5,17 +5,27 @@
 }
 .addmentee{
     background-color:white;
-    height: 700px;
+    height: 500px;
     width: 800px;
     border-radius:20px;
     margin:25px auto;
     overflow-y:scroll;
-     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     .headercontent{
         display: flex;
         justify-content: space-between;
         margin: 20px;
+        .logoalign{
+            width: 50px;
+            height: 50px;
+        }
+        p{
+            margin-right:28rem;
+        }
     }
+    label{
+        font-weight: bold; 
+     }
     input[type=text],input[type=number],input[type=password],input[type=email]{
         height:50px;
         width: 300px;
@@ -25,21 +35,26 @@
         padding-left: 40px;
         font-size: 16px; 
     }
-    .inputfeilds-postalfeild{
-        margin: 25px 50px;
-    }
+    .inputfeilds-postalfeild{margin: 25px 50px;}
     .feild{
         position: relative;
         margin-top: 10px;
     }
     p,input[type=radio],input[type=checkbox]{
         margin: 10px 0px 5px 30px;
+        color: #0C50A3;
+    }
+    .accesslvl-container{
+    .checkbox-label,.notify{
+        font-weight: normal;
+        margin-left: 10px;
     }
     .accesslvltxt{
         text-align: center;
         font-size: 18px;
         font-weight: bold;
     }
+}
     .inputfeilds{
         display: flex;
         justify-content: space-around;
@@ -47,12 +62,17 @@
     }
     .left-inputfeilds i,.right-inputfeilds i{
         position: absolute;
+        color: #2424;
     }
     i{
         margin: 13px 15px;
     }
     .close{
         margin-right: 25px;
+        width: 20px;
+        margin-top: 20px;
+        // height:20px;
+        color:red;
     }
     .notes{
         padding-bottom: 10px;
@@ -74,7 +94,8 @@
             margin-right: 40px;
             border-radius: 20px;
             font-size: 16px;
-            color:black;
+            color:white;
+            background-color:#0C50A3;
         }
         .Addstaff{
             margin-top: 10px;
@@ -84,6 +105,16 @@
             font-size: 16px;
             color: white;
             background-color:#0C50A3;
-        }        
+        }      
+        .cancel:hover
+        {
+             width: 110px;
+             height: 50px;
+        }
+        .Addstaff:hover
+        {
+             width: 110px;
+             height: 50px;
+        }  
     }
 }

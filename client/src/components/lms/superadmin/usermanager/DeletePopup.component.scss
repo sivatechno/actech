@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    // background-color: blue;
+}
+.container1{
+    background-color: white;
+     width:45%;
+     height:200px;
+     border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+    margin:100px 100px 0px 350px;
+    .header{
+        width:100%;
+        background-color: white;
+        .closeicon{
+            float: right;
+            margin:15px 15px 0px 0px;
+            background-color: white;
+            
+            .close{
+                font-size: 18px;  
+                background-color: white;                   
+            }
+        }
+    }    
+    .content-box{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:120px;
+        h3{
+            margin-left: 25px;
+            background-color: white;
+        }
+    }
+    .button-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    .cancel-btn{
+        margin-right: 35px;
+        height:30px;
+        width:100px; 
+        color: white; 
+        border: none; 
+        font-weight: bold;
+        background-color: gray;  
+        border-radius: 5px;   
+    }
+    .delete-btn{
+        height:30px;
+        width:100px;
+        background-color: rgb(250, 15, 15);
+        color: white;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+}
