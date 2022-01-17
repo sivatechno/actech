@@ -8,6 +8,11 @@ import {useEffect, useState } from 'react'
 import axios from 'axios';
 import Modal from 'react-modal'
 import config from '../../config/config'
+import { Link, useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+
 const customStyles = {
     content: {
         top: '58%',
@@ -32,16 +37,33 @@ const customStyles = {
 
     const [listOfProject, setListOfProject] = useState([]);
 
+    const deleteProject = (id,e) => {
+        //alert(id)
+      console.log(id);
+      axios.delete(`http://localhost:5000/project/deleteproject/${id}`).then((response) => {
+           //res.send("success");
+          //history.push("/viewproject")
+        //   alert('hello')
+        //notify(true);
+      });
+      notify(true);
+      
+  };
+
     useEffect(() => {
         axios.get("http://localhost:5000/project/viewproject").then((response) => {
             setListOfProject(response.data);
             // console.log(response.data);
+            
         });
     }, []);
 
     const [popup,popupcome] = useState(false)
     const [Deletepopup,Deletepopupcome] = useState(false)
     const [Editpopup,EditpopupCome] = useState(false)
+
+    const notify = ()=>{toast.error('Deleted',{position: toast.POSITION.BOTTOM_CENTER})}
+
     return (
            <div>
                
@@ -99,7 +121,7 @@ const customStyles = {
                         <td>{value.Project_Name}</td>
                         <td>{value.Start_Date}</td>
                         <td >{value.End_Date}</td>
-                        <td className="proj_table_icons"><AiIcons.MdEdit className="prof_edit_icon" onClick={()=>{EditpopupCome(true);}}/> <AiIcons.FaTrash className="prof_tash_icon" onClick={()=>{Deletepopupcome(true);}}/></td>
+                        <td className="proj_table_icons"> <Link to={`/Update_proj/`}><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon"  onClick={(e) => deleteProject(value.id, e)}/></td>
                     </tr>
                     
                     

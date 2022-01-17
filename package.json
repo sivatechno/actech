@@ -30,6 +30,7 @@
     "nodemon": "^2.0.14",
     "promise": "^8.1.0",
     "react-router-dom": "^6.0.2",
+    "react-toastify": "^8.1.0",
     "sequelize": "^6.9.0",
     "sequelize-cli": "^6.3.0"
   }

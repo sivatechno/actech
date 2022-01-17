@@ -1,0 +1,141 @@
+.update_proj_over_all{
+    border-top: 1px solid rgb(7, 78, 170);
+    width: 100%;
+    height: 80vh;
+    margin: 0 0 0 0;
+    border-top-left-radius:10px ;
+
+    .update_proj_head_div{
+        //border: 1px solid red;
+        width:100%;
+        height:40px;
+        border-top-left-radius:10px ;
+        background-color:rgb(7, 78, 170);
+        
+        .update_proj_head_inner_div{
+            //border: 2px solid red;
+            width:95%;
+            display: flex;
+            justify-content:space-between;
+            margin: 0px auto;
+            padding: 0 10px 5px 10px;
+
+            .update_proj_head_icon{
+                margin-top:20%;
+                font-size: 25px;
+                font-weight: 550;
+                color:white;
+            }
+
+            .update_proj_head_text{
+                margin-top:0.5%;
+                font-size: 20px;font-weight: 550;
+                color: white;
+            }
+        }
+    }
+
+    .update_proj_inner_div{
+        border: 1px solid transparent;
+        height: 50vh;
+        width: 100%;
+        margin-top:5%;
+        
+
+        .update_proj_inner_body{
+            border:1px solid transparent;
+            width: 85%;
+            margin: 2% auto;
+            height: 12vh;
+            display: flex;
+        justify-content: space-between;
+
+            .update_proj_content{
+                //border:1px solid red;
+                
+                .update_project_text{
+                    margin-bottom:2%;
+                    background-color: white;
+                    //border: 1px solid red;
+                    text-align: left;
+                    font-size: 15px;
+                    font-weight:600;
+                }
+
+                .update_project_field_contain{
+                    margin-top: -3%;
+                    
+                    .update_project_feild{
+                        border:solid 2px #2424;
+                        border-radius: 20px;
+                        display: inline-block;
+                        height: 50px;
+                        width: 450px;
+                        background-color:white;
+                        margin-top: 0%;
+
+                        .update_proj_icons{
+                            margin: 0 0 0 15px;
+                        }
+
+                        input[type=text],input[type=date],input[type=password],input[type=email]{
+                            height:90%;
+                            width: 85%;
+                            border:none;
+                            margin:1% 0 0 1%;
+                            outline: none;
+                            padding-left: 4%;
+                            background-color: transparent;
+                            font-size: 16px; 
+                            border-radius: 10px;
+                        } 
+                    }
+                }
+            }
+
+        }
+
+        .update_proj_checkbox_content{
+            //border:1px solid red;
+            width: 37.3%;
+
+            .update_project_checkbox_text{
+                margin-bottom:2%;
+                background-color: white;
+                //border: 1px solid red;
+                text-align: left;
+                font-size: 15px;
+                font-weight:600;
+            }
+
+            label{
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+
+    .update_proj_button_div{
+        //border: 1px solid green;
+        width: 100%;
+        height:60px;
+        margin: 2% auto;
+
+        .update_proj_button_inner_div{
+            //border:1px solid violet;
+            width: 95%;
+            margin: 0% auto;
+            height: 100%;
+
+            .update_btn{
+                padding: 8px 40px 8px 40px;
+                font-size: 15px;
+                font-weight: 600;
+                border-radius: 10px;
+                background-color: rgb(7, 78, 170);
+                color: white;
+                border: 1px solid  rgb(7, 78, 170);
+                margin: 1% 0 0 85%;
+            }
+        }
+    }
+}
