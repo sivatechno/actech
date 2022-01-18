@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddAssociateProfile from  './AddAssociateProfile.component'
-import config from '../../config/config'
+import config from '../../config/config';
 
 
 const customStyles = {
@@ -61,7 +61,7 @@ function ViewAssociateProfile() {
                ariaHideApp={false}
                contentLabel="Example Modal"
            >
-               <AddAssociateProfile />
+               <AddAssociateProfile closeModel={setIsOpen} />
            </Modal>
            <div className="table_container">
                <table cellSpacing="10px" >

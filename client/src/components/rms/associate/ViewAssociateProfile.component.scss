@@ -6,7 +6,7 @@
 .viewmentor_container{
     margin: 30px 30px;
     height: 80%;
-    width: 99%;
+    width: 90%;
     position: fixed; 
     border-radius: 18px;   
     background-color: #fff;
@@ -17,7 +17,8 @@
     align-items: center;
     .view_title{
         height: 60px;
-        width: 180px;
+        width: 23%;
+     
         float: left;
         h3{
             color: royalblue;
@@ -87,4 +88,12 @@ table{
             padding-left: 5px;
         }
     }
+}
+@media only screen and (min-width:1200px) and (max-width:1500px)
+{
+table{
+  width:80% !important;
+  //background-color:red;
+}
+ 
 }
