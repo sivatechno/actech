@@ -22,6 +22,7 @@ import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';
+import Update_Proj from './pages/rms/Update_proj'
 import { LmsRoutes } from './components/layout/LmsRoutes';
 
 
@@ -85,6 +86,10 @@ function App({ children }) {
 
             <Route exact path="/projectprofileview" element={<ProtectedRoute />}>
               <Route exact path="/projectprofileview" element={<Projectprofileview />} />
+            </Route>
+
+            <Route exact path="/Update_proj" element={<Update_Proj/>}>
+              <Route exact path="/Update_proj" element={<Update_Proj/>} />
             </Route>
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>

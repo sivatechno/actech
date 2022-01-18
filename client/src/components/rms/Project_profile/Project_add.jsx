@@ -5,6 +5,9 @@ import {useState} from 'react';
 import Validate from './Validate';
 import axios from 'axios';
 import config from '../../config/config'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 // import { useForm } from 'react-hook-form';
 // import { yupResolver } from '@hookform/resolvers/yup';
 // import * as yup from 'yup';
@@ -47,7 +50,8 @@ import config from '../../config/config'
               enddate:enddate,
               checkbox:check,
             }).then((response) =>{ 
-                alert("created_SuccessFully 😇")       
+                notify(true); 
+                //alert('hai')     
             })
 
            
@@ -76,6 +80,8 @@ import config from '../../config/config'
               });
             //   console.log(values);
           };
+
+          const notify = ()=>{toast.success('Success',{position: toast.POSITION.BOTTOM_CENTER})}
         
         // const addproject=(event) =>{
         //     event.preventDefault();
