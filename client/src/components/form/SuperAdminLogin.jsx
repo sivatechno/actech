@@ -30,6 +30,9 @@ export default function SuperAdminLogin() {
           navigate('homepage');
 
         }
+        else{
+          console.log("token is not generated")
+        }
       } catch (error) {
         console.log("login error", error);
       }
