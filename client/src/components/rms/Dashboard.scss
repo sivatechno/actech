@@ -8,12 +8,14 @@
         width: 100%;
         .dashboard_inner_contain{
             border: 1px  solid transparent;
+            
             height: 100%;
             width: 95%;
             margin: 0% auto;
             .dashboard_inner_card_contain{
                 margin: 2.5% 3% 0 0;
-               //border: 1px solid green;
+               //border: 1px solid green; 
+              
                height: 27%;
                width: 100%;
                 display: flex;
@@ -25,7 +27,9 @@
                 }
     
             .dashboard_inner_cards{
+               // background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
                 border: 2px solid #2424;
+                background-color: #3B0A5C;
                 height: 100%;
                 width: 100%;
                 border-radius: 10px;
@@ -34,9 +38,11 @@
                 // box-shadow: 0px 4px 6px 1px rgba(65, 65, 65, 0.589);
                .dashboard_inner_side_head{
                    border-right: 1.5px solid #2424;
+                   background-color: #3B0A5C;
                    width: 60%;
                    margin: 5% 0 5% 0;
                    .dashboard_inner_side_heading{
+                       color: #ffff;
                        //border: 1px solid red;
                        font-size: 18px;
                        font-weight: bold;
@@ -46,10 +52,13 @@
                    }
                }
                .dashboard_inner_side_count{
-                   //border: 1px solid violet;
+                   border: 1px solid violet;
+ background-color: #A57EC0;
+                   color: white;
                    width: 40%;
                    height: 100%;
                    .dashboard_inner_side_heading_count{
+                     
                        //border: 1px solid red;
                        height: 15%;
                        width: 100%;

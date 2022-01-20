@@ -34,7 +34,7 @@ export default  function UpdateProfileViewMentee({closeModule}) {
 
     const [newFirstname, setNewFirstname] = useState();
        
-        const [newLastname, setNewLastname] = useState();
+    const [newLastname, setNewLastname] = useState();
 
     const [newCountry, setNewCountry] = useState();
 
