@@ -5,11 +5,11 @@ import Profileimage from '../../assets/images/profileimage.jpg'
 import { useState , useEffect ,useRef } from 'react';
 import axios from 'axios';
 import Associateprofilepopup from './AssociatePopup.jsx';
+import AssociateValidate from './AssociateValidate'
 import config from '../../config/config'
 
 export default function AddAssociateprofile({closeModel}) {
- const apiURL = config.API_URL;
-   
+  const apiURL = config.API_URL;  
   const [email,setEmail] = useState("");
 
   const [firstname,setFirstname] = useState("");

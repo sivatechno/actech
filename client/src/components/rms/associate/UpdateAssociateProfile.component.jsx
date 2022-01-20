@@ -7,10 +7,9 @@ import { useParams } from 'react-router-dom';
 import config from '../../config/config'
 
 export default function UpdateProfileViewMentor() {
+ const apiURL = config.API_URL;
 
-  const apiURL = config.API_URL;
-
-  const [profiledata, setProfileData] = useState([]);
+ const [profiledata, setProfileData] = useState([]);
 
   const [newFirstname,setNewFirstname] = useState("");
 

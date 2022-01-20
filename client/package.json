@@ -19,6 +19,7 @@
     "react-pro-sidebar": "^0.7.1",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.1.0",
     "sass": "^1.43.4",
     "styled-components": "^5.3.3",
     "use-dynamic-refs": "^1.0.0",
