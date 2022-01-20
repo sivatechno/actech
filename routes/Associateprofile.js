@@ -47,8 +47,8 @@ router.delete('/delete/:id', async (req, res) => {
 router.post('/create', async (req, res) => {
 
     try {
-        const { firstname, lastname, email, country, city, address, state, phonenumber,
-             postalcode,university,college,passedoutyear,degree,cgpa,qualification,company,designation,
+        const { firstname, lastname, email, country, city, address, state, phonenumber,dob,
+             postalcode,sslcboard,sslcyearpassedout,sslcschoolname,sslcmark,hscboard,hscschoolname,hscyearpassedout,hscmark,university,college,passedoutyear,degree,cgpa,qualification,company,designation,
              currentsalary,expectsalary,yearsofexp,expcertificate,companyaddress,institutename,
              coursename,duration,coursecertificate,instituteaddress,project,female,male,
              experience,fresher,primaryskill,secondaryskill} = req.body;
@@ -64,7 +64,16 @@ router.post('/create', async (req, res) => {
                 address:address,
                 state:state,
                 phonenumber:phonenumber,
+                dob:dob,
                 postalcode:postalcode,
+                sslcboard:sslcboard,
+                sslcyearpassedout:sslcyearpassedout,
+                sslcschoolname:sslcschoolname,
+                sslcmark:sslcmark,
+                hscboard:hscboard,
+                hscyearpassedout:hscyearpassedout,
+                hscschoolname:hscschoolname,
+                hscmark:hscmark,
                 university : university,
                 college:college,
                 passedoutyear:passedoutyear,
@@ -105,8 +114,8 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const { newFirstname, newLastname, newEmail, newCountry, newCity, newAddress, newState, newPhonenumber,
-            newPostalcode,newUniversity,newCollege,newPassedoutyear,newDegree,newCgpa,newQualification, newCompany, newDesignation,
+        const { newFirstname, newLastname, newEmail, newCountry, newCity, newAddress, newState, newPhonenumber,newDob,
+            newPostalcode,newSslcboard,newSslcyearpassedout,newSslcschoolname,newSslcmark,newHscboard,newHscschoolname,newHscyearpassedout,newHscmark,newUniversity,newCollege,newPassedoutyear,newDegree,newCgpa,newQualification, newCompany, newDesignation,
             newCurrentsalary, newExpectsalary, newYearsofexp, newExpcertificate, newCompanyaddress, newInstitutename,
             newCoursename, newDuration, newCoursecertificate, newInstituteaddress, newProject, newFemale, newMale,
             newExperience, newFresher, newPrimaryskill, newSecondaryskill} = req.body;
@@ -121,7 +130,16 @@ router.put('/update/:id', async (req, res) => {
                 address:newAddress,
                 state:newState,
                 phonenumber:newPhonenumber,
+                dob:newDob,
                 postalcode:newPostalcode,
+                sslcboard:newSslcboard,
+                sslcschoolname:newSslcschoolname,
+                sslcyearpassedout: newSslcyearpassedout,
+                sslcmark:newSslcmark,
+                hscboard:newHscboard,
+                hscschoolname:newHscschoolname,
+                hscyearpassedout:newHscyearpassedout,
+                hscmark:newHscmark,
                 university : newUniversity,
                 college:newCollege,
                 passedoutyear:newPassedoutyear,
