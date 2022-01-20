@@ -7,16 +7,26 @@
     background-color:white;
     border-radius:20px;
     margin:25px auto;
+    .closeIcon{
+        float: right;
+    }
+    .closeIcon:hover{
+        width: 25px;
+        height: 25px;
+        background-color: red;
+        color: white;
+    }
     .profile_view{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5rem;
+            margin-left: 100px;
+            margin-bottom: 20px;
+        .profile_align{
             height: 150px;
             width: 150px;
-            border: solid 2px #2323;
-            // box-shadow: 3px 3px 3px 3px;
-            border-radius: 5rem;
-            margin: 20px 0 0 70px;
-        .profile_align{
-            height: 145px;
-            width: 145px;
+            border:2px solid #0c50a3 ;
             background-position: center;
             background-repeat: no-repeat;
             background-image: center;
@@ -27,8 +37,9 @@
     .Tabitems{
         display: flex;
         margin: 5px 20px;
-       .Certificatetab,  .Experiencetab,  .Educationtab , .profiletab{
-            background-color: rgb(43, 173, 233);
+       .Certificatetab,.Experiencetab,.Educationtab ,.profiletab{
+            background-color: #0c50a3;
+            color: #ffffff;
             float: left;
             border: none;
             outline: none;
@@ -41,9 +52,11 @@
             border-radius: 5px;
         }
     }
-    .Experiencetab:hover,.Certificatetab:hover,.Educationtab:hover,.profiletab:hover
+    .Experiencetabbg,.Certificatetabbg,.Educationtabbg,.profiletabbg
     {
-        background-color: rgb(49, 127, 245);
+        color:#0c50a3;
+        background-color:white;
+        border: 2px solid #0c50a3;
         width: 600px; 
     }
     .toptxtfeild{
@@ -52,12 +65,12 @@
         resize: none;
         border: none ;
     }
-    .textfeild-container{
+    .associateprofile-textfeild-container{
         text-align: left;
-        i{
+       .associateprofile-icons{
             margin: 13px 15px;
         }
-        input[type=text],input[type=number],input[type=password],input[type=email]{
+        input[type=text],input[type=date],input[type=number],input[type=password],input[type=email]{
             height:50px;
             width: 300px;
             border:solid 2px #2424;
@@ -66,49 +79,103 @@
             font-size: 16px; 
             margin-bottom: 20px;
         }
-        .feild{
+        .associateprofile-feild{
             position: relative;
             margin-top: 10px;
         }
-        .inputfeilds{
+        .associateprofile-inputfeilds{
             display: flex;
             justify-content: space-around;
             margin: 10px;
         }
-        .left-inputfeilds i,.right-inputfeilds i{
+        .associateprofile-left-inputfeilds .associateprofile-icons,
+        .associateprofile-right-inputfeilds .associateprofile-icons{
             position: absolute;
         }
-        .radiobutton{
-            margin: 15px 60px;
+        .associateprofile-left-inputfeilds-certifyuploadfeildleft, .associateprofile-right-inputfeilds-certifyuploadfeildright,
+        .associateprofile-left-inputfeilds-Avatarfeild{
+           margin-right: 140px;
+           input[type=file]{
+              display: none;
+           }
+           .imageupload{
+            height:50px;
+            border:solid 2px #2424;
+            border-radius: 20px;
+            padding: 10px;
+            color: rgb(141, 137, 137);
+           }
+           .imagefeild{
+            position: relative;
+            margin-top: 20px;
+           }
+        }
+         .certifyupoadinputfeilds{
+         display: flex;
+         justify-content: space-between;
+        }
+        .certifyuploadfeildright{margin-right: 220px;}
+        .associateprofile-right-inputfeilds-genderradiobutton,.associateprofile-left-inputfeilds-checkboxselective{
+            margin: 25px 0px;
             display: flex;
         }
-        .Qualificationlbl{
-            margin-right: 15px;
+        .radiomalebtn{margin-left: 70px;}
+        .checkfresherbtn{margin-left: 40px;}
+        .checkbtn-txt, .radiobtn-txt{ margin-right: 30px;}
+        .associateprofile-inputfeilds-checkbox{
+            margin-top: 50px;
+            margin-left: 105px;
         }
         label{
             font-size: 17px;
-        }
-        .radiobtn-txt,.genderlbl{ margin-right: 15px;}
-        .btn{
+        } 
+        .buttonsection{
             margin: 30px 30px;
             width: 90%;
             display: flex;
             justify-content: space-between;
         }
-        .nexticon{
+       .addcertificate,.addeducation,.backicon,.nexticon,.cancelicon{
             margin-top: 10px;
             float: right;
-            font-size: 25px;
-            color: rgb(40, 96, 250);
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #0c50a3;
+            border-radius: 20px;
+            width: 80px;
+            height: 35px;
+            border: none;
         }
+        .removeeducation,.removecertificate{ color: #ffffff;
+            background-color: #0c50a3;
+            border-radius: 20px;
+            width: 80px;
+            height: 35px;
+            border: none;
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .Hscpart,.Sslcpart{
+        border:2px solid rgb(240, 240, 243);
+        border-radius: 15px;
+        margin: 25px 5px;
+        }
+        .addcertificate,.addeducation{margin: 20px 80px 20px 0px;}
+        .cancelicon{margin-right:20px;
+            float: none;}
+        .Addprofile:hover,.backicon:hover,.nexticon:hover,.cancelicon:hover{height: 40px;
+            width: 90px;
+            color:#0c50a3;
+            background-color:white;
+            border: 2px solid #0c50a3;
+            }
         .Addprofile{
             width: 100px;
-            height: 40px;
+            height: 35px;
             border-radius: 20px;
             font-size: 16px;
             color: white;
-            background-color: rgb(40, 96, 250);;
-        }    
-   
+            background-color: #0c50a3;
+        }       
     }
 }
