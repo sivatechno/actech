@@ -6,7 +6,7 @@
 .viewmentor_container{
   margin: 30px 30px; 
   height: 80%;
-  width: 80%;
+  width: 90%;
   position: fixed;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -18,6 +18,8 @@
     margin-right: 115px;
     position: relative;
     align-self: center;
+    // border:solid 2px black;
+    width:88%;
    .view_title{
       height: 60px;
       width:180px;
