@@ -233,7 +233,7 @@ export default function AddMentee({closeModule}) {
                          </div>
                          <div className="buttons">
                              <input type="button" className="cancel" value="cancel" onClick={()=>closeModule(false)} />
-                             <input type="button" className="Addstaff" value="Addstaff" onClick={addMentee}/>
+                             <input type="button" className="Addstaff" value="Add student" onClick={addMentee}/>
                         </div> 
                     </div>
                  </div>
