@@ -95,7 +95,7 @@ async (req, res) => {
             await Mentors.create({
                 username: username,
                 password: passwordHash,
-                //role: role,
+                role: role,
                 email: email,
                 phonenumber: phonenumber,
                 firstname: firstname,

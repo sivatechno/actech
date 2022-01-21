@@ -5,7 +5,7 @@
 }
 .profileviewmentor_container{
     height: 100%;
-    // width: 100%;
+     //width: 100%;
     // position: absolute;
 
     .viewpart_left{
@@ -14,6 +14,7 @@
         border-right: solid 1px #232323;
         margin: 10px 0 0 0;
         float: left;
+       
         .profile_view{
             height: 150px;
             width: 150px;
@@ -84,7 +85,7 @@
             height: 350px;
             width: 80%;
             //border: solid 2px #242424;
-            position: relative;
+            position:relative;
             padding-top: 10px;
             .field{
                 height: 60px;

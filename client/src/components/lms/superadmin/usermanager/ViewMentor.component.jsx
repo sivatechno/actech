@@ -9,6 +9,9 @@ import AddMentor from './AddMentor.component';
 import UpdateProfileViewMentor from './UpdateProfileMentor.component';
 import DeletePopup from './DeletePopup.component'; 
 import config from '../../../config/config';
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 const customStyles = {
     content: {
@@ -74,6 +77,8 @@ function ViewMentor() {
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
+    const notify = ()=>{toast.error('Deleted Successfully',{position: toast.POSITION.TOP_CENTER})}
+
     function openModal() {
         setIsOpen(true);
     }
@@ -89,6 +94,7 @@ function ViewMentor() {
             response.json("deleted successfully");
             history.push("/viewmentors")
         });
+        notify(true);
     };
 
     useEffect(() => {
@@ -140,8 +146,9 @@ function ViewMentor() {
                                 <td className="emailcol">{value.email}</td>
                                 <td>{value.role}</td>
                                 <td>{value.phonenumber}</td>
+                                
                                 <td>
-                                    {/* <Link to={`/editprofileviewmentor/${value.id}`}> onClick={openModal} */}
+                                    {/* <Link to={`/editprofileviewmentor/${value.id}`}>  */}
                                         <div className="table_icons"><AiIcons.GrEdit className="icons_align" onClick={()=>{setEditpopup(true);}}  /></div>
                                         <Modal
                                              isOpen={editpopup}
@@ -153,7 +160,7 @@ function ViewMentor() {
                                         </Modal>
                                     {/* </Link> */}
                                     {/* <Link to={"/"}> */}
-                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
+                                        {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
                                             
                                         /></div>
                                         <Modal
@@ -163,9 +170,9 @@ function ViewMentor() {
                                             contentLabel="Example Modal"
                                             >                
                                             {  <DeletePopup closeModule={setDeletepopup} />}
-                                        </Modal>
-                                        {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"  onClick={(e) => deleteMentor(value.id, e)} /></div>
-                                     </Link> */}
+                                        </Modal> */}
+                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"  onClick={(e) => deleteMentor(value.id, e)} /></div>
+                                     {/* </Link> */}
                                     <Link to={`/profileviewmentor/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
                                 </td>
                             </tr>
