@@ -37,7 +37,43 @@ module.exports = (sequelize , DataTypes) => {
             type: DataTypes.STRING,
            
         },
+        dob:{
+            type: DataTypes.STRING,
+                       
+        },
         phonenumber:{
+            type: DataTypes.STRING,
+           
+        },
+        sslcboard:{
+            type: DataTypes.STRING,
+           
+        },
+        sslcschoolname:{
+            type: DataTypes.STRING,
+           
+        },
+        sslcyearpassedout:{
+            type: DataTypes.STRING,
+           
+        },
+        sslcmark:{
+            type: DataTypes.STRING,
+           
+        },
+        hscboard:{
+            type: DataTypes.STRING,
+           
+        },
+        hscschoolname:{
+            type: DataTypes.STRING,
+           
+        },
+        hscyearpassedout:{
+            type: DataTypes.STRING,
+           
+        },
+        hscmark:{
             type: DataTypes.STRING,
            
         },
@@ -94,6 +130,10 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         companyaddress:{
+            type: DataTypes.STRING,
+
+        },
+        institutename:{
             type: DataTypes.STRING,
 
         },

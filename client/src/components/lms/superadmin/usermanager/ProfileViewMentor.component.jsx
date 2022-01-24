@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileViewMentor.component.scss'
 import * as AiIcons from 'react-icons/all';
-// import Photo from '../../assets/images/profile.png';
+import Photo from '../../../assets/images/profile.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import config from '../../../config/config';
@@ -28,7 +28,7 @@ export default function ProfileViewMentor() {
                     <div>
                         <div className="viewpart_left">
                             <div className="profile_view">
-                                {/* <img src={Photo} alt="" className="profile_align" /> */}
+                                <img src={Photo} alt="" className="profile_align" />
                             </div>
                             <div className="about_profile">
                                 <div className="about_box_1">

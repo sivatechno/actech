@@ -68,10 +68,10 @@ function ViewClient(){
 
                                 <td>Bharath</td>
                                 <td>Bhaarath...</td>
-                                <td></td>
+                                <td>Actech</td>
                                 <td>2022-03-13</td>
                                 <td >2022-04-12</td>
-                                <td></td>
+                                <td>345678789</td>
                                 <td className="proj_table_icons"><AiIcons.MdEdit className="prof_edit_icon" /> <AiIcons.FaTrash className="prof_tash_icon" /></td>
 
                             </tr>
