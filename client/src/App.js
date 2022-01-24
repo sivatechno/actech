@@ -97,7 +97,7 @@ function App({ children }) {
             </Route>
             <Route exact path="/Update_proj" element={<Update_Proj/>}>
               <Route exact path="/Update_proj" element={<Update_Proj/>} />
-            </Route>
+            </Route>    
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
               <Route exact path="/ViewAssociate" element={<Viewassociateprofile />} />
