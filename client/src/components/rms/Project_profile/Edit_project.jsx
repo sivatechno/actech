@@ -59,7 +59,7 @@ function Edit_project({ Editclosepopup }) {
                          
                  <div className="edit_project_inner_body">
                  <div className="edit_project_content" >
-                          <p className="edit_project_text">Client_name*</p><br />
+                          <p className="edit_project_text">Client name*</p><br />
                           <div className="edit_project_field_contain">
                       <div className="edit_project_feild">
                           <i><AiIcons.FaRegUserCircle className="icons"/></i>
@@ -71,7 +71,7 @@ function Edit_project({ Editclosepopup }) {
                       </div>
                       
                       <div className="edit_project_content" >
-                          <p className="edit_project_text">Project_name*</p><br />
+                          <p className="edit_project_text">Project name*</p><br />
                           <div className="edit_project_field_contain">
                       <div className="edit_project_feild">
                           <i><AiIcons.AiOutlineFundProjectionScreen className="icons"/></i>
@@ -85,7 +85,7 @@ function Edit_project({ Editclosepopup }) {
                  
                  <div className="edit_project_inner_body">
                  <div className="edit_project_content" >
-                         <label > <p className="edit_project_text">Start_Date*</p> </label><br />
+                         <label > <p className="edit_project_text">Start Date*</p> </label><br />
                           <div className="edit_project_field_contain">
                       <div className="edit_project_feild">
                           <input type="date" className="textfield" placeholder='enter date' required name='startdate'  />
@@ -94,7 +94,7 @@ function Edit_project({ Editclosepopup }) {
     
                       </div>
                       <div className="edit_project_content" >
-                         <label > <p className="edit_project_text">End_Date*</p></label><br />
+                         <label > <p className="edit_project_text">End Date*</p></label><br />
                           <div className="edit_project_field_contain">
                       <div className="edit_project_feild">
                           <input type="date" className="textfield" placeholder='enter date' required  name='enddate'  />
@@ -107,7 +107,7 @@ function Edit_project({ Editclosepopup }) {
 
                  <div className="edit_project_inner_body">
                  <div className="edit_project_content" >
-                          <p className="edit_project_text">Client_E-Mail*</p><br />
+                          <p className="edit_project_text">Client E-Mail*</p><br />
                           <div className="edit_project_field_contain">
                       <div className="edit_project_feild">
                           <i><AiIcons.SiGmail className="icons"/></i>
@@ -117,7 +117,7 @@ function Edit_project({ Editclosepopup }) {
                       
                       </div>
                       <div className='proj_add_checkbox_contain'>
-                     <p className="add_project_checkbox_text">Project_Status</p>
+                     <p className="add_project_checkbox_text">Project Status</p>
                         <input type="checkbox" />
                         <label htmlFor="Enable">Enable</label>
                      </div>

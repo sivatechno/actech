@@ -17,6 +17,7 @@
       margin-top: 1.7%;
       //display:flex;
       color: #3253e2;
+      cursor: default;
       //border: 1px solid red;
     }
 
@@ -31,6 +32,7 @@
       width: 14%;
       height: 80%;
       margin-top: 1%;
+      cursor: pointer;
     }
 
     .add_proj_btn:hover{
@@ -62,6 +64,7 @@
       .project_profile_table_head{
        border:1px solid rgb(7, 78, 170);
         padding-top: 100px;
+        
         //border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
 
         th{
@@ -69,12 +72,14 @@
           font-size: 16px;
           padding:2% 4.5% 1% 0;
           background-color:rgb(7, 78, 170) ;
+          cursor:default;
         }
 
       }
       
       .project_profile_table_body{
        border: 1px solid #2424;
+       cursor: default;
 
         td{
          padding:1% 4.5% 1% 0;
@@ -84,6 +89,7 @@
           margin: 0 6% 0 0;
           color: blue;
           font-size: 18px;
+          cursor: pointer;
         }
 
         .prof_tash_icon,.prof_eye_icon{
@@ -93,6 +99,7 @@
         .prof_tash_icon{
           color: red;
           font-size: 14px;
+          cursor: pointer;
         }
 
       }
@@ -103,7 +110,7 @@
       background-color: rgba(172, 172, 172, 0.178);
       border-left: 2px solid rgb(7, 78, 170);
       border-right: 2.5px solid rgb(7, 78, 170);
-      font-weight:600;
+      font-weight:bold;
     }
 
   }
@@ -124,6 +131,7 @@ nav{
       list-style-type: none;
       margin: 1% 0 0 5px;
       padding: 0 10px 0 10px;
+      cursor: pointer;
     }
     
     .page-link{

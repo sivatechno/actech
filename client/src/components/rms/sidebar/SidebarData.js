@@ -3,7 +3,7 @@ import * as AiIcons  from "react-icons/all";
 
 export const SidebarData = [
   {
-    title:'RMS_DASHBOARD',
+    title:'DASHBOARD',
     path:'/Dashboardview',
   },
     {
@@ -21,8 +21,13 @@ export const SidebarData = [
       path:'/Projectprofileview',
       icon:<AiIcons.BiCodeBlock/>,
     },
+    {
+      title: 'Project Mapping',
+      path:'',
+      icon:<AiIcons.GrMapLocation/>,
+    },
      {
-      title: 'Resource Blocking',
+      title: 'Resource Handling',
       path:'',
       icon:<AiIcons.MdOutlinePersonOff/>,
       iconClosed:<AiIcons.AiFillCaretDown/> ,
@@ -30,12 +35,12 @@ export const SidebarData = [
       subNav:[
         {
           title: 'Hard Block',
-          path:'/Project_profile',
+          path:'/HardBlock',
           icon:<AiIcons.BsLockFill/>,
         },
         {
           title: 'Soft Block',
-          path:'/Project_profile',
+          path:'/SoftBlock',
           icon:<AiIcons.BsLock/>,
         },
       ]
@@ -43,6 +48,6 @@ export const SidebarData = [
     {
       title: 'Report',
       path:'',
-      icon:<AiIcons.MdReportGmailerrorred/>,
+      icon:<AiIcons.GoReport/>,
     },
 ]

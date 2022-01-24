@@ -10,7 +10,7 @@ import SubMenu from './SubMenu'
 
 const SidebarNav = styled.div`
 width:250px;
-height:cal(100% - 70px);
+height:calc(100% - 70px);
 display:flex;
 justify-content:center;
 

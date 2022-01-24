@@ -18,7 +18,7 @@ toast.configure()
 
 const customStyles = {
     content: {
-        top: '55%',
+        top: '56%',
         left: '58%',
         right: 'auto',
         bottom: 'auto',
@@ -27,9 +27,9 @@ const customStyles = {
         height:'83%',
         width:'60%',
         background:'transparent',
-        border:'solid 1px transparent',
+        border:'1px solid transparent',
         outline:'none',
-        overflow:'hidden'
+        overflow:'hidden',
 
     },
 };
@@ -58,9 +58,9 @@ function Project_profile_view() {
 
     }, []);
 
-    const [popup,popupcome] = useState(false)
-    const [Deletepopup,Deletepopupcome] = useState(false)
-    const [Editpopup,EditpopupCome] = useState(false)
+    const [popup, popupcome] = useState(false)
+    const [Deletepopup, Deletepopupcome] = useState(false)
+    const [Editpopup, EditpopupCome] = useState(false)
 
     const notify = ()=>{toast.error('Deleted',{position: toast.POSITION.TOP_CENTER})}
 
@@ -136,7 +136,7 @@ function Project_profile_view() {
                     </div>
                 </div>
 
-                {Deletepopup &&<Delete closeDeletePopup={Deletepopupcome}/>}
+                {/* {Deletepopup &&<Delete closeDeletePopup={Deletepopupcome}/>} */}
 
             </div>
 

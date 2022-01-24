@@ -25,6 +25,7 @@ export default function SuperAdminLogin() {
       // response.header("auth",JSON.stringify(response.data));
       try {
         if (response != null || response != undefined) {
+          // response.setHeader("auth" , JSON.stringify(response.data.token));
           localStorage.setItem("auth", JSON.stringify(response.data.token));
           // console.log(response);
           navigate('homepage');
