@@ -17,7 +17,6 @@ import LoginProtect from './LoginProtect';
 import HomePage from './components/frontpage/HomePage';
 import Dashboard from './pages/rms/Dashboardview';
 import Viewassociateprofile from './pages/rms/ViewAssociate';
-import HardBlock from './pages/rms/HardBlock';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'

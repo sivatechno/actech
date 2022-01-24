@@ -16,8 +16,8 @@ const customStyles = {
         height:'80%',
         width:'70%',
         background:'transparent',
-       // border:'none',
-        //outline:'none',
+        border:'none',
+        outline:'none',
     },
 
 };
@@ -31,7 +31,7 @@ function ViewClient(){
         <div>
 
             <div className="client_profile_top">
-                <p className="client_profile_headind_text">Client_View</p>
+                <p className="client_profile_headind_text">Client View</p>
                 <button className="add_client_btn" onClick={()=>{setIsOpen(true);}} >ADD Client</button>
             </div>
 
@@ -72,7 +72,7 @@ function ViewClient(){
                                 <td>2022-03-13</td>
                                 <td >2022-04-12</td>
                                 <td>345678789</td>
-                                <td className="proj_table_icons"><AiIcons.MdEdit className="prof_edit_icon" /> <AiIcons.FaTrash className="prof_tash_icon" /></td>
+                                <td className="client_table_icons"><AiIcons.MdEdit className="client_edit_icon" /> <AiIcons.FaTrash className="client_tash_icon" /></td>
 
                             </tr>
 

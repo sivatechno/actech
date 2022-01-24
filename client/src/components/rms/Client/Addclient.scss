@@ -44,6 +44,8 @@
                 font-size: 18px;
                 font-weight: bold;
                 background-color: white;
+                cursor: default;
+                color:  #3253e2;
             }
             .add_client_close{
                 //border: 1px solid red;
@@ -52,6 +54,7 @@
                 font-size: 18px;
                 color: red;
                 background-color: white;
+                cursor: pointer;
             }
         }
         .add_client_inner_body{
@@ -62,7 +65,7 @@
             justify-content: space-between;
             background-color: white;
             .add_div_client{
-              ///  border: 10px solid red;
+               border: 10px solid transparent;
                 // height: 200px;
             }
 
@@ -78,6 +81,7 @@
                     text-align: left;
                     font-size: 15px;
                     font-weight:600;
+                    cursor: default;
                    
                 }
                 .add_client_field_contain{
@@ -101,6 +105,7 @@
                         padding-left: 4%;
                         background-color: white;
                         font-size: 16px; 
+
                     }    
                 }
             }
@@ -108,41 +113,35 @@
         }
         .add_client_buttons{
             background-color: white;
-            //border: 1px solid greenyellow;
+            border: 1px solid greenyellow;
             margin: 6% 0 0 0;
             padding: 0 0 0 40%;
             height: 10%;
+            display: flex;
+            width: 100%;
             .client_cancel_btn,.client_add_btn{
                 font-size: 15px;
                 font-weight: 500;
                 border-radius: 10px;
+                width: 40%;
+                height: 45px;
             }
             .client_cancel_btn{
                 border: 2px solid rgb(14, 152, 216);
                 background-color: white;
-                padding: 1.5% 6% 1.5% 6%;
+                //padding: 1.5% 6% 1.5% 6%;
                 color: rgb(14, 152, 216);
-                margin: 0 0 0 38%;           
-             }
-             .client_cancel_btn:hover{
-                 background-color: rgb(14, 152, 216);
-                 color:rgb(218, 185, 185);
-                 border: solid 2px #fff;
-                 transition: 0.45;        
+                margin: 0 0 0 38%; 
+                cursor: pointer;          
              }
         
             .client_add_btn{
                 border: 2px solid white;
-                padding: 1.5% 6% 1.5% 6%;
+               // padding: 1.5% 6% 1.5% 6%;
                 background-color: rgb(14, 152, 216);
                 color: white;
                 margin: 0 0 0 5%;
-            }
-            .client_add_btn:hover{
-                background-color:#fff;
-                color: rgb(14, 152, 216);
-                border: solid 2px rgb(14,152,216);
-                transition: 0.4s;
+                cursor: pointer;
             }
         }
     }
