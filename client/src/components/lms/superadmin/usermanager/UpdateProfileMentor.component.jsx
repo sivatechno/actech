@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './ProfileViewMentor.component.scss'
+import './UpdateProfileMentor.scss'
 import * as AiIcons from 'react-icons/all';
 import image from '../../../assets/images/updatementor.png';
 
@@ -109,7 +109,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                     <div className="headercontent">
                         <img src={image} alt="" className="profile_align" />
                         <p className="member_align">Member Information</p>
-                        < AiIcons.GrClose className="close" onClick={() => closeModule(false)} />
+                        < AiIcons.VscChromeClose className="close" onClick={() => closeModule(false)} />
 
                     </div> <hr />
 
@@ -130,22 +130,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                                 </div>
                             </div>
                         </div>
-                        <div className="inputfeilds">
-                            <div className="left-inputfeilds" >
-                                <label>Technology</label><br />
-                                <div className="feild">
-                                    <i><AiIcons.GrTechnology className="icons" /></i>
-                                    <input type="text" className="textfield" placeholder="technology" /><br />
-                                </div>
-                            </div>
-                            <div className="right-inputfeilds">
-                                <label>Company</label><br />
-                                <div className="feild">
-                                    <i><AiIcons.HiOutlineOfficeBuilding className="icons" /></i>
-                                    <input type="text" className="textfield" placeholder="company" /><br />
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div className="inputfeilds">
                             <div className="left-inputfeilds" >
                                 <label>Email</label><br />
@@ -266,3 +251,4 @@ export default function UpdateProfileViewMentor({closeModule}) {
 
 
 }
+

@@ -56,7 +56,7 @@ function Dashboard() {
                             <Modal isOpen={associatemodalIsOpen}
                                 style={customStyles}
                                 contentLabel="Example Modal" >
-                                    {<AssociateView CloseModal={associatesetModal}/>}
+                                     {<AssociateView CloseModal={associatesetModal}/>}
                                
                             </Modal>  
             <div className='dashboard_overall-contain'>

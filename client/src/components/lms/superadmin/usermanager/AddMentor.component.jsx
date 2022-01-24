@@ -58,6 +58,15 @@ export default function AddMentor({ closeModule }) {
 
     const [preview, setPreview] = useState(placeholder);
 
+    
+    const [role,setRole]=useState("Role");
+
+    // const onValueChange =(e)=> {
+    //     this.setRole({
+    //       selectedOption: e.target.value,
+    //     });
+    //   }
+
 
 
 
@@ -78,7 +87,8 @@ export default function AddMentor({ closeModule }) {
                 address: address,
                 state: state,
                 phonenumber: phonenumber,
-                postalcode: postalcode
+                postalcode: postalcode,
+                role:role,
 
             }).then((response) => {
             })
@@ -229,10 +239,9 @@ export default function AddMentor({ closeModule }) {
                         <div className="accesslvl-container">
                             <p className="accesslvltxt">ACCESS LEVEL</p>
                             <div className="radiobutton">
-                                <input type="radio" className="radiobtnstaff" name="radio" />
-                                <label className="checkbox-label">ADMIN</label><br />
-                                <input type="radio" className="radiobtnadmin" name="radio" />
-                                <label className="checkbox-label">STAFF</label>
+                                
+                                <input type="radio" value={role} name="role"checked={role == "admin"}className="radio-btn"onClick={() => {setRole("admin");}}/>   ADMIN <br/>
+                                <input type="radio"  value={role} name="role" checked={role == "staff"} className="radio-btn"onClick={() => {setRole("staff");}}/>   STAFF
                             </div>
                             <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
                             <input type="checkbox" className="checkbox" />

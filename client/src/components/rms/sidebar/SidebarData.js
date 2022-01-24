@@ -35,7 +35,7 @@ export const SidebarData = [
         },
         {
           title: 'Soft Block',
-          path:'/Project_profile',
+          path:'/SoftBlock',
           icon:<AiIcons.BsLock/>,
         },
       ]

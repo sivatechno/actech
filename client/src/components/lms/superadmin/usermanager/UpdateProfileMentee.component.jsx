@@ -34,7 +34,7 @@ export default  function UpdateProfileViewMentee({closeModule}) {
 
     const [newFirstname, setNewFirstname] = useState();
        
-        const [newLastname, setNewLastname] = useState();
+    const [newLastname, setNewLastname] = useState();
 
     const [newCountry, setNewCountry] = useState();
 
@@ -111,7 +111,7 @@ export default  function UpdateProfileViewMentee({closeModule}) {
                             <div className="headercontent">
                             <img src={image} alt="" className="profile_align" />
                             <p className="member_align">Member Information</p>
-                            < AiIcons.GrClose className="close" onClick={()=>closeModule(false)}/>   
+                            < AiIcons.VscChromeClose className="close" onClick={()=>closeModule(false)}/>   
                             
                 </div> <hr />
                
