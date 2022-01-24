@@ -25,10 +25,14 @@ export default function SuperAdminLogin() {
       // response.header("auth",JSON.stringify(response.data));
       try {
         if (response != null || response != undefined) {
+          // response.setHeader("auth" , JSON.stringify(response.data.token));
           localStorage.setItem("auth", JSON.stringify(response.data.token));
           // console.log(response);
           navigate('homepage');
 
+        }
+        else{
+          console.log("token is not generated")
         }
       } catch (error) {
         console.log("login error", error);

@@ -9,6 +9,9 @@ import AddMentee from './AddMentee.component';
 import config from '../../../config/config';
 import UpdateProfileViewMentee from './UpdateProfileMentee.component'
 import DeletePopupMentee from './DeletePopupMentee.component';
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 
 const customStyles = {
@@ -72,6 +75,8 @@ function ViewMentee() {
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
+    const notify = ()=>{toast.error('Deleted Successfully',{position: toast.POSITION.TOP_CENTER})}
+
     function openModal() {
         setIsOpen(true);
     }
@@ -86,6 +91,7 @@ function ViewMentee() {
             response.json("deleted successfully");
             history.push("/viewmentee");
         });
+        notify(true);
     };
 
     useEffect(() => {
@@ -147,12 +153,12 @@ function ViewMentee() {
                                         </Modal>
                                     {/* </Link> */}
                                     
-                                    {/* <Link to={"/viewmentee"}>
+                                    {/* <Link to={"/viewmentee"}> */}
                                         <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
                                             onClick={(e) => deleteMentee(value.id, e)}
                                         /></div>
-                                    </Link> */}
-                                    <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
+                                    {/* </Link> */}
+                                    {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
                                             
                                             /></div>
                                             <Modal
@@ -162,7 +168,7 @@ function ViewMentee() {
                                                 contentLabel="Example Modal"
                                                 >                
                                                 {  <DeletePopupMentee closeModule={setDeletepopup} />}
-                                            </Modal>
+                                            </Modal> */}
                                     <Link to={`/profileviewmentee/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
                                 </td>
                             </tr>
