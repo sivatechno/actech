@@ -30,7 +30,7 @@ export const SidebarData = [
       subNav:[
         {
           title: 'Hard Block',
-          path:'/Project_profile',
+          path:'/HardBlock',
           icon:<AiIcons.BsLockFill/>,
         },
         {

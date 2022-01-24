@@ -7,6 +7,7 @@ import ProfileViewMentee from './pages/lms/ProfileViewMentee';
 import ProfileViewMentor from './pages/lms/ProfileViewMentor';
 import ViewMentee from './pages/lms/ViewMentee';
 import ViewCourse from './pages/lms/ViewCourse';
+import HardBlock from './pages/rms/HardBlock';
 import UpdateProfileViewMentor from './components/lms/superadmin/usermanager/UpdateProfileMentor.component';
 // import AdminLayout from './components/layout/AdminLayout';
 import ViewMentor from './pages/lms/ViewMentor';
@@ -97,6 +98,10 @@ function App({ children }) {
             </Route>
             <Route exact path="/ClientView" element={<ProtectedRoute />}>
               <Route exact path="/ClientView" element={<ClientView />} />
+            </Route>
+            
+            <Route exact path="/HardBlock" element={<ProtectedRoute />}>
+              <Route exact path="/HardBlock" element={<HardBlock />} />
             </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>
