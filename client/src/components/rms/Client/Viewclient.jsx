@@ -14,10 +14,10 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         height:'80%',
-        width:'60%',
+        width:'70%',
         background:'transparent',
-        border:'none',
-        outline:'none',
+       // border:'none',
+        //outline:'none',
     },
 
 };

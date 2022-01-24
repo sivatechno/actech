@@ -90,6 +90,7 @@ export default function UpdateProfileViewMentor() {
             setProfileData(response.data);
         });
     }, []);
+    
     const update = (e) => {
         axios.put(`http://localhost:5000/associateprofile/update/${id}`,
             {

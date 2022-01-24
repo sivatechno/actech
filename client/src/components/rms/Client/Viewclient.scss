@@ -2,9 +2,9 @@
 
 .client_profile_top{
   //border: 1px solid #2424;
-  width: 97%;
+  width: 100%;
   height: 50px;
-  margin: 2.5% 0 0 1.5%;
+  margin: 2.5% 0 0 0;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 0px;
@@ -38,32 +38,33 @@
 
 
 .client_profile_table_container{
-  border: 1px solid transparent;
-  width: 97%;
+  border: 1px solid green;
+  width: 100%;
   height: 500px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  margin: 0 0 0 1.5%;
+  //margin: 0 0 0 1.5%;
   box-shadow: white 0px 2px 8px 0px;
    
   .client_profile_table{
-    //border: 1px solid red;
+    outline: 1px solid red;
     border-collapse: collapse;
     text-align: center;
     width: 90%;
     margin:2% 0 0 4.5% ;
 
     .client_profile_table_head{
-      border:1px solid #2424;
+      border:1px solid rgb(7, 78, 170);
       padding-top: 100px;
-      border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+      //border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
 
       th{
-        color: #242424;
+        color: white;
         font-size: 16px;
         padding:2% 4.5% 1% 0;
+        background-color:rgb(7, 78, 170) ;
       }
     }
       
@@ -72,6 +73,10 @@
 
       td{
         padding:1% 4.5% 1% 0;
+        border: 1px solid green;
+        }
+        .proj_table_icons{
+          display: flex;
         }
 
       .prof_edit_icon{
