@@ -76,7 +76,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                        <div className='dashboard_inner_cards' onClick={()=>{associatesetModal(true);}} >
+                        <div className='associate_dashboard_inner_cards' onClick={()=>{associatesetModal(true);}} >
                             <div className='dashboard_inner_side_head'>
                                 <p className='dashboard_inner_side_heading'>ASSOCIATE_INFO</p>
                             </div>
