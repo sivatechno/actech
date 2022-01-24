@@ -64,7 +64,7 @@ function Dashboard() {
                     <div className='dashboard_inner_card_contain'>
                         <div className='dashboard_inner_cards'  onClick={()=>{projectsetModal(true);}}  >
                             <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>PROJECT_INFO</p>
+                                <p className='dashboard_inner_side_heading'>PROJECT INFO</p>
                             </div>
                             <div className='dashboard_inner_side_count'>
                                 <div className='dashboard_inner_side_heading_count'>
@@ -78,7 +78,7 @@ function Dashboard() {
                         </div>
                         <div className='dashboard_inner_cards' onClick={()=>{associatesetModal(true);}} >
                             <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>ASSOCIATE_INFO</p>
+                                <p className='dashboard_inner_side_heading'>ASSOCIATE INFO</p>
                             </div>
                             <div className='dashboard_inner_side_count'>
                                 <div className='dashboard_inner_side_heading_count'>
@@ -92,7 +92,7 @@ function Dashboard() {
                         </div>
                         <div className='dashboard_inner_cards'>
                             <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>ALLOCATED_INFO</p>
+                                <p className='dashboard_inner_side_heading'>ALLOCATED INFO</p>
                             </div>
                             <div className='dashboard_inner_side_count'>
                                 <div className='dashboard_inner_side_heading_count'>
@@ -123,7 +123,7 @@ function Dashboard() {
                         </div>
                         <div className='dashboard_inner_cards'>
                             <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>BILLABLE_INFO</p>
+                                <p className='dashboard_inner_side_heading'>BILLABLE INFO</p>
                             </div>
                             <div className='dashboard_inner_side_count'>
                                 <div className='dashboard_inner_side_heading_count'>
