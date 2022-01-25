@@ -1,12 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .viewhardblockcontainer{
-   // border: 2px solid blue;
+    //border: 2px solid blue;
     // margin-top: 4%;
-    height: 90vh;
+    height: calc(100vh - 80px);;
     width: 100%;
     overflow: hidden;
     .viewhardblockheader{
@@ -46,14 +41,18 @@
            //border: 1px solid green;
            margin: 0 auto;
            width: 80%;
+           border-collapse: collapse;
+
+         
+
 //padding-top: 500px;
            thead{
-               border: 1.5px solid #2424;
+               //border: 1.5px solid #2424;
                height: 65px;
                text-align: center;
                background-color: rgb(7, 78, 170);
                color: #ffff;
-
+               border-collapse: collapse
            }
            tbody{
               // border: 1px solid red;

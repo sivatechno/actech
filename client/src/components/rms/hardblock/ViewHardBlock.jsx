@@ -9,10 +9,11 @@ function ViewHardBlock() {
        <p className='viewhardblocktext'>View Hard Block</p>
         <button className='viewhardblockbtn'>Hard Block</button>
        </div>
+
      <div className='hardblockcontainer'>
       <table className='hardblocktable'>
         <thead>
-          <tr>
+          <tr className='hardblocktr'>
             <th>Name</th>
             <th>Technology</th>
             <th>Project</th>
