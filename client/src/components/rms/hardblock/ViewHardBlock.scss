@@ -52,7 +52,11 @@
                text-align: center;
                background-color: rgb(7, 78, 170);
                color: #ffff;
-               border-collapse: collapse
+               border-collapse: collapse;
+
+               th{
+                   color: white;
+               }
            }
            tbody{
               // border: 1px solid red;

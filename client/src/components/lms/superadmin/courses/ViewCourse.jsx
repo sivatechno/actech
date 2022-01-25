@@ -2,7 +2,7 @@ import React from 'react'
 import './ViewCourse.scss'
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
-import Courses from './Courses';
+import Courses from './courses';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';

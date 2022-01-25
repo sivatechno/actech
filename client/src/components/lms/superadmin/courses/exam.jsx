@@ -1,5 +1,5 @@
 import React from 'react'
-import './Exam.scss'
+import './exam.scss'
 import AddExam from './AddExam';
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';

@@ -20,7 +20,7 @@ import Viewassociateprofile from './pages/rms/ViewAssociate';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
-import Exam from './pages/lms/Exam';
+import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';

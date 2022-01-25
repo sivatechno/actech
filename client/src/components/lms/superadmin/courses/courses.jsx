@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Courses.scss'
+import './courses.scss'
 import axios from 'axios';
 
 const Courses = () => {
