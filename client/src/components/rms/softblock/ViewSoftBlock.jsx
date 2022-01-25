@@ -7,7 +7,7 @@ function ViewSoftBlock() {
    <div className='viewsoftblockcontainer'> 
       <div className='viewsoftblockheader'>
        <p className='viewsoftblocktext'>View Soft Block</p>
-        <button className='viewsoftblockbtn'>Soft Block</button>
+        {/* <button className='viewsoftblockbtn'>Soft Block</button> */}
        </div>
      <div className='softblockcontainer'>
       <table className='softblocktable'>
@@ -49,7 +49,6 @@ function ViewSoftBlock() {
           <td>01/01/2022</td>
           <td>21/11/2022</td>
         </tr>
-      
         </tbody>
       </table>
     </div>

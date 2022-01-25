@@ -121,7 +121,11 @@ function Project_profile_view() {
                                         <td>{value.Project_Name}</td>
                                         <td>{value.Start_Date}</td>
                                         <td >{value.End_Date}</td>
-                                        <td className="proj_table_icons"> <Link to={`/Update_proj/`}><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon" onClick={(e) => deleteProject(value.id, e)} /></td>
+                                        <td className="proj_table_icons"> 
+                                        <Link to={`/Update_proj/`}>
+                                            <AiIcons.MdEdit className="prof_edit_icon" />
+                                        </Link> <AiIcons.FaTrash className="prof_tash_icon" onClick={(e) => deleteProject(value.id, e)} />
+                                        </td>
                                     </tr>
 
 

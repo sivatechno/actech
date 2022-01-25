@@ -1,3 +1,7 @@
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -22,20 +26,20 @@
             font-size: 20px;
             font-weight: 600;
         }
-        .viewsoftblockbtn{
-            border: 2px solid #3253e2;
-            background-color: #ffff;
-            color: #3253e2;
-            padding: 7px 30px 9px 30px;
-            text-align: center;
-            border-radius: 10px;
-          font-size: 15px;
-           font-weight: bolder;
-        }
-        .viewsoftblockbtn:hover{
-            background-color: rgb(7, 78, 170);
-            color: rgb(255, 255, 255);
-        }
+        // .viewsoftblockbtn{
+        //     border: 2px solid #3253e2;
+        //     background-color: #ffff;
+        //     color: #3253e2;
+        //     padding: 7px 30px 9px 30px;
+        //     text-align: center;
+        //     border-radius: 10px;
+        //    font-size: 15px;
+        //    font-weight: bolder;
+        // }
+        // .viewsoftblockbtn:hover{
+        //     background-color: rgb(7, 78, 170);
+        //     color: rgb(255, 255, 255);
+        // }
       
     }
     .softblockcontainer{
@@ -43,10 +47,10 @@
         margin-top:  -3% ;
         height: 80%;
        .softblocktable{
-           //border: 1px solid green;
+         //  border: 1px solid green;
            margin: 0 auto;
            width: 80%;
-           padding-top: 500px;
+        // padding-top: 50px;
            thead{
                border: 1.5px solid #2424;
                height: 65px;
@@ -56,12 +60,12 @@
 
            }
            tbody{
-              // border: 1px solid red;
+              //border: 1px solid red;
                height: 45px;
                text-align: center;
                border: 1.5px solid #2424;
                tr{
-                   border-bottom: 1.5px solid #2424;
+                 border-bottom: 1.5px solid #2424;
                  height: 50px;
                
                }
@@ -69,6 +73,7 @@
                 background-color: #f3f3f3;
                 border-left: 3px solid rgb(7, 78, 170);
                 border-right: 3px solid rgb(7, 78, 170);
+                
     
              }
               
