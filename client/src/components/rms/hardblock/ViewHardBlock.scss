@@ -3,21 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-.viewhardblockcontainer{
-   // border: 2px solid blue;
-    // margin-top: 4%;
-    height: 90vh;
+.viewhardblockoverallcontainer{
+    border: solid 2px blue;
+    height: calc(100vh - 75px);
     width: 100%;
-    overflow: hidden;
     .viewhardblockheader{
-        //border: 1px solid red;
+        border: 1px solid red;
         width: 80%;
         height: 40px;
-        display: flex;
-        justify-content: space-between;
         margin: 5% auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         .viewhardblocktext{
-            margin: 1% 0 0 0;
             color: #3253e2;
             font-size: 20px;
             font-weight: 600;
@@ -26,55 +24,107 @@
             border: 2px solid #3253e2;
             background-color: #ffff;
             color: #3253e2;
-            padding: 7px 30px 9px 30px;
+            padding: 7px 30px 7px 30px;
             text-align: center;
             border-radius: 10px;
-          font-size: 15px;
-           font-weight: bolder;
+            font-size: 15px;
+            font-weight: bolder;
         }
         .viewhardblockbtn:hover{
             background-color: rgb(7, 78, 170);
             color: rgb(255, 255, 255);
         }
-      
     }
-    .hardblockcontainer{
-       // outline: 2px solid blueviolet;
-        margin-top:  -3% ;
-        height: 80%;
-       .hardblocktable{
-           //border: 1px solid green;
-           margin: 0 auto;
-           width: 80%;
-//padding-top: 500px;
-           thead{
-               border: 1.5px solid #2424;
-               height: 65px;
-               text-align: center;
-               background-color: rgb(7, 78, 170);
-               color: #ffff;
+    .hardblocktable{
+        border: solid 2px black;
+        width: 100%;
+        margin: -3% auto;
+        .hardblockheader{
+            border: solid 2px green;
+        }
+    }
+    // .hardblockcontainer{
+    //     height: 60%;
+    //     width: 80%;
+    //     border: solid 2px red;
+    //     margin: -3% 10% 0 10%;
+       
+    // }
+}
 
-           }
-           tbody{
-              // border: 1px solid red;
-               height: 45px;
-               text-align: center;
-               border: 1.5px solid #2424;
-               tr{
-                   border-bottom: 1.5px solid #2424;
-                 height: 50px;
+// .viewhardblockoverallcontainer{
+//    // border: 2px solid blue;
+//     // margin-top: 4%;
+//     height: 90vh;
+//     width: 100%;
+//     overflow: hidden;
+//     .viewhardblockheader{
+//         border: 1px solid red;
+//         width: 80%;
+//         height: 40px;
+//         display: flex;
+//         justify-content: space-between;
+//         margin: 5% auto;
+//         .viewhardblocktext{
+//             margin: 1% 0 0 0;
+//             color: #3253e2;
+//             font-size: 20px;
+//             font-weight: 600;
+//         }
+//         .viewhardblockbtn{
+//             border: 2px solid #3253e2;
+//             background-color: #ffff;
+//             color: #3253e2;
+//             padding: 7px 30px 9px 30px;
+//             text-align: center;
+//             border-radius: 10px;
+//           font-size: 15px;
+//            font-weight: bolder;
+//         }
+//         .viewhardblockbtn:hover{
+//             background-color: rgb(7, 78, 170);
+//             color: rgb(255, 255, 255);
+//         }
+      
+//     }
+//     .hardblockcontainer{
+//        // outline: 2px solid blueviolet;
+//         margin-top:  -3% ;
+//         height: 70%;
+//         border: solid 2px green;
+//     //   .hardblocktable{
+//             //border: 1px solid green;
+//     //        margin: 0 auto;
+//     //        width: 80%;
+//     //        //padding-top: 500px;
+//     //        .hardblockheader{
+//     //            border: 1.5px solid red;
+//     //            height: 65px;
+//     //            text-align: center;
+//     //            background-color: rgb(7, 78, 170);
+//     //            color: #ffff;
+
+//     //        }
+//     //        tbody{
+//     //           // border: 1px solid red;
+//     //            height: 45px;
+//     //            text-align: center;
+//     //            border: 1.5px solid #2424;
+//     //            tr{
+//     //                border-bottom: 1.5px solid #2424;
+//     //              height: 50px;
                
-               }
-               .hardblockhover:hover{
-                background-color: #f3f3f3;
-                border-left: 3px solid rgb(7, 78, 170);
-                border-right: 3px solid rgb(7, 78, 170);
+//     //            }
+//     //            .hardblockhover:hover{
+//     //             background-color: #f3f3f3;
+//     //             border-left: 3px solid rgb(7, 78, 170);
+//     //             border-right: 3px solid rgb(7, 78, 170);
     
-             }
+//     //          }
               
-           }
-       }
+//     //        }
+//     //    }
        
         
-    }
-}
+//      }
+// }
