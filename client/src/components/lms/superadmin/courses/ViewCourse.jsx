@@ -1,23 +1,24 @@
 import React from 'react'
-import './ViewQuestion.scss'
+import './ViewCourse.scss'
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
+import Courses from './Courses';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-//import Modal from 'react-modal';
+import Modal from 'react-modal';
 //import AddMentor from './AddMentor.component';
 
-// const customStyles = {
-//     content: {
-//         top: '50%',
-//         left: '50%',
-//         right: 'auto',
-//         bottom: 'auto',
-//         marginRight: '-50%',
-//         transform: 'translate(-50%, -50%)',
-//     },
-// };
-function Question() {
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+function ViewCourse() {
     const [listOfMentors, setListOfMentors] = useState([]);
 
     let history = useNavigate();
@@ -50,47 +51,41 @@ function Question() {
 
     return (
         <div className="main">
-            <div className="view_header">
+            <div className="view-header">
                 <div className="view_title">
-                    <h3>View Questions</h3>
+                    <h3><Link to="/Courses"/>View Courses</h3>
                 </div>
-                <div className="add_question">
-                    <button className="button_click"><Link to="/AddQuestion">AddQuestions</Link></button>
+                <div className="view_search">
+                <input
+            type="text"
+            id="header-search"
+            placeholder="Search"
+            name="s" />
+        {/* <button type="submit">Search</button> */}
+                </div>
+                <div className="add_course">
+                    
+                    <button className="button_click" onClick={openModal}>AddCourses</button>
+                    
+                    
                 </div>
             </div>
-            {/* <Modal
+             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddMentor />
-            </Modal> */}
-            <div class="section2">
-                    <select class="select1" placeholder="--select Courses--">
-                        <option value="0">--select Courses--</option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                    </select>
-                    <select class="select2">
-                        <option value="0">Items Per Page</option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                    </select>
-                    <select class="select3">
-                        <option value="0">Go To</option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                    </select>
-                </div>
+                <Courses/>
+            </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
                     <tr className="table_row_head">
-                        <th >Question ID</th>
-                        <th >Exam ID</th>
-                        <th>Question Type</th>
-                        <th>Questions</th>
-                        <th>Marks</th>
+                        <th>Course Id</th>
+                        <th className="namehead">Course Name</th>
+                        {/* <th className="emailhead">Email</th> */}
+                        <th>Course Description</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
 
@@ -128,5 +123,4 @@ function Question() {
     )
 }
 
-
-export default Question;
+export default ViewCourse;

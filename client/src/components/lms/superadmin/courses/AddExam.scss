@@ -1,6 +1,6 @@
 
 
-.addcourses_container
+.addexam_container
 {
      display: flex;   
        flex-direction: column;
@@ -12,7 +12,7 @@
        
     
     
-    .main, input{
+    .addexam_container, input{
         margin: 10px;
         padding: 10px;
         border: 2px solid lightslategrey;
@@ -20,7 +20,7 @@
         border-radius: 10px;
         
     }
-    .Courses-btn
+    .addexam-btn
     {
         margin: 10px;
         padding: 10px;
