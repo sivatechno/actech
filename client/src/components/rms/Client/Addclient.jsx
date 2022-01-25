@@ -43,7 +43,7 @@ import Validate from './Clientvalidate';
                      <form>
                  <div className="add_client_inner_body">
                  <div className="add_client_content" >
-                          <p className="add_client_text">Client_name*</p><br />
+                          <p className="add_client_text">Client name*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.FaRegUserCircle className="add_client_icons"/></i>
@@ -55,7 +55,7 @@ import Validate from './Clientvalidate';
                       </div>
                       
                       <div className="add_client_content" >
-                          <p className="add_client_text">company_name*</p><br />
+                          <p className="add_client_text">company name*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.SiMicrosoftoffice className="add_client_icons"/></i>
@@ -68,7 +68,7 @@ import Validate from './Clientvalidate';
                  </div>
                  <div className="add_client_inner_body">
                  <div className="add_client_content" >
-                          <p className="add_client_text">Client_E-Mail*</p><br />
+                          <p className="add_client_text">Client E-Mail*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.SiGmail className="add_client_icons"/></i>
