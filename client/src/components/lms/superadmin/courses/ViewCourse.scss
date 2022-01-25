@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+.main
+{
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    display: flex;   
+    flex-direction: column;
+    margin: 20px 10px 10px 45px;
+    padding: 10px;
+    flex-grow: 1;
+    height: 500px;
+
+.view-header
+{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+ .view_title{
+    height: 60px;
+    width: 180px;
+    float: left;
+    h3{
+        color: royalblue;
+        text-align: center;
+        font-size: large;
+        padding-top: 18px;
+    }
+ }
+ #header-search
+{
+    width: 500px;
+    margin-top: 10px;
+    border: 2px solid lightslategray;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.add_course{
+    
+    display: flex;
+    flex-direction: row-reverse;
+   }
+   .button_click{
+    padding: 10px 15px;
+    font-size: 16px;
+    border: blue;
+    border-radius: 23px;
+    background-color: #0c50a3;
+    color: white;
+    margin-right: 30px;
+    margin-top: .5rem;
+}
+.button_click:hover{
+   background-color:#fff;
+   color: #0C50A3;
+   border: solid 2px #0C50A3;
+   transition: 0.4s;
+}
+}
+table{
+    width: 95%;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-collapse: collapse;
+  td,tr{
+      padding: 6px; 
+      text-align: center;
+  }
+  .table_row:hover {
+    background-color: #e0e2e6;
+  }
+  .namecol,.emailcol
+  {  
+    text-align: left; 
+    padding-left:20px ;
+   }
+  .table_row_head,.table_row{box-shadow: rgba(185, 183, 183, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;}
+  th{padding: 12px;}
+   td .table_icons{
+        height: 35px;
+        width: 13%;
+        display: inline-block;
+        margin-right: 10px;
+        
+        .icons_align{
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+        .icons_align_delete{
+            color: red;
+            font-size: 25px;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+    }
+}
+
+
+
+}

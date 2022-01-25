@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Users, AccessToken } = require("../models");
+const { Users, Mentors, Mentee, AccessToken } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
@@ -26,6 +26,24 @@ router.get("/viewuser", async (req, res) => {
 
 });
 
+router.delete("/logout", async (req, res) => {
+    try {
+        const { person_id } = await req.body;
+        const person = await AccessToken.findByPk(person_id);
+        if (!person) {
+            person.destroy();
+            res.json("deleted successfully");
+        }
+        else {
+            res.send("nothing")
+        }
+    } catch (error) {
+        res.send(error)
+
+    }
+})
+
+
 
 
 router.post("/login", async (req, res) => {
@@ -35,23 +53,29 @@ router.post("/login", async (req, res) => {
         // console.log("test2");
         const user = await Users.findOne({ where: { username: username } });
         // console.log("test3");
-        if (!user) await res.json({ error: "User donsen't exist" });
+        if (!user) {
+            await res.json({ error: "User donsen't exist" });
+        } else {
+            await bcrypt.compare(password, user.password).then(async (match) => {
+                if (match) {
+                    // console.log("test4");
+                    var userToken = await jwt.sign({ id: user.id }, 'try to get someting happen');
+                    // console.log("test5");
+                    await res.json({ token: userToken });
+                    // console.log("test6");
+                    console.log(user.id)
+                    await AccessToken.create({
+                        person_id: user.id,
+                        accesstoken: userToken
+                    }) 
 
-        await bcrypt.compare(password, user.password).then(async (match) => {
-            if (match) {
-                // console.log("test4");
-                var userToken = await jwt.sign({ id: user.id }, 'try to get someting happen');
-                // console.log("test5");
-                await res.json({ token: userToken });
-                // console.log("test6");
+                } else {
 
-            } else {
+                    res.json({ error: "Wrong username and password combination" });
+                }
 
-                res.json({ error: "Wrong username and password combination" });
-            }
-
-        });
-
+            });
+        }
 
     } catch (error) {
         res.json(error);
@@ -64,10 +88,16 @@ router.post("/login", async (req, res) => {
 //     console.log(counting)
 // })
 router.get('/count', (req, res) => {
-    Users.findAndCountAll({})
-  .then(result => {
-    res.json(result.count);
-  });
+    jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
+        if (err) {
+            res.json("not viewewd");
+        } else {
+            Users.findAndCountAll({})
+                .then(result => {
+                    res.json(result.count);
+                });
+        }
+    })
 })
 
 
@@ -75,8 +105,10 @@ router.post("/register", async (req, res) => {
     try {
         const { username, password, email } = req.body;
         const user = await Users.findOne({ where: { username: username } });
+        const mentor = await Mentors.findOne({ where: { username: username } })
+        const mentee = await Mentee.findOne({ where: { username: username } })
         const passwordHash = await bcrypt.hash(password, 10);
-        if (!user) {
+        if (!user && !mentor && !mentee) {
             Users.create({
                 username: username,
                 password: passwordHash,

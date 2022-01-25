@@ -1,98 +1,77 @@
-
 .truefalse
 {
     display: flex;
     justify-content: space-between;
-}
-.MultipleQues
-{
-    display: flex;
-    justify-content: space-between;
-}
-.Multipleans
-{
-    display: flex;
-    justify-content: space-between;
-}
-.writing
-{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    justify-content: space-evenly;
+    .true_txt-box1
+    {
+     margin: 2px;
+     width: 80%;
+     .true_questions
+     {
+        margin: 5px 10px;
+        text-align: left;
+        font-size: 16px;
+        color: #aaa;
+     }
+              textarea
+              {
+                    padding: 20px;
+                    border: 1px solid lightslategrey;
+                    border-radius: 8px;
+                    width: 100%;
+                    margin: 2px;
+                    padding: 30px;
+                    border: 1px solid lightslategrey;
+                    border-radius: 8px;
+                    width: 98%;
 
-.txt-box1
-{
-  margin: 2px;
-  width: 55%;
-}
-.txtbox1
-{
-  margin: 2px;
-  width: 80%;
-}
-
-textarea
-{
-    padding: 20px;
-    border: 1px solid lightslategrey;
-    border-radius: 8px;
-    width: 100%;
-
-}
-.text-box
-{
-    padding: 20px;
-    border: 1px solid lightslategrey;
-    border-radius: 8px;
-    width: 150%;
-}
-
-.txt-box2
-{
+               }
+    }
+    .true_txt-box2
+    {
     margin: 2px;
-    width: 30%;
-    
-}
-.input-checkbox
-{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.input-checkbox>label
-{
-    font-size: 15px;
-    font-family: sans-serif;
-    display: inline;
-}
-.input-radio
-{
-    display: flex;
-}
-.input-radio>input
-{
-    margin: 1rem;
-}
-.input-radio>label
-{
-    padding-top: 20px;
-}
-.answers
-{
-    margin: 5px 5px 20px 5px;
-    text-align: left;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    color: #aaa;
+    width: 40%;
+    .true_answers
+      {
+         margin: 5px 5px 20px 5px;
+         text-align: left;
+         margin: 5px 5px 5px 5px;
+         font-size: 16px;
+         text-align: center;
+         font-family: 'Poppins', sans-serif;
+         color: #aaa;
+      }
+      .input-radio
+      {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px;
+      }
+      .true-addbutton
+      {
+        display: flex;
+        justify-content: center;
+      .true_addbutton
+      {
+        
+        margin-top: 20px;
+        padding: 10px 30px;
+        border-radius: 10px;
+        border-color: #2874A6;
+        color: rgb(17, 26, 37);
+       
+      }
+     }
+    }
+
 }
 
 
-.questions
-{
-    margin: 5px 10px;
-    text-align: left;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    color: #aaa;
-}
+
+
+
+
+ 
+
+

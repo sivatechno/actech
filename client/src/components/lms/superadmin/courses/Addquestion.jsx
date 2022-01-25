@@ -1,120 +1,115 @@
 import React, { useState } from 'react';
 import './Addquestion.scss';
-import True from '../../coursespages/True';
-import MCQs from '../../coursespages/MCQs';
-import MCQ from '../../coursespages/MCQ';
-import * as AiIcons from 'react-icons/all';
-import Write from '../../coursespages/Write';
+import Accordian from '../../coursespages/Accordian';
+import Validate from '../../coursespages/Validate';
+
+
 
 const Addquestion = () => {
-    const [trueBox, setTruebox] = useState(' ');
-    const [question, setQuestions] = useState(' ');
-    const [answer, setAnswers] = useState(' ');
-    const [writing, setWriting] = useState(' ');
+   const [values, setValues] = useState({
+       select:" ",
+       enddate:" ",
+       time:" ",
+       startdate:" "
 
+   });
+   
+    const [errors, setErrors] = useState({});
 
-    const TrueFalse = () => {
-        setAnswers('')
-        setQuestions('')
-        setWriting('')
-        setTruebox(() => {
-            return <>
-                <True />
-            </>
-        })
+    // const [inputDetails, setInputDetails] = useState([]);
+    const handleChange = (e) => {
+        e.preventDefault();
+        setValues({
+            ...values,
+            [e.target.name]:e.target.value,
+        });
 
     }
-    const multipleQuestion = () => {
-        setAnswers('')
-        setWriting('')
-        setTruebox('')
-        setQuestions(() => {
-            return <>
-                <MCQ />
-            </>
-        })
-    }
-    const multipleAnswer = () => {
+    
 
-        setQuestions('')
-        setWriting('')
-        setTruebox('')
-        setAnswers(() => {
-            return <>
-                <MCQs />
-            </>
-        })
+    const handleSubmit = (e) => {
+        
+        setErrors(Validate(values));   
+        console.log(values);   
+        
     }
-    const Writing = () => {
-        setAnswers('')
-        setQuestions('')
-        setTruebox('')
-        setWriting(() => {
-            return <>
-                <Write />
-            </>
-        })
-    }
+    
+    
+   
 
     return (
-        <div className="main">
-            <div className="header">
-                <h3>ADD QUESTIONS</h3>
-            </div>
-            <hr />
-            <div className="body">
-                <div className="box1">
-                    <label>SELECT EXAMS *</label>
-                    <i className="icons"><AiIcons.ImBooks /></i>
-
-                    <input className='' type="text" id="name" name="name" placeholder="--select Name--" required
-                        minlength="4" maxlength="8" size="23" /><i className="icon"><AiIcons.IoIosArrowUp /></i>
-
-                    <label>MARKS *</label>
-                    <i className="icons"><AiIcons.RiBookMarkLine /></i>
-                    <input className="inputnumber" type="number" id="name" name="name" required
-                        minlength="4" maxlength="8" size="23" />
-                    <label>END_DATE *</label>
-                    {/* <i className="icons"><AiIcons.BsCalendarEvent /></i> */}
-                    <input type="datetime-local" id="name" name="name" required
-                        minlength="4" maxlength="8" size="23" />
+        <div className="addquestion_container">
+                <div className="addquestion_section1">
+                    <div>Add Questions</div>
                 </div>
-                <div className="box2">
-                    <label>EXAM_DURATION *</label>
-                    {/* <i className="icons"><AiIcons.MdTimer /></i> */}
-                    <input className="inputtime" type="time" id="name" name="name" required
-                        minlength="4" maxlength="8" size="23" />
-                    <label>START_DATE *</label>
-                    {/* <i className="icons"><AiIcons.BsCalendarEvent /></i> */}
-                    <input type="datetime-local" id="name" name="name" required
-                        minlength="4" maxlength="8" size="23" />
-                    <div className="row1">
-                        <button className="btn1" onClick={TrueFalse}>True/False</button>
-                        <button className="btn2" onClick={multipleQuestion}>MCQ(1-4)</button>
+                <hr/>
+                 <div className="addquestion_section2">
+                   <div className="addquestion_box1"> 
+                       <label className='addquestion_labelexams'>SELECT EXAMS*</label>
+                    <div className="addquestion_scrollbar">
+                        <select 
+                        className="addquestion_select" 
+                        name='select' 
+                        placeholder="--Select Exam--" 
+                        value={values.select}
+                        onChange={handleChange}
+                        required>
+                            <option value="">--Please choose an option--</option>
+                            <option>AWS One</option>
+                            <option>Snow Flake One</option>
+                            <option>Week two</option>
+                        </select>
+                        {errors.select && <p className='errors'>{errors.select}</p>}
                     </div>
-                    <div className="row2">
-                        <button className="btn3" onClick={multipleAnswer}>MCQ(mul ans)</button>
-                        <button className="btn4" onClick={Writing}>Writing</button>
+                    <label className='addquestion_label-enddate'>END_DATE : </label><br/>
+                     <input 
+                     className='addquestion_input-enddate' 
+                     name='enddate' 
+                     type="date" 
+                     value={values.enddate}
+                     onChange={handleChange}
+                     required/>
+                     {errors.enddate && <p className='errors'>{errors.enddate}</p>}
+                   </div>
+                   <div className="addquestion_box2">
+                       <label className='addquestion_label-duration'>EXAM_DURATION:</label><br/>
+                       <input 
+                       className='addquestion_input-time' 
+                       name='time' 
+                       type="time" 
+                       value={values.time}
+                       onChange={handleChange}
+                       required
+                       />
+                       {errors.time && <p className='errors'>{errors.time}</p>}
+                       <br/>
+                       <label className='addquestion_label-date'>START_DATE :</label><br/>
+                       <input 
+                       className='addquestion_input-startdate' 
+                       name='startdate' 
+                       type="date" 
+                       value={values.startdate}
+                       onChange={handleChange} 
+                       required />
+                       {errors.startdate && <p className='errors'>{errors.startdate}</p>}
                     </div>
-                </div></div>
-            <div className="footer">
-                <hr /><p>{trueBox}</p>
-                <p>{question}</p>
-                <p>{answer}</p>
-                <p>{writing}</p>
-
-
-                <hr />
-                <div className="box">
-
-                    <button className="btn5">cancel</button>
-                    <button className="btn6">ADD QUESTION</button>
-
-                </div>
-
+                    </div>
+                    
+                    
+        <div className="addquestion_section3">
+            <Accordian/>
+               
             </div>
+            
+            <div className="addquestion_section4">
 
-        </div>
+                <div className="addquestion_btn">
+               <button className="addquestion_btn1" >Cancel</button>
+                <button className="addquestion_btn2" type='submit'>Submit</button>
+                </div>
+            </div>
+            </div>
+           
     );
 }
 

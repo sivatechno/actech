@@ -7,6 +7,7 @@ import ProfileViewMentee from './pages/lms/ProfileViewMentee';
 import ProfileViewMentor from './pages/lms/ProfileViewMentor';
 import ViewMentee from './pages/lms/ViewMentee';
 import ViewCourse from './pages/lms/ViewCourse';
+import HardBlock from './pages/rms/HardBlock';
 import UpdateProfileViewMentor from './components/lms/superadmin/usermanager/UpdateProfileMentor.component';
 // import AdminLayout from './components/layout/AdminLayout';
 import ViewMentor from './pages/lms/ViewMentor';
@@ -16,7 +17,6 @@ import LoginProtect from './LoginProtect';
 import HomePage from './components/frontpage/HomePage';
 import Dashboard from './pages/rms/Dashboardview';
 import Viewassociateprofile from './pages/rms/ViewAssociate';
-import HardBlock from './pages/rms/HardBlock';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
@@ -97,13 +97,17 @@ function App({ children }) {
             </Route>
             <Route exact path="/Update_proj" element={<Update_Proj/>}>
               <Route exact path="/Update_proj" element={<Update_Proj/>} />
-            </Route>
+            </Route>    
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
               <Route exact path="/ViewAssociate" element={<Viewassociateprofile />} />
             </Route>
             <Route exact path="/ClientView" element={<ProtectedRoute />}>
               <Route exact path="/ClientView" element={<ClientView />} />
+            </Route>
+            
+            <Route exact path="/HardBlock" element={<ProtectedRoute />}>
+              <Route exact path="/HardBlock" element={<HardBlock />} />
             </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>

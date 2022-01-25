@@ -27,10 +27,10 @@ function Projectview({CloseModal}) {
                     
                     
                     <tr className="project_profile_table_head">
-                        <th>Client_Name</th>
-                        <th>Proj_Name</th>
-                        <th>Start_Date</th>
-                        <th>End_Date</th>
+                        <th>Client Name</th>
+                        <th>Proj Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
                         {/* <th>Actions</th> */}
                     </tr>
                     </thead>

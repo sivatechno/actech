@@ -33,6 +33,20 @@ function ViewProjects() {
     }
 
 
+    const deleteMentor = (id, e) => {
+        console.log(id);
+        axios.delete(`http://localhost:5000/mentorsOne/delete/${id}`).then((response) => {
+            response.json("deleted successfully");
+            history.push("/viewmentors")
+        });
+    };
+
+    useEffect(() => {
+        axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) => {
+            setListOfMentors(response.data);
+            // console.log(response.data);
+        });
+    }, []);
 
     return (
         <div className="main">
@@ -69,17 +83,44 @@ function ViewProjects() {
                         <option value="2"></option>
                     </select> */}
                 </div>
-            <div className="table_container">
+            <div className="tablecontainer">
                 <table cellSpacing="10px" >
                     <tr className="table_row_head">
-                        <th >Question Title</th>
-                        <th >Exam Name</th>
-                        <th>Question Type</th>
-                        <th>Marks</th>
+                        <th >User Name</th>
+                        <th >Exam Title</th>
+                        <th>Score</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
 
-                    
+                    {/* {listOfMentors.map((value,key) =>{
+                    return <div>{value.username}</div>
+                })} */}
+                    {listOfMentors && listOfMentors.map((value, key) => {
+                        return (
+
+
+                            <tr className="table_row">
+                                 <td className="namecol">{value.firstname} {value.lastname}</td>
+                                <td className="emailcol">{value.email}</td>
+                                <td>{value.role}</td>
+                                <td>{value.phonenumber}</td>
+                                <td>
+                                    <Link to={`/editprofileviewmentor/${value.id}`}>
+                                        <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
+                                    </Link>
+                                    <Link to={"/"}>
+                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
+                                            onClick={(e) => deleteMentor(value.id, e)}
+                                        /></div>
+                                    </Link>
+                                    <Link to={`/profileviewmentor/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
+                                </td>
+                            </tr>
+
+
+                        )
+                    })}
                 </table>
             </div>
         </div>

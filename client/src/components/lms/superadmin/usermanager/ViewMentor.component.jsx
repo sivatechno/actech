@@ -73,6 +73,8 @@ function ViewMentor() {
 
     const [listOfMentors, setListOfMentors] = useState([]);
 
+    const [token,setToken] = useState("")
+
     let history = useNavigate();
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -98,14 +100,17 @@ function ViewMentor() {
     };
 
     useEffect(() => {
+        setToken(localStorage.getItem("auth"))
         axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
             setListOfMentors(response.data);
             // console.log(response.data);
+            console.log(token)
         });
     }, []);
 
     return (
         <div className="viewmentor_container">
+            {console.log(token)}
             <div className="view_header">
                 <div className="view_title">
                     <h3>View Mentor</h3>
@@ -136,6 +141,7 @@ function ViewMentor() {
                     {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
+                {console.log(listOfMentors)}
                     {listOfMentors && listOfMentors.map((value, key) => {
                         return (
 
