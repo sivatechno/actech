@@ -18,7 +18,7 @@ import Dashboard from './pages/rms/Dashboardview';
 import Viewassociateprofile from './pages/rms/ViewAssociate';
 import ClientView from './pages/rms/Clientview';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
-import Exam from './pages/lms/exam';
+import Exam from './pages/lms/Exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';

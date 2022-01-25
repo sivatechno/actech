@@ -1,52 +1,68 @@
-import React, { Component } from 'react';
-import '../Pages/courses.scss';
-import * as AiIcons from 'react-icons/all';
-class Courses extends Component {
-    render() {
-        return (
-            <div>
-                <div class="main">
-                <div class="section1">
-                    <div><ion-icon name="menu"></ion-icon>Viewing Courses</div>
-                </div>
-                <hr/>
-        <div class="section2">
-            <table>
-                <tr>
-                    <th>Course Name</th>
-                    <th>Course Description</th>
-                    <th>Fees</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                        <td>Snow Flake</td>
-                        <td>SnowFlake is an Data ware house system used for Analytical purpose<br/>
-                        Snow Flake is an Which runs on AWS/GCP/AZURE System</td>
-                        <td>$0.USD</td>
-                        <td class="icons">
-                  <i><AiIcons.GrEdit/></i>
-                  <i class="delete"><AiIcons.MdDelete/></i>
-                  <i><AiIcons.BsFillEyeSlashFill/></i>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>AWS Cloud</td>
-                        <td>AWS Cloud</td>
-                        <td>$0.USD</td>
-                        <td class="icons">
-                  <i><AiIcons.GrEdit/></i>
-                  <i class="delete"><AiIcons.MdDelete/></i>
-                  <i><AiIcons.BsFillEyeSlashFill/></i>
-                    </td>
-                    </tr>
+import React, {useState} from 'react';
+import './Courses.scss'
+import axios from 'axios';
+
+const Courses = () => {
+
+  const [courseid,setCourseId] = useState("");
+
+  const [coursename,setCourseName] = useState("");
+
+  const [coursedescription,setCourseDescription] = useState("");
+
+  const [status,setStatus] = useState("");
+
+ 
+
+    const addCourse = (e) =>{
+        //    sendEmail();
+        e.preventDefault();
+        //setErrors(validate(values));
+          axios.post("http://localhost:5000/courses/create",
+          {
+             
+            courseid:courseid , 
+            coursename:coursename, 
+            coursedescription:coursedescription,
+            status:status,
+            
+        
+          }).then((response) =>{        
+          });
+        }
+    return (
+        <div className='addcourses_container'>
                 
-            </table>
-                   
-        </div>
+                    <input 
+                    type="text"
+                    placeholder="Course Id"
+                    className='Course-id'
+                    autoFocus={false}
+                    onChange={(e) =>{setCourseId(e.target.value)}}
+                    />
+                    <input 
+                    type="text"
+                    placeholder='Course Name'
+                    className='Course-name'
+                    onChange={(e) =>{setCourseName(e.target.value)}}
+                    />
+                    <input 
+                   type="text"
+                    placeholder='Course Description'
+                    className='Course-desc'
+                    onChange={(e) =>{setCourseDescription(e.target.value)}}
+                    />
+                    <input 
+                    type="text"
+                    placeholder='Status'
+                    className='status'
+                    onChange={(e) =>{setStatus(e.target.value)}}
+                    />
+                    <button type='submit' className='Courses-btn' onClick={addCourse}>Submit</button>
+               
     </div>
-            </div>
-        );
-    }
+    );
 }
 
 export default Courses;
+
