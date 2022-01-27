@@ -109,11 +109,10 @@ function ViewAssociateProfile() {
                                         >
                                         {modalUpdateIsOpen &&<UpdateAssociateProfile closeModelUpdate={setUpdateIsOpen}/>}
                                     </Modal>
-                                    <Link to={"/"}>
                                         <div className="associate_table_icons"><AiIcons.MdDelete className="associate_icons_align_delete"
                                             onClick={(e) => deleteAssociateProfile(value.id, e)}
                                         /></div>
-                                    </Link>
+                                    
                                     {/* <Link to={`/profileviewassociateprofile/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link> */}
                                 </td>
                             </tr>
