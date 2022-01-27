@@ -42,6 +42,7 @@ router.get('/getid/:id',async(req,res)=>{
   }
 });
 
+//coounting of data
 router.get('/count', (req, res) => {
   Project.findAndCountAll({})
 .then(result => {
@@ -49,12 +50,6 @@ router.get('/count', (req, res) => {
 });
 });
 
-router.get('/count', (req, res) => {
-  Project.findAndCountAll({})
-.then(result => {
-  res.json(result.count);
-});
-});
 
 
 
@@ -79,7 +74,7 @@ async(req,res)=>{
 
   try {
 
-    const {clientname,projectname,clientemail,startdate,enddate,projectstatus}=req.body;
+    const {clientname,projectname,clientemail,startdate,enddate,status,billing}=req.body;
     const projectAlreadyExists=await Project.findOne({where:{Project_Name:projectname}});
 
     if (!projectAlreadyExists) {
@@ -90,7 +85,8 @@ async(req,res)=>{
             Client_email:clientemail,
             Start_Date:startdate,
             End_Date:enddate,
-            Project_Status:projectstatus,
+            Project_Status:status,
+            Billing_Status:billing,
         });
         res.json("success")
         

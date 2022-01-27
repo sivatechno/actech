@@ -4,9 +4,9 @@ import './ViewHardBlock.scss';
 function ViewHardBlock() {
   return( 
   <>
-   <div className='viewhardblockcontainer'> 
+   <div className='viewhardblockoverallcontainer'> 
       <div className='viewhardblockheader'>
-       <p className='viewhardblocktext'>View Hard Block</p>
+        <p className='viewhardblocktext'>View Hard Block</p>
         <button className='viewhardblockbtn'>Hard Block</button>
        </div>
 

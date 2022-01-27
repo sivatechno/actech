@@ -62,18 +62,16 @@
       margin:0 auto ;
 
       .project_profile_table_head{
-       border:1px solid rgb(7, 78, 170);
-        padding-top: 100px;
-
-        //border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
+      // border:3px solid green;
 
         th{
           color: white;
-          font-size: 16px;
-          padding:2% 4.5% 1% 0;
-          text-align: center;
+          font-size: 15px;
+          padding:2% 0% 2% 1.5%;
+          text-align: left;
           background-color:rgb(7, 78, 170) ;
           cursor:default;
+          //border: 1px solid red;
         }
 
       }
@@ -83,11 +81,20 @@
        cursor: default;
 
         td{
-         padding:1% 4.5% 1% 0;
+         // border: 1px solid violet;
+         padding:1.5% 0% 1% 1.5%;
+         text-align: left;
+        }
+
+        .proj_table_icons{
+          display: flex;
+          //border: 1px solid red;
+          margin:10% 0 0 10% ;
+         
         }
 
         .prof_edit_icon{
-          margin: 0 6% 0 0;
+          margin: 0 0% 0 60%;
           color: blue;
           font-size: 18px;
           cursor: pointer;
@@ -101,6 +108,7 @@
           color: red;
           font-size: 14px;
           cursor: pointer;
+          margin: 0 0% 0 30%;
         }
 
       }

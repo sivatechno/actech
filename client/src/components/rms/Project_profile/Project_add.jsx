@@ -31,9 +31,11 @@ toast.configure()
       
         const [enddate,setEndDate] = useState("");
 
-        const [check,setcheck] = useState("");
+        const [status,setstatus] = useState("");
 
-        const [projectstatus,setprojectstatus] = useState("");
+        const [billing,setbilling] = useState("");
+
+       
 
         const addproject = (event) =>{
 
@@ -50,7 +52,8 @@ toast.configure()
               clientemail:clientemail,
               startdate:startdate,
               enddate:enddate,
-              checkbox:check,
+              status:status,
+              billing:billing,
             }).then((response) =>{ 
                 notify(true); 
                 //alert('hai')     
@@ -169,16 +172,27 @@ toast.configure()
                       </div>
                       {errors.clientemail && <p className='errormsg'>{errors.clientemail}</p>}
                       </div>
-                     <div className='proj_add_checkbox_contain'>
-                     <p className="add_project_checkbox_text">Project Status</p>
-                     <select className='update_proj_select' >
-                             <option className='val' >Enable</option>
-                             <option className='val' >Disable</option>
-                            </select>
+                     <div className='proj_add_status_contain'>
+                     <p className="add_project_status_text">Project Status</p>
+                     <div className='add_project_status_radio_btn'>
+                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}}/> <p>Enable</p>
+                         <input type="radio" value={status} name='status' checked={status == "Disable"} onClick={()=>{setstatus("Disable");}}/> <p>Disable</p>
+                     </div>
                      </div>
                     
 
                  </div>
+
+                <div className="add_project_inner_body">
+                <div className='proj_add_bill_contain'>
+                     <p className="add_project_bill_text">Billing Status</p>
+                     <div className='add_project_bill_radio_btn'>
+                         <input type="radio" value={billing} name='billing' checked={billing == "Billable"} onClick={()=>{setbilling("Billable");}} /> <p>Billable</p>
+                         <input type="radio" value={billing} name='billing' checked={billing == "Non-Billable"} onClick={()=>{setbilling("Non-Billable");}}/> <p>Non-Billable</p>
+                     </div>
+                     </div>
+                </div>
+
                  <div className="add_project_buttons">
                      <div className="cncl_bttn">
                      <button className="cancel_btn" onClick={()=>closeModel(false)}>Cancel</button>
@@ -197,4 +211,3 @@ toast.configure()
     )
     };
     export default Project_add;
-// }

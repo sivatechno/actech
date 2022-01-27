@@ -1,16 +1,15 @@
 import React from 'react'
-import _ from 'lodash';
+import _, { ceil } from 'lodash';
 import './Project_profile_view.scss'
 import * as AiIcons from 'react-icons/all'
 import Project_add from './Project_add'
-import Delete from './Table_data_delete'
 import Edit from './Edit_project'
-import { useEffect, useState } from 'react'
+import {useEffect, useState } from 'react'
 import axios from 'axios';
 import Modal from 'react-modal'
 import config from '../../config/config'
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify'
+import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
@@ -39,7 +38,7 @@ function Project_profile_view() {
     const [listOfProject, setListOfProject] = useState([]);
     const [paginatedPosts,setpaginatedPosts] = useState();
 
-    const deleteProject = (id, e) => {
+    const deleteProject = (id,e) => {
         //alert(id)
       console.log(id);
         axios.delete(`http://localhost:5000/project/deleteproject/${id}`).then((response) => {
@@ -49,29 +48,28 @@ function Project_profile_view() {
     };
 
     useEffect(() => {
-        axios.get(`${apiURL}/project/viewproject`).then((response) => {
+        axios.get("http://localhost:5000/project/viewproject").then((response) => {
             setListOfProject(response.data);
             setpaginatedPosts(_(response.data).slice(0).take(pageSize).value());
             // console.log(response.data);
-
+            
         });
 
     }, []);
 
     const [popup, popupcome] = useState(false)
-    const [Deletepopup, Deletepopupcome] = useState(false)
     const [Editpopup, EditpopupCome] = useState(false)
 
     const notify = ()=>{toast.error('Deleted',{position: toast.POSITION.TOP_CENTER})}
 
     const [currentPage,setcurrentPage] = useState(1);
 
-    const pageSize=8;
-    const pageCount = listOfProject? Math.ceil( listOfProject.length/pageSize):0;
+    const pageSize=7;
+    console.log(Math)
+    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):1;
+    //if(pageCount===1){return null};
 
-    if(pageCount===1) return null;
-
-    const pages = _.range(1, pageCount+1)
+    const pages = _.range(1, pageCount+1);
 
     const pagination =(pageNo)=>{
         setcurrentPage(pageNo);
@@ -113,6 +111,8 @@ function Project_profile_view() {
                                     <th>Project Name</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
+                                    <th>Billing</th>
+                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -120,13 +120,15 @@ function Project_profile_view() {
                             <tbody>
 
                                 {paginatedPosts&&paginatedPosts.map((value,key)=>{
-                                    console.log(value.id);
+                                    //console.log(value.id);
                                     return(
                                         <tr className="project_profile_table_body">
                                             <td>{value.Client_Name}</td>
                                             <td>{value.Project_Name}</td>
                                             <td>{value.Start_Date}</td>
-                                            <td >{value.End_Date}</td>  
+                                            <td >{value.End_Date}</td> 
+                                            <td>{value.Billing_Status}</td>
+                                            <td >{value.Project_Status}</td>  
                                             <td className="proj_table_icons"> <Link to={`/Update_proj/`}><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon"  onClick={(e) => deleteProject(value.id, e)}/></td>
                                         </tr>
                                      )
@@ -153,7 +155,7 @@ function Project_profile_view() {
             </nav>
 
         </div>
-
+        
     )
 };
 export default Project_profile_view;
