@@ -14,8 +14,8 @@ function Update_project() {
     const {id}   = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/project/${id}`).then((response) => {
-            //setProfileData(response.data);
+        axios.get(`http://localhost:5000/project/getid/${id}`).then((response) => {
+            setProfileData(response.data);
             console.log(response)
         });
     }, 
@@ -39,8 +39,8 @@ function Update_project() {
                 </div>
 
                 <div className='update_proj_inner_div'>
-                {/* {profiledata.map((values, key) => {
-                return ( */}
+                 {/* {profiledata.map((values, key) => {
+                return (  */}
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>
                         <p className="update_project_text">Client Name*</p><br />
@@ -63,7 +63,7 @@ function Update_project() {
                         </div>
                      </div>
                     {/* )
-                    })}      */}
+                    })}     */}
 
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>

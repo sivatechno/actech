@@ -19,7 +19,7 @@
         color: white;
     }
     .associate_profile_table_container{
-        width: 100%;
+        width: 98%;
         border-collapse: collapse;
         background-color: white;
         margin: 5% auto;
@@ -44,6 +44,19 @@
     .associate_profile_body_row:hover{
         background-color: rgba(172, 172, 172, 0.178);
         border-left: 2px solid rgb(7, 78, 170);
-        border-right: 2px solid rgb(7, 78, 170);            }
+        border-right: 2px solid rgb(7, 78, 170);          
+      }
 }
+
 }
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:rgb(7, 78, 170);
+}
+::-webkit-scrollbar-button {
+    height: 30px;
+  }
+
