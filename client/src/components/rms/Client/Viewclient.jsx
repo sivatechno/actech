@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 
 const customStyles = {
     content: {
-        top: '58%',
+        top: '54%',
         left: '58%',
         right: 'auto',
         bottom: 'auto',
@@ -19,6 +19,7 @@ const customStyles = {
         background:'transparent',
         border:'none',
         outline:'none',
+        overflow:'hidden',
     },
 
 };

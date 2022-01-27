@@ -171,7 +171,7 @@ import Validate from './Clientvalidate';
                       <div className='add_div_client'></div>
                  </div>
                  <div className="add_client_buttons">
-                     <button className="client_cancel_btn">Cancel</button>
+                     <button className="client_cancel_btn" onClick={()=>{ closeModule(false)}}>Cancel</button>
                      <button className="client_add_btn" onClick={handleFormSubmit}>Add client</button>
                  </div>
                  </form>
