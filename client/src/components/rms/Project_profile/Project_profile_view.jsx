@@ -65,7 +65,7 @@ function Project_profile_view() {
     const [currentPage,setcurrentPage] = useState(1);
 
     const pageSize=8;
-    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):0;
+    const pageCount=listOfProject?(listOfProject.length/pageSize):0;
 
     if(pageCount===1){return null};
 
