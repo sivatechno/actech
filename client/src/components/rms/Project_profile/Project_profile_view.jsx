@@ -1,5 +1,5 @@
 import React from 'react'
-import _ from 'lodash';
+import _, { ceil } from 'lodash';
 import './Project_profile_view.scss'
 import * as AiIcons from 'react-icons/all'
 import Project_add from './Project_add'
@@ -64,10 +64,10 @@ function Project_profile_view() {
 
     const [currentPage,setcurrentPage] = useState(1);
 
-    const pageSize=8;
-    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):0;
-
-    if(pageCount===1){return null};
+    const pageSize=7;
+    console.log(Math)
+    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):1;
+    //if(pageCount===1){return null};
 
     const pages = _.range(1, pageCount+1);
 
@@ -120,7 +120,7 @@ function Project_profile_view() {
                             <tbody>
 
                                 {paginatedPosts&&paginatedPosts.map((value,key)=>{
-                                    console.log(value.id);
+                                    //console.log(value.id);
                                     return(
                                         <tr className="project_profile_table_body">
                                             <td>{value.Client_Name}</td>
