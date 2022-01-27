@@ -64,13 +64,14 @@
       .project_profile_table_head{
        border:1px solid rgb(7, 78, 170);
         padding-top: 100px;
-        
+
         //border-bottom: 2.5px solid rgba(216, 216, 216, 0.411);
 
         th{
           color: white;
           font-size: 16px;
           padding:2% 4.5% 1% 0;
+          text-align: center;
           background-color:rgb(7, 78, 170) ;
           cursor:default;
         }
