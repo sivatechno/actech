@@ -19,6 +19,7 @@ import Dashboard from './pages/rms/Dashboardview';
 import Viewassociateprofile from './pages/rms/ViewAssociate';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
+import EditClient from './components/rms/Client/Editclient';
 import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
 import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
@@ -104,6 +105,10 @@ function App({ children }) {
             </Route>
             <Route exact path="/ClientView" element={<ProtectedRoute />}>
               <Route exact path="/ClientView" element={<ClientView />} />
+            </Route>
+
+            <Route exact path="/Editclient" element={<ProtectedRoute />}>
+              <Route exact path="/Editclient" element={<EditClient />} />
             </Route>
             
             <Route exact path="/HardBlock" element={<ProtectedRoute />}>

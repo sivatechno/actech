@@ -4,12 +4,12 @@ import './Project_profile_view.scss'
 import * as AiIcons from 'react-icons/all'
 import Project_add from './Project_add'
 import Edit from './Edit_project'
-import { useEffect, useState } from 'react'
+import {useEffect, useState } from 'react'
 import axios from 'axios';
 import Modal from 'react-modal'
 import config from '../../config/config'
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify'
+import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
@@ -38,7 +38,7 @@ function Project_profile_view() {
     const [listOfProject, setListOfProject] = useState([]);
     const [paginatedPosts,setpaginatedPosts] = useState();
 
-    const deleteProject = (id, e) => {
+    const deleteProject = (id,e) => {
         //alert(id)
       console.log(id);
         axios.delete(`http://localhost:5000/project/deleteproject/${id}`).then((response) => {
@@ -48,11 +48,11 @@ function Project_profile_view() {
     };
 
     useEffect(() => {
-        axios.get(`${apiURL}/project/viewproject`).then((response) => {
+        axios.get("http://localhost:5000/project/viewproject").then((response) => {
             setListOfProject(response.data);
             setpaginatedPosts(_(response.data).slice(0).take(pageSize).value());
             // console.log(response.data);
-
+            
         });
 
     }, []);
@@ -155,7 +155,7 @@ function Project_profile_view() {
             </nav>
 
         </div>
-
+        
     )
 };
 export default Project_profile_view;

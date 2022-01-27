@@ -42,6 +42,7 @@ router.get('/getid/:id',async(req,res)=>{
   }
 });
 
+//coounting of data
 router.get('/count', (req, res) => {
   Project.findAndCountAll({})
 .then(result => {
@@ -49,12 +50,6 @@ router.get('/count', (req, res) => {
 });
 });
 
-router.get('/count', (req, res) => {
-  Project.findAndCountAll({})
-.then(result => {
-  res.json(result.count);
-});
-});
 
 
 

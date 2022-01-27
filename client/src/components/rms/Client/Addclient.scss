@@ -6,22 +6,22 @@
     //background-color:red;
 }
 .addclient_overall_div{
-   // border: 1px solid green;
+    border: 2px solid green;
     background-color: white;
     backface-visibility: hidden;
-    height: 500px;
+    height: 450px;
     width: 100%;
     // margin: 10% 0 0 24%;
-    border-radius:20px;
+    border-radius:15px;
     box-shadow: rgba(54, 54, 54, 0.37) 0px 2px 8px 2px;
 
     //background: white;
 .add_client_overall{
     background: white;
     background-color:white;
-    height: 500px;
+    height: 100%;
     width: 100%;
-    border-radius:20px;
+    border-radius:15px;
    
     //overflow-y:scroll;
     overflow-x: hidden;
@@ -127,10 +127,10 @@
                 height: 45px;
             }
             .client_cancel_btn{
-                border: 2px solid rgb(14, 152, 216);
+                border: 2px solid #3253e2;
                 background-color: white;
                 //padding: 1.5% 6% 1.5% 6%;
-                color: rgb(14, 152, 216);
+                color: #3253e2;
                 margin: 0 0 0 38%; 
                 cursor: pointer;          
              }
@@ -138,7 +138,7 @@
             .client_add_btn{
                 border: 2px solid white;
                // padding: 1.5% 6% 1.5% 6%;
-                background-color: rgb(14, 152, 216);
+                background-color: #3253e2;
                 color: white;
                 margin: 0 0 0 5%;
                 cursor: pointer;
