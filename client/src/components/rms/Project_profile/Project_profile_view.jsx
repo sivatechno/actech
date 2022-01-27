@@ -65,11 +65,11 @@ function Project_profile_view() {
     const [currentPage,setcurrentPage] = useState(1);
 
     const pageSize=8;
-    const pageCount = listOfProject? Math.ceil( listOfProject.length/pageSize):1;
+    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):0;
 
-    if(pageCount===1) return null;
+    if(pageCount===1){return null};
 
-    const pages = _.range(1, pageCount+1)
+    const pages = _.range(1, pageCount+1);
 
     const pagination =(pageNo)=>{
         setcurrentPage(pageNo);
