@@ -3,7 +3,6 @@ import _ from 'lodash';
 import './Project_profile_view.scss'
 import * as AiIcons from 'react-icons/all'
 import Project_add from './Project_add'
-import Delete from './Table_data_delete'
 import Edit from './Edit_project'
 import {useEffect, useState } from 'react'
 import axios from 'axios';
@@ -59,7 +58,6 @@ function Project_profile_view() {
     }, []);
 
     const [popup, popupcome] = useState(false)
-    const [Deletepopup, Deletepopupcome] = useState(false)
     const [Editpopup, EditpopupCome] = useState(false)
 
     const notify = ()=>{toast.error('Deleted',{position: toast.POSITION.TOP_CENTER})}
@@ -67,11 +65,11 @@ function Project_profile_view() {
     const [currentPage,setcurrentPage] = useState(1);
 
     const pageSize=8;
-    const pageCount = listOfProject? Math.ceil( listOfProject.length/pageSize):0;
+    const pageCount=listOfProject?Math.ceil(listOfProject.length/pageSize):0;
 
-    if(pageCount===1) return null;
+    if(pageCount===1){return null};
 
-    const pages = _.range(1, pageCount+1)
+    const pages = _.range(1, pageCount+1);
 
     const pagination =(pageNo)=>{
         setcurrentPage(pageNo);
@@ -113,6 +111,8 @@ function Project_profile_view() {
                                     <th>Project Name</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
+                                    <th>Billing</th>
+                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -126,7 +126,9 @@ function Project_profile_view() {
                                             <td>{value.Client_Name}</td>
                                             <td>{value.Project_Name}</td>
                                             <td>{value.Start_Date}</td>
-                                            <td >{value.End_Date}</td>  
+                                            <td >{value.End_Date}</td> 
+                                            <td>{value.Billing_Status}</td>
+                                            <td >{value.Project_Status}</td>  
                                             <td className="proj_table_icons"> <Link to={`/Update_proj/`}><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon"  onClick={(e) => deleteProject(value.id, e)}/></td>
                                         </tr>
                                      )

@@ -8,19 +8,20 @@ function ViewHardBlock() {
       <div className='viewhardblockheader'>
         <p className='viewhardblocktext'>View Hard Block</p>
         <button className='viewhardblockbtn'>Hard Block</button>
-      </div>
+       </div>
+
      <div className='hardblockcontainer'>
-        <table className='hardblocktable'>
-          <thead >
-            <tr className="hardblockheader">
-              <th>Name</th>
-              <th>Technology</th>
-              <th>Project</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-            </tr>
-          </thead>
-         <tbody>
+      <table className='hardblocktable'>
+        <thead>
+          <tr className='hardblocktr'>
+            <th>Name</th>
+            <th>Technology</th>
+            <th>Project</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr className='hardblockhover'>
           <td>vaishnavi</td>
           <td>React</td>
