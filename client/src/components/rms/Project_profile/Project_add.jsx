@@ -72,6 +72,7 @@ toast.configure()
             password:"",
             start_date:"",
             end_date:"",
+            status:"",
             
 
         });
@@ -175,9 +176,10 @@ toast.configure()
                      <div className='proj_add_status_contain'>
                      <p className="add_project_status_text">Project Status</p>
                      <div className='add_project_status_radio_btn'>
-                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}}/> <p>Enable</p>
-                         <input type="radio" value={status} name='status' checked={status == "Disable"} onClick={()=>{setstatus("Disable");}}/> <p>Disable</p>
+                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}} /> <p>Enable</p>
+                         <input type="radio" value={status} name='status'  checked={status == "Disable"} onClick={()=>{setstatus("Disable");}} /> <p>Disable</p>
                      </div>
+                     
                      </div>
                     
 

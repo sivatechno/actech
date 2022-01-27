@@ -25,6 +25,9 @@ const Validate = (values) => {
     if(!values.enddate){
         errors.enddate="* Please Select End Date"
     }
+    if(!values.status){
+        errors.status="* Please Select Status"
+    }
     return errors;
 };
 

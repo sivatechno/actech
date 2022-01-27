@@ -60,6 +60,7 @@ body('projectname').isLength({min : 1}),
 body('clientname').isLength({min : 1}),
 body('startdate').isDate(),
 body('enddate').isDate(),
+
 // body('check').isIn(['blue','white']),
 
 

@@ -1,166 +1,109 @@
-*{
-    margin:0px;
-    padding: 0px;
-    box-sizing: border-box;
-    //background-color: blue;
-}
-.update_client_overall_div{
-   // border:2px solid red;
-    margin-top: 1%;
-   // margin-right: 10%;
-   // margin-left: 10%;
-    height: calc(100vh - 90px);
+.update_client_overall_contain{
+    //border: 1px solid red;
     width: 100%;
-    overflow-y: scroll;
-    .update_client_overall{
-        //border:2px solid green;
-        height: 495px;
+    height: calc(100vh - 80px);
+    .update_client_overall_head_contain{
+        //border: 1px solid green;
         width: 100%;
-        .update_client_inner{
-            //border:2px solid blue;
-            height: 490px;
-            width: 100%;
-            .update_client_head{
-                //border: 2px solid black;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;    
-                background-color: blue;
-                display: flex;
-                justify-content:space-between;
-                height: 10%;
-                .update_client_header{
-                    margin-top: 1%;
-                    margin-right: 5%;
-                    font-size: 20px;
-                    font-weight: bolder;
-                    background-color: blue;
-                    color: white;
-                         
-                }
-                .update_client_back{
-                    font-size: 20px;
-                    margin-top: 1%;
-                    margin-left: 2%;
-                    background-color: blue;
-                    color:white;
-                 .update_client_back:hover{
-                     background-color: black;
-                     color: white;
-                     transition:0.45;
-
-                 }   
-                    
-                
-                }
-
-            }
-            .update_client_innerbody{
-                //border:1px solid brown;
-                margin:1% 0 0 0;
-                display: flex; 
-                width: 100%;
-                justify-content:space-between;
-                background-color: white;
-                .update_client_content{
-                    //border:2px solid blue;
-                    background-color: white;
-                    padding: 0 2% 0 5%;
-                    .update_client_text{
-                        background-color: white;
-                        //border: 1px solid red;
-                        text-align: left;
-                        font-size: 15px;
-                        font-weight:600;
-                    }
-                    .update_client_field_contain{
-                        //border: 2px solid red;
-                        margin-top: -6;
-                        .update_client_field{
-                            border:solid 2px #2424;
-                            border-radius: 20px;
-                            display: inline-block;
-                            height: 50px;
-                            width: 350px;
-                            background-color: white;
-                            margin-top: -3%;
-                            input[type=text],input[type=date],input[type=password],input[type=email]{
-                                height:90%;
-                                width: 80%;
-                                border:none ;
-                                margin:1% 0 0 2%;
-                                outline: none;
-                                padding-left: 4%;
-                                background-color: white;
-                                font-size: 16px; 
-                            }    
-                        }
-                    }
-                }
-            }
-            .update_client_buttons{
-            background-color: white;
-            border: 1px solid greenyellow;
-            margin: 0 0 0 0;
-            padding: 0 0 0 40%;
-            height: 10%;
-            display: flex;
-        
-            .update_cancel_button,.update_update_button{
-                font-size: 15px;
-                font-weight: 500;
-                border-radius: 10px;
-                justify-content: space-between;
-                //padding:10% 2% 10% 2%;
-            }
-            .update_cancel_button{
-                border: 2px solid rgb(14, 152, 216);
-                background-color: white;
-                padding: 1.5% 6% 1.5% 6%;
-                color: rgb(14, 152, 216);
-                margin: 0 0 0 38%; 
-            }
-            .update_cancel_button:hover{
-                background-color: rgb(14, 152, 216);
-                color:white;
-                border: solid 2px #fff;
-                transition: 0.45;
-            }
-            .update_update_button{
-                border: 2px solid white;
-                padding: 5% 6% 5% 6%;
-                background-color: rgb(14, 152, 216);
-                color: white;
-                margin: 0 0 0 20%;
-            }
-            .update_update_button:hover{
-                background-color:#fff;
-                color: rgb(14, 152, 216);
-                border: solid 2px rgb(14,152,216);
-                transition: 0.4s;
-            }
-            }
-
-        }
-        .update_client_errormsg{
-            font-size: 11px;
-            color: red;
+        height: 9%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(7, 78, 170);
+        border-top-left-radius: 9px;
+        .update_client_back_icon{
+            font-size: 28px;
             font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 1% 50% 0 0;
-            background-color: white;
+            margin: 50% 0 0 50%;
+            color: white;
+        }
+        .update_client_header_text{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 1.2% 2% 0 0 ;
+            color: white;
+            cursor: default;
+        }
+    }
+
+    .update_client_inner_contain{
+        //border: 2px solid blue;
+        height: calc(100% - 12%);
+        width: 100%;
+        overflow-y: scroll;
+        margin-top: 1%;
+        .update_client_inner_contant{
+            //border: 1px solid red;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            margin: 3% 0 0 0;
+            .update_client_inner_contant_contain{
+                //border: 1px solid black;
+                height: 100%;
+                width: 40%;
+                margin: 0 0 0 7%;
+                .update_client_inner_contant_text{
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: default;
+                }
+                .update_client_inner_input_contain{
+                    border: 1px solid #2424;
+                    height: 40%;
+                    display: flex;
+                    border-radius: 20px;
+                    margin: 4% 0 0 0;
+                    .update_client_inner_icon{
+                        //border: 1px solid yellow;
+                        margin: 2% 2% 0 4%;
+                        font-size: 25px;
+
+                    }
+                    input[type="text"],input[type="email"],input[type="password"],input[type="date"]{
+                        border: none;
+                        width: 80%;
+                        outline: none;
+                        //text-align: center;
+                        font-size: 16px;
+                        font-size: 600;
+                        margin: 0 0 0 3%;
+                    }
+                    input[type="date"]{
+                        cursor: pointer;
+                    }
+                }
+            }
         }
 
+        .update_client_btn{
+            //border: 1px solid green;
+            height: 10%;
+            width: 90%;
+            margin: -1% auto;
+            .update_client_update_button{
+                border: 2px solid rgb(7, 78, 170);
+                float: right;
+                width: 15%;
+                height: 70%;
+                font-size: 16px;
+                font-weight: 600;
+                color: rgb(7, 78, 170);
+                background-color: white;
+                border-radius: 10px;
+                margin: 1% 0 0 0;
+                cursor: pointer;
+            }
+            .update_client_update_button:hover{
+                color: white;
+                background-color: rgb(7, 78, 170);
+            }
+        }
     }
-    i{
-        background-color: white;
+    ::-webkit-scrollbar{
+        width: 3px;
     }
-    .update_client_icons{
-        border-color: white;
-        background: white;
-        margin-left: 2px; 
-    }
-    form{
-        background-color: white;
-        //border:1px solid blue;
+    ::-webkit-scrollbar-thumb{
+        background-color:rgb(7, 78, 170) ;
+        border-radius: 20px;
     }
 }

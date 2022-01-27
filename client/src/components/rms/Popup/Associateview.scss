@@ -5,6 +5,7 @@
     border-radius: 15px;
     background-color: white;
     box-shadow: white 0px 2px 8px 0px;
+    overflow-y: scroll;
 
     .close_icon{
         //border: solid 1px black;
@@ -18,29 +19,31 @@
         color: white;
     }
     .associate_profile_table_container{
-        height: 300px;
         width: 100%;
         border-collapse: collapse;
         background-color: white;
         margin: 5% auto;
 
         .associate_profile_row{
-            border: solid 1px #242424;
+            border: solid 1px  rgb(7, 78, 170);
+            background-color: rgb(7, 78, 170) ;
             .associate_row_data{
-                padding: 5px 0 5px 0px;
+                padding: 5px 0 5px 30px;
                 font-size: 16px;
+                color: white;
             }
         }
         .associate_profile_body_row{
             border-bottom: solid 1px #2424;
             .associate_profile_body_row_data{
                 text-align: left;
-                padding: 5px 0 3px 3px;
+                padding: 5px 0 3px 30px;
             }
-            .associate_profile_body_row_data:hover{
-                background-color: rgba(172, 172, 172, 0.178);
-                border-left: 2px solid rgb(7, 78, 170);
-                border-right: 2px solid rgb(7, 78, 170);            }
-        }
+            
     }
+    .associate_profile_body_row:hover{
+        background-color: rgba(172, 172, 172, 0.178);
+        border-left: 2px solid rgb(7, 78, 170);
+        border-right: 2px solid rgb(7, 78, 170);            }
+}
 }
