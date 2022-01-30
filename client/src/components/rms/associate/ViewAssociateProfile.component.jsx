@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddAssociateProfile from  './AddAssociateProfile.component'
 import UpdateAssociateProfile from './UpdateAssociateProfile.component';
+import { toast } from 'react-toastify'
 import config from '../../config/config'
 
 const customStyles = {
@@ -42,8 +43,9 @@ function ViewAssociateProfile() {
         console.log(id);
         axios.delete(`http://localhost:5000/associateprofile/delete/${id}`).then((response) => {
             //response.json("deleted successfully");
-            history.push("/viewassociateprofile")
+            //history.push("/viewassociateprofile")
         });
+        notify(true);
     };
     useEffect(() => {
         axios.get("http://localhost:5000/associateprofile/viewassociateprofile").then((response) => {
@@ -51,6 +53,8 @@ function ViewAssociateProfile() {
             // console.log(response.data);
         });
     }, []);
+
+    const notify = () => { toast.error('Deleted', { position: toast.POSITION.BOTTOM_CENTER }) }
     console.log(listOfAssociateProfiles);
     return (
         <div className="associateprofile_container">
@@ -64,7 +68,6 @@ function ViewAssociateProfile() {
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Example Modal"

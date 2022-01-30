@@ -85,13 +85,9 @@ export default function UpdateProfileViewMentor() {
 
   const [newProject, setNewProject] = useState("");
   
-  const [newFemale,setNewFemale] = useState("");
+  const [newGender,setNewGender] = useState("");
 
-  const [newMale,setNewMale] = useState("");
-
-  const [newExperience,setNewExperience] = useState("");
-
-  const [newFresher,setNewFresher] = useState("");
+  const [newQualify,setNewQualify] = useState("");
 
   const [newPrimaryskill,setNewPrimarySkill] = useState("");
 
@@ -182,10 +178,8 @@ export default function UpdateProfileViewMentor() {
                 coursecertificate:newCoursecertificate,
                 instituteaddress:newInstituteaddress,
                 project:newProject,
-                female:newFemale,
-                male:newMale,
-                experience:newExperience,
-                fresher:newFresher,
+                gender:newGender,
+                qualify:newQualify,
                 secondaryskill:newSecondaryskill,
                 primaryskill:newPrimaryskill,
             }).then((response) => {
@@ -314,22 +308,23 @@ export default function UpdateProfileViewMentor() {
                             </div>
                         </div>  
                         <div className="associateprofile-right-inputfeilds-genderradiobutton">
-                            <label className="genderlbl">Gender</label><br />
-                            <input type="radio"  className="radiomalebtn" onChange={(e)=>{setNewMale(e.target.value);}} value={values.male} name="radio"  />
+                            <label className="genderlbl">Gender</label><br />                            
+                            <input type="radio"  className="radiomalebtn" value={values.gender} name="gender" checked={true}  onClick={(e)=> {setNewGender(e.target.value)}} />
                             <p className="radiobtn-txt">Male</p>
-                            <input type="radio" className="radiofemalebtn" onChange={(e)=>{setNewFemale(e.target.value);}} value={values.female} name="radio"/>
+                            <input type="radio" className="radiofemalebtn" value={values.gender} name="gender" checked={true} onClick={(e) => { setNewGender(e.target.value)}} />
                             <p className="radiobtn-txt">Female</p>
                         </div>
-                    </div>  
+                    </div> 
+                {/* </div>  */}
                     <div className="associateprofile-inputfeilds-checkbox">   
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
-                            <input type="checkbox"  className="checkfresherbtn" onChange={(e)=>{setNewFresher(e.target.value);}} value={values.fresher} name="radio"  />
+                            <input type="checkbox"  className="checkfresherbtn"  value={values.qualify} name="qualify" checked={true}   onClick={(e)=> {setNewQualify(e.target.value)}}   />
                             <p className="checkbtn-txt">Fresher</p>
-                            <input type="checkbox" className="checkexperiencebtn" onChange={(e)=>{setNewExperience(e.target.value);}} value={values.experience} name="radio"/>
+                            <input type="checkbox" className="checkexperiencebtn" value={values.qualify} name="qualify" checked={true}  onClick={(e)=> {setNewQualify(e.target.value)}} />
                             <p className="checkbtn-txt">Experience</p>
                         </div> 
-                    </div>                              
+                    </div>                                                     
                     <div className="buttonsection">
                             <div className="backbtn">
                                <i></i>
@@ -338,7 +333,7 @@ export default function UpdateProfileViewMentor() {
                                 <input type="button" className="cancelicon" value="Cancel" />
                                 <input type="button" className="nexticon" value="Next" onClick={focus2}/>
                             </div>
-                        </div>
+                    </div>
                     {/* </div>{console.log(addAssociate)} */}
                 </div>                
                 <div className="associateprofile-textfeild-container" hidden={index != 1}> 
@@ -526,10 +521,10 @@ export default function UpdateProfileViewMentor() {
                             </div>
                         </div>
                         <div className="associateprofile-right-inputfeilds">
-                           <label>Exceptation Salary(Pa)</label><br />
+                           <label>Expectation Salary(Pa)</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaMoneyBillAlt className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Exceptation Salary" onChange={(e)=>{setNewExpectsalary(e.target.value);}} value={values.expectsalary}/><br/>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Expectation Salary" onChange={(e)=>{setNewExpectsalary(e.target.value);}} value={values.expectsalary}/><br/>
                             </div>
                         </div>
                    </div> 

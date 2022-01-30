@@ -1,4 +1,6 @@
+//const { ARRAY } = require("sequelize/types");
 module.exports = (sequelize , DataTypes) => {
+
     const AssociateProfile = sequelize.define("AssociateProfile",
     {
         user_id:{
@@ -7,6 +9,7 @@ module.exports = (sequelize , DataTypes) => {
         },
         firstname:{
             type: DataTypes.STRING,
+            //allowNull : false,
            
         },
         lastname:{
@@ -38,10 +41,38 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         dob:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
                        
         },
         phonenumber:{
+            type: DataTypes.INTEGER,
+           
+        },
+        university:{
+            type: DataTypes.STRING,
+           
+        },
+        college:{
+            type: DataTypes.STRING,
+           
+        },
+        passedoutyear:{
+            type: DataTypes.INTEGER,
+           
+        },
+        degree:{
+            type: DataTypes.STRING,
+           
+        },
+        cgpa:{
+            type: DataTypes.INTEGER,
+           
+        },
+        qualification:{
+            type: DataTypes.STRING,
+    
+        },
+        company:{
             type: DataTypes.STRING,
            
         },
@@ -54,11 +85,11 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         sslcyearpassedout:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         sslcmark:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         hscboard:{
@@ -70,12 +101,15 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         hscyearpassedout:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         hscmark:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
+        },
+        educationinputlist:{
+           type: DataTypes.STRING,
         },
         university:{
             type: DataTypes.STRING,
@@ -86,7 +120,7 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         passedoutyear:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         degree:{
@@ -94,7 +128,7 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         cgpa:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         qualification:{
@@ -110,19 +144,19 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         currentsalary:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         expectsalary:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         passedoutyear:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         yearsofexp:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         expcertificate:{
@@ -142,7 +176,7 @@ module.exports = (sequelize , DataTypes) => {
            
         },
         duration:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
            
         },
         coursecertificate:{
@@ -157,19 +191,14 @@ module.exports = (sequelize , DataTypes) => {
             type: DataTypes.STRING,
            
         },
-        female:{
+        projectduration:{
+            type: DataTypes.INTEGER,
+        },
+        gender:{
             type: DataTypes.STRING,
            
         },
-        male:{
-            type: DataTypes.STRING,
-           
-        },
-        experience:{
-            type: DataTypes.STRING,
-
-        },
-        fresher:{
+        qualify:{
             type: DataTypes.STRING,
            
         },
@@ -182,6 +211,41 @@ module.exports = (sequelize , DataTypes) => {
            
         },
     })
+    // const AssociateEducation = sequelize.define("AssociateEducation",
+    // {
+    //     university:{
+    //         type: DataTypes.STRING,
+           
+    //     },
+    //     college:{
+    //         type: DataTypes.STRING,
+           
+    //     },
+    //     passedoutyear:{
+    //         type: DataTypes.INTEGER,
+           
+    //     },
+    //     degree:{
+    //         type: DataTypes.STRING,
+           
+    //     },
+    //     cgpa:{
+    //         type: DataTypes.INTEGER,
+           
+    //     },
+    //     qualification:{
+    //         type: DataTypes.STRING,
     
+    //     },
+    //     company:{
+    //         type: DataTypes.STRING,
+           
+    //     },
+    
+    // })
+    // AssociateProfile.hasOne(AssociateEducation);
+    // AssociateEducation.belongsTo(AssociateProfile);
+    
+ 
     return AssociateProfile;
 }
