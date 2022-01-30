@@ -5,6 +5,7 @@ import ProjectView from './Popup/Projectview';
 import AssociateView from './Popup/Associateview';
 import axios from 'axios';
 import Modal from 'react-modal';
+import config from '../config/config'
 
 const customStyles = {
     content: {
@@ -25,6 +26,8 @@ const customStyles = {
 };
 
 function Dashboard() {
+    const apiURL = config.API_URL;
+
     const [listOfMentors, setListOfMentors] = useState([0]);
     const [associatelistOfMentors, associatesetListOfMentors] = useState([0]);
     const[projectmodalIsOpen,projectsetModal] = useState(false);
@@ -33,14 +36,14 @@ function Dashboard() {
     
     
     useEffect(() => {
-        axios.get("http://localhost:5000/project/count").then((response) => {
+        axios.get(`${apiURL}/project/count`).then((response) => {
             setListOfMentors(response.data);
             
         });
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/associateprofile/count").then((response) => {
+        axios.get(`${apiURL}/associateprofile/count`).then((response) => {
             associatesetListOfMentors(response.data);
             
         });

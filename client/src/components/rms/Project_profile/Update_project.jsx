@@ -14,7 +14,7 @@ function Update_project() {
     const {id}   = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/project/getid/${id}`).then((response) => {
+        axios.get(`${apiURL}/project/getid/${id}`).then((response) => {
             setProfileData(response.data);
             console.log(response)
         });

@@ -40,14 +40,14 @@ function Project_profile_view() {
     const deleteProject = (id,e) => {
         //alert(id)
       console.log(id);
-        axios.delete(`http://localhost:5000/project/deleteproject/${id}`).then((response) => {
+        axios.delete(`${apiURL}/project/deleteproject/${id}`).then((response) => {
          //res.send("success");
         });
      notify(true);
     };
 
     useEffect(() => {
-        axios.get("http://localhost:5000/project/viewproject").then((response) => {
+        axios.get(`${apiURL}/project/viewproject`).then((response) => {
             setListOfProject(response.data);
             setpaginatedPosts(_(response.data).slice(0).take(pageSize).value());
             // console.log(response.data);
