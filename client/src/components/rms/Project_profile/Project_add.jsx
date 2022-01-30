@@ -44,7 +44,7 @@ toast.configure()
 
                 
 
-            axios.post("http://localhost:5000/project/addproject",
+            axios.post(`${apiURL}/project/addproject`,
             {
                 
               clientname:clientname,
@@ -72,6 +72,7 @@ toast.configure()
             password:"",
             start_date:"",
             end_date:"",
+            status:"",
             
 
         });
@@ -117,12 +118,10 @@ toast.configure()
                           <div className="add_project_field_contain">
                       <div className="add_project_feild">
                           <i><AiIcons.FaRegUserCircle className="icons"/></i>
-                          <input type="name" className="textfield" placeholder="Client_name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture}  />
+                          <input type="name" className="textfield" placeholder="Client Name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture} autoFocus = {true} />
                     
                       </div>
                       </div>
-                      {/* <p role="alert">haai</p> */}
-                      {/* <p>{errors.message}</p> */}
                       {errors.clientname && <p className='errormsg'>{errors.clientname}</p>}
                       </div>
                       
@@ -131,7 +130,7 @@ toast.configure()
                           <div className="add_project_field_contain">
                       <div className="add_project_feild">
                           <i><AiIcons.AiOutlineFundProjectionScreen className="icons"/></i>
-                          <input type="name" className="textfield" placeholder="Project_name" required name='projectname' values={setValues.project_name} onChange={(e)=>{setProjectName(e.target.value);}} onChangeCapture={handleChangeCapture}  />
+                          <input type="name" className="textfield" placeholder="Project Name" required name='projectname' values={setValues.project_name} onChange={(e)=>{setProjectName(e.target.value);}} onChangeCapture={handleChangeCapture}  />
                       </div>
                       </div>
                       {errors.projectname && <p className='errormsg'>{errors.projectname}</p>}
@@ -175,9 +174,10 @@ toast.configure()
                      <div className='proj_add_status_contain'>
                      <p className="add_project_status_text">Project Status</p>
                      <div className='add_project_status_radio_btn'>
-                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}}/> <p>Enable</p>
-                         <input type="radio" value={status} name='status' checked={status == "Disable"} onClick={()=>{setstatus("Disable");}}/> <p>Disable</p>
+                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}} /> <p>Enable</p>
+                         <input type="radio" value={status} name='status'  checked={status == "Disable"} onClick={()=>{setstatus("Disable");}} /> <p>Disable</p>
                      </div>
+                     
                      </div>
                     
 
