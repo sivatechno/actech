@@ -18,14 +18,14 @@
         margin: 5% auto;
         .viewsoftblocktext{
             margin: 1% 0 0 0;
-            color: #3253e2;
+            color: rgb(7, 78, 170);
             font-size: 20px;
             font-weight: 600;
         }
         .viewsoftblockbtn{
-            border: 2px solid #3253e2;
+            border: 2px solid rgb(7, 78, 170);
             background-color: #ffff;
-            color: #3253e2;
+            color: rgb(7, 78, 170);
             padding: 7px 30px 9px 30px;
             text-align: center;
             border-radius: 10px;
@@ -40,17 +40,17 @@
     }
     .softblockcontainer{
        // outline: 2px solid blueviolet;
-        margin-top:  -3% ;
+       // margin-top:  -3% ;
         height: 80%;
        .softblocktable{
-           //border: 1px solid green;
+          // border: 1px solid green;
            margin: 0 auto;
            width: 80%;
            border-collapse: collapse;
            thead{
                //border: 1.5px solid #2424;
                height: 65px;
-               text-align: center;
+               //text-align: center;
                background-color: rgb(7, 78, 170);
                color:white;
 
@@ -60,12 +60,12 @@
 
            }
            tbody{
-              // border: 1px solid red;
+             //  border: 1px solid red;
                height: 45px;
-               text-align: center;
+               //text-align: center;
                border: 1.5px solid #2424;
                tr{
-                   border-bottom: 1.5px solid #2424;
+                 border-bottom: 1.5px solid #2424;
                  height: 50px;
                
                }

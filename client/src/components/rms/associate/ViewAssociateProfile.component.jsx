@@ -40,13 +40,13 @@ function ViewAssociateProfile() {
     }
     const deleteAssociateProfile = (id, e) => {
         console.log(id);
-        axios.delete(`http://localhost:5000/associateprofile/delete/${id}`).then((response) => {
+        axios.delete(`${apiURL}/associateprofile/delete/${id}`).then((response) => {
             //response.json("deleted successfully");
             history.push("/viewassociateprofile")
         });
     };
     useEffect(() => {
-        axios.get("http://localhost:5000/associateprofile/viewassociateprofile").then((response) => {
+        axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
             // console.log(response.data);
         });
@@ -109,11 +109,10 @@ function ViewAssociateProfile() {
                                         >
                                         {modalUpdateIsOpen &&<UpdateAssociateProfile closeModelUpdate={setUpdateIsOpen}/>}
                                     </Modal>
-                                    <Link to={"/"}>
                                         <div className="associate_table_icons"><AiIcons.MdDelete className="associate_icons_align_delete"
                                             onClick={(e) => deleteAssociateProfile(value.id, e)}
                                         /></div>
-                                    </Link>
+                                    
                                     {/* <Link to={`/profileviewassociateprofile/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link> */}
                                 </td>
                             </tr>

@@ -31,9 +31,11 @@ toast.configure()
       
         const [enddate,setEndDate] = useState("");
 
-        const [check,setcheck] = useState("");
+        const [status,setstatus] = useState("");
 
-        const [projectstatus,setprojectstatus] = useState("");
+        const [billing,setbilling] = useState("");
+
+       
 
         const addproject = (event) =>{
 
@@ -42,7 +44,7 @@ toast.configure()
 
                 
 
-            axios.post("http://localhost:5000/project/addproject",
+            axios.post(`${apiURL}/project/addproject`,
             {
                 
               clientname:clientname,
@@ -50,7 +52,8 @@ toast.configure()
               clientemail:clientemail,
               startdate:startdate,
               enddate:enddate,
-              checkbox:check,
+              status:status,
+              billing:billing,
             }).then((response) =>{ 
                 notify(true); 
                 //alert('hai')     
@@ -69,6 +72,7 @@ toast.configure()
             password:"",
             start_date:"",
             end_date:"",
+            status:"",
             
 
         });
@@ -114,12 +118,10 @@ toast.configure()
                           <div className="add_project_field_contain">
                       <div className="add_project_feild">
                           <i><AiIcons.FaRegUserCircle className="icons"/></i>
-                          <input type="name" className="textfield" placeholder="Client_name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture}  />
+                          <input type="name" className="textfield" placeholder="Client Name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture} autoFocus = {true} />
                     
                       </div>
                       </div>
-                      {/* <p role="alert">haai</p> */}
-                      {/* <p>{errors.message}</p> */}
                       {errors.clientname && <p className='errormsg'>{errors.clientname}</p>}
                       </div>
                       
@@ -128,7 +130,7 @@ toast.configure()
                           <div className="add_project_field_contain">
                       <div className="add_project_feild">
                           <i><AiIcons.AiOutlineFundProjectionScreen className="icons"/></i>
-                          <input type="name" className="textfield" placeholder="Project_name" required name='projectname' values={setValues.project_name} onChange={(e)=>{setProjectName(e.target.value);}} onChangeCapture={handleChangeCapture}  />
+                          <input type="name" className="textfield" placeholder="Project Name" required name='projectname' values={setValues.project_name} onChange={(e)=>{setProjectName(e.target.value);}} onChangeCapture={handleChangeCapture}  />
                       </div>
                       </div>
                       {errors.projectname && <p className='errormsg'>{errors.projectname}</p>}
@@ -169,16 +171,28 @@ toast.configure()
                       </div>
                       {errors.clientemail && <p className='errormsg'>{errors.clientemail}</p>}
                       </div>
-                     <div className='proj_add_checkbox_contain'>
-                     <p className="add_project_checkbox_text">Project Status</p>
-                     <select className='update_proj_select' >
-                             <option className='val' >Enable</option>
-                             <option className='val' >Disable</option>
-                            </select>
+                     <div className='proj_add_status_contain'>
+                     <p className="add_project_status_text">Project Status</p>
+                     <div className='add_project_status_radio_btn'>
+                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}} /> <p>Enable</p>
+                         <input type="radio" value={status} name='status'  checked={status == "Disable"} onClick={()=>{setstatus("Disable");}} /> <p>Disable</p>
+                     </div>
+                     
                      </div>
                     
 
                  </div>
+
+                <div className="add_project_inner_body">
+                <div className='proj_add_bill_contain'>
+                     <p className="add_project_bill_text">Billing Status</p>
+                     <div className='add_project_bill_radio_btn'>
+                         <input type="radio" value={billing} name='billing' checked={billing == "Billable"} onClick={()=>{setbilling("Billable");}} /> <p>Billable</p>
+                         <input type="radio" value={billing} name='billing' checked={billing == "Non-Billable"} onClick={()=>{setbilling("Non-Billable");}}/> <p>Non-Billable</p>
+                     </div>
+                     </div>
+                </div>
+
                  <div className="add_project_buttons">
                      <div className="cncl_bttn">
                      <button className="cancel_btn" onClick={()=>closeModel(false)}>Cancel</button>
@@ -197,4 +211,3 @@ toast.configure()
     )
     };
     export default Project_add;
-// }

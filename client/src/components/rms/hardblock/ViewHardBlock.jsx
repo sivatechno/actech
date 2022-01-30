@@ -3,10 +3,10 @@ import './ViewHardBlock.scss';
 
 function ViewHardBlock() {
   return( 
-  <>
-   <div className='viewhardblockcontainer'> 
+  <div>
+   <div className='viewhardblockoverallcontainer'> 
       <div className='viewhardblockheader'>
-       <p className='viewhardblocktext'>View Hard Block</p>
+        <p className='viewhardblocktext'>View Hard Block</p>
         <button className='viewhardblockbtn'>Hard Block</button>
        </div>
 
@@ -22,46 +22,40 @@ function ViewHardBlock() {
           </tr>
         </thead>
         <tbody>
-        <tr className='hardblockhover'>
+        <tr className='hardblocktr'>
           <td>vaishnavi</td>
           <td>React</td>
           <td>Website</td>
           <td>01/01/2022</td>
           <td>21/11/2022</td>
         </tr>
-        <tr className='hardblockhover'>
+        <tr className='hardblocktr'>
           <td>vaishnavi</td>
           <td>React</td>
           <td>Website</td>
           <td>01/01/2022</td>
           <td>21/11/2022</td>
         </tr>
-        <tr className='hardblockhover'>
+        <tr className='hardblocktr'>
           <td>Vaishnavi</td>
           <td>React</td>
           <td>Website</td>
           <td>01/01/2022</td>
           <td>21/11/2022</td>
         </tr>
-        <tr className='hardblockhover'>
+        <tr className='hardblocktr'>
           <td>vaishnavi</td>
           <td>React</td>
           <td>Website</td>
           <td>01/01/2022</td>
           <td>21/11/2022</td>
         </tr>
-        <tr>
-          <td>vaishnavi</td>
-          <td>React</td>
-          <td>Website</td>
-          <td>01/01/2022</td>
-          <td>21/11/2022</td>
-        </tr>
+       
         </tbody>
       </table>
     </div>
    </div>
-  </>
+  </div>
   );
 }
 

@@ -1,149 +1,109 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    //background-color: white;
-    //background-color:red;
-}
-.addedit_overall_div{
-   // border: 1px solid green;
-    background-color: white;
-    backface-visibility: hidden;
-    // height: 70px;
-    width: 790px;
-    // margin: 10% 0 0 24%;
-    border-radius:20px;
-    box-shadow: rgba(54, 54, 54, 0.37) 0px 2px 8px 2px;
-    //background: white;
-.add_edit_overall{
-    background: white;
-    background-color:white;
-    height: 450px;
-    width: 790px;
-    border-radius:20px;
-   
-    //overflow-y:scroll;
-    overflow-x: hidden;
-    
-    .add_edit_inner{
-        background-color: white;
-        //border: 1px solid blue;
+.update_client_overall_contain{
+    //border: 1px solid red;
+    width: 100%;
+    height: calc(100vh - 80px);
+    .update_client_overall_head_contain{
+        //border: 1px solid green;
+        width: 100%;
+        height: 9%;
+        display: flex;
         justify-content: space-between;
-        margin: 20px;
-        font-weight: bolder;
-        background:white;
-        enable-background: white;
-        .add_edit_head{
-            border-bottom: 2px solid rgba(223, 223, 223, 0.418);
-            height: 5%;
-            display: flex;
-            padding-bottom: 2%;
-            background-color: white;
-            .add_edit_header{
-                font-size: 18px;
-                font-weight: bold;
-                background-color: white;
-            }
-            .close{
-                //border: 1px solid red;
-                margin:0.8% 0 0 80%;
-                font-weight: bolder;
-                font-size: 18px;
-                color: red;
-                background-color: white;
-            }
+        background-color: rgb(7, 78, 170);
+        border-top-left-radius: 9px;
+        .update_client_back_icon{
+            font-size: 28px;
+            font-weight: 600;
+            margin: 50% 0 0 50%;
+            color: white;
         }
-        .add_edit_inner_body{
-            //border: 1px solid blue;
+        .update_client_header_text{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 1.2% 2% 0 0 ;
+            color: white;
+            cursor: default;
+        }
+    }
+
+    .update_client_inner_contain{
+        //border: 2px solid blue;
+        height: calc(100% - 12%);
+        width: 100%;
+        overflow-y: scroll;
+        margin-top: 1%;
+        .update_client_inner_contant{
+            //border: 1px solid red;
+            width: 100%;
+            height: 20%;
+            display: flex;
             margin: 3% 0 0 0;
-            display: flex;
-            justify-content: space-between;
-            background-color: white;
-
-            .add_edit_content{
-                background-color: white;
-                //border: 1px solid green;
-                .add_edit_text{
-                    background-color: white;
-                    //border: 1px solid red;
-                    text-align: left;
-                    font-size: 15px;
-                    font-weight:600;
-                   
+            .update_client_inner_contant_contain{
+                //border: 1px solid black;
+                height: 100%;
+                width: 40%;
+                margin: 0 0 0 7%;
+                .update_client_inner_contant_text{
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: default;
                 }
-                .add_edit_field_contain{
-                    background-color: white;
-                    //border: 1px solid red;
-                    margin-top: -6%;
-                .add_edit_feild{
-                    border:solid 2px #2424;
+                .update_client_inner_input_contain{
+                    border: 1px solid #2424;
+                    height: 40%;
+                    display: flex;
                     border-radius: 20px;
-                    display: inline-block;
-                    height: 50px;
-                    width: 300px;
-                    background-color: white;
-                    margin-top: 0%;
-                    input[type=text],input[type=date],input[type=password],input[type=email]{
-                        height:90%;
+                    margin: 4% 0 0 0;
+                    .update_client_inner_icon{
+                        //border: 1px solid yellow;
+                        margin: 2% 2% 0 4%;
+                        font-size: 25px;
+
+                    }
+                    input[type="text"],input[type="email"],input[type="password"],input[type="date"]{
+                        border: none;
                         width: 80%;
-                        border:none ;
-                        margin:1% 0 0 2%;
                         outline: none;
-                        padding-left: 4%;
-                        background-color: white;
-                        font-size: 16px; 
-                    }    
+                        //text-align: center;
+                        font-size: 16px;
+                        font-size: 600;
+                        margin: 0 0 0 3%;
+                    }
+                    input[type="date"]{
+                        cursor: pointer;
+                    }
                 }
             }
-         }
         }
-        .add_edit_buttons{
-            background-color: white;
-            //border: 1px solid greenyellow;
-            margin: 6% 0 0 0;
-            padding: 0 0 0 40%;
-            height: 10%;
-            .edit_cancel_btn,.edit_add_btn{
-                font-size: 15px;
-                font-weight: 500;
-                border-radius: 10px;
-            }
-            .edit_cancel_btn{
-                border: 2px solid rgb(14, 152, 216);
-                background-color: white;
-                padding: 1.5% 6% 1.5% 6%;
-                color: rgb(14, 152, 216);
-                margin: 0 0 0 38%;           
-             }
-        
-            .edit_add_btn{
-                border: 2px solid white;
-                padding: 1.5% 6% 1.5% 6%;
-                background-color: rgb(14, 152, 216);
-                color: white;
-                margin: 0 0 0 5%;
-            }
-        }
-    }
-    .errormsg{
-        font-size: 11px;
-        color: red;
-        font-weight: 600;
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 1% 50% 0 0;
-        background-color: white;
-    }
-}
-i{
-    background-color: white;
-}
-.icons{
-    border-color: white;
-    background: white;
-}
-form{
-    background-color: white;
-    //border:1px solid blue;
-}
 
+        .update_client_btn{
+            //border: 1px solid green;
+            height: 10%;
+            width: 90%;
+            margin: -1% auto;
+            .update_client_update_button{
+                border: 2px solid rgb(7, 78, 170);
+                float: right;
+                width: 15%;
+                height: 70%;
+                font-size: 16px;
+                font-weight: 600;
+                color: rgb(7, 78, 170);
+                background-color: white;
+                border-radius: 10px;
+                margin: 1% 0 0 0;
+                cursor: pointer;
+            }
+            .update_client_update_button:hover{
+                color: white;
+                background-color: rgb(7, 78, 170);
+            }
+        }
+    }
+    ::-webkit-scrollbar{
+        width: 3px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color:rgb(7, 78, 170) ;
+        border-radius: 20px;
+    }
 }

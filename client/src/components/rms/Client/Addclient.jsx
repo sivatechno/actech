@@ -47,7 +47,7 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.FaRegUserCircle className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="Client_name" required name="clientname" value={values.clientname} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="Client Name" required name="clientname" value={values.clientname} onChange={handleChange}  />
                     
                       </div>
                       </div>
@@ -59,7 +59,7 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.SiMicrosoftoffice className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="company_name" required name='companyname' value={values.projectname} onChange={handleChange} />
+                          <input type="text" className="textfield" placeholder="company Name" required name='companyname' value={values.projectname} onChange={handleChange} />
                       </div>
                       </div>
                       {errors.companyname && <p className='add_client_errormsg'>{errors.companyname}</p>}
@@ -163,7 +163,7 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.BsPinAngleFill className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="pin_code" required name='pincode' value={values.pincode} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="pin code" required name='pincode' value={values.pincode} onChange={handleChange}  />
                       </div>
                       </div>
                       {errors.Pin_code && <p className='add_client_errormsg'>{errors.Pin_code}</p>}
@@ -171,7 +171,7 @@ import Validate from './Clientvalidate';
                       <div className='add_div_client'></div>
                  </div>
                  <div className="add_client_buttons">
-                     <button className="client_cancel_btn">Cancel</button>
+                     <button className="client_cancel_btn" onClick={()=>{ closeModule(false)}}>Cancel</button>
                      <button className="client_add_btn" onClick={handleFormSubmit}>Add client</button>
                  </div>
                  </form>

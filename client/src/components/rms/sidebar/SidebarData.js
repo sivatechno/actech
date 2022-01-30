@@ -23,7 +23,7 @@ export const SidebarData = [
     },
     {
       title: 'Project Mapping',
-      path:'',
+      path:'/ProjectMappingView',
       icon:<AiIcons.GrMapLocation/>,
     },
      {

@@ -1,14 +1,14 @@
 .dashboard_overall-contain{
-    border: 1px solid red;
+    border: 1px solid transparent;
     height: calc(100vh - 80px);
     width: 100%;
     .dashboard_inner_row_card_contain{
-        border: 1px solid green;
-        height: 30%;
-        margin-top: 1.5%;
+      //  border: 1px solid green;
+        height: 28%;
+        margin-top: 2%;
         display: flex;
 
-        .dashboard_inner_proj_card_outline,.dashboard_inner_asso_card_outline,.dashboard_inner_client_card_outline,.dashboard_inner_allo_card_outline,.dashboard_inner_unallo_card_outline,.dashboard_inner_bill_card_outline{
+        .dashboard_inner_proj_card_outline,.dashboard_inner_asso_card_outline,.dashboard_inner_client_card_outline,.dashboard_inner_allo_card_outline,.dashboard_inner_unallo_card_outline,.dashboard_inner_bill_card_outline,.dashboard_inner_non_bill_card_outline,.dashboard_inner_hard_card_outline,.dashboard_inner_soft_card_outline{
             // border: 1px solid blue;
             height: 100%;
             width: 28%;
@@ -16,7 +16,7 @@
             display: flex;
             border-radius: 10px;
 
-            .dashboard_inner_proj_card_left,.dashboard_inner_asso_card_left,.dashboard_inner_client_card_left,.dashboard_inner_allo_card_left,.dashboard_inner_unallo_card_left,.dashboard_inner_bill_card_left{
+            .dashboard_inner_proj_card_left,.dashboard_inner_asso_card_left,.dashboard_inner_client_card_left,.dashboard_inner_allo_card_left,.dashboard_inner_unallo_card_left,.dashboard_inner_bill_card_left,.dashboard_inner_non_bill_card_left,.dashboard_inner_hard_card_left,.dashboard_inner_soft_card_left{
                 //border: 1px solid red;
                 height: 100%;
                 width: 100%;
@@ -24,7 +24,7 @@
                 //background-color: rgb(117, 15, 15);
                 clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 240%) ;
 
-                .dashboard_inner_proj_card_left_text,.dashboard_inner_asso_card_left_text,.dashboard_inner_client_card_left_text,.dashboard_inner_allo_card_left_text,.dashboard_inner_unallo_card_left_text,.dashboard_inner_bill_card_left_text{
+                .dashboard_inner_proj_card_left_text,.dashboard_inner_asso_card_left_text,.dashboard_inner_client_card_left_text,.dashboard_inner_allo_card_left_text,.dashboard_inner_unallo_card_left_text,.dashboard_inner_bill_card_left_text,.dashboard_inner_non_bill_card_left_text,.dashboard_inner_hard_card_left_text,.dashboard_inner_soft_card_left_text{
                     //border: 1px solid pink;
                     text-align: center;
                     margin: 30% 30% 0 0;
@@ -67,13 +67,28 @@
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
+            .dashboard_inner_non_bill_card_left{
+                background-color: rgb(10, 180, 202);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .dashboard_inner_hard_card_left{
+                background-color: rgb(4, 112, 49);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .dashboard_inner_soft_card_left{
+                background-color: rgb(202, 10, 42);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
            
-            .dashboard_inner_proj_card_right,.dashboard_inner_asso_card_right,.dashboard_inner_client_card_right,.dashboard_inner_allo_card_right,.dashboard_inner_unallo_card_right,.dashboard_inner_bill_card_right{
-                //border: 1px solid black;
+            .dashboard_inner_proj_card_right,.dashboard_inner_asso_card_right,.dashboard_inner_client_card_right,.dashboard_inner_allo_card_right,.dashboard_inner_unallo_card_right,.dashboard_inner_bill_card_right,.dashboard_inner_non_bill_card_right,.dashboard_inner_hard_card_right,.dashboard_inner_soft_card_right{
+              //  border: 1px solid black;
                 height: 100%;
                 width: 40%;
 
-                .dashboard_inner_proj_card_right_text,.dashboard_inner_asso_card_right_text,.dashboard_inner_client_card_right_text,.dashboard_inner_allo_card_right_text,.dashboard_inner_unallo_card_right_text,.dashboard_inner_bill_card_right_text{
+                .dashboard_inner_proj_card_right_text,.dashboard_inner_asso_card_right_text,.dashboard_inner_client_card_right_text,.dashboard_inner_allo_card_right_text,.dashboard_inner_unallo_card_right_text,.dashboard_inner_bill_card_right_text,.dashboard_inner_non_bill_card_right_text,.dashboard_inner_hard_card_right_text,.dashboard_inner_soft_card_right_text{
                    // border: 1px solid violet;
                     text-align: center;
                     margin: 30% 30% 0 0;
@@ -83,8 +98,8 @@
                     cursor: default;
                 }
 
-                .dashboard_inner_proj_card_right_count,.dashboard_inner_asso_card_right_count,.dashboard_inner_client_card_right_count,.dashboard_inner_allo_card_right_count,.dashboard_inner_unallo_card_right_count,.dashboard_inner_bill_card_right_count{
-                    //border: 1px solid green;
+                .dashboard_inner_proj_card_right_count,.dashboard_inner_asso_card_right_count,.dashboard_inner_client_card_right_count,.dashboard_inner_allo_card_right_count,.dashboard_inner_unallo_card_right_count,.dashboard_inner_bill_card_right_count,.dashboard_inner_non_bill_card_right_count,.dashboard_inner_hard_card_right_count,.dashboard_inner_soft_card_right_count{
+                  //  border: 1px solid green;
                     text-align: center;
                     margin: 20% 35% 0 0;
                     font-size: 65px;
@@ -111,15 +126,16 @@
                 .dashboard_inner_bill_card_right_count{
                     color:rgb(10, 78, 105) ;
                 }
-                .dashboard_inner_proj_card_right_icon,.dashboard_inner_asso_card_right_icon,.dashboard_inner_client_card_right_icon,.dashboard_inner_allo_card_right_icon,.dashboard_inner_unallo_card_right_icon,.dashboard_inner_bill_card_right_icon{
-                    //border: 1px solid red;
-                    font-size: 25px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    float: right;
-                    margin-top: 10%;
-                    width: 30%;
+                .dashboard_inner_non_bill_card_right_count{
+                    color: rgb(10, 180, 202);
                 }
+                .dashboard_inner_hard_card_right_count{
+                    color: rgb(4, 112, 49) ;
+                }
+                .dashboard_inner_soft_card_right_count{
+                    color: rgb(202, 10, 42) ;
+                }
+            
             }
         }
         .dashboard_inner_proj_card_outline{
@@ -140,11 +156,21 @@
         .dashboard_inner_bill_card_outline{
             border: 2px solid rgb(10, 78, 105);
         }
-        .dashboard_inner_proj_card_outline:hover,.dashboard_inner_asso_card_outline:hover,.dashboard_inner_client_card_outline:hover,.dashboard_inner_allo_card_outline:hover,.dashboard_inner_unallo_card_outline:hover,.dashboard_inner_bill_card_outline:hover{
-           transform: 1.05;
-           width: 28.5%;
+        .dashboard_inner_non_bill_card_outline{
+            border: 2px solid rgb(10, 180, 202);
+        }
+        .dashboard_inner_hard_card_outline{
+            border: 2px solid rgb(4, 112, 49) ;
+        }
+        .dashboard_inner_soft_card_outline{
+            border: 2px solid rgb(202, 10, 42);
+        }
+        .dashboard_inner_proj_card_outline:hover,.dashboard_inner_asso_card_outline:hover,.dashboard_inner_client_card_outline:hover,.dashboard_inner_allo_card_outline:hover,.dashboard_inner_unallo_card_outline:hover,.dashboard_inner_bill_card_outline:hover,.dashboard_inner_non_bill_card_outline:hover,.dashboard_inner_hard_card_outline:hover,.dashboard_inner_soft_card_outline:hover{
+           transform: scale(1.05);
+           width: 29%;
            box-shadow: 1px 7px 7px 5px #6b6a6a67;
         }
+        
     }
     
 }
