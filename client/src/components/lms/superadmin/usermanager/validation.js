@@ -1,3 +1,5 @@
+// import { NUMERIC } from "sequelize";
+
 const Validate = (values) => {
     let errors={};
     
@@ -38,6 +40,7 @@ const Validate = (values) => {
     if(!values.postalcode){
         errors.postalcode="* Please Enter postalcode"
     }
+    
     if(!values.uploadimage){
         errors.uploadimage="* Please Enter uploadimage"
     }

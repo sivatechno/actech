@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
+// import './UpdateProfileMentor.scss'
 import './UpdateProfileMentor.scss'
 import * as AiIcons from 'react-icons/all';
 import image from '../../../assets/images/updatementor.png';
-
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import config from '../../../config/config';
@@ -81,7 +81,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
 
 
     return (
-        <div className="profileviewmentor_container">
+        <div className="updateprofilementor">
             {/* {newProfileData.length > 0 && newProfileData.map((values, key) => {
                 return ( */}
             <div>
