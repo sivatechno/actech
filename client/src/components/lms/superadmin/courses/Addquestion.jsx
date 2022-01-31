@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Addquestion.scss';
+import './AddQuestion.scss';
 import Accordian from '../../coursespages/Accordian';
 
 

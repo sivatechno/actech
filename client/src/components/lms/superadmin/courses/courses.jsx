@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './courses.scss'
+import './Courses.scss'
 import axios from 'axios';
 import Validate from '../../coursespages/Validate';
 
