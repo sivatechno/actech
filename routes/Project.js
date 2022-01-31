@@ -22,6 +22,27 @@ router.get('/viewproject',async(req,res)=>{
 
     }
 });
+
+router.get('/getid/:id',async(req,res)=>{
+  try {
+     const id = req.params.id;
+      const project=await Project.findByPk(id);
+      if (project) {
+
+        console.log(id)
+          
+          res.send(project);
+
+      }
+      
+  } catch (error) {
+
+      res.send({error:error.message})
+
+  }
+});
+
+//coounting of data
 router.get('/count', (req, res) => {
   Project.findAndCountAll({})
 .then(result => {
@@ -29,12 +50,6 @@ router.get('/count', (req, res) => {
 });
 });
 
-router.get('/count', (req, res) => {
-  Project.findAndCountAll({})
-.then(result => {
-  res.json(result.count);
-});
-});
 
 
 
@@ -45,6 +60,7 @@ body('projectname').isLength({min : 1}),
 body('clientname').isLength({min : 1}),
 body('startdate').isDate(),
 body('enddate').isDate(),
+
 // body('check').isIn(['blue','white']),
 
 
@@ -59,7 +75,7 @@ async(req,res)=>{
 
   try {
 
-    const {clientname,projectname,clientemail,startdate,enddate,check}=req.body;
+    const {clientname,projectname,clientemail,startdate,enddate,status,billing}=req.body;
     const projectAlreadyExists=await Project.findOne({where:{Project_Name:projectname}});
 
     if (!projectAlreadyExists) {
@@ -70,7 +86,8 @@ async(req,res)=>{
             Client_email:clientemail,
             Start_Date:startdate,
             End_Date:enddate,
-            check_box:check,
+            Project_Status:status,
+            Billing_Status:billing,
         });
         res.json("success")
         

@@ -1,4 +1,3 @@
-//const { ARRAY } = require("sequelize/types");
 module.exports = (sequelize , DataTypes) => {
 
     const AssociateProfile = sequelize.define("AssociateProfile",
@@ -9,7 +8,6 @@ module.exports = (sequelize , DataTypes) => {
         },
         firstname:{
             type: DataTypes.STRING,
-            //allowNull : false,
            
         },
         lastname:{

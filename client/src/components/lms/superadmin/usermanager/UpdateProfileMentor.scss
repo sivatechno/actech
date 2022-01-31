@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 .updateprofilementor{
-    background-color:white;
-    height: 518px;
+    background-color:rgb(255, 255, 255);
+    height: 500px;
     width: 750px;
     border-radius:20px;
-    margin:-12% auto;
+     margin:0  auto;    
     overflow-y:scroll;
     box-shadow: rgba(56, 55, 55, 0.39) 1px 2px 8px 1px;
     .headercontent{
@@ -19,6 +19,7 @@
             height: 50px;
             width: 50px;
         } 
+        
         .member_align{
              margin-right: 28rem;
         } 
@@ -89,16 +90,12 @@
     i{
         margin: 13px 15px;
     }
-    .close{
-        //border: 1px solid red;
-        font-size: 16px;
-        font-weight: bold;
-        color: red;
-        margin: 0 0 0 0;
-        width: 5%;
-        height: 5%;
-        background-color: white;
-        border: none;
+    .close{   
+            margin-right: 25px;
+            height:4%;
+            width:4%;
+            color:red;           
+        
     }
     .notes{
         padding-bottom: 10px;
@@ -138,12 +135,16 @@
     .cancel:hover
     {
          width: 102px;
-         height: 41px;
+         height: 42px;
          
     }
     .editstaff:hover
     {
          width: 102px;
-         height: 41px;
+         height: 42px;
     }
-}
+   
+ }
+
+
+

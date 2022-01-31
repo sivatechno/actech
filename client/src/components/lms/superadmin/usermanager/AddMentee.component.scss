@@ -91,8 +91,8 @@
         .cancel{
             width:100px;
             height: 40px;
-            margin-right: 40px;
-            border-radius: 20px;
+            margin-right: 50px;
+            border-radius: 10px;
             font-size: 16px;
             color:black;
             border: solid 2px #0C50A3 ;
@@ -100,15 +100,26 @@
             cursor: pointer;
         }
         .Addstaff{
+            border:1px solid white;
             margin-top: 10px;
             width: 100px;
             height: 40px;
-            border-radius: 20px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 13px;
             color: white;
             background-color:#0C50A3;
             border: none;
             cursor: pointer;
         }        
+    }
+    .cancel:hover
+    {
+         width: 102px;
+         height: 41px;
+    }
+    .Addstaff:hover
+    {
+         width: 102px;
+         height: 41px;
     }
 }

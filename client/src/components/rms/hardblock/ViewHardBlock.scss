@@ -1,0 +1,68 @@
+.viewhardblockoverallcontainer{
+   // border: 1px solid red;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    .viewhardblockheader{
+        //border: 1px solid blue;
+        display: flex;
+        justify-content: space-between;
+        margin: 5% auto;
+        width: 80%;
+        height: 40px;
+        .viewhardblocktext{
+            margin: 1% 0 0 0;
+            color: rgb(7, 78, 170);
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .viewhardblockbtn{
+            border: 2px solid rgb(7, 78, 170);
+            background-color: #ffff;
+            color: rgb(7, 78, 170);
+            padding: 7px 30px 9px 30px;
+            text-align: center;
+            border-radius: 10px;
+          font-size: 15px;
+           font-weight: bolder;
+        }
+        .viewhardblockbtn:hover{
+            background-color: rgb(7, 78, 170);
+            color: rgb(255, 255, 255);
+        }
+    }
+    .hardblockcontainer{
+        height: 80%;
+        .hardblocktable{
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+            thead{
+                //border: 1.5px solid #2424;
+                height: 65px;
+                background-color: rgb(7, 78, 170);
+                th{
+                    color: white;
+                }
+ 
+            }
+            tbody{
+                //  border: 1px solid red;
+                  height: 45px;
+                  border: 1.5px solid #2424;
+                  tr{
+                    border-bottom: 1.5px solid #2424;
+                    height: 50px;
+                  
+                  }
+                  .hardblocktr:hover{
+                    background-color: #f3f3f3;
+                    border-left: 3px solid rgb(7, 78, 170);
+                    border-right: 3px solid rgb(7, 78, 170);
+                  }
+                }
+               
+        }
+    }
+
+}

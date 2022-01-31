@@ -5,6 +5,7 @@ import ProjectView from './Popup/Projectview';
 import AssociateView from './Popup/Associateview';
 import axios from 'axios';
 import Modal from 'react-modal';
+import config from '../config/config'
 
 const customStyles = {
     content: {
@@ -18,184 +19,171 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
         backgroundColor: 'transparent',
         outline: 'none',
-        border: 'none'
+        border: 'none',
+        overflow: 'hidden'
     },
 
 };
 
 function Dashboard() {
+    const apiURL = config.API_URL;
+
     const [listOfMentors, setListOfMentors] = useState([0]);
-    const [associatesetlistOfMentors, associatesetListOfMentors] = useState([0]);
+    const [associatelistOfMentors, associatesetListOfMentors] = useState([0]);
     const[projectmodalIsOpen,projectsetModal] = useState(false);
     const[associatemodalIsOpen,associatesetModal] = useState(false);
 
     
     
     useEffect(() => {
-        axios.get("http://localhost:5000/project/count").then((response) => {
+        axios.get(`${apiURL}/project/count`).then((response) => {
             setListOfMentors(response.data);
             
         });
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/associateprofile/count").then((response) => {
+        axios.get(`${apiURL}/associateprofile/count`).then((response) => {
             associatesetListOfMentors(response.data);
             
         });
     }, []);
 
-    return (
-        <div>
-              <Modal isOpen={projectmodalIsOpen}
-                                style={customStyles}
-                                contentLabel="Example Modal" >
-                                    {<ProjectView CloseModal={projectsetModal}/>}
+return (
+    <div>
+        <Modal isOpen={projectmodalIsOpen}
+            style={customStyles}
+            contentLabel="Example Modal" >
+            {<ProjectView CloseModal={projectsetModal}/>}
                                
-                            </Modal>
-                            <Modal isOpen={associatemodalIsOpen}
-                                style={customStyles}
-                                contentLabel="Example Modal" >
-                                    {<AssociateView CloseModal={associatesetModal}/>}
+        </Modal>
+        <Modal isOpen={associatemodalIsOpen}
+            style={customStyles}
+            contentLabel="Example Modal" >
+            {<AssociateView CloseModal={associatesetModal}/>}
                                
-                            </Modal>  
-            <div className='dashboard_overall-contain'>
-                <div className='dashboard_inner_contain'>
-                    <div className='dashboard_inner_card_contain'>
-                        <div className='dashboard_inner_cards'  onClick={()=>{projectsetModal(true);}}  >
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>PROJECT_INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>                                                                                        
-                                    <p className='dashboard_innercounting'>{listOfMentors}</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards' onClick={()=>{associatesetModal(true);}} >
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>ASSOCIATE_INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>{associatesetlistOfMentors}</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>ALLOCATED_INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
+        </Modal>  
+        <div className='dashboard_overall-contain'>       
+            <div className='dashboard_inner_row_card_contain'>
+                <div className='dashboard_inner_proj_card_outline' onClick={()=>{projectsetModal(true);}}>
+
+                    <div className='dashboard_inner_proj_card_left'>
+                        <p className='dashboard_inner_proj_card_left_text'>Project</p>
+                    </div>
+ 
+                    <div className='dashboard_inner_proj_card_right'>
+                        <p className='dashboard_inner_proj_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_proj_card_right_count'>{listOfMentors}</p>
                     </div>
 
-                    <div className='dashboard_inner_card_contain'>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>UNALLOCATED INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>BILLABLE_INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>NON-BILLABLE INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+
+                <div className='dashboard_inner_asso_card_outline' onClick={()=>{associatesetModal(true);}}>
+
+                    <div className='dashboard_inner_asso_card_left'>
+                        <p className='dashboard_inner_asso_card_left_text'>Associate</p>
+                    </div>
+ 
+                    <div className='dashboard_inner_asso_card_right'>
+                        <p className='dashboard_inner_asso_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_asso_card_right_count'>{associatelistOfMentors}</p>
                     </div>
 
-                    <div className='dashboard_inner_card_contain'>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>HARD-BLOCK INFO</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>SOFT-BLOCK info</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='dashboard_inner_cards'>
-                            <div className='dashboard_inner_side_head'>
-                                <p className='dashboard_inner_side_heading'>REPORT</p>
-                            </div>
-                            <div className='dashboard_inner_side_count'>
-                                <div className='dashboard_inner_side_heading_count'>
-                                    <p className='dashboard_inner_count'>COUNT</p>
-                                </div>
-                                <p className='dashboard_innercounting'>20</p>
-                                <div className='dashboard_inner_icon'>
-                                    <AiIcons.MdOutlineDoubleArrow className='dashboard_icons'/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                                                     
-                </div>                
+                </div>
+
+                <div className='dashboard_inner_client_card_outline'>
+
+                    <div className='dashboard_inner_client_card_left'>
+                        <p className='dashboard_inner_client_card_left_text'>Client</p>
+                    </div>
+ 
+                    <div className='dashboard_inner_client_card_right'>
+                        <p className='dashboard_inner_client_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_client_card_right_count'>0</p>
+                    </div>
+
+                </div> 
+
+            </div>
+
+ {/* -------------------------------------------------------------------------------------------------------------------------------------------*/}
+            <div className='dashboard_inner_row_card_contain'>
+
+                <div className='dashboard_inner_allo_card_outline'>
+
+                    <div className='dashboard_inner_allo_card_left'>
+                        <p className='dashboard_inner_allo_card_left_text'>Allocated</p>
+                    </div>
+
+                    <div className='dashboard_inner_allo_card_right'>
+                        <p className='dashboard_inner_allo_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_allo_card_right_count'>0</p>
+                    </div>
+
+                </div>
+
+                <div className='dashboard_inner_unallo_card_outline'>
+
+                    <div className='dashboard_inner_unallo_card_left'>
+                        <p className='dashboard_inner_unallo_card_left_text'>Un Allocated</p>
+                    </div>
+
+                    <div className='dashboard_inner_unallo_card_right'>
+                        <p className='dashboard_inner_unallo_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_unallo_card_right_count'>0</p>
+                    </div>
+
+                </div>
+
+                <div className='dashboard_inner_bill_card_outline'>
+
+                    <div className='dashboard_inner_bill_card_left'>
+                        <p className='dashboard_inner_bill_card_left_text'>Billable</p>
+                    </div>
+
+                    <div className='dashboard_inner_bill_card_right'>
+                        <p className='dashboard_inner_bill_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_bill_card_right_count'>0</p>
+                    </div>
+
+                </div>
+                  
+            </div>
+
+ {/* -------------------------------------------------------------------------------------------------------------------------------------------*/}
+
+            <div className='dashboard_inner_row_card_contain'>
+                <div className='dashboard_inner_non_bill_card_outline'>
+                    <div className='dashboard_inner_non_bill_card_left'>
+                        <p className='dashboard_inner_non_bill_card_left_text'>Non Billable</p>
+                    </div>
+                    <div className='dashboard_inner_non_bill_card_right'>
+                        <p className='dashboard_inner_non_bill_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_non_bill_card_right_count'>0</p>
+                    </div>
+                </div>
+                <div className='dashboard_inner_hard_card_outline'>
+                    <div className='dashboard_inner_hard_card_left'>
+                        <p className='dashboard_inner_hard_card_left_text'>Hard Block</p>
+                    </div>
+                    <div className='dashboard_inner_hard_card_right'>
+                        <p className='dashboard_inner_hard_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_hard_card_right_count'>0</p>
+                    </div>
+                </div>
+                <div className='dashboard_inner_soft_card_outline'>
+                    <div className='dashboard_inner_soft_card_left'>
+                        <p className='dashboard_inner_soft_card_left_text'>Soft Block</p>
+                    </div>
+                    <div className='dashboard_inner_soft_card_right'>
+                        <p className='dashboard_inner_soft_card_right_text'>COUNT</p>
+                        <p className='dashboard_inner_soft_card_right_count'>0</p>
+                    </div>
+                </div>
+            </div>
+
+                                                               
+                               
             </div>
             {/* {modalIsOpen && <Popup   CloseModal={setModalIsOpen}/>} */}
             

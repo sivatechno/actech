@@ -1,0 +1,33 @@
+
+
+.addexam_container
+{
+     display: flex;   
+       flex-direction: column;
+       justify-content: center;
+       background-color: rgb(255, 255, 255);
+       width: 500px;
+       margin: 20px 20px 20px 20px;             
+       height: 350px;
+       
+    
+    
+    .addexam_container, input{
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid lightslategrey;
+        color: black;
+        border-radius: 10px;
+        
+    }
+    .addexam-btn
+    {
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #1F618D;
+        color: #FFF;
+        border-radius: 10px;
+        background-color: #1B4F72;
+    }
+
+}

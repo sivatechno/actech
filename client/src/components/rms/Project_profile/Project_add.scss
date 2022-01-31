@@ -35,10 +35,12 @@
             display: flex;
             padding-bottom: 2%;
             background-color: white;
+            color: rgb(7, 78, 170);
             .add_project_header{
                 font-size: 18px;
                 font-weight: bold;
                 background-color: white;
+                cursor: default;
             }
             .close{
                 //border: 1px solid red;
@@ -47,10 +49,17 @@
                 font-size: 18px;
                 color: red;
                 background-color: white;
+                cursor: pointer;
+            }
+            .close:hover{
+                border: 1px solid red;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
             }
         }
         .add_project_inner_body{
-            //border: 1px solid blue;
+           // border: 1px solid blue;
             margin: 3% 0 0 0%;
             display: flex;
             width:100%;
@@ -59,7 +68,7 @@
 
             .add_project_content{
                 background-color: white;
-               // border: 1px solid green;
+                //border: 1px solid green;
                 padding:0 48px 0 48px;
                 .add_project_text{
                     margin-bottom:2% ;
@@ -68,6 +77,7 @@
                     text-align: left;
                     font-size: 15px;
                     font-weight:600;
+                    cursor:default;
                     
                    
                 }
@@ -93,51 +103,78 @@
                         background-color: transparent;
                         font-size: 16px; 
                         border-radius: 10px;
-                    }    
+                    } 
+                    input[type=date]{
+                        cursor: pointer;
+                    }   
                 }
             }
          }
-                    .proj_add_checkbox_contain{
-                        //border: 1px solid red;
-                        //height: 50px;
-                        //width: 300px;
-                        //margin: 2% 0 0 0;
-                        padding: 0 144px 0 150px;
-                        .add_project_checkbox_text{
-                            background-color: white;
-                            //border: 1px solid red;
-                            text-align: left;
-                            font-size: 15px;
-                            font-weight:600;
-                            margin: 20px 0 0 0;
-                        }
-                        input[type=checkbox]{
-                            margin: 15% 0 0 0;
-                        }
-                        label{
-                            margin: 0 0 0 2%;
-                            font-size: 16px;
-                            font-weight: 300;
-                        }
-                        
-                    }
+                  .proj_add_status_contain{
+                      //border: 1px solid red;
+                      padding:0 127px 0  127px;
+
+                      .add_project_status_text{
+                          //border: 1px solid yellow;
+                          margin: 6% 0 0 0;
+                      }
+
+                      .add_project_status_radio_btn{
+                          display: flex;
+                          margin: 11% 0 0 0 ;
+                          //border: 1px solid green;
+                          justify-content: space-evenly;
+
+                          input[type=radio]{
+                              margin: 4% 0 0 8%;
+                              cursor: pointer;
+                      }
+                  }
         }
+
+        .proj_add_bill_contain{
+            //border: 1px solid red;
+            width: 50%;
+            //padding: 0 0 0 100px;
+            margin: 3% 50% 0 0;
+
+            .add_project_bill_text{
+                border: 1px solid transparent;
+                margin: 0 0 0 2%;
+            }
+
+            .add_project_bill_radio_btn{
+                //border: 1px solid green;
+                display: flex;
+                margin: 5% 10% 0 0;
+                //justify-content: space-around;
+
+                input[type=radio]{
+                    margin: 2% 0 0 3%;
+                    cursor: pointer;
+            }
+            }
+        }
+        
+    }
         .add_project_buttons{
             background-color:white;
             //border: 1px solid greenyellow;
-            margin: 4% 0 0 0;
+            margin: 5% 0 0 10%;
             //padding: 0 0 0 40%;
             height: 50px;
             width: 100%;
             display: flex;
+            justify-content: right;
             .cncl_bttn{
-                
-               // border: 1px solid red;
-                padding: 0 30px 0 371px;
+                //border: 1px solid red;
+               // margin: 0 30px 0 371px;
+                width: 130px;
             }
             .add_bttn{
-               //  border: 1px solid red;
-                 padding: 0 10px 0 10px;
+                 //border: 1px solid red;
+                 margin: 0 10px 0 10px;
+                 width: 130px;
              }
             .cancel_btn,.add_btn{
                 font-size: 15px;
@@ -146,19 +183,25 @@
 
             }
             .cancel_btn{
-                border: 2px solid rgb(14, 152, 216);
+                border: 2px solid rgb(7, 78, 170);
                 background-color: white;
-                padding: 10px 40px 10px 40px;
-                color: rgb(14, 152, 216);
+                width: 100%;
+                //padding: 7px 40px 7px 40px;
+                color: rgb(7, 78, 170);
+                height: 90%;
+                cursor: pointer;
                 //margin: 0 0 0 38%;           
              }
         
             .add_btn{
-                justify-content: right;
+                //justify-content: right;
                 border: 2px solid white;
-                padding: 10px 40px 10px 40px;
-                background-color: rgb(14, 152, 216);
+               // padding: 7px 40px 7px 40px;
+                background-color: rgb(7, 78, 170);
                 color: white;
+                width: 100%;
+                height: 90%;
+                cursor: pointer;
                 //margin: 0 0 0 5%;
             }
         }
@@ -170,6 +213,9 @@
         font-family: Arial, Helvetica, sans-serif;
         margin: 1% 50% 0 0;
         background-color: white;
+        cursor: default;
+        //border: 1px solid pink;
+        width: 100%;
     }
 }
 i{
@@ -181,4 +227,14 @@ i{
     background: none;
 }
 
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:rgb(7, 78, 170);
+}
+::-webkit-scrollbar-button {
+    height: 30px;
+  }
 }

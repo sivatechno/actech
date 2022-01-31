@@ -9,6 +9,7 @@ import  {AssociateEducationValidate,AssociateProfileValidate , AssociateCompanyV
 import config from '../../config/config'
 
 export default function AddAssociateprofile({closeModel}) {
+    
   const apiURL = config.API_URL;  
   const [email,setEmail] = useState("");
 
@@ -104,9 +105,11 @@ export default function AddAssociateprofile({closeModel}) {
 
   const [educationinputList, setEducationInputList] = useState([{ university:university, college:college,passedoutyear:passedoutyear , cgpa:cgpa, qualification:qualification }]);
 
-  const[errors,setErrors]=useState({});
+  const [experienceinputList, setExperienceInputList] = useState([{ company:company,companyaddress:companyaddress, designation:designation,currentsalary:currentsalary , expectsalary:expectsalary, yearsofexp:yearsofexp }]);
 
-//   const[educationerrors,setEducationErrors]=useState({});
+  const [certificateinputList, setCertificateInputList] = useState([{ institutename:institutename, instituteaddress:instituteaddress,coursename:coursename , duration:duration, project:project,projectduration:projectduration,primaryskill:primaryskill,secondaryskill:secondaryskill }]);
+
+  const[errors,setErrors]=useState({});
 
   const[active,setActive]=useState(false);
 
@@ -207,12 +210,6 @@ function cancel(e) {
         headers : {
             "enc-type" : "multipart/form-data",
         },
-       
-        // onUploadProgress : (event) =>
-        // {
-        //   const totalUpload = (event.loaded / event.total)*100 
-        //   setUploadProgress(totalUpload);
-        // },
     })
     .then((res) => console.log(res))
     .catch((err) => console.log(err))
@@ -281,22 +278,29 @@ function cancel(e) {
       const imagePreview = URL.createObjectURL(selectedImage)
       setPreview(imagePreview)
   }
-  // handle click event of the Remove button
-  const handleRemoveClick = index => {
-    const list = [...inputList];
-    list.splice(index, 1);
-    setInputList(list);
-  };
   const handleEducationRemoveClick = index => {
-    const list = [...educationinputList];
-    list.splice(index, 1);
-    setEducationInputList(list);
+    const educationlist = [...educationinputList];
+    educationlist.splice(index, 1);
+    setEducationInputList(educationlist);
   };
-  const handleAddClick = () => {
-    setInputList([...inputList, { university,college,passedoutyear,cgpa ,qualification }]);
+  const handleExperienceRemoveClick = index => {
+    const experiencelist = [...experienceinputList];
+    experiencelist.splice(index, 1);
+    setExperienceInputList(experiencelist);
+  };
+  const handleCertificateRemoveClick = index => {
+    const certificatelist = [...certificateinputList];
+    certificatelist.splice(index, 1);
+    setCertificateInputList(certificatelist);
+  };
+  const handleExperienceAddClick = () => {
+    setExperienceInputList([...experienceinputList, { company:company,companyaddress:companyaddress, designation:designation,currentsalary:currentsalary , expectsalary:expectsalary, yearsofexp:yearsofexp  }]);
   };
   const handleEducationAddClick = () => {
     setEducationInputList([...educationinputList, { university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
+  };
+  const handleCertificateAddClick = () => {
+    setCertificateInputList([...certificateinputList, {  institutename:institutename, instituteaddress:instituteaddress,coursename:coursename,duration:duration, project:project,projectduration:projectduration,primaryskill:primaryskill,secondaryskill:secondaryskill }]);
   };
    function proifleTabfunc()
    {
@@ -619,9 +623,13 @@ function cancel(e) {
                     </div>
                 </div>               
                 <div className="associateprofile-textfeild-container" hidden={index != 2}>
-                {inputList.map((x, i) => {
+                {experienceinputList.map((x, i) => {
                 return ( 
-                <div className='Addeducationpart'>
+                <div className='AddExperiencepart'>
+                <div className="btn-box">
+                    {experienceinputList.length !== 1 && <button  className="removeexperience"  onClick={() => handleExperienceRemoveClick(i)}>-</button>}
+                    {experienceinputList.length - 1 === i && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
+                </div><br /><br /><br />
                 <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Company/Organization Name</label><br />
@@ -676,10 +684,6 @@ function cancel(e) {
                             </div>
                         </div>
                    </div> 
-                   <div className="btn-box">
-                        {inputList.length !== 1 && <button  className="removeeducation"  onClick={() => handleRemoveClick(i)}>Remove</button>}
-                        {inputList.length - 1 === i && <button onClick={handleAddClick} className='addeducation'>Add</button>}
-                   </div> 
                    </div>
                     );
                   })}
@@ -694,9 +698,13 @@ function cancel(e) {
                     </div>
                 </div>
                 <div className="associateprofile-textfeild-container" hidden={index != 3}>
-                {inputList.map((x, i) => {
+                {certificateinputList.map((x, i) => {
                 return (
                 <div className='associateprofile-adddcertificatepart'>
+                     <div className="btn-box">
+                            {certificateinputList.length !== 1 && <button  className="removecertificate"  onClick={() => handleCertificateRemoveClick(i)}>-</button>}
+                            {certificateinputList.length - 1 === i && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
+                    </div><br /><br /><br /> 
                    <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Institute Name</label><br />
@@ -786,13 +794,9 @@ function cancel(e) {
                             <label htmlFor='Course_certify' className='fileupload'>
                             <i>< AiIcons.FcAddImage/> Choose an file</i>
                             </label>
-                            </div>
-                        </div>    
-                   </div>
-                   <div className="btn-box">
-                            {inputList.length !== 1 && <button  className="removecertificate"  onClick={() => handleRemoveClick(i)}>Remove</button>}
-                            {inputList.length - 1 === i && <button onClick={handleAddClick} className='addcertificate'>Add</button>}
-                    </div> 
+                            </div><br />
+                        </div>   
+                     </div>
                     </div>
                     );
                 })}

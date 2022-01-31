@@ -1,7 +1,10 @@
 module.exports = (sequelize , DataTypes) => {
     const Project = sequelize.define("Project",
     {
-        
+        user_id:{
+            type: DataTypes.STRING,
+                       
+        },
         Client_Name:{
             type:DataTypes.STRING,
         },
@@ -16,6 +19,12 @@ module.exports = (sequelize , DataTypes) => {
         },
         End_Date:{
             type:DataTypes.STRING,
+        },
+        Project_Status:{
+            type:DataTypes.STRING,
+        },
+        Billing_Status: {
+            type: DataTypes.STRING,
         },
         
 

@@ -18,7 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 //     },
 // };
 function Question() {
-
+    const [listOfMentors, setListOfMentors] = useState([]);
 
     let history = useNavigate();
 
@@ -33,6 +33,20 @@ function Question() {
     }
 
 
+    const deleteMentor = (id, e) => {
+        console.log(id);
+        axios.delete(`http://localhost:5000/mentorsOne/delete/${id}`).then((response) => {
+            response.json("deleted successfully");
+            history.push("/viewmentors")
+        });
+    };
+
+    useEffect(() => {
+        axios.get("http://localhost:5000/mentorsOne/viewmentors").then((response) => {
+            setListOfMentors(response.data);
+            // console.log(response.data);
+        });
+    }, []);
 
     return (
         <div className="main">
@@ -41,7 +55,7 @@ function Question() {
                     <h3>View Questions</h3>
                 </div>
                 <div className="add_question">
-                    <button className="button_click" onClick={openModal}>Add Questions</button>
+                    <button className="button_click"><Link to="/AddQuestion">AddQuestions</Link></button>
                 </div>
             </div>
             {/* <Modal
@@ -72,14 +86,42 @@ function Question() {
             <div className="table_container">
                 <table cellSpacing="10px" >
                     <tr className="table_row_head">
-                        <th >Question Title</th>
-                        <th >Exam Name</th>
+                        <th >Question ID</th>
+                        <th >Exam ID</th>
                         <th>Question Type</th>
+                        <th>Questions</th>
                         <th>Marks</th>
                         <th>Actions</th>
                     </tr>
 
-                    
+                    {/* {listOfMentors.map((value,key) =>{
+                    return <div>{value.username}</div>
+                })} */}
+                    {listOfMentors && listOfMentors.map((value, key) => {
+                        return (
+
+
+                            <tr className="table_row">
+                                 <td className="namecol">{value.firstname} {value.lastname}</td>
+                                <td className="emailcol">{value.email}</td>
+                                <td>{value.role}</td>
+                                <td>{value.phonenumber}</td>
+                                <td>
+                                    <Link to={`/editprofileviewmentor/${value.id}`}>
+                                        <div className="table_icons"><AiIcons.GrEdit className="icons_align" /></div>
+                                    </Link>
+                                    <Link to={"/"}>
+                                        <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete"
+                                            onClick={(e) => deleteMentor(value.id, e)}
+                                        /></div>
+                                    </Link>
+                                    <Link to={`/profileviewmentor/${value.id}`} className="table_icons"><AiIcons.BsFillEyeSlashFill className="icons_align" /></Link>
+                                </td>
+                            </tr>
+
+
+                        )
+                    })}
                 </table>
             </div>
         </div>

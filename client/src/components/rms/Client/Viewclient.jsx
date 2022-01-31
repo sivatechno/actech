@@ -4,20 +4,22 @@ import "./Viewclient.scss";
 import {useState} from 'react';
 import Modal from 'react-modal';
 import Addclient from './Addclient';
+import {Link} from 'react-router-dom';
 
 const customStyles = {
     content: {
-        top: '58%',
+        top: '54%',
         left: '58%',
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
         height:'80%',
-        width:'60%',
+        width:'70%',
         background:'transparent',
         border:'none',
         outline:'none',
+        overflow:'hidden',
     },
 
 };
@@ -31,7 +33,7 @@ function ViewClient(){
         <div>
 
             <div className="client_profile_top">
-                <p className="client_profile_headind_text">Client_View</p>
+                <p className="client_profile_headind_text">Client View</p>
                 <button className="add_client_btn" onClick={()=>{setIsOpen(true);}} >ADD Client</button>
             </div>
 
@@ -68,11 +70,13 @@ function ViewClient(){
 
                                 <td>Bharath</td>
                                 <td>Bhaarath...</td>
-                                <td></td>
+                                <td>Actech</td>
                                 <td>2022-03-13</td>
                                 <td >2022-04-12</td>
-                                <td></td>
-                                <td className="proj_table_icons"><AiIcons.MdEdit className="prof_edit_icon" /> <AiIcons.FaTrash className="prof_tash_icon" /></td>
+                                <td>345678789</td>
+                                <td className="client_table_icons">
+                                    <Link to={'/Editclient'}><AiIcons.MdEdit className="client_edit_icon" /></Link>
+                                     <AiIcons.FaTrash className="client_tash_icon" /></td>
 
                             </tr>
 

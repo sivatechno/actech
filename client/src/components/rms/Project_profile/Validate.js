@@ -4,15 +4,15 @@ const Validate = (values) => {
     let errors={};
     
     if(!values.clientname){
-        errors.clientname="* Please Enter Client_name"
+        errors.clientname="* Please Enter Client Name"
     }
     if(!values.projectname){
-        errors.projectname="* Please Enter Project_name"
+        errors.projectname="* Please Enter Project Name"
     }
     if(!values.clientemail){
-        errors.clientemail="* Please Enter Client_email"
+        errors.clientemail="* Please Enter Client E-Mail"
     }else if(!/\S+@\S+\.\S+/.test(values.clientemail)){
-        errors.clientemail="* Please Enter Valid Email"
+        errors.clientemail="* Please Enter Valid E-Mail"
     }
     if(!values.password){
         errors.password="* Please Enter Password"
@@ -20,10 +20,13 @@ const Validate = (values) => {
         errors.password="* Password must be in 8 Characters"
     }
     if(!values.startdate){
-        errors.startdate="* Please Select StartDate"
+        errors.startdate="* Please Select Start Date"
     }
     if(!values.enddate){
-        errors.enddate="* Please Select EndtDate"
+        errors.enddate="* Please Select End Date"
+    }
+    if(!values.status){
+        errors.status="* Please Select Status"
     }
     return errors;
 };

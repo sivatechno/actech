@@ -1,180 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-// .main{
-//     margin: 10px 20px 20px 40px;
-//     border-radius: 10px;
-//     height: auto;
-//     background-color: rgb(255, 255, 255);
-// }
-// .header{
-//     padding: 20px;
-//     margin-left: 40px;
-//     font-family: 'Poppins', sans-serif;
-// }
+  $app-color: lightslategrey;
 
-// label{
-//     display: block;
-//     font-family: 'Poppins', sans-serif;
-    
-    
-// }
-// input, label{
-//     margin: .1rem ;
-    
-// }
-// .body,input{
+.addquestion_container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    .errors{
+        width: '100%';
+        padding: 10;
+        text-align:center;
+        color: orangered;
+    }
+    .addquestion_section1
+    {
+        height: 60px;
+        width: 180px;
+        
+        div{
+            color: royalblue;
+            text-align: center;
+            font-size: large;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 18px;
+            
+        }
       
-//     border-radius: 15px;
-//     padding: 7px 60px 7px 5px;
-//     text-align: center;
-//     font-size: 16px;
+    }
+    .addquestion_section2
+    {
+        padding: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        .addquestion_box1
+        {
+          .addquestion_labelexams
+          {
+            margin: 5px;
+          }
+          .addquestion_select
+          {
+            margin: 5px;
+            height: 40px;
+            width: 280px;
+            border: 2px solid $app-color;
+            border-radius: 8px;
+            color: #1f2122;
+          }
+          .addquestion_label-enddate
+        {
+            margin: 5px;
+           
+        }
+        .addquestion_input-enddate
+        {
+            margin: 5px;
+            padding: 8px;
+            width: 280px;
+            border: 2px solid $app-color;
+            border-radius: 8px;
+        }
+        }
+        .addquestion_box2
+        {
+            .addquestion_label-duration
+        {
+            margin: 5px;
+        }
+        .addquestion_input-time
+        {
+            margin: 5px;
+            padding: 8px;
+            width: 280px;
+            border: 2px solid $app-color;
+            border-radius: 8px;
+        }
+        .addquestion_label-date
+        {
+            margin: 5px;
+        }
+        .addquestion_input-startdate
+        {
+            margin: 5px;
+            padding: 8px;
+            width: 280px;
+            border: 2px solid $app-color;
+            border-radius: 8px;
+        }
+        }
         
-// }
-// input{
-//   border: 2px solid lightslategray;
-// }
-// .inputnumber
-// {
-//   padding: 10px 50px 10px 50px;
-// }
-// .inputtime
-// {
-//   padding: 10px 110px 10px 110px;
-// }
-// .icons
-// {
-//     position: absolute;
-//     padding-top: 10px;
-//     padding-left: 23px;
-//     font-size: 24px;
-//     color: #aaa;
-// }
-// .icon
-// {
-//     position: absolute;
-//     padding-top: 12px;
-//     margin-left: -30px;
-//     font-size: 24px;
-//     color: #aaa;
-// }
-// .box1
-// {
-//     margin-left: 50px;
-//     float: left;
-// }
-// .box2
-// {
-//     margin-left: 520px;
-// }
-// .row1
-// {
-//   margin-top: 15px;
-//  }
-// .row2
-// {
-//   margin-top: 15px;
-//   }
-// .btn1, .btn2, .btn3, .btn4, .btn6
-// {
-//     font-size: 13px;
-//     font-family: 'Poppins', sans-serif;
-//     height: 30px;
-//     width: 130px;
-//     border-radius: 10px;
-//     background-color: #0F94B8;
-//     color: rgb(254, 255, 253);
-    
-// }
-// .btn1 
-// {
-//     margin-right: 10px;
-// }
-// .btn3
-// {
-//     margin-right: 10px;
-// }
-
-
-// .footer
-// {
-    
-//     padding: 30px;
-//     padding-bottom: 20px;
-// }
-
-
-// .answer
-// {
-//     margin: 5px 5px;
-//     text-align: left;
-//     font-size: 16px;
-//     font-family: 'Poppins', sans-serif;
-//     color: #aaa;
-// }
-
-// .MultipleQuestion {
-//     display: flex;
-//     justify-content: space-between;
-//     width: 50%;
-//     margin: .2rem;
-// }
-// .question
-// {
-//     margin: 5px 10px;
-//     text-align: left;
-//     font-size: 16px;
-//     font-family: 'Poppins', sans-serif;
-//     color: #aaa;
-// }
-
-// .box
-// {
-//     margin-top: 20px;
-//     display: flex;
-//     justify-content: flex-end;
-    
-// }
-// .btn5
-// {
-   
-//     margin-right: 30px;
-//     font-size: 15px;
-//     height: 30px;
-//     width: 180px;
-//     border-radius: 10px;
-//     background-color: rgb(249, 250, 248);
-//     color: #0FC4E0 ;
-//     border-color: #0FC4E0 ;
-//     font-family: 'Poppins', sans-serif;
-// }
-// .btn6
-// {
-//     width: 180px;
-//     font-family: 'Poppins', sans-serif;
-    
-// }
-// @media screen {
-//     .body
-//     {
-//         margin: auto;
-//     }
-//     .main
-//     {
         
-//         width:auto;
-//         padding: auto;
-//     }
-//     .body
-//     {
-//         width: auto;
-//         height:auto;
-//     }
-//     .footer
-//     {
-//         width: auto;
-//     }
-//     .box
-//     {
-//         width: auto;
-//     }
-
-// }
+    }
+    .addquestion_section4
+    {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 80px;
+        .addquestion_btn
+        {
+            .addquestion_btn1, .addquestion_btn2
+            {
+                padding: 5px 35px;
+                margin-left: 20px;
+                border-radius: 8px;
+                height: 30px;
+                background-color: #2874A6;
+                border-color: dodgerblue;
+                color: #fff;
+            }
+            .addquestion_btn1:hover, .addquestion_btn2:hover
+            {
+                background-color: #fff;
+                border-color: dodgerblue;
+                color: #4A235A;
+            }
+        }
+    }
+}

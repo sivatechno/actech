@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.viewsoftblockcontainer{
+   //border: 2px solid blue;
+    // margin-top: 4%;
+    height:calc(100vh - 200px);
+    width: 100%;
+    overflow: hidden;
+    .viewsoftblockheader{
+        //border: 1px solid red;
+        width: 80%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        margin: 5% auto;
+        .viewsoftblocktext{
+            margin: 1% 0 0 0;
+            color: rgb(7, 78, 170);
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .viewsoftblockbtn{
+            border: 2px solid rgb(7, 78, 170);
+            background-color: #ffff;
+            color: rgb(7, 78, 170);
+            padding: 7px 30px 9px 30px;
+            text-align: center;
+            border-radius: 10px;
+          font-size: 15px;
+           font-weight: bolder;
+        }
+        .viewsoftblockbtn:hover{
+            background-color: rgb(7, 78, 170);
+            color: rgb(255, 255, 255);
+        }
+      
+    }
+    .softblockcontainer{
+       // outline: 2px solid blueviolet;
+       // margin-top:  -3% ;
+        height: 80%;
+       .softblocktable{
+          // border: 1px solid green;
+           margin: 0 auto;
+           width: 80%;
+           border-collapse: collapse;
+           thead{
+               //border: 1.5px solid #2424;
+               height: 65px;
+               //text-align: center;
+               background-color: rgb(7, 78, 170);
+               color:white;
+
+               th{
+                   color: white;
+               }
+
+           }
+           tbody{
+             //  border: 1px solid red;
+               height: 45px;
+               //text-align: center;
+               border: 1.5px solid #2424;
+               tr{
+                 border-bottom: 1.5px solid #2424;
+                 height: 50px;
+               
+               }
+               .softblockhover:hover{
+                background-color: #f3f3f3;
+                border-left: 3px solid rgb(7, 78, 170);
+                border-right: 3px solid rgb(7, 78, 170);
+    
+             }
+              
+           }
+       }
+       
+        
+    }
+}

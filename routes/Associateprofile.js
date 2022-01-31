@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { Users, AssociateProfile , Mentors } = require("../models");
+const { AssociateProfile  } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const path = require('path');
 const expressFileUpload = require ('express-fileupload')
 router.use(expressFileUpload())
-var mysql = require('mysql');
 
 router.get('/viewassociateprofile', async (req, res) => {
     try {
@@ -115,8 +114,8 @@ router.put('/update/:id', async (req, res) => {
         const { newFirstname, newLastname, newEmail, newCountry, newCity, newAddress, newState, newPhonenumber,newDob,
             newPostalcode,newSslcboard,newSslcyearpassedout,newSslcschoolname,newSslcmark,newHscboard,newHscschoolname,newHscyearpassedout,newHscmark,newUniversity,newCollege,newPassedoutyear,newDegree,newCgpa,newQualification, newCompany, newDesignation,
             newCurrentsalary, newExpectsalary, newYearsofexp, newExpcertificate, newCompanyaddress, newInstitutename,
-            newCoursename, newDuration, newCoursecertificate, newInstituteaddress, newProject,newProjectDuration, newFemale, newMale,
-            newExperience, newFresher, newPrimaryskill, newSecondaryskill} = req.body;
+            newCoursename, newDuration, newCoursecertificate, newInstituteaddress, newProject,newProjectDuration,
+            newGender,newQualify, newPrimaryskill, newSecondaryskill} = req.body;
         const user = await AssociateProfile.findByPk(id);
         if (user) {
             await AssociateProfile.update({
@@ -158,10 +157,8 @@ router.put('/update/:id', async (req, res) => {
                 instituteaddress:newInstituteaddress,
                 project:newProject,
                 projectduration:newProjectDuration,
-                female:newFemale,
-                male:newMale,
-                experience:newExperience,
-                fresher:newFresher,
+                gender:newGender,
+                qualify:newQualify,
                 secondaryskill:newSecondaryskill,
                 primaryskill:newPrimaryskill,
             });

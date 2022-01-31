@@ -151,7 +151,18 @@
             display: flex;
             justify-content: space-between;
         }
-       .addcertificate,.addeducation,.backicon,.nexticon,.cancelicon{
+       .addcertificate,.addeducation,.addexperience,.backicon,.nexticon,.cancelicon{
+            margin-top: 10px;
+            float: right;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #0c50a3;
+            border-radius: 50%;
+            width: 50px;
+            height: 35px;
+            border: none;
+        }
+        .backicon,.nexticon,.cancelicon{
             margin-top: 10px;
             float: right;
             font-size: 16px;
@@ -162,10 +173,10 @@
             height: 35px;
             border: none;
         }
-        .removeeducation,.removecertificate{ color: #ffffff;
+        .removeeducation,.removecertificate,.removeexperience{ color: #ffffff;
             background-color: #0c50a3;
-            border-radius: 20px;
-            width: 80px;
+            border-radius: 50%;
+            width: 50px;
             height: 35px;
             border: none;
             margin-left: 50px;
@@ -176,7 +187,7 @@
         border-radius: 15px;
         margin: 25px 5px;
         }
-        .addcertificate,.addeducation{margin: 20px 80px 20px 0px;}
+        .addcertificate,.addeducation,.addexperience{margin: 20px 80px 20px 0px;}
         .cancelicon{margin-right:20px;
             float: none;}
         .Addprofile:hover,.backicon:hover,.nexticon:hover,.cancelicon:hover{height: 40px;
