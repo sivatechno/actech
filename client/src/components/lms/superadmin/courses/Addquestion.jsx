@@ -1,41 +1,48 @@
 import React, { useState } from 'react';
 import './AddQuestion.scss';
 import Accordian from '../../coursespages/Accordian';
-import Validate from '../../coursespages/Validate';
 
 
 
-const Addquestion = () => {
-   const [values, setValues] = useState({
-       select:" ",
-       enddate:" ",
-       time:" ",
-       startdate:" "
 
-   });
-   
-    const [errors, setErrors] = useState({});
+const Addquestion = (props) => {
+      
+      const [selectExams, setSelectExams] = useState(""); 
+      const [examId, setExamId] = useState("");  
+      const [selectQues, setSelectQues] = useState("");    
+      const [scores, setScores] = useState("");  
+      const [error, setError] = useState(false);
 
-    // const [inputDetails, setInputDetails] = useState([]);
-    const handleChange = (e) => {
-        e.preventDefault();
-        setValues({
-            ...values,
-            [e.target.name]:e.target.value,
-        });
+    //  const [outputValue, setOutputValue] = useState(Data);
 
-    }
-    
+      const [dataValues, setDataValues] = useState({});
 
-    const handleSubmit = (e) => {
-        
-        setErrors(Validate(values));   
-        console.log(values);   
-        
-    }
-    
-    
-   
+      const handleSubmit = () => {
+          if(!selectExams||!examId||!selectQues||!scores)
+          {
+              setError(true)
+              return;
+          }
+          else
+          {
+              setError(false)
+              const values = {
+                selectExams:selectExams,
+                examId:examId,
+                selectQues:selectQues,
+                scores:scores,
+                }
+                setDataValues({...dataValues,values})
+                console.log(values);
+                setSelectExams("");
+                setExamId("");
+                setSelectQues("");
+                setScores("");
+               
+          }
+          
+
+      }
 
     return (
         <div className="addquestion_container">
@@ -45,53 +52,59 @@ const Addquestion = () => {
                 <hr/>
                  <div className="addquestion_section2">
                    <div className="addquestion_box1"> 
-                       <label className='addquestion_labelexams'>SELECT EXAMS*</label>
+                       <label className='addquestion_labelexams'>SELECT EXAMS :-</label>
                     <div className="addquestion_scrollbar">
                         <select 
                         className="addquestion_select" 
-                        name='select' 
+                        name='selectExams' 
                         placeholder="--Select Exam--" 
-                        value={values.select}
-                        onChange={handleChange}
+                        value={selectExams}
+                        onChange={(e)=>setSelectExams(e.target.value)}
+                        
                         required>
                             <option value="">--Please choose an option--</option>
                             <option>AWS One</option>
                             <option>Snow Flake One</option>
                             <option>Week two</option>
                         </select>
-                        {errors.select && <p className='errors'>{errors.select}</p>}
+                        { error && <p className='error'>*Exam Field is Required</p>}
+                        
                     </div>
-                    <label className='addquestion_label-enddate'>END_DATE : </label><br/>
+                    <label className='addquestion_label-examId'>EXAM ID :-</label>
                      <input 
-                     className='addquestion_input-enddate' 
-                     name='enddate' 
-                     type="date" 
-                     value={values.enddate}
-                     onChange={handleChange}
+                     className='addquestion_input-examId' 
+                     name='examId' 
+                     type="text" 
+                     value={examId}
+                        onChange={(e)=>setExamId(e.target.value)}
                      required/>
-                     {errors.enddate && <p className='errors'>{errors.enddate}</p>}
+                     { error && <p className='error'>*Exam Id Field is Required</p>}
                    </div>
                    <div className="addquestion_box2">
-                       <label className='addquestion_label-duration'>EXAM_DURATION:</label><br/>
+                       <label className='addquestion_label-questiontypes'>QUESTION_TYPES :-</label>
+                       <select 
+                        className="addquestion_selectQuesTypes" 
+                        name='selectQues' 
+                        placeholder="" 
+                        value={selectQues}
+                        onChange={(e)=>setSelectQues(e.target.value)}
+                        required>
+                            <option value="">--Please choose an option--</option>
+                            <option>True/False</option>
+                            <option>MCQ</option>
+                            <option>MCQ(Multi Answers)</option>
+                        </select>
+                        { error && <p className='error'>*Question Type Field is Required</p>}
+                     
+                       <label className='addquestion_scores'>SCORES :-</label>
                        <input 
-                       className='addquestion_input-time' 
-                       name='time' 
-                       type="time" 
-                       value={values.time}
-                       onChange={handleChange}
-                       required
-                       />
-                       {errors.time && <p className='errors'>{errors.time}</p>}
-                       <br/>
-                       <label className='addquestion_label-date'>START_DATE :</label><br/>
-                       <input 
-                       className='addquestion_input-startdate' 
-                       name='startdate' 
-                       type="date" 
-                       value={values.startdate}
-                       onChange={handleChange} 
+                       className='addquestion_input-scores' 
+                       name='scores' 
+                       type="text" 
+                     value={scores}
+                    onChange={(e)=>setScores(e.target.value)}
                        required />
-                       {errors.startdate && <p className='errors'>{errors.startdate}</p>}
+                       { error && <p className='error'>*Scores Field is Required</p>}
                     </div>
                     </div>
                     
@@ -105,9 +118,13 @@ const Addquestion = () => {
 
                 <div className="addquestion_btn">
                <button className="addquestion_btn1" >Cancel</button>
-                <button className="addquestion_btn2" type='submit'>Submit</button>
+                <button className="addquestion_btn2" type='submit' onClick={handleSubmit}>Submit</button>
                 </div>
             </div>
+                {/* <div>
+                    <h4>output</h4>
+                   
+                </div> */}
             </div>
            
     );

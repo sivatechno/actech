@@ -34,20 +34,33 @@
     display: flex;
     flex-direction: row-reverse;
    }
-   .button_click{
+   .viewques_click{
     padding: 10px 15px;
     font-size: 16px;
     border: blue;
     border-radius: 23px;
-    background-color: #0c50a3;
-    color: white;
+    background-color:#0C50A3;
+    // color: #fff;
     margin-right: 30px;
     margin-top: .5rem;
+    .addques-link
+    {
+        background-color: #0C50A3;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+    }
 }
-.button_click:hover{
+.viewques_click:hover{
    background-color:#fff;
    color: #0C50A3;
    border: solid 2px #0C50A3;
+   transition: 0.4s;
+}
+.addques-link:hover
+{
+    background-color:#fff;
+   color: #0C50A3;
    transition: 0.4s;
 }
 .section1 div ion-icon

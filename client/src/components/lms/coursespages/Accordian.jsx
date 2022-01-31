@@ -3,6 +3,7 @@ import { questions } from './api';
 import MyAccordian from './MyAccordian';
 import './Accordian.scss';
 
+
 const Accordian = () => {
     const [data, setData] = useState(questions);
     return (

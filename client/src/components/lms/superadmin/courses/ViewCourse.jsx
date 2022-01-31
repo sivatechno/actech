@@ -6,7 +6,7 @@ import Courses from './Courses';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
-//import AddMentor from './AddMentor.component';
+
 
 const customStyles = {
     content: {
@@ -16,6 +16,7 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        border: 'none',
     },
 };
 function ViewCourse() {
@@ -76,7 +77,7 @@ function ViewCourse() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <Courses/>
+                {openModal && <Courses closeModal={setIsOpen} />}
             </Modal>
             <div className="table_container">
                 <table cellSpacing="10px" >
