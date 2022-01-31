@@ -40,13 +40,13 @@ function ViewAssociateProfile() {
     }
     const deleteAssociateProfile = (id, e) => {
         console.log(id);
-        axios.delete(`http://localhost:5000/associateprofile/delete/${id}`).then((response) => {
+        axios.delete(`${apiURL}/associateprofile/delete/${id}`).then((response) => {
             //response.json("deleted successfully");
             history.push("/viewassociateprofile")
         });
     };
     useEffect(() => {
-        axios.get("http://localhost:5000/associateprofile/viewassociateprofile").then((response) => {
+        axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
             // console.log(response.data);
         });

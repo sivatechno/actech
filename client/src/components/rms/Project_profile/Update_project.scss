@@ -13,7 +13,7 @@
         background-color:rgb(7, 78, 170);
         
         .update_proj_head_inner_div{
-            //border: 2px solid red;
+            border: 2px solid transparent;
             width:95%;
             display: flex;
             justify-content:space-between;
@@ -98,45 +98,23 @@
 
         }
 
-        .update_proj_checkbox_content{
-            //border:1px solid red;
-           // width: 37.3%;
+        .update_project_inner_radio_body{
+            //border: 1px solid green;
+            width: 450px;
+            .update_project_bill_radio_btn{
+                display: flex;
+                //border: 1px solid yellow;
+                margin: 6% 0 0 0;
 
-            .update_proj_select{
-                //border: 1px solid red;
-                height: 50px;
-                width: 440px;
-                margin-top: -5%;
-                border:solid 2px #2424;
-                border-radius: 20px;
-                display: inline-block;
-                outline: none;
-                padding: 0 80px 0 20px;
-                font-size: 16px;
-
-
-                option{
-                    background-color:white;
-                    font-size: 16px;
-                    height: 20px;
-                    color: black;
+                input[type="radio"]{
+                    margin: 1% 1% 0 3%;
+                    cursor: pointer;
                 }
             }
-
-            .update_project_checkbox_text{
-                margin-bottom:2%;
-                background-color: white;
-                //border: 1px solid red;
-                text-align: left;
-                font-size: 15px;
-                font-weight:600;
-            }
-
-            label{
-                margin: 0 0 0 5px;
-            }
         }
+        
     }
+    
 
     .update_proj_button_div{
         //border: 1px solid green;
