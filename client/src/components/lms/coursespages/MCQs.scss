@@ -1,112 +1,127 @@
-.MultipleAns
-{
-    display: flex;
-    flex-direction: column;
-    .MultipleAns_txt-box1
+.MultipleAnswer{
+    .MultipleAns
     {
-       .MultipleAns_txt-box1-quest
-       {
-        margin: 5px 10px;
-        font-size: 16px;
-        color: #aaa;
-       }
-       .MultipleAns_txt-box1-textarea
-       {
-        .input_textarea
-         {
-            padding: 30px;
-            width: 100%;
-            border: 2px solid lightslategrey;
-            border-radius: 8px;
-         }
-       }
-    }
-    .MultipleAns-txt-box2
-    {
-    display: flex;
-    flex-direction: column;
-    .MultipleAns-txt-box2-answ
-    {
-         margin: 5px 10px;
-            font-size: 16px;
-            color: #aaa;
-    }
-    .Multiple-input_generate
-    {
-        margin: 10px;
-        padding: 5px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        
-        .Multiple-Ans_Inputfields
+        .MultipleAns_txt-box1
         {
-            width: 90%;
+           .MultipleAns_txt-box1-quest
+           {
+            margin: 5px 10px;
+            font-size: 16px;
+            color: #aaa;
+           }
+           .MultipleAns_txt-box1-textarea
+           {
+            .input_textarea
+             {
+                padding: 30px;
+                width: 100%;
+                border: 2px solid lightslategrey;
+                border-radius: 8px;
+             }
+           }
+        }
+        .MultipleAns-txt-box2
+        {
+        display: flex;
+        flex-direction: column;
+        .MultipleAns-txt-box2-answ
+        {
+             margin: 5px 10px;
+                font-size: 16px;
+                color: #aaa;
+        }
+        .Multiple-input_generate
+        {
+            margin: 10px;
+            padding: 5px;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            .multipleans_checkbox
-            {
-               margin-top: 30px;
-                height: 20px;
-                width: 20px;
-            }
+            flex-direction: column;
+            justify-content: space-between;
             
-            .multipleans_auge
+            .Multiple-Ans_Inputfields
             {
-                border: none;
-                border-bottom: 2px solid lightslategrey;
-                outline: none;
                 width: 90%;
-                padding: 10px;
-                margin: 5px;
-                border-radius: 10px;
-                color: rgb(158, 17, 17);
-                background-color: #D6DBDF;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .multipleans_checkbox
+                {
+                   margin-top: 30px;
+                    height: 20px;
+                    width: 20px;
+                }
+                
+                .multipleans_auge
+                {
+                    border: none;
+                    border-bottom: 2px solid lightslategrey;
+                    outline: none;
+                    width: 90%;
+                    padding: 10px;
+                    margin: 5px;
+                    border-radius: 10px;
+                    color: rgb(158, 17, 17);
+                    background-color: #D6DBDF;
+                }
+                .multipleans_auge-btn1
+                {
+                    margin: 15px;
+                    font-size: 20px;
+                    border-radius: 9px;
+                    padding: 5px 20px;
+                    border-color: #1F618D;
+                }
+                .multipleans_auge-btn2
+                {
+                    margin:15px;
+                    font-size: 20px;
+                    border-radius: 9px;
+                    padding: 5px 20px;
+                    border-color: #1F618D;
+                }
             }
-            .multipleans_auge-btn1
+            .MultipleAns_Buttonfields
             {
-                margin: 15px;
-                font-size: 20px;
-                border-radius: 9px;
-                padding: 5px 20px;
-                border-color: #1F618D;
-            }
-            .multipleans_auge-btn2
-            {
-                margin:15px;
-                font-size: 20px;
-                border-radius: 9px;
-                padding: 5px 20px;
-                border-color: #1F618D;
+                
+               margin-top: 30px;
+                display: flex;
+                align-self: center;
+                .MultipleAns-addbutton
+                {
+                    padding: 20px 40px;
+                    border-radius: 10px;
+                    border-color: #2874A6;
+                    color: rgb(17, 26, 37);
+                }
             }
         }
-        .MultipleAns_Buttonfields
+        .MultipleAns-output
         {
-            
-           margin-top: 30px;
-            display: flex;
-            align-self: center;
-            .MultipleAns-addbutton
-            {
-                padding: 20px 40px;
-                border-radius: 10px;
-                border-color: #2874A6;
-                color: rgb(17, 26, 37);
-                
-                
-               
-               
-            }
+            font-size: 30px;
         }
+        }
+    
     }
-    .MultipleAns-output
-    {
-        font-size: 30px;
+    .MultipleAnswer-output{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h4{
+            color: crimson;
+            font-size: large;
+            }
+            p{
+                color: #099110;
+                font-size: medium;
+            }
     }
-    }
-
 }
+
+
 
 
 

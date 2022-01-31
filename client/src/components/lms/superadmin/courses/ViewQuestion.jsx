@@ -55,7 +55,7 @@ function Question() {
                     <h3>View Questions</h3>
                 </div>
                 <div className="add_question">
-                    <button className="button_click"><Link to="/AddQuestion">AddQuestions</Link></button>
+                    <button className="viewques_click"><Link to="/AddQuestion" className='addques-link' >AddQuestions</Link></button>
                 </div>
             </div>
             {/* <Modal
