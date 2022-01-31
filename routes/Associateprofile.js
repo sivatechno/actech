@@ -22,10 +22,8 @@ router.get('/viewassociateprofile', async (req, res) => {
 });
 
 router.post('/upload' , (req, res) => {
-    //console.log(req.files)
     const image = req.files.myuploadimage
     const imagepath = path.join(__dirname, '..', 'client','public','images')
-    //console.log(imagepath)
    return image.mv(`${imagepath}/${image.name}`,(err) =>
     {
         if(err) console.log('file was not uploaded')
