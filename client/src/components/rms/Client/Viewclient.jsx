@@ -4,10 +4,11 @@ import "./Viewclient.scss";
 import {useState} from 'react';
 import Modal from 'react-modal';
 import Addclient from './Addclient';
+import {Link} from 'react-router-dom';
 
 const customStyles = {
     content: {
-        top: '58%',
+        top: '54%',
         left: '58%',
         right: 'auto',
         bottom: 'auto',
@@ -18,6 +19,7 @@ const customStyles = {
         background:'transparent',
         border:'none',
         outline:'none',
+        overflow:'hidden',
     },
 
 };
@@ -72,7 +74,9 @@ function ViewClient(){
                                 <td>2022-03-13</td>
                                 <td >2022-04-12</td>
                                 <td>345678789</td>
-                                <td className="client_table_icons"><AiIcons.MdEdit className="client_edit_icon" /> <AiIcons.FaTrash className="client_tash_icon" /></td>
+                                <td className="client_table_icons">
+                                    <Link to={'/Editclient'}><AiIcons.MdEdit className="client_edit_icon" /></Link>
+                                     <AiIcons.FaTrash className="client_tash_icon" /></td>
 
                             </tr>
 

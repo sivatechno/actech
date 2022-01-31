@@ -190,6 +190,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//counting of data
 router.get('/count', (req, res) => {
     Associateprofile.findAndCountAll({})
         .then(result => {

@@ -19,22 +19,18 @@ function Projectview({CloseModal}) {
     return (
         <div>
 
-            <div className="projectprofiletablecontainer">
-            <AiIcons.CgClose className="close_icon" onClick={()=>CloseModal(false)} />
-
-                <table  className="project_profile_table">
-                    <thead>
-                    
-                    
-                    <tr className="project_profile_table_head">
-                        <th>Client Name</th>
-                        <th>Proj Name</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        {/* <th>Actions</th> */}
-                    </tr>
-                    </thead>
-                    
+            <div className="project_container">
+                <AiIcons.CgClose className="close_icon" onClick={()=>CloseModal(false)} />
+                <table  className="project_profile_table_container">
+                    <thead>           
+                        <tr className="project_profile_row">
+                            <th className='project_row_data'>Client Name</th>
+                            <th className='project_row_data'>Proj Name</th>
+                            <th className='project_row_data'>Start Date</th>
+                            <th className='project_row_data'>End Date</th>
+                            {/* <th>Actions</th> */}
+                        </tr>
+                    </thead>                   
                    <tbody>
 
                    {listOfProject&&listOfProject.map((value,key)=>{
@@ -42,11 +38,11 @@ function Projectview({CloseModal}) {
 
                        
 
-                        <tr className="project_profile_table_body">
-                        <td>{value.Client_Name}</td>
-                        <td>{value.Project_Name}</td>
-                        <td>{value.Start_Date}</td>
-                        <td >{value.End_Date}</td>
+                        <tr className="project_profile_body_row">
+                        <td className='project_profile_body_row_data'>{value.Client_Name}</td>
+                        <td className='project_profile_body_row_data'>{value.Project_Name}</td>
+                        <td className='project_profile_body_row_data'>{value.Start_Date}</td>
+                        <td className='project_profile_body_row_data'>{value.End_Date}</td>
                         {/* <td className="proj_table_icons"><AiIcons.MdEdit className="prof_edit_icon" onClick={()=>{EditpopupCome(true);}}/> <AiIcons.FaTrash className="prof_tash_icon" onClick={()=>{Deletepopupcome(true);}}/></td> */}
                     </tr>
                     
@@ -56,14 +52,7 @@ function Projectview({CloseModal}) {
 
                        )
                    })}
-                   </tbody>
-                
-
-                   
-                  
-                        
-                
-                    
+                   </tbody>                                                     
              </table>
             
         </div>

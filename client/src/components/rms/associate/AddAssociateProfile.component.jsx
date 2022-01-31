@@ -161,7 +161,7 @@ function cancel(e) {
   const formData = new FormData()
   formData.append("myuploadimage" , uploadimage)
 
-  axios.post("http://localhost:5000/associateprofile/upload" , formData,{
+  axios.post(`${apiURL}/associateprofile/upload` , formData,{
       headers : {
           "enc-type" : "multipart/form-data",
       },
@@ -171,7 +171,7 @@ function cancel(e) {
  }
   const addAssociateProfile = (e) =>{
     upload();
-    axios.post("http://localhost:5000/associateprofile/create",
+    axios.post(`${apiURL}/associateprofile/create`,
     {
       firstname:firstname,
       lastname:lastname,

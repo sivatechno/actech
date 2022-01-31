@@ -19,8 +19,10 @@ import Dashboard from './pages/rms/Dashboardview';
 import Viewassociateprofile from './pages/rms/ViewAssociate';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
-import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component'
-import Exam from './pages/lms/Exam';
+import EditClient from './components/rms/Client/Editclient';
+import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component';
+import ProjectMappingView from './pages/rms/ProjectMappingView';
+import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';
@@ -105,9 +107,17 @@ function App({ children }) {
             <Route exact path="/ClientView" element={<ProtectedRoute />}>
               <Route exact path="/ClientView" element={<ClientView />} />
             </Route>
+
+            <Route exact path="/Editclient" element={<ProtectedRoute />}>
+              <Route exact path="/Editclient" element={<EditClient />} />
+            </Route>
             
             <Route exact path="/HardBlock" element={<ProtectedRoute />}>
               <Route exact path="/HardBlock" element={<HardBlock />} />
+            </Route>
+
+            <Route exact path="/ProjectMappingView" element={<ProtectedRoute />}>
+              <Route exact path="/ProjectMappingView" element={<ProjectMappingView />} />
             </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>

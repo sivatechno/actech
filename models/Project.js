@@ -22,7 +22,9 @@ module.exports = (sequelize , DataTypes) => {
         },
         Project_Status:{
             type:DataTypes.STRING,
-            
+        },
+        Billing_Status: {
+            type: DataTypes.STRING,
         },
         
 

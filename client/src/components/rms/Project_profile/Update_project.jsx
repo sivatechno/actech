@@ -14,8 +14,8 @@ function Update_project() {
     const {id}   = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/project/${id}`).then((response) => {
-            //setProfileData(response.data);
+        axios.get(`${apiURL}/project/getid/${id}`).then((response) => {
+            setProfileData(response.data);
             console.log(response)
         });
     }, 
@@ -39,15 +39,15 @@ function Update_project() {
                 </div>
 
                 <div className='update_proj_inner_div'>
-                {/* {profiledata.map((values, key) => {
-                return ( */}
+                 {/* {profiledata.map((values, key) => {
+                return (  */}
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>
                         <p className="update_project_text">Client Name*</p><br />
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.FaRegUserCircle className="update_proj_icons"/>
-                            <input type="text" className="update_proj_textfield" placeholder="Client_name" required Value={"Admin"}/>
+                            <input type="text" className="update_proj_textfield" placeholder="Client Name" required Value={"Admin"}/>
                         </div>
                         </div>
                         </div>
@@ -57,13 +57,13 @@ function Update_project() {
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.AiOutlineFundProjectionScreen className="update_proj_icons"/>
-                            <input type="text" className="update_proj_textfield" placeholder="Project_name" required Value={"Proj A"}  />
+                            <input type="text" className="update_proj_textfield" placeholder="Project Name" required Value={"Proj A"}  />
                         </div>
                         </div>
                         </div>
                      </div>
                     {/* )
-                    })}      */}
+                    })}     */}
 
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>
@@ -91,19 +91,34 @@ function Update_project() {
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.SiGmail className="update_proj_icons"/>  
-                            <input type="email" className="update_proj_textfield" placeholder="Client_Email" required Value={"admin@gmail.com"}  />
+                            <input type="email" className="update_proj_textfield" placeholder="Client E-Mail" required Value={"admin@gmail.com"}  />
                         </div>
                         </div>
                         </div>
                    
-                        <div className='update_proj_checkbox_content'>
-                            <p className="update_project_checkbox_text">Project Status*</p><br />
-                            <select className='update_proj_select' name="cars" id="cars">
-                             <option className='val' >Enable</option>
-                             <option className='val' >Disable</option>
-                            </select>
-                        </div>
+                        <div className="update_project_inner_radio_body">
+                            <div className='update_proj_content'>
+                                <p className="update_project_text">Project Status</p>
+                                <div className='update_project_bill_radio_btn'>
+                                     <input type="radio" value="status" name='status'  /> <p>Enable</p>
+                                    <input type="radio" value="status" name='status' /> <p>Disable</p>
+                                </div>
+                            </div>
+                         </div>
                     </div>
+
+                    <div className='update_proj_inner_body'>
+                    <div className="update_project_inner_radio_body">
+                            <div className='update_proj_content'>
+                                <p className="update_project_text">Billing Status</p>
+                                <div className='update_project_bill_radio_btn'>
+                                     <input type="radio" /> <p>Billable</p>
+                                    <input type="radio" /> <p>Non-Billable</p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+
                 </div>
 
                 <div className='update_proj_button_div'>

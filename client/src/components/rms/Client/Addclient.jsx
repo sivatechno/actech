@@ -1,36 +1,51 @@
-import React,{useState} from 'react'
-import './Addclient.scss'
+import React from 'react'
 import * as AiIcons from 'react-icons/all'
+import './Addclient.scss'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 import Validate from './Clientvalidate';
+import config from '../../config/config';
 
 // export default function Project_add() {
     function  Addclient ({ closeModule}) {
+        const apiURL = config.API_URL;
+        const [clientprofiledata, setClientProfileData] = useState([]);
+        const [clientname, setClientName] = useState([]);
+        const [clientemail, setClientEMail] = useState([]);
+        const [companyname, setCompanyName] = useState([]);
+        const [password, setPassword] = useState([]);
+        const [country, setCountry] = useState([]);
+        const [state, setState] = useState([]);
+        const [city, setCity] = useState([]);
+        const [address, setAddress] = useState([]);
+        const [startdate, setStartDate] = useState([]);
+        const [enddate, setEndDate] = useState([]);
+        const [contact, setContact] = useState([]);
+        const [pincode, setPinCode] = useState([]);
+        const [newclientprofileData, setNewClientProfileData] = useState([]);
+        const {id} = useParams();
 
-        const [values,setValues]=useState({
-            clientname:"",
-            companyname:"",
-            clientemail:"",
-            password:"",
-            startdate:"",
-            enddate:"",
-            
+        useEffect(() =>{
+            axios.get(`http://localhost:5000/clientprofile/${id}`).then((response) => {
+                setClientProfileData(response.data);
+            })
+        },[]);    
 
-        });
-
-        const[errors,setErrors]=useState({});
+        //const[errors,setErrors]=useState({});
         // console.log(values);
-          const handleChange = (event) =>{
-              setValues({
-                  ...values,
-                  [event.target.name]: event.target.value,
-              });
+          //const handleChange = (event) =>{
+              //setValues({
+                  //...values,
+                  //[event.target.name]: event.target.value,
+             // });
             //   console.log(values);
-          };
+          //};
         
-        const handleFormSubmit=(event) =>{
-            event.preventDefault();
-            setErrors(Validate(values));
-        };
+        //const handleFormSubmit=(event) =>{
+            //event.preventDefault();
+            //setErrors(Validate(values));
+        //};
     return (
         <div>
         <div className='addclient_overall_div'>
@@ -47,11 +62,11 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.FaRegUserCircle className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="Client_name" required name="clientname" value={values.clientname} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="Client_name" required name="clientname" />
                     
                       </div>
                       </div>
-                      {errors.clientname && <p className='add_client_errormsg'>{errors.clientname}</p>}
+                      
                       </div>
                       
                       <div className="add_client_content" >
@@ -59,10 +74,10 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.SiMicrosoftoffice className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="company_name" required name='companyname' value={values.projectname} onChange={handleChange} />
+                          <input type="text" className="textfield" placeholder="company_name" required name='companyname'/>
                       </div>
                       </div>
-                      {errors.companyname && <p className='add_client_errormsg'>{errors.companyname}</p>}
+            
                       </div>
 
                  </div>
@@ -72,20 +87,20 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.SiGmail className="add_client_icons"/></i>
-                          <input type="email" className="textfield" placeholder="E-Mail" required name='clientemail' value={values.clientemail} onChange={handleChange}  />
+                          <input type="email" className="textfield" placeholder="E-Mail" required name='clientemail' />
                       </div>
                       </div>
-                      {errors.clientemail && <p className='add_client_errormsg'>{errors.clientemail}</p>}
+                      
                       </div>
                       <div className="add_client_content" >
-                          <p className="add_client_text">Password*</p><br />
+                          <p className="add_client_text">Contact*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
-                          <i><AiIcons.CgPassword className="add_client_icons"/></i>
-                          <input type="password" className="textfield" placeholder="Password" required name='password' value={values.password}  onChange={handleChange} />
+                          <i><AiIcons.MdOutlineLocalPhone className="add_client_icons"/></i>
+                          <input type="text" className="textfield" placeholder="contact" required name='contact'  />
                       </div>
                       </div>
-                      {errors.password && <p className='add_client_errormsg'>{errors.password}</p>}
+                      
                       </div>
 
                  </div>
@@ -95,20 +110,20 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.ImAddressBook className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="Address" required name='Address' value={values.Address} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="Address" required name='Address' />
                       </div>
                       </div>
-                      {errors.Address && <p className='add_client_errormsg'>{errors.Address}</p>}
+                      
                       </div>
                       <div className="add_client_content" >
                           <p className="add_client_text">Country*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.GiWorld className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="Country" required name='Country' value={values.Country}  onChange={handleChange} />
+                          <input type="text" className="textfield" placeholder="Country" required name='Country' />
                       </div>
                       </div>
-                      {errors.Country && <p className='add_client_errormsg'>{errors.Country}</p>}
+                      
                       </div>
                  </div>
                  <div className="add_client_inner_body">
@@ -117,20 +132,20 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.FiMapPin className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="state" required name='State' value={values.State} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="state" required name='State' />
                       </div>
                       </div>
-                      {errors.State && <p className='add_client_errormsg'>{errors.State}</p>}
+                      
                       </div>
                       <div className="add_client_content" >
                           <p className="add_client_text">City*</p><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.FaCity className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="City" required name='City' value={values.City}  onChange={handleChange} />
+                          <input type="text" className="textfield" placeholder="City" required name='City'  />
                       </div>
                       </div>
-                      {errors.City && <p className='add_client_errormsg'>{errors.City}</p>}
+                      
                       </div>
                  </div>
                  <div className="add_client_inner_body">
@@ -139,20 +154,20 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           {/* <i><AiIcons.FaUser className="icons"/></i> */}
-                          <input type="date" className="textfield" placeholder='enter date' required name='startdate' value={values.startdate}  onChange={handleChange}  />
+                          <input type="date" className="textfield" placeholder='enter date' required name='startdate' />
                       </div>
                       </div>
-                      {errors.startdate && <p className='add_client_errormsg'>{errors.startdate}</p>}
+                      
                       </div>
                       <div className="add_client_content" >
                          <label > <p className="add_client_text">End_Date*</p></label><br />
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           {/* <i><AiIcons.FaUser className="icons"/></i> */}
-                          <input type="date" className="textfield" placeholder='enter date' required  name='enddate' value={values.enddate}  onChange={handleChange} />
+                          <input type="date" className="textfield" placeholder='enter date' required  name='enddate'  />
                       </div>
                       </div>
-                      {errors.enddate && <p className='add_client_errormsg'>{errors.enddate}</p>}
+                      
                       </div>
                       
 
@@ -163,16 +178,22 @@ import Validate from './Clientvalidate';
                           <div className="add_client_field_contain">
                       <div className="add_client_feild">
                           <i><AiIcons.BsPinAngleFill className="add_client_icons"/></i>
-                          <input type="text" className="textfield" placeholder="pin_code" required name='pincode' value={values.pincode} onChange={handleChange}  />
+                          <input type="text" className="textfield" placeholder="pin_code" required name='pincode'  />
                       </div>
                       </div>
-                      {errors.Pin_code && <p className='add_client_errormsg'>{errors.Pin_code}</p>}
+                      
                       </div>
-                      <div className='add_div_client'></div>
+                      <div className="add_client_content" >
+                        
+                          <div className="add_client_field_contain">
+                      
+                      </div>
+                      
+                      </div>
                  </div>
                  <div className="add_client_buttons">
-                     <button className="client_cancel_btn">Cancel</button>
-                     <button className="client_add_btn" onClick={handleFormSubmit}>Add client</button>
+                     <button className="client_cancel_btn" onClick={()=>{ closeModule(false)}}>Cancel</button>
+                     <button className="client_add_btn">Add client</button>
                  </div>
                  </form>
                 
