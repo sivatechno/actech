@@ -8,27 +8,27 @@ import config from '../../config/config'
 import './Project_profile_view'
 
 
-export default  function Update_project(props) {
+export default  function Update_project() {
 
     
 
     const apiURL = config.API_URL;
 
-    const [data,setProfileData] = useState([]);
+    const [profdata,setProfileData] = useState([]);
 
-  const { id }=useParams();
+    const { id }=useParams();
  // const {id} = props.to
   //console.log(props.id)
     
 
     useEffect(() => {
-        axios.get(`${apiURL}/project/getid/${id}`).then((response) => {
+        axios.get(`${apiURL}/project/${id}`).then((response) => {
             setProfileData(response.data);
            // console.log(response)
         });
     }, 
     []);
-    console.log(data)
+    //console.log(profdata)
     
 
     return (
@@ -45,7 +45,7 @@ export default  function Update_project(props) {
                         <p className='update_proj_head_text'>Update project</p>
                     </div>
                 </div>
-                {data.map((values, key) => {
+                {profdata.map((values, key) => {
                 return (
                 <div className='update_proj_inner_div'>
                    

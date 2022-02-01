@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) =>{
-    const Clientprofile = Sequelize.define("Clientprofile",
+    const Clientprofile = sequelize.define("Clientprofile",
     {
         user_id:{
-            type: Datatypes.STRING,
+            type:DataTypes.STRING,
         },
         Client_Name:{
             type:DataTypes.STRING,
@@ -32,11 +32,12 @@ module.exports = (sequelize, DataTypes) =>{
             type:DataTypes.STRING,
         },
         End_Date:{
-            
-        }
+            type:DataTypes.STRING,
+        },
 
 
+    })
 
-    }
+    return Clientprofile;
         
 }

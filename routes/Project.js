@@ -23,24 +23,24 @@ router.get('/viewproject',async(req,res)=>{
     }
 });
 
-router.get('/getid/:id',async(req,res)=>{
-  try {
-     const id = req.params.id;
-      const project=await Project.findByPk(id);
-      if (project) {
+// router.get('/getid/:id',async(req,res)=>{
+//   try {
+//      const id = req.params.id;
+//       const project=await Project.findByPk(id);
+//       if (project) {
 
-        console.log(id)
+//         console.log(id)
           
-          res.send(project);
+//           res.send(project);
 
-      }
+//       }
       
-  } catch (error) {
+//   } catch (error) {
 
-      res.send({error:error.message})
+//       res.send({error:error.message})
 
-  }
-});
+//   }
+// });
 
 //coounting of data
 router.get('/count', (req, res) => {
