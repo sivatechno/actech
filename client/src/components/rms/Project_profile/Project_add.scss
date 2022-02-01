@@ -127,6 +127,7 @@
 
                           input[type=radio]{
                               margin: 4% 0 0 8%;
+                              cursor: pointer;
                       }
                   }
         }
@@ -150,9 +151,11 @@
 
                 input[type=radio]{
                     margin: 2% 0 0 3%;
+                    cursor: pointer;
             }
             }
         }
+        
     }
         .add_project_buttons{
             background-color:white;
@@ -224,4 +227,14 @@ i{
     background: none;
 }
 
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:rgb(7, 78, 170);
+}
+::-webkit-scrollbar-button {
+    height: 30px;
+  }
 }

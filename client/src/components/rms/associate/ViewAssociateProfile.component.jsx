@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewAssociateProfile.component.scss'
+import _, { ceil } from 'lodash';
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddAssociateProfile from  './AddAssociateProfile.component'
 import UpdateAssociateProfile from './UpdateAssociateProfile.component';
+import { toast } from 'react-toastify'
 import config from '../../config/config'
 
 const customStyles = {
@@ -23,6 +25,7 @@ function ViewAssociateProfile() {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalUpdateIsOpen, setUpdateIsOpen] = useState(false);
+    const [associatepaginatedPosts,setAssociatePaginatedPosts] = useState();
 
     function openModal() {
         setIsOpen(true);
@@ -40,18 +43,33 @@ function ViewAssociateProfile() {
     }
     const deleteAssociateProfile = (id, e) => {
         console.log(id);
-        axios.delete(`http://localhost:5000/associateprofile/delete/${id}`).then((response) => {
-            //response.json("deleted successfully");
-            history.push("/viewassociateprofile")
+        axios.delete(`${apiURL}/associateprofile/delete/${id}`).then((response) => {
         });
+        notify(true);
     };
     useEffect(() => {
-        axios.get("http://localhost:5000/associateprofile/viewassociateprofile").then((response) => {
+        axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
-            // console.log(response.data);
+            setAssociatePaginatedPosts(_(response.data).slice(0).take(associatepageSize).value());
         });
     }, []);
-    console.log(listOfAssociateProfiles);
+
+    const notify = () => { toast.error('Deleted', { position: toast.POSITION.BOTTOM_CENTER }) }
+    const [currentAssociatePage,setcurrentAssociatePage] = useState(1);
+
+    const associatepageSize=7;
+    console.log(Math)
+    const associatepageCount=listOfAssociateProfiles?Math.ceil(listOfAssociateProfiles.length/associatepageSize):1;
+
+    const associatepages = _.range(1, associatepageCount+1);
+
+    const Associatepagination =(pageNo)=>{
+        setcurrentAssociatePage(pageNo);
+        const startIndex = (pageNo-1)* associatepageSize;
+        const associatepaginatedPosts = _(listOfAssociateProfiles).slice(startIndex).take(associatepageSize).value();
+        setAssociatePaginatedPosts(associatepaginatedPosts);
+        }
+
     return (
         <div className="associateprofile_container">
             <div className="associate_header">
@@ -64,7 +82,6 @@ function ViewAssociateProfile() {
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Example Modal"
@@ -86,7 +103,7 @@ function ViewAssociateProfile() {
                     {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
-                    {listOfAssociateProfiles.length > 0 && listOfAssociateProfiles.map((value, key)=> {
+                    {associatepaginatedPosts&&associatepaginatedPosts.map((value,key)=>{
                     return (
                             <tr className="associate_table_row">
                                  <td className="associate_namecol">{value.firstname} {value.lastname}</td>
@@ -119,7 +136,18 @@ function ViewAssociateProfile() {
                         )
                     })}
                 </table>
-            </div>
+            </div>            
+            <nav className='Associativenav'>
+                <ul className='Associatepagination'>
+                    {
+                        associatepages.map((Associatepage)=>(
+                            <li className={Associatepage === currentAssociatePage ? "associatepage-item active" : "associatepage-item"} onClick={()=>Associatepagination(Associatepage)}>
+                                <p className='associatepage-link' onClick={()=>Associatepagination(Associatepage)}>{Associatepage}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
         </div>
     )
 }

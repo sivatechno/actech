@@ -2,16 +2,30 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    //background-color: white;
+    //background-color:red;
 }
 .addclient_overall_div{
-    height: 450px;
-    width: 100%;
+    //border: 2px solid green;
+    background-color: white;
+    backface-visibility: hidden;
+    height: 481px;
+    width: 98%;
+    // margin: 10% 0 0 24%;
+    border-radius: 15px;
+    box-shadow: rgba(54, 54, 54, 0.37) 0px 2px 8px 2px;
+
+    //background: white;
 .add_client_overall{
     background: white;
     background-color:white;
     height: 100%;
     width: 100%;
     border-radius:15px;
+   
+    //overflow-y:scroll;
+    overflow-x: hidden;
+    
     .add_client_inner{
         background-color: white;
         //border: 1px solid blue;
@@ -21,7 +35,7 @@
         background:white;
         enable-background: white;
         .add_client_head{
-            //border-bottom: 2px solid rgba(223, 223, 223, 0.418);
+            border-bottom: 2px solid rgba(223, 223, 223, 0.418);
             height: 5%;
             display: flex;
             padding-bottom: 2%;
@@ -31,7 +45,7 @@
                 font-weight: bold;
                 background-color: white;
                 cursor: default;
-                color:  #3253e2;
+                color:  rgb(7, 78, 170);
             }
             .add_client_close{
                 //border: 1px solid red;
@@ -41,6 +55,12 @@
                 color: red;
                 background-color: white;
                 cursor: pointer;
+            }
+            .add_client_close:hover{
+                border: 1px solid red;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
             }
         }
         .add_client_inner_body{
@@ -75,14 +95,14 @@
                    // border: 1px solid red;
                     margin-top: -6%;
                 .add_client_feild{
-                    //border:solid 2px #2424;
+                    border:solid 2px #2424;
                     border-radius: 20px;
                     display: inline-block;
                     height: 50px;
                     width: 300px;
                     background-color: white;
                     margin-top: 0%;
-                    input[type=text],input[type=date],input[type=password],input[type=email]{
+                    input[type=text],input[type=date],input[type=password],input[type=email],input[type=tel]{
                         height:90%;
                         width: 80%;
                         border:none ;
@@ -113,10 +133,10 @@
                 height: 45px;
             }
             .client_cancel_btn{
-                border: 2px solid #3253e2;
+                border: 2px solid rgb(7, 78, 170);
                 background-color: white;
                 //padding: 1.5% 6% 1.5% 6%;
-                color: #3253e2;
+                color: rgb(7, 78, 170);
                 margin: 0 0 0 38%; 
                 cursor: pointer;          
              }
@@ -124,7 +144,7 @@
             .client_add_btn{
                 border: 2px solid white;
                // padding: 1.5% 6% 1.5% 6%;
-                background-color: #3253e2;
+                background-color: rgb(7, 78, 170);
                 color: white;
                 margin: 0 0 0 5%;
                 cursor: pointer;
@@ -140,9 +160,6 @@
         background-color: white;
     }
 }
-i{
-    background-color: white;
-}
 .add_client_icons{
     border-color: white;
     background: white;
@@ -152,5 +169,15 @@ form{
     background-color: white;
     //border:1px solid blue;
 }
-
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:rgb(7, 78, 170);
+}
+::-webkit-scrollbar-button {
+    height: 20px;
+  }
+  
 }

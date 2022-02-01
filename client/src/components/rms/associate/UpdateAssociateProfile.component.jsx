@@ -85,13 +85,9 @@ export default function UpdateProfileViewMentor() {
 
   const [newProject, setNewProject] = useState("");
   
-  const [newFemale,setNewFemale] = useState("");
+  const [newGender,setNewGender] = useState("");
 
-  const [newMale,setNewMale] = useState("");
-
-  const [newExperience,setNewExperience] = useState("");
-
-  const [newFresher,setNewFresher] = useState("");
+  const [newQualify,setNewQualify] = useState("");
 
   const [newPrimaryskill,setNewPrimarySkill] = useState("");
 
@@ -138,13 +134,13 @@ export default function UpdateProfileViewMentor() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/associateprofile/${id}`).then((response) => {
+        axios.get(`${apiURL}/associateprofile/${id}`).then((response) => {
             setProfileData(response.data);
         });
     }, []);
     
     const update = (e) => {
-        axios.put(`http://localhost:5000/associateprofile/update/${id}`,
+        axios.put(`${apiURL}/associateprofile/update/${id}`,
             {
                 firstname:newFirstname,
                 lastname:newLastname,
@@ -183,29 +179,16 @@ export default function UpdateProfileViewMentor() {
                 coursecertificate:newCoursecertificate,
                 instituteaddress:newInstituteaddress,
                 project:newProject,
-                female:newFemale,
-                male:newMale,
-                experience:newExperience,
-                fresher:newFresher,
+                gender:newGender,
+                qualify:newQualify,
                 secondaryskill:newSecondaryskill,
                 primaryskill:newPrimaryskill,
             }).then((response) => {
                 setNewProfileData(response.data);
             });
     };
-    
-    const handleRemoveClick = index => {
-        const list = [...inputList];
-        list.splice(index, 1);
-        setInputList(list);
-      };
-
-    const handleAddClick = () => {
-        setInputList([...inputList, { firstName: "", lastName: "" }]);
-      };
-
     return (
-        <div className="profileviewmentor_container">
+        <div className="updateassociate_container">
             {profiledata.length > 0 && profiledata.map((values, key) => {
                 return (
         <div>
@@ -213,7 +196,7 @@ export default function UpdateProfileViewMentor() {
            <i >< AiIcons.IoMdClose className="closeIcon" /></i>
            <div className="update_profile_view">
                 {uploadimage && <img alt={uploadimage.name} src={preview}  className="profile_align"  /> }
-                {/* <input type="text" className="toptxtfeild"   onChange={(e) => { setNewFirstname(e.target.value); }} value={values.firstname}  /><br />               */}
+                
             </div>
             <div className="update_Tabitems">
                 <button className={index != 0 ? "profiletab":"profiletabbg"} onClick={()=>{setIndex(0)}}>Profile</button>
@@ -305,32 +288,27 @@ export default function UpdateProfileViewMentor() {
                         
                     </div>
                     <div className="associateprofile-inputfeilds">
-                    <div className="associateprofile-left-inputfeilds-Avatarfeild" >
-                            <label >Avatar</label><br />
-                            <div className="imagefeild">
-                            <input type="file" name="file" className="textfield" accept="image/*" id='input' onChange={(e)=> imageHandler(e)}/>
-                            <label htmlFor='input' className='imageupload'>
-                            <i>< AiIcons.FcAddImage/> Choose an image</i>
-                            </label>
-                            </div>
-                        </div>  
-                        <div className="associateprofile-right-inputfeilds-genderradiobutton">
-                            <label className="genderlbl">Gender</label><br />
-                            <input type="radio"  className="radiomalebtn" onChange={(e)=>{setNewMale(e.target.value);}} value={values.male} name="radio"  />
-                            <p className="radiobtn-txt">Male</p>
-                            <input type="radio" className="radiofemalebtn" onChange={(e)=>{setNewFemale(e.target.value);}} value={values.female} name="radio"/>
-                            <p className="radiobtn-txt">Female</p>
-                        </div>
-                    </div>  
-                    <div className="associateprofile-inputfeilds-checkbox">   
+                    <div className="associateprofile-left-inputfeilds-checkbox">   
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
-                            <input type="checkbox"  className="checkfresherbtn" onChange={(e)=>{setNewFresher(e.target.value);}} value={values.fresher} name="radio"  />
-                            <p className="checkbtn-txt">Fresher</p>
-                            <input type="checkbox" className="checkexperiencebtn" onChange={(e)=>{setNewExperience(e.target.value);}} value={values.experience} name="radio"/>
-                            <p className="checkbtn-txt">Experience</p>
+                            <div>
+                            <input type="checkbox"  className="checkfresherbtn"  value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("fresher")}}   />
+                            <label className="checkbtn-txt">Fresher</label>
+                            <input type="checkbox" className="checkexperiencebtn" value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("experience")}} />
+                            <label className="checkbtn-txt">Experience</label>
+                            </div>
                         </div> 
-                    </div>                              
+                    </div> 
+                        <div className="associateprofile-right-inputfeilds-genderradiobutton">
+                            <label className="genderlbl">Gender</label><br />
+                            <div>                          
+                            <input type="radio"  className="radiomalebtn" value={values.gender} name="gender"   onClick={()=> {setNewGender("male")}} />
+                            <label className="radiobtn-txt">Male</label>
+                            <input type="radio" className="radiofemalebtn" value={values.gender} name="gender"  onClick={() => { setNewGender("female")}} />
+                            <label className="radiobtn-txt">Female</label>
+                            </div>  
+                        </div>
+                    </div>                                                                
                     <div className="buttonsection">
                             <div className="backbtn">
                                <i></i>
@@ -339,7 +317,7 @@ export default function UpdateProfileViewMentor() {
                                 <input type="button" className="cancelicon" value="Cancel" />
                                 <input type="button" className="nexticon" value="Next" onClick={focus2}/>
                             </div>
-                        </div>
+                    </div>
                     {/* </div>{console.log(addAssociate)} */}
                 </div>                
                 <div className="associateprofile-textfeild-container" hidden={index != 1}> 
@@ -375,7 +353,7 @@ export default function UpdateProfileViewMentor() {
                             <label>Sslc Marks</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Sslc Marks"  onChange={(e)=>{setNewSslcMark(e.target.value);}} value={values.newSslcmark}/>
+                            <input type="text" className="associateprofile-textfield" placeholder="Sslc Marks"  onChange={(e)=>{setNewSslcMark(e.target.value);}} value={values.sslcmark}/>
                             </div>
                         </div>
                    </div>
@@ -438,7 +416,7 @@ export default function UpdateProfileViewMentor() {
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Year of Passed out</label><br />
                             <div className="associateprofile-feild">
-                            <input type="date" className="associateprofile-textfield" placeholder=" Year of Passed out"  onChange={(e)=>{setNewPassedoutyear(e.target.value);}} value={values.passedoutyear}/>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Year of Passed out"  onChange={(e)=>{setNewPassedoutyear(e.target.value);}} value={values.passedoutyear}/>
                             </div>
                         </div>
                         <div className="associateprofile-right-inputfeilds">
@@ -527,10 +505,10 @@ export default function UpdateProfileViewMentor() {
                             </div>
                         </div>
                         <div className="associateprofile-right-inputfeilds">
-                           <label>Exceptation Salary(Pa)</label><br />
+                           <label>Expectation Salary(Pa)</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaMoneyBillAlt className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Exceptation Salary" onChange={(e)=>{setNewExpectsalary(e.target.value);}} value={values.expectsalary}/><br/>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Expectation Salary" onChange={(e)=>{setNewExpectsalary(e.target.value);}} value={values.expectsalary}/><br/>
                             </div>
                         </div>
                    </div> 
@@ -550,68 +528,71 @@ export default function UpdateProfileViewMentor() {
                     </div>
                 </div>
                 <div className="associateprofile-textfeild-container" hidden={index != 3}>
-                <div className="associateprofile-inputfeilds">
+                   <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Institute Name</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield"   placeholder="Institute name" required onChange={(e)=>{setNewInstitutename(e.target.value);}} value={values.institutename} /><br />
-                            <span  hidden >This is required feild</span>
+                            <input type="text" className="associateprofile-textfield"   placeholder="Institute name" name='institutename' onChange={(e)=>{setNewInstitutename(e.target.value);}} value={values.institutename} /><br />
                             </div>
                         </div>
-                        <div className="associateprofile-right-inputfeilds">
-                            <label>Course Name</label><br />
-                            <div className="associateprofile-feild">
-                            <i><AiIcons.FaChalkboardTeacher className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Course name" autoFocus={false} onChange={(e)=>{setNewCoursename(e.target.value);}} value={values.coursename}/>
-                            </div>
-                        </div>
-                   </div>
-                   <div className="associateprofile-inputfeilds">
-                        <div className="associateprofile-left-inputfeilds" >
-                            <label>No of Month/year</label><br />
-                            <div className="associateprofile-feild">
-                            <i><AiIcons.MdToday className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder= "No of Month/year"  onChange={(e)=>{setNewDuration(e.target.value);}} value={values.duration}/>
-                            </div>
-                        </div>
-                        <div className="associateprofile-right-inputfeilds">
-                            <label>Score</label><br />
-                            <div className="associateprofile-feild">
-                            <i><AiIcons.GrScorecard className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Course Certificate" onChange={(e)=>{setNewCoursecertificate(e.target.value);}} value={values.coursecertificate}/>
-                            </div>
-                        </div>
-                   </div>
-                   <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Institute Address</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaCity className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Institute Address" onChange={(e)=>{setNewInstituteaddress(e.target.value);}} value={values.instituteaddress}/><br/>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Institute Address" name='instituteaddress' onChange={(e)=>{setNewInstituteaddress(e.target.value);}} value={values.instituteaddress}/><br/>                            
                             </div>
                         </div>
-                        <div className="associateprofile-right-inputfeilds">
+                     </div>
+                   <div className="associateprofile-inputfeilds">
+                        <div className="associateprofile-left-inputfeilds">
+                            <label>Course Name</label><br />
+                            <div className="associateprofile-feild">
+                            <i><AiIcons.FaChalkboardTeacher className="associateprofile-icons"/></i>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Course name" name='coursename' onChange={(e)=>{setNewCoursename(e.target.value);}} value={values.coursename} />
+                            </div>
+                        </div>
+                        <div className="associateprofile-right-inputfeilds" >
+                            <label>Course Duration</label><br />
+                            <div className="associateprofile-feild">
+                            <i><AiIcons.MdToday className="associateprofile-icons"/></i>
+                            <input type="text" className="associateprofile-textfield" placeholder= "Course Duration" name='duration'  onChange={(e)=>{setNewDuration(e.target.value);}} value={values.duration} />
+                            </div>
+                        </div>
+                   </div>
+                   <div className="associateprofile-inputfeilds">
+                   <div className="associateprofile-left-inputfeilds">
                             <label>Project</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaProjectDiagram className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Project " onChange={(e)=>{setNewProject(e.target.value);}} value={values.project}/>
+                            <input type="text" className="associateprofile-textfield" placeholder=" Project" name='project' onChange={(e)=>{setNewProject(e.target.value);}} value={values.project} />
+                
                             </div>
                         </div>
+                        <div className="associateprofile-right-inputfeilds" >
+                            <label>Project Duration</label><br />
+                            <div className="associateprofile-feild">
+                            <i><AiIcons.FaCity className="associateprofile-icons"/></i>
+                            <input type="text" className="associateprofile-textfield" name='projectduration' placeholder=" Project Duration" onChange={(e)=>{setNewDuration(e.target.value);}}  value={values.duration}/><br/>
+                           
+                            </div>
+                        </div>                        
                    </div> 
                    <div className="associateprofile-inputfeilds">
                    <div className="associateprofile-left-inputfeilds" >
                             <label>Primary Skill</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiSkills className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="PrimarySkill" onChange={(e)=>{setNewPrimarySkill(e.target.value);}} value={values.primaryskill}/><br/>
+                            <input type="text" className="associateprofile-textfield" placeholder="PrimarySkill" name='primaryskill' onChange={(e)=>{setNewPrimarySkill(e.target.value);}} value={values.primaryskill} /><br/>
+                           
                             </div>
                         </div>
                         <div className="associateprofile-right-inputfeilds">
                             <label> Secondary Skill</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiSkills className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="SecondarySkill" onChange={(e)=>{setNewSecondarySkill(e.target.value);}} value={values.secondaryskill}/>
+                            <input type="text" className="associateprofile-textfield" placeholder="SecondarySkill" name='secondaryskill' onChange={(e)=>{setNewSecondarySkill(e.target.value);}} value={values.secondaryskill}/>
+                            
                             </div>
                         </div>
                    </div> 
@@ -620,7 +601,7 @@ export default function UpdateProfileViewMentor() {
                             <label>Experience Certificate</label><br />
                             <div className="associateprofile-feild">
                             <input type="file" name="file" className="textfield"  id='exp_certify'/>
-                            <label htmlFor='exp_certify' className='imageupload'>
+                            <label htmlFor='exp_certify' className='fileupload'>
                             <i>< AiIcons.FcAddImage/> Choose an file</i>
                             </label>
                             </div>
@@ -629,26 +610,12 @@ export default function UpdateProfileViewMentor() {
                             <label>Course Certificate</label><br />
                             <div className="associateprofile-feild">
                             <input type="file" name="file" className="textfield"  id='Course_certify' />
-                            <label htmlFor='Course_certify' className='imageupload'>
+                            <label htmlFor='Course_certify' className='fileupload'>
                             <i>< AiIcons.FcAddImage/> Choose an file</i>
                             </label>
                             </div>
                         </div>    
-                        {/* <div className="left-inputfeilds" >
-                            <label>Experience Certificate</label><br />
-                            <div className="feild">
-                            {/* <input type="text" className="textfield" placeholder=" Experience Certificate" onChange={(e)=>{setExpcertificate(e.target.value);}}/> */}
-                            {/* <input type="file" name="file" className="textfield"   onChange={(e)=>{setExpcertificate(e.target.value);}}/>
-                            </div>
-                        </div>  */} 
-                        {/* <div className="right-inputfeilds">
-                            <label>Course Certificate</label><br />
-                            <div className="feild"> */}
-                            {/* <input type="text" className="textfield" placeholder="Course Certificate" onChange={(e)=>{setCoursecertificate(e.target.value);}}/> */}
-                            {/* <input type="file" name="file" className="textfield"   onChange={(e)=>{setCoursecertificate(e.target.value);}}/>
-                            </div>
-                        </div> */}
-                   </div>
+                    </div>
                     <div className="buttonsection">
                             <div className="backbtn">
                                {/* <i><AiIcons.BsArrowLeftSquareFill className="nexticon" onClick={focus3}/></i> */}
