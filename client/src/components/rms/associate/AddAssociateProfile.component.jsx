@@ -8,6 +8,7 @@ import Associateprofilepopup from './AssociatePopup.jsx';
 import  {AssociateEducationValidate,AssociateProfileValidate , AssociateCompanyValidate,AssociateCertificateValidate} from './AssociateValidate'
 import config from '../../config/config'
 
+
 export default function AddAssociateprofile({closeModel}) {
     
   const apiURL = config.API_URL;  
@@ -318,6 +319,22 @@ function cancel(e) {
    {
     setIndex(3)
    }
+   const alphacheck= (e) =>{
+    const regex = /[A-Za-z]/;
+    const chars = e.target.value.split('');
+    const char = chars.pop();
+    console.log(char);
+    if (!regex.test(char)) {
+      e.target.value = chars.join('');
+      alert("Please enter only alphabets");
+      e.preventDefault();
+      return false;
+     
+    }
+    else {
+      return true;
+    }
+  }
     return (
       <div>
         <div className="addassociate">
@@ -343,7 +360,7 @@ function cancel(e) {
                             <label>First Name</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaUser className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" values={setValues.firstname} name='firstname'  autoFocus = {true} placeholder="first name" values={setValues.firstname} onChangeCapture={handleChangeCapture} required onChange={(e)=>{setFirstname(e.target.value);}} /><br />
+                            <input type="text" className="associateprofile-textfield" values={setValues.firstname} maxLength={30} name='firstname'   autoFocus = {true} placeholder="first name" values={setValues.firstname} onChangeCapture={handleChangeCapture} required onChange={(e)=>{setFirstname(e.target.value);}} /><br />
                             {errors.firstname && <p className='errormsg'>{errors.firstname}</p>}
                             <span className="error" ><p id="firstname_error"></p></span>
                             </div>
@@ -352,7 +369,7 @@ function cancel(e) {
                             <label>Last Name</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaUser className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" name='lastname'  placeholder="last name" onChange={(e)=>{setLastname(e.target.value);}} values={setValues.lastname} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" name='lastname' maxLength={30} placeholder="last name" onChange={(e)=>{setLastname(e.target.value);}} values={setValues.lastname} onChangeCapture={handleChangeCapture} required/>
                             {errors.lastname && <p className='errormsg'>{errors.lastname}</p>}
                             <span className="error"><p id="lastname_error"></p></span>
                             </div>
@@ -372,17 +389,17 @@ function cancel(e) {
                             <label>Country</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.BiWorld className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" name='country' placeholder="country" onChange={(e)=>{setCountry(e.target.value);}} values={setValues.country} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" pattern = "!/^[A-Za-z]+$/" maxLength={30} className="associateprofile-textfield" name='country' placeholder="country" onChange={(e)=>{setCountry(e.target.value);}} values={setValues.country} onChangeCapture={handleChangeCapture} required/>
                             {errors.country && <p className='errormsg'>{errors.country}</p>}
                             </div>
                         </div>
                    </div>
                    <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
-                            <label>City</label><br />
+                            <label>District</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaCity className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" name='city' placeholder="city" onChange={(e)=>{setCity(e.target.value);}} values={setValues.city} onChangeCapture={handleChangeCapture} required/><br/>
+                            <input type="text" className="associateprofile-textfield" maxLength={20} name='city' placeholder="city" onChange={(e)=>{setCity(e.target.value);}} values={setValues.city} onChangeCapture={handleChangeCapture} required/><br/>
                             {errors.city && <p className='errormsg'>{errors.city}</p>}
                             </div>
                         </div>
@@ -390,7 +407,7 @@ function cancel(e) {
                             <label>Address</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.FiMapPin className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" name='address' placeholder="address" onChange={(e)=>{setAddress(e.target.value);}} values={setValues.address} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" name='address' maxLength={100} placeholder="address" onChange={(e)=>{setAddress(e.target.value);}} values={setValues.address} onChangeCapture={handleChangeCapture} required/>
                             {errors.address && <p className='errormsg'>{errors.address}</p>}
                             </div>
                         </div>
@@ -401,7 +418,7 @@ function cancel(e) {
                             <label>State</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiModernCity className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="State" name='state'onChange={(e)=>{setState(e.target.value);}} values={setValues.state} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" placeholder="State" maxLength={20} name='state'onChange={(e)=>{setState(e.target.value);}} values={setValues.state} onChangeCapture={handleChangeCapture} required/>
                             {errors.state && <p className='errormsg'>{errors.state}</p>}
                             </div>
                         </div>
@@ -409,7 +426,7 @@ function cancel(e) {
                             <label>Phone Number</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.BsPhone className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Phone number" name='phonenumber' pattern="\d*" title="Numbers only, please." onChange={(e)=>{setPhonenumber(e.target.value);}} values={setValues.phonenumber} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" placeholder="Phone number"  maxLength={12} name='phonenumber' pattern="\d*" title="Numbers only, please." onChange={(e)=>{setPhonenumber(e.target.value);}} values={setValues.phonenumber} onChangeCapture={handleChangeCapture} required/>
                             {errors.phonenumber && <p className='errormsg'>{errors.phonenumber}</p>}
                             </div>
                         </div>
@@ -419,7 +436,7 @@ function cancel(e) {
                             <label>Postal Code</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.BiMapPin className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Postal Code" name='postalcode' onChange={(e)=>{setPostalcode(e.target.value);}} values={setValues.postalcode} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" placeholder="Postal Code" maxLength={6} name='postalcode' onChange={(e)=>{setPostalcode(e.target.value);}} values={setValues.postalcode} onChangeCapture={handleChangeCapture} required/>
                             {errors.postalcode && <p className='errormsg'>{errors.postalcode}</p>}
                           </div>
                         </div>
@@ -473,7 +490,7 @@ function cancel(e) {
                             <label>Board</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.IoBusinessOutline className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Sslc Board " name='sslcboard'  onChange={(e)=>{setSslcBoard(e.target.value);}} values={setValues.sslcboard} onChangeCapture={handleChangeCapture} required /><br />
+                            <input type="text" className="associateprofile-textfield" placeholder=" Sslc Board " maxLength={20} name='sslcboard'  onChange={(e)=>{setSslcBoard(e.target.value);}} values={setValues.sslcboard} onChangeCapture={handleChangeCapture} required /><br />
                             {errors.sslcboard && <p className='errormsg'>{errors.sslcboard}</p>}
                             <span  hidden >This is required feild</span>
                             </div>
@@ -482,7 +499,7 @@ function cancel(e) {
                             <label>Sslc School Name</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="School Name" name='sslcschoolname'  onChange={(e)=>{setSslcSchoolName(e.target.value);}} values={setValues.sslcschoolname} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" placeholder="School Name" maxLength={20} name='sslcschoolname'  onChange={(e)=>{setSslcSchoolName(e.target.value);}} values={setValues.sslcschoolname} onChangeCapture={handleChangeCapture} required/>
                             {errors.sslcschoolname && <p className='errormsg'>{errors.sslcschoolname}</p>}
                             </div>
                         </div>
@@ -501,7 +518,7 @@ function cancel(e) {
                             <label>Sslc Marks</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Sslc Marks" name='sslcmark' onChange={(e)=>{setSslcMark(e.target.value);}} values={setValues.sslcmark} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" placeholder="Sslc Perecentage" maxLength={5} name='sslcmark' onChange={(e)=>{setSslcMark(e.target.value);}} values={setValues.sslcmark} onChangeCapture={handleChangeCapture} required />
                             {errors.sslcmark && <p className='errormsg'>{errors.sslcmark}</p>}
                             </div>
                         </div>
@@ -513,7 +530,7 @@ function cancel(e) {
                             <label>Board </label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.IoBusinessOutline className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield"    placeholder=" Hsc Board " name='hscboard'  onChange={(e)=>{setHscBoard(e.target.value);}} values={setValues.hscboard} onChangeCapture={handleChangeCapture} required  /><br />
+                            <input type="text" className="associateprofile-textfield" placeholder=" Hsc Board " maxLength={20} name='hscboard'  onChange={(e)=>{setHscBoard(e.target.value);}} values={setValues.hscboard} onChangeCapture={handleChangeCapture} required  /><br />
                             {errors.hscboard && <p className='errormsg'>{errors.hscboard}</p>}
                             <span  hidden >This is required feild</span>
                             </div>
@@ -522,7 +539,7 @@ function cancel(e) {
                             <label>Hsc School Name</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Hsc School Name" name='hscschoolname'  onChange={(e)=>{setHscSchoolName(e.target.value);}} values={setValues.hscschoolname} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" placeholder="Hsc School Name" maxLength={20} name='hscschoolname'  onChange={(e)=>{setHscSchoolName(e.target.value);}} values={setValues.hscschoolname} onChangeCapture={handleChangeCapture} required />
                             {errors.hscschoolname && <p className='errormsg'>{errors.hscschoolname}</p>}
                             </div>
                         </div>
@@ -532,7 +549,7 @@ function cancel(e) {
                             <label>Year Of Passed Out </label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.IoBusinessOutline className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield"    placeholder=" Year of Passedout " name='hscyearpassedout' onChange={(e)=>{setHscYearPassedOut(e.target.value);}} values={setValues.hscyearpassedout} onChangeCapture={handleChangeCapture} required  /><br />
+                            <input type="text" className="associateprofile-textfield" maxLength={4} placeholder=" Year of Passedout " name='hscyearpassedout' onChange={(e)=>{setHscYearPassedOut(e.target.value);}} values={setValues.hscyearpassedout} onChangeCapture={handleChangeCapture} required  /><br />
                             {errors.hscyearpassedout && <p className='errormsg'>{errors.hscyearpassedout}</p>}
                             <span  hidden >This is required feild</span>
                             </div>
@@ -541,7 +558,7 @@ function cancel(e) {
                             <label>Hsc Mark</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Hsc Mark" name='hscmark'  onChange={(e)=>{setHscMark(e.target.value);}} values={setValues.hscmark} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" maxLength={5} placeholder="Hsc Percentage" name='hscmark' maxLength={5}  onChange={(e)=>{setHscMark(e.target.value);}} values={setValues.hscmark} onChangeCapture={handleChangeCapture} required />
                             {errors.hscmark && <p className='errormsg'>{errors.hscmark}</p>}
                             </div>
                         </div>
@@ -559,7 +576,7 @@ function cancel(e) {
                             <label>University</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.IoBusinessOutline className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield"  placeholder=" University Name " name='university' onChange={(e)=>{setUniversity(e.target.value);}} values={setValues.university} onChangeCapture={handleChangeCapture} required  /><br />
+                            <input type="text" className="associateprofile-textfield"  placeholder=" University Name " maxLength={20} name='university' onChange={(e)=>{setUniversity(e.target.value);}} values={setValues.university} onChangeCapture={handleChangeCapture} required  /><br />
                             {errors.university && <p className='errormsg'>{errors.university}</p>}
                             </div>
                         </div>
@@ -567,7 +584,7 @@ function cancel(e) {
                             <label>College</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="College Name" name='college'  onChange={(e)=>{setCollege(e.target.value);}} values={setValues.college} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" placeholder="College Name" name='college' maxLength={20}  onChange={(e)=>{setCollege(e.target.value);}} values={setValues.college} onChangeCapture={handleChangeCapture} required />
                             {errors.college && <p className='errormsg'>{errors.college}</p>}
                             </div>
                         </div>
@@ -576,7 +593,7 @@ function cancel(e) {
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Year of Passed out</label><br />
                             <div className="associateprofile-feild">
-                            <input type="text" className="associateprofile-textfield" placeholder=" Year of Passed out" name='passedoutyear' onChange={(e)=>{setPassedoutyear(e.target.value);}} values={setValues.passedoutyear} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" maxLength={4} placeholder=" Year of Passed out" name='passedoutyear' onChange={(e)=>{setPassedoutyear(e.target.value);}} values={setValues.passedoutyear} onChangeCapture={handleChangeCapture} required />
                             {errors.passedoutyear && <p className='errormsg'>{errors.passedoutyear}</p>}
                             </div>
                         </div>
@@ -584,7 +601,7 @@ function cancel(e) {
                             <label>Degree</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiMedallist className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="Degree" name='degree' onChange={(e)=>{setDegree(e.target.value);}} values={setValues.degree} onChangeCapture={handleChangeCapture} required />
+                            <input type="text" className="associateprofile-textfield" maxLength={30}  placeholder="Degree" name='degree' maxLength={20} onChange={(e)=>{setDegree(e.target.value);}} values={setValues.degree} onChangeCapture={handleChangeCapture} required />
                             {errors.degree && <p className='errormsg'>{errors.degree}</p>}
                             </div>
                         </div>
@@ -594,7 +611,7 @@ function cancel(e) {
                             <label>CGPA</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GrScorecard className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" CGPA " name='cgpa' onChange={(e)=>{setCgpa(e.target.value);}} values={setValues.cgpa} onChangeCapture={handleChangeCapture} required /><br/>
+                            <input type="text" className="associateprofile-textfield" pattern='/^[+-]?\d*(?:[.,]\d*)?$/' placeholder=" CGPA " name='cgpa' maxLength={5} onChange={(e)=>{setCgpa(e.target.value);}} values={setValues.cgpa} onChangeCapture={handleChangeCapture} required /><br/>
                             {errors.cgpa && <p className='errormsg'>{errors.cgpa}</p>}
                             </div>
                         </div>
@@ -602,7 +619,7 @@ function cancel(e) {
                             <label>Highest qualification</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiMedallist className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Highest Qualification " name='qualification' onChange={(e)=>{setQualification(e.target.value);}} values={setValues.qualification} onChangeCapture={handleChangeCapture} required /><br />
+                            <input type="text" className="associateprofile-textfield" maxLength={30} placeholder=" Highest Qualification " maxLength={20} name='qualification' onChange={(e)=>{setQualification(e.target.value);}} values={setValues.qualification} onChangeCapture={handleChangeCapture} required /><br />
                             {errors.qualification && <p className='errormsg'>{errors.qualification}</p>}
                             </div>
                         </div>
@@ -653,7 +670,7 @@ function cancel(e) {
                             <label>Years of Experience</label><br />                    
                             <div className="associateprofile-feild">
                             <i><AiIcons.FaMoneyBillAlt className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder=" Year of Experience" name='yearsofexp'  onChange={(e)=>{setYearsofexp(e.target.value);}} values={setValues.yearsofexp} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" maxLength={2} placeholder=" Year of Experience" name='yearsofexp'  onChange={(e)=>{setYearsofexp(e.target.value);}} values={setValues.yearsofexp} onChangeCapture={handleChangeCapture} required/>
                             {errors.yearsofexp && <p className='errormsg'>{errors.yearsofexp}</p>}
                             </div>
                         </div>
@@ -736,7 +753,7 @@ function cancel(e) {
                             <label>Course Duration</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.MdToday className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder= "Course Duration" name='duration'  onChange={(e)=>{setDuration(e.target.value);}} values={setValues.duration} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield"  placeholder= "Course Duration" name='duration'  onChange={(e)=>{setDuration(e.target.value);}} values={setValues.duration} onChangeCapture={handleChangeCapture} required/>
                             {errors.duration && <p className='errormsg'>{errors.duration}</p>}
                             </div>
                         </div>
@@ -764,7 +781,7 @@ function cancel(e) {
                             <label>Primary Skill</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiSkills className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="PrimarySkill" name='primaryskill' onChange={(e)=>{setPrimarySkill(e.target.value);}} values={setValues.primaryskill} onChangeCapture={handleChangeCapture} required/><br/>
+                            <input type="text" className="associateprofile-textfield" maxLength={50} placeholder="PrimarySkill" name='primaryskill' onChange={(e)=>{setPrimarySkill(e.target.value);}} values={setValues.primaryskill} onChangeCapture={handleChangeCapture} required/><br/>
                             {errors.primaryskill && <p className='errormsg'>{errors.primaryskill}</p>}
                             </div>
                         </div>
@@ -772,7 +789,7 @@ function cancel(e) {
                             <label> Secondary Skill</label><br />
                             <div className="associateprofile-feild">
                             <i><AiIcons.GiSkills className="associateprofile-icons"/></i>
-                            <input type="text" className="associateprofile-textfield" placeholder="SecondarySkill" name='secondaryskill' onChange={(e)=>{setSecondarySkill(e.target.value);}} values={setValues.secondaryskill} onChangeCapture={handleChangeCapture} required/>
+                            <input type="text" className="associateprofile-textfield" maxLength={50} placeholder="SecondarySkill" name='secondaryskill' onChange={(e)=>{setSecondarySkill(e.target.value);}} values={setValues.secondaryskill} onChangeCapture={handleChangeCapture} required/>
                             {errors.secondaryskill && <p className='errormsg'>{errors.secondaryskill}</p>}
                             </div>
                         </div>
