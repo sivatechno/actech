@@ -38,6 +38,12 @@ app.use('/mentee', menteeRouter);
 const mentorRouter = require('./routes/Mentors');
 app.use('/mentorsOne', mentorRouter);
 
+const coursesRouter = require('./routes/Courses');
+app.use('/courses', coursesRouter);
+
+const examRouter = require('./routes/AddExam');
+app.use('/exam', examRouter);
+
 app.delete(`/mentors/:id`, mentorRouter);
 db.sequelize.sync().then(() => {
     app.listen(process.env.PORT || 5000, () => {

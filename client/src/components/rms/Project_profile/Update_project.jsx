@@ -22,7 +22,7 @@ export default  function Update_project(props) {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/project/${id}`).then((response) => {
+        axios.get(`${apiURL}/project/getid/${id}`).then((response) => {
             setProfileData(response.data);
            // console.log(response)
         });
