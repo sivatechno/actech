@@ -1,5 +1,5 @@
 import React from 'react'
-import _, { ceil } from 'lodash';
+import _ from 'lodash';
 import './Project_profile_view.scss'
 import * as AiIcons from 'react-icons/all'
 import Project_add from './Project_add'
@@ -7,7 +7,7 @@ import {useEffect, useState } from 'react'
 import axios from 'axios';
 import Modal from 'react-modal'
 import config from '../../config/config'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
@@ -76,6 +76,7 @@ function Project_profile_view() {
         const paginatedPosts = _(listOfProject).slice(startIndex).take(pageSize).value();
         setpaginatedPosts(paginatedPosts);
     }
+   
 
     return (
         <div>
@@ -103,8 +104,8 @@ function Project_profile_view() {
                                     <th>Project Name</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Billing</th>
                                     <th>Status</th>
+                                    <th>Billing</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -112,19 +113,28 @@ function Project_profile_view() {
                             <tbody>
 
                                 {paginatedPosts&&paginatedPosts.map((value,key)=>{
-                                    //console.log(value.id);
+                                    console.log(value.id);
+                                    
                                     return(
                                         <tr className="project_profile_table_body">
                                             <td>{value.Client_Name}</td>
                                             <td>{value.Project_Name}</td>
                                             <td>{value.Start_Date}</td>
                                             <td >{value.End_Date}</td> 
-                                            <td>{value.Billing_Status}</td>
-                                            <td >{value.Project_Status}</td>  
-                                            <td className="proj_table_icons"> <Link to={`/Update_proj`}><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon"  onClick={(e) => deleteProject(value.id, e)}/></td>
+                                            
+                                            <td style={{color:((value.Project_Status === 'Enable' && '#03FC15')) || ((value.Project_Status === 'Disable' && 'red'))}} >
+                                                <AiIcons.FaCircle className='proj_table_status' style={{color:((value.Project_Status === 'Enable' && '#03FC15')) || ((value.Project_Status === 'Disable' && 'red'))}}/>
+                                                {value.Project_Status}
+                                            </td> 
+                                            <td>{value.Billing_Status}</td> 
+                                            <td className="proj_table_icons"><Link  to={`/Update_proj/${value.id}`} ><AiIcons.MdEdit className="prof_edit_icon" /></Link> <AiIcons.FaTrash className="prof_tash_icon"  onClick={(e) => deleteProject(value.id, e)}/></td>
+                                             
                                         </tr>
+                                        
+
                                      )
                                 })}
+                               
                             </tbody>
                         </table>
                     </div>
@@ -134,19 +144,28 @@ function Project_profile_view() {
 
             </div>
 
-            <nav>
+           
+
+            <nav >
                 <ul className='pagination'>
                     {
                         pages.map((page)=>(
                             <li className={page === currentPage ? "page-item active" : "page-item"} onClick={()=>pagination(page)}>
                                 <p className='page-link' onClick={()=>pagination(page)}>{page}</p>
+                                
                             </li>
+
+                           
+                            
                         ))
+                       
                     }
                 </ul>
+                                    
             </nav>
-
-        </div>
+            </div>
+            
+       
         
     )
 };

@@ -26,6 +26,7 @@ const projectsRouter = require('./routes/Project');
 app.use('/project', projectsRouter);
 
  app.delete(`/projects/:id`, projectsRouter);
+ app.put(`/projects/:id`, projectsRouter);
  //app.use(`/project/getid/:id`, projectsRouter);
 
 const associateProfileRouter = require('./routes/AssociateProfile');

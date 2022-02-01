@@ -1,3 +1,15 @@
 $--primary:#0C50A3;
 $--primary2:#232323;
 $--primary-badge:#0c50a352;
+
+::-webkit-scrollbar{
+    width: 3px;
+    height: 3px;
+  }
+  ::-webkit-scrollbar-thumb{
+     border-radius: 10px;
+     background-color:rgb(7, 78, 170);
+  }
+  ::-webkit-scrollbar-button {
+         height: 30px;
+       }

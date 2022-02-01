@@ -98,7 +98,7 @@ function App({ children }) {
               <Route exact path="/SoftBlock" element={<SoftBlock />} />
             </Route>
             <Route exact path="/Update_proj" element={<Update_Proj/>}>
-              <Route exact path="/Update_proj" element={<Update_Proj/>} />
+              <Route exact path="/Update_proj/:id" element={<Update_Proj/>} />
             </Route>    
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
