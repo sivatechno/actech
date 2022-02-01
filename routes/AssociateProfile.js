@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { Users, AssociateProfile } = require("../models");
+const { Users, AssociateProfile, HardBlock } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const path = require('path');
+const { DATE } = require('sequelize');
 //const expressFileUpload = require ('express-fileupload')
 //const expressFileUpload = require('express-fileupload')
 //router.use(expressFileUpload())
+
 
 router.get('/viewassociateprofile', async (req, res) => {
     try {
@@ -21,6 +23,7 @@ router.get('/viewassociateprofile', async (req, res) => {
     }
 
 });
+
 
 router.post('/upload', (req, res) => {
     //console.log(req.uploadimage);
