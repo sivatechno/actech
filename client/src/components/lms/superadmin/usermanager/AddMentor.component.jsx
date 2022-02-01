@@ -132,7 +132,7 @@ export default function AddMentor({ closeModule }) {
                                 <label>Username</label><br />
                                 <div className="feild">
                                     <i><AiIcons.FaUser className="icons" /></i>
-                                    <input type="number" className="textfield" placeholder="username" name='username' required values={setValues.user_name} onChangeCapture={handleChangeCapture} onChange={(e) => { setUsername(e.target.value); }} />
+                                    <input type="text" className="textfield" placeholder="username" name='username' required values={setValues.user_name} onChangeCapture={handleChangeCapture} onChange={(e) => { setUsername(e.target.value); }} />
                                     {errors.username && <p className="error">{errors.username}</p>}
                                 </div>
                             </div>
