@@ -181,10 +181,6 @@ router.get('/count', (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        // const id = req.params.id;
-        // const profile = await Mentors.findByPk(id);
-        // res.send(profile);
-        // console.log(profile);
         const id = req.params.id;
         let data = []
         let vals = {}
