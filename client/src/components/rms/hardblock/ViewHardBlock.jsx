@@ -2,15 +2,13 @@ import React,{ useEffect,useState } from 'react';
 import './ViewHardBlock.scss';
 import { useDispatch,useSelector } from "react-redux"
 import { viewDefaultProject } from '../../../store/actions/hardBlockActions'
+import {Table, Input,Button} from "antd";
+import {SearchOutlined } from '@ant-design/icons';
 
 function ViewHardBlock(users) {
-  
-  
 
   const dispatch = useDispatch();
-  
-
-
+ 
   useEffect(() =>{
     dispatch(viewDefaultProject())
   },[dispatch])
@@ -21,10 +19,8 @@ function ViewHardBlock(users) {
     return state.hardblock  })
 
   console.log("state",usersData);
-import {Table, Input,Button} from "antd";
-import {SearchOutlined } from '@ant-design/icons';
-import { useState } from 'react';
-function ViewHardBlock() {
+
+
 
   const [dataSource,setDataSource] = useState([
     {
@@ -223,6 +219,6 @@ function ViewHardBlock() {
    </div>
   </div>
   );
-}}
+}
 
 export default ViewHardBlock;
