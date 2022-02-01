@@ -1,8 +1,10 @@
 @import '../../assets/stylesheets/common.scss';
 .project_profile_overall_contain{
-  border: 1px solid transparent;
+  //border: 1px solid red;
   width: 100%;
   height: 80vh;
+  overflow: hidden;
+  
   .project_profile_top{
     //border: 1px solid #2424;
     width: 85%;
@@ -18,7 +20,7 @@
       //display:flex;
       color: #3253e2;
       cursor: default;
-      //border: 1px solid red;
+     // border: 1px solid red;
     }
 
     .add_proj_btn{
@@ -81,10 +83,16 @@
        cursor: default;
 
         td{
-         // border: 1px solid violet;
+          //border: 1px solid violet;
          padding:1.5% 0% 1% 1.5%;
          text-align: left;
+         color: #242424;
+        .proj_table_status{
+          margin: 2% 10% 0 0%;
+          font-size: 12px;
         }
+        }
+       
 
         .proj_table_icons{
           display: flex;
@@ -92,6 +100,7 @@
           margin:10% 0 0 10% ;
          
         }
+      
 
         .prof_edit_icon{
           margin: 0 0% 0 60%;
@@ -117,43 +126,62 @@
 
     .project_profile_table_body:hover{
       background-color: rgba(172, 172, 172, 0.178);
-      border-left: 2px solid rgb(7, 78, 170);
+      border-left: 2.5px solid rgb(7, 78, 170);
       border-right: 2.5px solid rgb(7, 78, 170);
-      font-weight:bold;
     }
 
   }
 
 }
 
+
+
 nav{
   //border: 1px solid red;
- height: 45px;
+ height: 39px;
+ width: calc(100vh - 60vh);
+ display: inline-block;
+ overflow-x:scroll;
+ margin: 0 0 0 40%;
+
 
   .pagination{
-    //border: 1px solid blue;
+   // border: 1px solid blue;
     display: flex;
-    justify-content: center;
+    //justify-content: center;
+    //margin-left: 10%;
+    width: 100%;
 
     li{
-     // border: 1px solid green;
+      //border: 1px solid green;
       list-style-type: none;
-      margin: 1% 0 0 5px;
+      margin: 0% 0 0 5px;
       padding: 0 10px 0 10px;
       cursor: pointer;
     }
     
     .page-link{
+      //border: 1px solid green;
       text-align: center;
       margin-top: 30%;
+      //width: 20%;
     }
 
     .page-item.active{
       background-color:rgb(7, 78, 170);
       color: white;
-      border-radius: 5px;
+      border-radius: 3px;
     }
     
   }
 
+
+// ::-webkit-scrollbar-button {
+//     height: 30px;
+//   }
+ 
+
 }
+
+
+

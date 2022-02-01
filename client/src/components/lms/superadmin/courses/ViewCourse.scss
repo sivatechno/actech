@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 
@@ -13,13 +12,14 @@
     background-color: rgb(255, 255, 255);
     display: flex;   
     flex-direction: column;
-    margin: 20px 10px 10px 45px;
+    margin: 100px 10px 10px 20px;
     padding: 10px;
     flex-grow: 1;
-    height: 500px;
+    height: auto;
 
 .view-header
 {
+   
    display: flex;
    flex-direction: row;
    justify-content: space-around;
@@ -44,19 +44,15 @@
 
 }
 .add_course{
-    
     display: flex;
-    flex-direction: row-reverse;
+    border-radius: 23px;
+    font-size: 16px;
+    margin-left: 25px;
    }
    .button_click{
-    padding: 10px 15px;
-    font-size: 16px;
-    border: blue;
-    border-radius: 23px;
+    border: white;
     background-color: #0c50a3;
     color: white;
-    margin-right: 30px;
-    margin-top: .5rem;
 }
 .button_click:hover{
    background-color:#fff;
@@ -66,10 +62,9 @@
 }
 }
 table{
-    width: 95%;
+    width: 100%;
     margin-left: 30px;
     margin-top: 10px;
-    border-collapse: collapse;
   td,tr{
       padding: 6px; 
       text-align: center;
@@ -88,7 +83,6 @@ table{
         height: 35px;
         width: 13%;
         display: inline-block;
-        margin-right: 10px;
         
         .icons_align{
             font-size: 25px;
@@ -103,7 +97,23 @@ table{
         }
     }
 }
+}
 
-
-
+@media (max-width: 1500px) {
+    .view-header{
+        .view_search{
+            #header-search{
+            width: 350px;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .view-header{
+        .view_search{
+            #header-search{
+            width: 200px;
+            }
+        }
+    }
 }

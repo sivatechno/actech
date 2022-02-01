@@ -21,43 +21,65 @@
             align-items: center;
             justify-content: center;
             border-radius: 5rem;
-            margin-left: 100px;
+            margin-left: 60px;
             margin-bottom: 20px;
-        .profile_align{
-            height: 150px;
-            width: 150px;
-            border:2px solid #0c50a3 ;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: center;
-            border-radius: 5rem;
-            object-fit: cover;
+            .imagefeild{
+                position: relative;
+                margin-top: 20px;
+            .imageupload{
+                height:50px;
+                border-radius: 20px;
+                padding: 10px;
+                //position: absolute;
+                .profile_align{
+                    height: 150px;
+                    width: 150px;
+                    border:2px solid #0c50a3 ;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-image: center;
+                    border-radius: 5rem;
+                    object-fit: cover;
+                    background-color: #0c50a3;
+                    display: block;
+                }                
+              }
+            }        
         }
-    }
-    .Tabitems{
-        display: flex;
-        margin: 5px 20px;
-       .Certificatetab,.Experiencetab,.Educationtab ,.profiletab{
-            background-color: #0c50a3;
-            color: #ffffff;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 10px 10px;
-            transition: 0.3s;
-            font-size: 18px;  
-            width: 500px; 
-            margin: 2px;
-            border-radius: 5px;
+        .addimageicon{
+            position: absolute;
+            font-size: 35px;
+            margin-left: 150px;
+          }
+        .Tabitems{
+            display: flex;
+            margin: 5px 20px;
+           .Certificatetab,.Experiencetab,.Educationtab ,.profiletab{
+               background-color: #0c50a3;
+               color: #ffffff;
+               float: left;
+               border: none;
+               outline: none;
+               cursor: pointer;
+               padding: 10px 10px;
+               transition: 0.3s;
+               font-size: 18px;  
+               width: 500px; 
+               margin: 2px;
+               border-radius: 5px;
+            }
         }
-    }
+        .errormsg{
+            color: red;
+            background-color: white;
+        }
     .Experiencetabbg,.Certificatetabbg,.Educationtabbg,.profiletabbg
     {
         color:#0c50a3;
         background-color:white;
         border: 2px solid #0c50a3;
         width: 600px; 
+        border-radius: 20px;
     }
     .toptxtfeild{
         outline: none ;
@@ -92,23 +114,19 @@
         .associateprofile-right-inputfeilds .associateprofile-icons{
             position: absolute;
         }
-        .associateprofile-left-inputfeilds-certifyuploadfeildleft, .associateprofile-right-inputfeilds-certifyuploadfeildright,
-        .associateprofile-left-inputfeilds-Avatarfeild{
-           margin-right: 140px;
+        .associateprofile-left-inputfeilds-certifyuploadfeildleft, .associateprofile-right-inputfeilds-certifyuploadfeildright
+        {
+            margin-right: 140px;
            input[type=file]{
               display: none;
            }
-           .imageupload{
+           .fileupload{
             height:50px;
             border:solid 2px #2424;
             border-radius: 20px;
             padding: 10px;
             color: rgb(141, 137, 137);
-           }
-           .imagefeild{
-            position: relative;
-            margin-top: 20px;
-           }
+           }        
         }
          .certifyupoadinputfeilds{
          display: flex;
@@ -116,29 +134,35 @@
         }
         .certifyuploadfeildright{margin-right: 220px;}
         .associateprofile-right-inputfeilds-genderradiobutton,.associateprofile-left-inputfeilds-checkboxselective{
-            margin: 25px 0px;
+            margin: 25px 30px;
             display: flex;
         }
-        .radiomalebtn{margin-left: 70px;}
-        .checkfresherbtn{margin-left: 40px;}
-        .checkbtn-txt, .radiobtn-txt{ margin-right: 30px;}
-        .associateprofile-inputfeilds-checkbox{
-            margin-top: 50px;
-            margin-left: 105px;
+        .radiomalebtn{margin-right:10px;
+        margin-left: 40px;
         }
-        .genderradiobutton{margin-left: 110px;}
-        .checkboxselective{margin-right: 190px;}
-        .radiobtn-txt,.genderlbl{ margin-right: 30px;}
-        label{
-            font-size: 17px;
-        } 
+        .checkfresherbtn{margin-right:10px;
+            margin-left: 30px;}
+        .radiofemalebtn,.checkexperiencebtn{margin-right:10px;}
+        .checkbtn-txt, .radiobtn-txt{ margin-right: 30px;}
+        .genderlbl{ margin-right: 14px;}
         .buttonsection{
             margin: 30px 30px;
             width: 90%;
             display: flex;
             justify-content: space-between;
         }
-       .addcertificate,.addeducation,.backicon,.nexticon,.cancelicon{
+       .addcertificate,.addeducation,.addexperience,.backicon,.nexticon,.cancelicon{
+            margin-top: 10px;
+            float: right;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #0c50a3;
+            border-radius: 50%;
+            width: 50px;
+            height: 35px;
+            border: none;
+        }
+        .backicon,.nexticon,.cancelicon{
             margin-top: 10px;
             float: right;
             font-size: 16px;
@@ -149,10 +173,10 @@
             height: 35px;
             border: none;
         }
-        .removeeducation,.removecertificate{ color: #ffffff;
+        .removeeducation,.removecertificate,.removeexperience{ color: #ffffff;
             background-color: #0c50a3;
-            border-radius: 20px;
-            width: 80px;
+            border-radius: 50%;
+            width: 50px;
             height: 35px;
             border: none;
             margin-left: 50px;
@@ -163,7 +187,7 @@
         border-radius: 15px;
         margin: 25px 5px;
         }
-        .addcertificate,.addeducation{margin: 20px 80px 20px 0px;}
+        .addcertificate,.addeducation,.addexperience{margin: 20px 80px 20px 0px;}
         .cancelicon{margin-right:20px;
             float: none;}
         .Addprofile:hover,.backicon:hover,.nexticon:hover,.cancelicon:hover{height: 40px;

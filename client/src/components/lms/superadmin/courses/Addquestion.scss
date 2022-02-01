@@ -8,6 +8,7 @@
     margin: 20px;
     background-color: white;
     border-radius: 10px;
+    font-weight: 500;
     .errors{
         width: '100%';
         padding: 10;
@@ -34,11 +35,18 @@
         padding: 30px;
         display: flex;
         justify-content: space-evenly;
+        
+            .error{
+                font-size: 15px;
+                color: crimson;
+            }
+        
         .addquestion_box1
         {
           .addquestion_labelexams
           {
             margin: 5px;
+            display: block;
           }
           .addquestion_select
           {
@@ -49,12 +57,13 @@
             border-radius: 8px;
             color: #1f2122;
           }
-          .addquestion_label-enddate
+          .addquestion_label-examId
         {
             margin: 5px;
+            display: block;
            
         }
-        .addquestion_input-enddate
+        .addquestion_input-examId
         {
             margin: 5px;
             padding: 8px;
@@ -65,23 +74,27 @@
         }
         .addquestion_box2
         {
-            .addquestion_label-duration
+            .addquestion_label-questiontypes
         {
             margin: 5px;
+            display: block;
         }
-        .addquestion_input-time
+        .addquestion_selectQuesTypes
         {
             margin: 5px;
             padding: 8px;
+            height: 40px;
             width: 280px;
             border: 2px solid $app-color;
             border-radius: 8px;
         }
-        .addquestion_label-date
+        .addquestion_scores
         {
             margin: 5px;
+            display: block;
+
         }
-        .addquestion_input-startdate
+        .addquestion_input-scores
         {
             margin: 5px;
             padding: 8px;

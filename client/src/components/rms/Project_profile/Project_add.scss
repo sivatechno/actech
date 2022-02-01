@@ -127,6 +127,11 @@
 
                           input[type=radio]{
                               margin: 4% 0 0 8%;
+                              cursor: pointer;
+                      }
+                      .add_project_radio_text{
+                          font-size: 16px;
+                          font-weight: 400;
                       }
                   }
         }
@@ -150,9 +155,15 @@
 
                 input[type=radio]{
                     margin: 2% 0 0 3%;
+                    cursor: pointer;
+                }
             }
-            }
+            .add_project_radio_text{
+                font-size: 16px;
+                font-weight: 400;
+            }   
         }
+        
     }
         .add_project_buttons{
             background-color:white;
@@ -211,6 +222,8 @@
         margin: 1% 50% 0 0;
         background-color: white;
         cursor: default;
+        //border: 1px solid pink;
+        width: 100%;
     }
 }
 i{
@@ -222,4 +235,15 @@ i{
     background: none;
 }
 
+// ::-webkit-scrollbar{
+//     width: 3px;
+//     height: 2px;
+// }
+// ::-webkit-scrollbar-thumb{
+//     border-radius: 10px;
+//     background-color:rgb(7, 78, 170);
+// }
+// ::-webkit-scrollbar-button {
+//     height: 30px;
+//   }
 }
