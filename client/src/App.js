@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
+import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/form/SuperAdminLogin';
 import Projectprofileview from './pages/rms/ProjectProfileView';

@@ -8,7 +8,7 @@ import Validate from './Clientvalidate';
 
         const [values,setValues]=useState({
             clientname:"",
-            companyname:"",
+            companyname:"", 
             clientemail:"",
             password:"",
             startdate:"",

@@ -13,16 +13,16 @@ const cookie = require('cookie-parser');
 // }
 
 router.get("/viewuser", async (req, res) => {
-    jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
-        if (err) {
-            res.json("not viewewd");
-        } else {
-            const listOfUsers = await Users.findAll({ limit: 10 });
-            res.json(listOfUsers);
-        }
-    })
-    // const listOfUsers = await Users.findAll({ limit: 10 });
-    // res.json(listOfUsers);
+    // jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
+    //     if (err) {
+    //         res.json("not viewewd");
+    //     } else {
+    //         const listOfUsers = await Users.findAll({ limit: 10 });
+    //         res.json(listOfUsers);
+    //     }
+    // })
+    const listOfUsers = await Users.findAll({ limit: 10 });
+    res.json(listOfUsers);
 
 });
 
