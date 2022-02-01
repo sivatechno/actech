@@ -7,6 +7,9 @@ const Validate = (values) => {
     if(!values.phonenumber){
         errors.phonenumber="* Please Enter phonenumber"
     }
+    else if( !/^[0-9\b]+$/.test(values.phonenumber)){
+        errors.phonenumber="* Please enter the integer values"
+    }
     if(!values.Email){
         errors.Email="* Please Enter Email"
     }else if(!/\S+@\S+\.\S+/.test(values.Email)){
@@ -37,6 +40,9 @@ const Validate = (values) => {
     }
     if(!values.postalcode){
         errors.postalcode="* Please Enter postalcode"
+    }
+    else if( !/^[0-9\b]+$/.test(values.postalcode)){
+        errors.postalcode="* Please enter the integer values"
     }
     if(!values.uploadimage){
         errors.uploadimage="* Please Enter uploadimage"
