@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
-//import AddMentor from './AddMentor.component';
+
 
 const customStyles = {
     content: {
@@ -16,6 +16,7 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        border: 'none',
     },
 };
 function Viewexam() {
@@ -65,7 +66,7 @@ function Viewexam() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <AddExam />
+                {openModal && <AddExam closeModal={setIsOpen} />}
             </Modal>
             <div class="sec2">
                     <select class="selectinput1" placeholder="--select Courses--">

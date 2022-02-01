@@ -154,17 +154,17 @@ function ViewMentor() {
                                 <td>{value.phonenumber}</td>
                                 
                                 <td>
-                                    {/* <Link to={`/editprofileviewmentor/${value.id}`}>  */}
+                                     <Link to={`/editprofileviewmentor/${value.id}`}>  
                                         <div className="table_icons"><AiIcons.GrEdit className="icons_align" onClick={()=>{setEditpopup(true);}}  /></div>
-                                        <Modal
+                                        {/* <Modal
                                              isOpen={editpopup}
                                             onRequestClose={closeModal}
                                             style={Styles}
                                             contentLabel="Example Modal"
                                             >                
                                             {  <UpdateProfileViewMentor closeModule={setEditpopup} />}
-                                        </Modal>
-                                    {/* </Link> */}
+                                        </Modal> */}
+                                     </Link> 
                                     {/* <Link to={"/"}> */}
                                         {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
                                             
