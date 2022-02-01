@@ -102,7 +102,7 @@
                     width: 300px;
                     background-color: white;
                     margin-top: 0%;
-                    input[type=text],input[type=date],input[type=password],input[type=email]{
+                    input[type=text],input[type=date],input[type=password],input[type=email],input[type=tel]{
                         height:90%;
                         width: 80%;
                         border:none ;
@@ -169,15 +169,15 @@ form{
     background-color: white;
     //border:1px solid blue;
 }
-::-webkit-scrollbar{
-    width: 3px;
-}
-::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background-color:rgb(7, 78, 170);
-}
-::-webkit-scrollbar-button {
-    height: 20px;
-  }
+// ::-webkit-scrollbar{
+//     width: 3px;
+// }
+// ::-webkit-scrollbar-thumb{
+//     border-radius: 10px;
+//     background-color:rgb(7, 78, 170);
+// }
+// ::-webkit-scrollbar-button {
+//     height: 20px;
+//   }
   
 }

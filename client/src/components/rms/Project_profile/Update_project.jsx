@@ -1,26 +1,34 @@
 import React,{ useEffect, useState } from 'react'
 import './Update_project.scss'
 import * as AiIcons from 'react-icons/all'
-import { Link,useParams} from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config/config'
+import './Project_profile_view'
 
-function Update_project() {
+
+export default  function Update_project() {
+
+    
 
     const apiURL = config.API_URL;
 
-    const [profiledata, setProfileData] = useState([]);
+    const [profdata,setProfileData] = useState([]);
 
-    const {id}   = useParams();
+    const { id }=useParams();
+ // const {id} = props.to
+  //console.log(props.id)
+    
 
     useEffect(() => {
-        axios.get(`${apiURL}/project/getid/${id}`).then((response) => {
+        axios.get(`${apiURL}/project/${id}`).then((response) => {
             setProfileData(response.data);
-            console.log(response)
+           // console.log(response)
         });
     }, 
     []);
-    console.log(profiledata)
+    //console.log(profdata)
     
 
     return (
@@ -34,17 +42,17 @@ function Update_project() {
                         <p className='update_proj_head_text'>Update project</p>
                     </div>
                 </div>
-
+                {profdata.map((values, key) => {
+                return (
                 <div className='update_proj_inner_div'>
-                 {/* {profiledata.map((values, key) => {
-                return (  */}
+                   
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>
                         <p className="update_project_text">Client Name*</p><br />
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.FaRegUserCircle className="update_proj_icons"/>
-                            <input type="text" className="update_proj_textfield" placeholder="Client Name" required Value={"Admin"}/>
+                            <input type="text" className="update_proj_textfield" placeholder="Client Name" required Value={values.Client_Name}/>
                         </div>
                         </div>
                         </div>
@@ -54,20 +62,19 @@ function Update_project() {
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.AiOutlineFundProjectionScreen className="update_proj_icons"/>
-                            <input type="text" className="update_proj_textfield" placeholder="Project Name" required Value={"Proj A"}  />
+                            <input type="text" className="update_proj_textfield" placeholder="Project Name" required Value={values.Project_Name}  />
                         </div>
                         </div>
                         </div>
                      </div>
-                    {/* )
-                    })}     */}
+                          
 
                     <div className='update_proj_inner_body'>
                         <div className='update_proj_content'>
                         <p className="update_project_text">Start Date*</p><br />
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
-                            <input type="text" className="update_proj_textfield"  Value={"01-02-2022"} placeholder='dd-mm-yyyy'  />
+                            <input type="date" className="update_proj_textfield"  Value={values.Start_Date} placeholder='dd-mm-yyyy'  />
                         </div>
                         </div>
                         </div>
@@ -76,7 +83,7 @@ function Update_project() {
                         <p className="update_project_text">End Date*</p><br />
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
-                            <input type="text" className="update_proj_textfield"  required  Value={"05-06-2022"} placeholder='dd-mm-yyyy'  />
+                            <input type="date" className="update_proj_textfield"  required  Value={values.End_Date} placeholder='dd-mm-yyyy'  />
                         </div>
                         </div>
                         </div>
@@ -88,7 +95,7 @@ function Update_project() {
                         <div className="update_project_field_contain">
                         <div className="update_project_feild">
                             <AiIcons.SiGmail className="update_proj_icons"/>  
-                            <input type="email" className="update_proj_textfield" placeholder="Client E-Mail" required Value={"admin@gmail.com"}  />
+                            <input type="email" className="update_proj_textfield" placeholder="Client E-Mail" required Value={values.Client_email}  />
                         </div>
                         </div>
                         </div>
@@ -97,8 +104,8 @@ function Update_project() {
                             <div className='update_proj_content'>
                                 <p className="update_project_text">Project Status</p>
                                 <div className='update_project_bill_radio_btn'>
-                                     <input type="radio" value="status" name='status'  /> <p>Enable</p>
-                                    <input type="radio" value="status" name='status' /> <p>Disable</p>
+                                     <input type="radio" value="status" name='status' /> <p>Enable</p>
+                                    <input type="radio" value="status" name='status'  /> <p>Disable</p>
                                 </div>
                             </div>
                          </div>
@@ -115,8 +122,12 @@ function Update_project() {
                             </div>
                          </div>
                     </div>
+                    
+                   
 
                 </div>
+                 )
+                })}
 
                 <div className='update_proj_button_div'>
                     <div className="update_proj_button_inner_div">
@@ -129,4 +140,3 @@ function Update_project() {
     )
 }
 
-export default Update_project
