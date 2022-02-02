@@ -76,6 +76,10 @@ function ViewAssociateProfile() {
                 <div className="associate_title">
                     <h3>AssociateProfile</h3>
                 </div>
+                <div className="associateprofile-feild">
+                    <i><AiIcons.BsSearch className="associateprofile-icons"/></i>                    
+                    <input type="text" className="associateprofile-namesearch" placeholder= " Associate name " name='hscboard'  /><br />
+                </div>                
                 <div className="add_profile">
                     <button className="associate_button_click"  onClick={()=>{setIsOpen(true);}}>Add Profile</button>
                 </div>

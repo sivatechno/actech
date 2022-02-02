@@ -155,6 +155,7 @@ export default function AddAssociateprofile({closeModel}) {
     projectduration:"",
     secondaryskill:"",
     primaryskill:"",
+    setEducationInputList:"",
 });
 const handleChangeCapture = (event) =>{
     setValues({
@@ -185,6 +186,7 @@ function cancel(e) {
     if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && 
         values.sslcmark && values.hscboard && values.hscschoolname && values.hscyearpassedout && values.hscmark &&
         values.university && values.college && values.passedoutyear && values.cgpa && values.qualification){
+        //document.getElementById('add')
         ExperienceTabFunc()
     }  
   }
@@ -295,12 +297,18 @@ function cancel(e) {
     setCertificateInputList(certificatelist);
   };
   const handleExperienceAddClick = () => {
+    if(experienceinputList == "" || experienceinputList == null)
     setExperienceInputList([...experienceinputList, { company:company,companyaddress:companyaddress, designation:designation,currentsalary:currentsalary , expectsalary:expectsalary, yearsofexp:yearsofexp  }]);
   };
   const handleEducationAddClick = () => {
+     //educationinputList[1]
+    //if(university && college   && passedoutyear && cgpa && qualification)
+     if(values.university && values.college && values.passedoutyear && values.cgpa && values.qualification)
     setEducationInputList([...educationinputList, { university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
   };
   const handleCertificateAddClick = () => {
+    if(values.institutename && values.instituteaddress && values.coursename && 
+        values.duration && values.project && values.projectduration && values.primaryskill && values.secondaryskill)
     setCertificateInputList([...certificateinputList, {  institutename:institutename, instituteaddress:instituteaddress,coursename:coursename,duration:duration, project:project,projectduration:projectduration,primaryskill:primaryskill,secondaryskill:secondaryskill }]);
   };
    function proifleTabfunc()
@@ -569,7 +577,7 @@ function cancel(e) {
                         <div className='Universitypart'>
                         <div className="btn-box">
                            {educationinputList.length !== 1 && <button  className="removeeducation"  onClick={() => handleEducationRemoveClick(i)}>-</button>}
-                           {educationinputList.length  -1 === i && <button onClick={handleEducationAddClick} className='addeducation'>+</button>}
+                           {educationinputList.length  -1 === i && educationinputList.length<5 &&<button onClick={handleEducationAddClick} className='addeducation'>+</button>}
                         </div><br /><br /><br />                
                       <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -645,7 +653,7 @@ function cancel(e) {
                 <div className='AddExperiencepart'>
                 <div className="btn-box">
                     {experienceinputList.length !== 1 && <button  className="removeexperience"  onClick={() => handleExperienceRemoveClick(i)}>-</button>}
-                    {experienceinputList.length - 1 === i && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
+                    {experienceinputList.length -1 === i && educationinputList.length<5 && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
                 </div><br /><br /><br />
                 <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -720,7 +728,7 @@ function cancel(e) {
                 <div className='associateprofile-adddcertificatepart'>
                      <div className="btn-box">
                             {certificateinputList.length !== 1 && <button  className="removecertificate"  onClick={() => handleCertificateRemoveClick(i)}>-</button>}
-                            {certificateinputList.length - 1 === i && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
+                            {certificateinputList.length - 1 === i && educationinputList.length < 10 && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
                     </div><br /><br /><br /> 
                    <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
