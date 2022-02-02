@@ -51,7 +51,7 @@ const Courses = ({closeModal}) => {
         <div className='addcourses_container'>
           <div className="addcourses_title">
             <p className='addcourses_heading'>Add Courses</p>
-         <AiIcons.GrClose className='titleCloseBtn' onClick={()=>closeModal(false)}/>
+         <AiIcons.IoCloseSharp className='titleCloseBtn' onClick={()=>closeModal(false)}/>
                 
                 </div>
                 

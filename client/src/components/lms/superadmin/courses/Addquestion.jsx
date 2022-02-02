@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import './Addquestion.scss';
 import Accordian from '../../coursespages/Accordian';
 
-
-
-
 const Addquestion = (props) => {
       
       const [selectExams, setSelectExams] = useState(""); 
