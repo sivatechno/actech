@@ -92,7 +92,7 @@ export default function AddMentee({closeModule}) {
             <div className="headercontent">
                          <img src={image} className="logoalign" alt="logo"/>
                          <p>Member Information</p>
-                        < AiIcons.IoMdClose className="close" onClick={()=>closeModule(false)} />        
+                        < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)} />        
                  </div> <hr />
                  <div className="textfeild-container">
                      <div className="inputfeilds">

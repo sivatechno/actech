@@ -109,7 +109,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                     <div className="headercontent">
                         <img src={image} alt="" className="profile_align" />
                         <p className="member_align">Member Information</p>
-                        < AiIcons.VscChromeClose className="close" onClick={() => closeModule(false)} />
+                        < AiIcons.IoCloseSharp className="close" onClick={() => closeModule(false)} />
 
                     </div> <hr />
 

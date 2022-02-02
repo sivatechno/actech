@@ -68,11 +68,27 @@
         margin: 13px 15px;
     }
     .close{
+        cursor: pointer;
         margin-right: 25px;
         width: 20px;
         margin-top: 20px;
-        // height:20px;
         color:red;
+        font-weight: bold;
+         border-radius: 50%;
+         padding: 0.1rem;
+         width: 25px;
+         height: 25px;
+        border: 2px solid RED;
+         color: white;
+        // position: center;  
+         background-color: RED;
+       //  font-size: 25px;
+
+      .close:hover {
+        border: 2px solid RED;
+        background-color: red;
+        color: #ffffff;
+      }
     }
     .notes{
         padding-bottom: 10px;

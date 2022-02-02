@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Courses.scss'
+import './courses.scss'
 import axios from 'axios';
 import Validate from '../../coursespages/Validate';
 
@@ -51,7 +51,7 @@ const Courses = ({closeModal}) => {
         <div className='addcourses_container'>
           <div className="addcourses_title">
             <p className='addcourses_heading'>Add Courses</p>
-         <AiIcons.GrClose className='titleCloseBtn' onClick={()=>closeModal(false)}/>
+         <AiIcons.IoCloseSharp className='titleCloseBtn' onClick={()=>closeModal(false)}/>
                 
                 </div>
                 
