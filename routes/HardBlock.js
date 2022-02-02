@@ -6,14 +6,14 @@ const { AssociateProfile, HardBlock, DefaultProject } = require('../models');
 router.get("/hardblockview", async (req, res) => {
     try {
         const listOfHardBlock = await AssociateProfile.findAll(
-            { where: { isproject: "Yes" }, include: [HardBlock] }
+            { where: { isproject: true }, include: [HardBlock] }
         );
         if (listOfHardBlock) {
             res.send(listOfHardBlock);
         }
         else {
             res.send("nothin")
-        }
+        }   
         // console.log(listOfHardBlock)
     } catch (error) {
 
@@ -51,7 +51,8 @@ router.post("/addhardblock", async (req, res) => {
     if (!associate) {
         res.json("not available")
     } else {
-        const hardblock = await AssociateProfile.findOne({ where: { email: req.body.email } })
+        const hardblock = await AssociateProfile.findOne(
+            { where: { email: req.body.email } })
         // const timestamps = Date.now() + 3600 * 1000 * 7;
         await HardBlock.create({
             start_date: start_date,
@@ -59,6 +60,10 @@ router.post("/addhardblock", async (req, res) => {
             AssociateProfileId: hardblock.id,
             project:projects,
         })
+
+        const project = await DefaultProject.findOrCreate({
+            where:{default_projects:projects}})
+
         // res.json("success")
         res.json(hardblock)
     }

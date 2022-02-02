@@ -1,176 +1,155 @@
-import React,{ useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ViewHardBlock.scss';
-import { useDispatch,useSelector } from "react-redux"
-import { viewDefaultProject } from '../../../store/actions/hardBlockActions'
-import {Table, Input,Button} from "antd";
-import {SearchOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from "react-redux"
+import { viewHardBlock } from '../../../store/actions/hardBlockActions';
+import { Table, Input, Button } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
 
 function ViewHardBlock(users) {
 
   const dispatch = useDispatch();
- 
-  useEffect(() =>{
-    dispatch(viewDefaultProject())
-  },[dispatch])
 
+  // useEffect(() => {
+  //   dispatch(viewDefaultProject())
+  // }, [dispatch])
+
+  useEffect(() => {
+    dispatch(viewHardBlock())
+  }, [dispatch])
 
   // const usersData = useSelector((state) => state.usersData)
-  const usersData = useSelector(function(state){
-    return state.hardblock  })
+  // const projectdefault = useSelector(function (projects) {
+  //   return projects.hardblock
+  // })
 
-  console.log("state",usersData);
+  const hardblockdata = useSelector(function (state) {
+    return state.hardblock.data
+  })
+
+  const hardblockproject = useSelector(function (state) {
+    return state.hardblock.data
+  })
+
+
+  console.log("overal", hardblockdata)
+  console.log("state", hardblockproject);
 
 
 
-  const [dataSource,setDataSource] = useState([
-    {
-      name:"Naresh",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
 
-    },
-    {
-      name:"kumar",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"raj",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-
-  ]);
   const columns = [
     {
-      title:"Name",
-      dataIndex:'name',
-      filterDropdown:({setSelectedKeys, selectedKeys,confirm, clearFilters }) => {
+      title: "Name",
+      dataIndex: 'firstname',
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => {
         return (
           <>
-        <Input
-         autoFocus
-         placeholder='Type text here'
-         value={selectedKeys[0]}
-        
-         onChange={(e)=>{
-          setSelectedKeys(e.target.value? [e.target.value]: []);
-          confirm({closeDropdown:false});
-         
-         }}
-         onPressEnter={() => {confirm(); }}
-         style={{ marginBottom: 8, display: 'block' }}
-         
-         onBlur= {() => {
-           confirm();
-         }}
-         ></Input>
-           <Button 
-           onClick={()=>{
-             confirm()
-            }} 
-            icon={<SearchOutlined/>}
-           type='primary'>Search</Button>
+            <Input
+              autoFocus
+              placeholder='Type text here'
+              value={selectedKeys[0]}
 
-          <Button onClick={()=>{clearFilters(); }} type='danger' >Reset</Button>
+              onChange={(e) => {
+                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                confirm({ closeDropdown: false });
 
-        
-        </>
+              }}
+              onPressEnter={() => { confirm(); }}
+              style={{ marginBottom: 8, display: 'block' }}
+
+              onBlur={() => {
+                confirm();
+              }}
+            ></Input>
+            <Button
+              onClick={() => {
+                confirm()
+              }}
+              icon={<SearchOutlined />}
+              type='primary'>Search</Button>
+
+            <Button onClick={() => { clearFilters(); }} type='danger' >Reset</Button>
+
+
+          </>
         );
       },
-      filterIcon:(filtered) => {
-        return <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }}/>;
+      filterIcon: (filtered) => {
+        return <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />;
       },
-      
-        onFilter:(value,record)=>{
-          return record.name.toLowerCase().includes(value.toLowerCase())
-        }
-      
-    },
-    {
-      title:"Technology",
-      dataIndex:'technology',
-    },
-    {
-      title:"Email",
-      dataIndex:'email',
-    },
-    {
-      title:"Start Date",
-      dataIndex:'startdate'
+
+      onFilter: (value, record) => {
+        return record.name.toLowerCase().includes(value.toLowerCase())
+      }
 
     },
     {
-      title:"End Date",
-      dataIndex:'enddate',
+      title: "Technology",
+      dataIndex: 'primaryskill',
+    },
+    {
+      title: "Email",
+      dataIndex: 'email',
+    },
+    {
+      title: "Project",
+      dataIndex: 'HardBlocks',
+      render: HardBlocks => (
+        <>
+          {HardBlocks.map(HardBlocks => {
+            return (
+              <div>
+                {HardBlocks.project}
+              </div>
+            );
+          })}
+        </>
+      ),
+
+    },
+    {
+      title: "Start Date",
+      dataIndex: 'HardBlocks',
+      render: HardBlocks => (
+        <>
+          {HardBlocks.map(HardBlocks => {
+            return (
+              <div>
+                {HardBlocks.start_date}
+              </div>
+            );
+          })}
+        </>
+      ),
+
+    },
+    {
+      title: "End Date",
+      dataIndex: 'HardBlocks',
+      render: HardBlocks => (
+        <>
+          {HardBlocks.map(HardBlocks => {
+            return (
+              <div>
+                {HardBlocks.end_date}
+              </div>
+            );
+          })}
+        </>
+      ),
+
     }
   ]
 
 
-  return( 
-  <div>
-   <div className='viewhardblockoverallcontainer'> 
-      <div className='viewhardblockheader'>
+  return (
+    <div>
+      <div className='viewhardblockoverallcontainer'>
+        <div className='viewhardblockheader'>
 
 
-      <Table style={{display:"flex", flex:1,textAlign:'center' }}columns={columns} dataSource={dataSource}>
-          
+          <Table style={{ width: "80%", margin: "0 auto" }} columns={columns} dataSource={hardblockdata}>
+
 
           </Table>
 
@@ -186,7 +165,7 @@ function ViewHardBlock(users) {
 
 
 
-        {/* <p className='viewhardblocktext'>View Hard Block</p>
+          {/* <p className='viewhardblocktext'>View Hard Block</p>
         <button className='viewhardblockbtn'>Hard Block</button>
        </div>
 
@@ -215,9 +194,9 @@ function ViewHardBlock(users) {
         </tr>
         </tbody>
       </table> */}
+        </div>
+      </div>
     </div>
-   </div>
-  </div>
   );
 }
 

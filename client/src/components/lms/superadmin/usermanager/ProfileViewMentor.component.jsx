@@ -104,9 +104,12 @@ export default function ProfileViewMentor() {
                                     <p className="aboutvaluesprofile">{values.address}</p>
                                 </div>
                             </div>
+
+                            </div>    
+                               
                         </div>
                     </div>
-            </div>
+        
         )
         })}
       
