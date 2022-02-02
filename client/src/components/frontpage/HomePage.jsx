@@ -17,7 +17,7 @@ export default function HomePage() {
                         <div className='desc'>
                             <p>Learning Management System</p>
                             <button className='lmsbutton' >
-                                <Link className='link-lms' to="/viewmentor">LMS</Link>
+                                <Link className='link-lms' to="/lmsdashboard">LMS</Link>
                             </button>
                         </div>
                     </div>

@@ -10,13 +10,14 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
     const logout = () => {
         localStorage.removeItem("auth");
-        let histoy=Navigate();
+        let histoy = Navigate();
         histoy.push("/");
     }
     return (
         <div>
             <ProSidebar>
                 <Menu iconShape="square">
+                    <MenuItem icon={<AiIcons.FiUsers />}><Link to="/lmsdashboard" />Dashboard</MenuItem>
                     <SubMenu title="Usermanager" icon={<AiIcons.FiUsers />}>
                         <MenuItem icon={<AiIcons.FiUsers />}><Link to="/viewmentor" />Mentor</MenuItem>
                         <MenuItem icon={<AiIcons.FiUsers />}><Link to="/viewmentee" />Mentee</MenuItem>

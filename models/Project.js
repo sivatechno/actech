@@ -26,8 +26,6 @@ module.exports = (sequelize , DataTypes) => {
         Billing_Status: {
             type: DataTypes.STRING,
         },
-        
-
     })
     
     return Project;

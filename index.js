@@ -22,6 +22,9 @@ const db = require('./models');
 const userRouter = require('./routes/Users');
 app.use('/auth', userRouter);
 
+const hardBlockRouter = require('./routes/HardBlock');
+app.use('/blocks', hardBlockRouter);
+
 const projectsRouter = require('./routes/Project');
 app.use('/project', projectsRouter);
 

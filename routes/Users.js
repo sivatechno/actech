@@ -3,7 +3,6 @@ const router = express.Router();
 const { Users, Mentors, Mentee, AccessToken } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const db = require('../models');
 const cookie = require('cookie-parser');
 
 // const validUser = (req,res,next) => {
@@ -13,16 +12,31 @@ const cookie = require('cookie-parser');
 // }
 
 router.get("/viewuser", async (req, res) => {
-    jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
-        if (err) {
-            res.json("not viewewd");
-        } else {
-            const listOfUsers = await Users.findAll({ limit: 10 });
-            res.json(listOfUsers);
+    // jwt.verify(req.token, 'try to get someting happen', async (err, data) => {
+    //     if (err) {
+    //         res.json("not viewewd");
+    //     } else {
+    //         // const listOfUsers = await Users.findAll({ limit: 10 });
+    //         // res.json(listOfUsers);
+    //         const listOfUsers = await Users.findAll(
+    //             {
+    //                 include: [AccessToken]
+    //             }
+    //         );
+    //         res.send(listOfUsers)
+    //     }
+    // })
+
+    const listOfUsers = await Users.findAll(
+        {
+            include:[AccessToken]
         }
-    })
-    // const listOfUsers = await Users.findAll({ limit: 10 });
-    // res.json(listOfUsers);
+    );
+    res.send(listOfUsers)
+    // const listOfUsers = await Users.findAll({ 
+    //     // include:[AccessToken]
+    //  }).then(listOfUsers => res.send(listOfUsers))
+
 
 });
 
@@ -65,9 +79,9 @@ router.post("/login", async (req, res) => {
                     // console.log("test6");
                     console.log(user.id)
                     await AccessToken.create({
-                        person_id: user.id,
+                        UserId: user.id,
                         accesstoken: userToken
-                    }) 
+                    })
 
                 } else {
 
