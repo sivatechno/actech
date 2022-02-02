@@ -184,10 +184,10 @@ return (
 
                                                                
                                
-            </div>
+        </div>
             {/* {modalIsOpen && <Popup   CloseModal={setModalIsOpen}/>} */}
             
-        </div>
+    </div>
     )
 }
 

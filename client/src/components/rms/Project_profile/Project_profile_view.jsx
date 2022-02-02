@@ -146,8 +146,8 @@ function Project_profile_view() {
 
            
 
-            <nav >
-                <ul className='pagination'>
+            <nav className='proj_profile_view_pagination_overall' >
+                <ul className='proj_profile_view_pagination_inner_contain'>
                     {
                         pages.map((page)=>(
                             <li className={page === currentPage ? "page-item active" : "page-item"} onClick={()=>pagination(page)}>
