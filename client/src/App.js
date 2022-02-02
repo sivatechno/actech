@@ -22,6 +22,7 @@ import ClientView from './pages/rms/Clientview';
 import EditClient from './components/rms/Client/Editclient';
 import UpdateAssociateProfile from './pages/rms/UpdateAssociate';
 import ProjectMappingView from './pages/rms/ProjectMappingView';
+import AddProjectMapping from './components/rms/projectmapping/Addprojectmapping';
 import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
@@ -123,6 +124,10 @@ function App({ children }) {
 
             <Route exact path="/ProjectMappingView" element={<ProtectedRoute />}>
               <Route exact path="/ProjectMappingView" element={<ProjectMappingView />} />
+            </Route>
+
+            <Route exact path="/Addprojectmapping" element={<ProtectedRoute />}>
+              <Route exact path="/Addprojectmapping" element={<AddProjectMapping />} />
             </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>
