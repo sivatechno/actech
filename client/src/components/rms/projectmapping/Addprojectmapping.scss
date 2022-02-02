@@ -1,0 +1,181 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.addproject_mapping_overall_conatiner{
+    max-height: 100%;
+    width: 100%;
+    //border: solid 2px red;
+    .addproject_mapping_inner_container{
+        height: calc(100vh - 80px);
+        width: 100%;
+    //    border: solid 2px green;
+        .addproject_mapping_topheader{
+            height: 10%;
+            width: 100%;
+            border: solid 2px #0e98d8;
+            background-color: #0e98d8;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin: 1px 0 0 1px;
+            display: flex;
+            align-items: center;
+            .top_icon{
+                height: 40px;
+                width: 40px;
+             //   border: solid 2px red;
+                margin: 0.5% 0 0 4%;
+                text-align: center;
+                .arrow_icon{
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: white;
+                    margin-top: 5px;
+                }
+            }
+            .mapping_top_header{
+                height: 40px;
+                width: 20%;
+               // border: solid 2px black;
+                margin: 0.5% 0 0 0;
+                h4{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: white;
+                    text-transform: capitalize;
+                }
+            }           
+        }
+        .addproject_mapping_formbody{
+            height: 400px;
+            width: 95%;
+          //  border: solid 2px yellowgreen;
+            margin: 5% auto;
+            .addproject_mapping_form_row{
+                height: 100px;
+                width: 100%;
+             //   border: solid 2px black;
+                display: flex;
+                .label{
+                    font-size: 16px;
+                    color: #242424;
+                }
+                .addproject_mapping_col1{
+                    height: 100%;
+                    width: 50%;
+                //    border: solid 2px red;
+                    .addproject_mapping_input_container{
+                        height: 50px;
+                        width: 70%;
+                        margin: 1% 0  0 0;
+                        border: solid 2px #242424;
+                        border-radius: 20px;
+                        .usericons{
+                            font-size: 18px;
+                            margin: 5% 0 0 3%;
+                            color: #2424;
+                        }
+                        .input_name_textboxes{
+                            padding: 2% 8% 0 0;
+                            margin: 0 0 0 2% ;
+                            font-size: 16px;
+                            outline: none;
+                            border: none;
+                        }
+                        .input_date_textboxes{
+                            padding: 2% 10% 0 0;
+                            margin: 0 0 -5% 3% ;
+                            font-size: 15px;
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                }
+                .addproject_mapping_col2{
+                    height: 100%;
+                    width: 50%;
+                //    border: solid 2px red;
+                    .addproject_mapping_input_container{
+                        height: 50px;
+                        width: 70%;
+                        margin: 1% 0  0 0;
+                        border: solid 2px #242424;
+                        border-radius: 20px;
+                        .usericons{
+                            font-size: 18px;
+                            margin: 5% 0 0 3%;
+                            color: #2424;
+                        }
+                        .input_name_textboxes{
+                            padding: 2% 8% 0 0;
+                            margin: 0 0 0 2% ;
+                            font-size: 16px;
+                            outline: none;
+                            border: none;
+                        }
+                        .input_date_textboxes{
+                            padding: 2% 10% 0 0;
+                            margin: 0 0 -5% 3% ;
+                            font-size: 15px;
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                }
+                .addproject_mapping_radio_container{
+                    height: 50px;
+                    width: 70%;
+                    margin: 1% 0  0 0;
+                  //  border: solid 2px #242424;
+                    .rbtn1,.rbtn2{
+                        margin: 5% 3% 0 4%;
+                    }
+                }
+            }
+            .addproject_mapping_submittingpart{
+                height: 80px;
+                width: 40%;
+              //  border: solid 2px green;
+                float: right;
+                display: flex;
+                justify-content: right;
+                margin-right: 15%;
+                .addproject_mapping_submittingpart_cancelbtns_body{
+                    height: 50px;
+                    width: 40%;
+                    border: solid 2px #0e98d8;
+                    border-radius: 15px;
+                    margin: 5% 2% 0 5%;
+                    .cnclebtn{
+                        padding: 3% 25%;
+                        font-size: 16px;
+                        margin: 5px 0 2px 3px;
+                        background-color: white;
+                        color: #242424;
+                        border: none;
+                        outline: none;
+                    }
+                }
+                .addproject_mapping_submittingpart_addbtns_body{
+                    height: 50px;
+                    width: 40%;
+                    border: solid 2px #0e98d8;
+                    background-color: #0e98d8;
+                    border-radius: 15px;
+                    margin: 5% 2% 0 5%;
+                    .addbtn{
+                        padding: 3% 30%;
+                        font-size: 16px;
+                        margin: 5px 0 2px 8px;
+                        background-color: #0e98d8;
+                        color: white;
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

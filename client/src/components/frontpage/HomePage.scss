@@ -15,20 +15,23 @@
     color: #fff;
         .card:hover{
         transform: scale(1.05);
+        transition: all 0.3s linear;
         width:38.5%;
         box-shadow: 0px 4px 6px 1px rgba(65, 65, 65, 0.589);
        
     }   
     .card{
         background-color: #eba452;
-        border-top-right-radius:40px ;
+        border-top-right-radius:40px ; 
         width: 38%;
         height: 100%;   
         border: 1px solid #2424;
         text-decoration: none;
         color: #fff;
-        
+       
     }
+   
+
     .img_lms img{
         width: 100%;
         border-top-right-radius:40px ;    
@@ -78,6 +81,7 @@
 
     .card2:hover{
         transform: scale(1.05);
+        transition: all 0.3s linear;
         width:38.5%;
         box-shadow: 0px 4px 6px 1px rgba(65, 65, 65, 0.589);
     } 
