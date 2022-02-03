@@ -86,6 +86,7 @@ export default function AddMentor({ closeModule }) {
                 city: city,
                 address: address,
                 state: state,
+                role:role,
                 phonenumber: phonenumber,
                 postalcode: postalcode,
                 role:role,

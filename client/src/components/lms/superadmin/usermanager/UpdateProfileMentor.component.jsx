@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import './UpdateProfileMentor.scss'
 import './UpdateProfileMentor.scss'
 import * as AiIcons from 'react-icons/all';
 import image from '../../../assets/images/updatementor.png';
@@ -74,7 +73,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                 state: newState
             }).then((response) => {
                 setNewProfileData(response.data);
-                alert("Submitted")
+                
             });
     };
 
@@ -109,7 +108,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                     <div className="headercontent">
                         <img src={image} alt="" className="profile_align" />
                         <p className="member_align">Member Information</p>
-                        < AiIcons.IoCloseSharp className="close" onClick={() => closeModule(false)} />
+                        < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)}/>
 
                     </div> <hr />
 
@@ -234,16 +233,8 @@ export default function UpdateProfileViewMentor({closeModule}) {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-
-
-            {/* ) */}
-            {/* }
-            )}  */}
         </div>
 
 

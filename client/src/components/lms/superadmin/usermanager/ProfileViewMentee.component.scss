@@ -1,111 +1,104 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
- }
- .profileviewmentor_container{
-    //height: 100%;
-     width: 100%;
-     
-    // position: absolute;
- 
-    .left{
-        height: 500px;
-        width: 300px;
-       // border-right: solid 1px #232323;
-        margin: 10px 0 0 20px;
-        float: left;
-        background-color:white;
-       // border-radius:20px 0px 0px 20px;
-       
-        .profile_view{
-            height: 100px;
-            width: 100px;
-           // border: solid 2px #2323;
-             box-shadow: 3px 3px 3px 3px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+.profileviewmentee_container{
+  
+    width: 100%;
+    //border: solid 2px red;
+    height: 100vh;
+    margin: 0 0 0 0;
+    border-top-left-radius:10px ;
+    overflow-y: hidden;
+    .toprofileviewcontainer{
+       //border: solid 2px green;
+        width: 90%;
+        height: 280px;
+        border-radius: 20px;
+        margin-left:16px;
+        margin-top: 15px;
+        background-color: white;
+        box-shadow:20px 20px 50px grey;  
+        display: flex;
+        .profile_viewmentee{
+            //border: solid 2px black;
+            width: 160px;
+            height: 160px;
             border-radius: 10rem;
-            margin: 20px 0 0 70px;
-            .profile_align{
-                height: 105px;
-                width: 105px;
+            margin: 10px 0 0 30px;
+            .profile_alignmentee{
+               // border: solid 2px red;
+                width: 155px;
+                height: 155px;
+                border-radius: 9rem;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-image: center;
-                border-radius: 10rem;
-            }}
-        .about_profile{
-            height: 130px;
-            width: 270px;
-            //border: solid 2px #232323;
-            margin: 30px 0 0 20px;
-            .about_box_1{
-                height: 40px;
-                width: 250px;
-                //border: solid 2px green;
-                .label{
-                    margin-left: 0px;
+            }
+        }
+        .aboutprofileviewmentee{
+            //border:solid 2px purple;
+            width: 450px;
+            height: 170px;
+            margin: 10px 0 0 250px;
+            display: inline;
+            .aboutprofilebox1{
+                //border: solid 2px blue;
+                height: 50px;
+                    .aboutvaluesprofile{
+                       // border: solid 2px green;
+                        display: inline;
+                        //margin-left: 65px;
+                        font-size: 16px;
+                    }         
+            }
+        }
+
+    }
+    .bottomprofileviewMenteecontainer{
+        border: solid 2px blue;
+        box-shadow:20px 20px 50px grey;
+        margin-top: 20px;
+        margin-left:16px;
+        width :90%;
+        height: 340px;
+        background-color: white;
+        border-radius: 20px;
+        .viewtitle{
+            width: 100px;
+            color: royalblue;
+            margin-left: 400px;
+            margin-bottom: 15px;
+        }
+        .profiledetails{
+            //border: solid 2px green;
+            width: 100%;
+            height: 320px;
+            border-radius: 20px;
+            .wholeprofileboxes{
+               // border: solid 2px orange;
+                height: 50px;
+                // float: left;
+                display: flex;
+                .aboutprofilebox1{
+                    //border: solid 2px navy;
+                    float: left;
+                    margin-right: 330px;
+                    margin-left: 40px;
+                    margin-top: 10px;
+                    .label{
+                        //border: solid 2px black;
+                        width: 60px;
+                    }
+                    .aboutvaluesprofile{
+                      // border: solid 2px green;
+                        display: inline;
+                        margin-left: 5px;
+                        font-size: 16px;
+                    }     
                 }
-                .profile_field{
-                    margin-left: 5px;
-                    padding-top: 5px;
-                    font-size: 16px;
-                    display: inline;
-                    border: none;
-                    outline: none;                
-                }}}
+            }
+        }
     }
- 
-    .right{
-       width:45%;
-       border: 1px royalblue;
-       .viewtitle{
-   
-           p{
-             font-size: 22px;
-             font-family:'Times New Roman', Times, serif;
-             margin: 20px 15px;
-             color: #1869d3;
-             margin-left: 23rem;
-         }
-       }
-       .right_container_1{
-          margin-left: 23rem;
-          height: 395px;
-          width: 50%;
-         // border: solid 2px #242424;
-          position:right;
-         //padding-bottom: 20px; 
-        
-       }
-       .about_profile{
-          font-size: 20px;
-          margin-top: 2rem;
-         
-          .about_box_1{
-           
-                
-           // height: 40px;
-           // width: 280px;
-             //border: solid 2px green;
-            margin: 30px 0px 10px 80px;
-             float:left;
-             .label{
-                 margin-left: 0px;
-                 font-size: 17px;
-             }}
-       }
-       .profile_field{
-          margin-left: 5px;
-          padding-top: 5px;
-          font-size: 15px;
-          display: inline;
-          border: none;
-          outline: none;                
-      }
-    }
- }
- @media only screen and (max-width:900px){
- 
- }
-    
- 
+}
