@@ -23,6 +23,36 @@
      // border: 1px solid red;
     }
 
+    .project_profile_headind_search_contain{
+      border: 2px solid #2424;
+      height: 75%;
+      width: 35%;
+      display: flex;
+      border-radius: 20px;
+      margin: 1% 2% 0 0;
+      .project_profile_headind_search{
+        height: 100%;
+        outline: none;
+        width: 85%;
+        margin: 0 0 0 3.5%;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+      }
+      .project_profile_headind_search_icon{
+       // border: 1px solid red;
+        font-size: 20px;
+        margin: 2% 0 0 2.5%;
+        color: rgba(15, 15, 15, 0.527);
+      }
+    }
+    .project_profile_headind_search_contain:hover{
+      border:2px solid rgb(7, 78, 170);
+      .project_profile_headind_search_icon:hover{
+        color: rgb(7, 78, 170);
+      }
+    }
+
     .add_proj_btn{
       //padding: 0.5% 2.5% 0.5% 2.5% ;
       border: 2px solid rgb(7, 78, 170);
@@ -31,9 +61,9 @@
       color: rgb(7, 78, 170);
       font-size: 12px;
       font-weight: 600;
-      width: 14%;
+      width: 150px;
       height: 80%;
-      margin-top: 1%;
+      margin: 5% 2% 0 0;
       cursor: pointer;
     }
 
@@ -79,7 +109,9 @@
       }
       
       .project_profile_table_body{
-       border: 1px solid #2424;
+       border-bottom: 1px solid #2424;
+       border-right: 1px solid #2424;
+       border-left: 1px solid #2424;
        cursor: default;
 
         td{
@@ -142,7 +174,7 @@
  width: calc(100vh - 60vh);
  display: inline-block;
  overflow-x:scroll;
- margin: 0 0 0 40%;
+ margin: 0 0 0 43%;
 
 
   .proj_profile_view_pagination_inner_contain{
@@ -176,9 +208,7 @@
   }
 
 
-// ::-webkit-scrollbar-button {
-//     height: 30px;
-//   }
+
  
 
 }

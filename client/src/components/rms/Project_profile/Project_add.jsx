@@ -6,6 +6,7 @@ import Validate from './Validate';
 import axios from 'axios';
 import config from '../../config/config'
 import {toast} from 'react-toastify'
+import { Link} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 // import { useForm } from 'react-hook-form';
@@ -55,8 +56,7 @@ toast.configure()
               status:status,
               billing:billing,
             }).then((response) =>{ 
-                notify(true); 
-                //alert('hai')     
+                notify(true);   
             })
 
            
@@ -93,21 +93,21 @@ toast.configure()
 
     return (
         <div>
-        <div className='addprof_overall_div'>
+        
         <div className="add_project_overall"> 
-            <div className="add_project_inner">
                 <div className="add_project_head">
+                <Link to={'/Projectprofileview'}>
+                    <AiIcons.HiArrowNarrowLeft className='add_project_header_back_icon'/>
+                    </Link>
                 <p className="add_project_header">ADD PROJECT</p>
-                     < AiIcons.CgClose className="close" onClick={()=>closeModel(false)} />
                      </div>
-                     <form>
                  <div className="add_project_inner_body">
                  <div className="add_project_content" >
                           <p className="add_project_text">Client Name*</p><br />
                           <div className="add_project_field_contain">
                       <div className="add_project_feild">
                           <i><AiIcons.FaRegUserCircle className="icons"/></i>
-                          <input type="name" className="textfield" placeholder="Client Name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture} autoFocus = {true} />
+                          <input type="name" className="textfield" placeholder="Client Name" required name='clientname'  values={setValues.client_name} onChange={(e)=>{setClientName(e.target.value);}}   onChangeCapture={handleChangeCapture} autoFocus = {true}  />
                     
                       </div>
                       </div>
@@ -163,8 +163,8 @@ toast.configure()
                      <div className='proj_add_status_contain'>
                      <p className="add_project_status_text">Project Status *</p>
                      <div className='add_project_status_radio_btn'>
-                         <input type="radio" value={status} name='status' checked={status == "Enable"} onClick={()=>{setstatus("Enable");}} /> <p className='add_project_radio_text'>Enable</p>
-                         <input type="radio" value={status} name='status'  checked={status == "Disable"} onClick={()=>{setstatus("Disable");}} /> <p className='add_project_radio_text'>Disable</p>
+                         <input type="radio" value={status} name='status' checked={status == "Active"} onClick={()=>{setstatus("Active");}} /> <p className='add_project_radio_text'>Active</p>
+                         <input type="radio" value={status} name='status'  checked={status == "In-Active"} onClick={()=>{setstatus("In-Active");}} /> <p className='add_project_radio_text'>In-Active</p>
                      </div>
                      
                      </div>
@@ -184,18 +184,18 @@ toast.configure()
 
                  <div className="add_project_buttons">
                      <div className="cncl_bttn">
-                     <button className="cancel_btn" onClick={()=>closeModel(false)}>Cancel</button>
+                     <Link to={'/Projectprofileview'}>
+                     <button className="cancel_btn">Cancel</button>
+                     </Link>
                      </div>
                      <div className="add_bttn">
                     <button className="add_btn" onClick={addproject} >AddProject</button>
                     </div>
 
                  </div>
-                 </form>
                 
             </div>
-        </div>
-        </div>
+        
         </div>
     )
     };

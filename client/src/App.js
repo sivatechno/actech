@@ -29,6 +29,7 @@ import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';
 import Update_Proj from './pages/rms/Update_proj'
+import Project_add from './pages/rms/Project_add'
 import { LmsRoutes } from './components/layout/LmsRoutes';
 import LmsDashboard from './pages/lms/LmsDashboard';
 
@@ -102,6 +103,10 @@ function App({ children }) {
             </Route>
             <Route exact path="/Update_proj" element={<Update_Proj />}>
               <Route exact path="/Update_proj/:id" element={<Update_Proj />} />
+            </Route>
+
+            <Route exact path="/Project_add" element={<ProtectedRoute />}>
+              <Route exact path="/Project_add" element={<Project_add />} />
             </Route>
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>

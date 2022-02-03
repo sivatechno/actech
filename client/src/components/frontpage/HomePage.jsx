@@ -8,7 +8,7 @@ export default function HomePage() {
         <div className='main_card' >
 
             <div className='homepage'>
-                <Link className='card' to="/viewmentor">
+                <Link className='card' to="/lmsdashboard">
                     <div className='img_lms'>
                         <img src={img1} alt='' />
                         <div className='title_lms'>

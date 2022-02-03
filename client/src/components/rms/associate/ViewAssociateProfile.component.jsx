@@ -18,14 +18,15 @@ const customStyles = {
     },
 };
 function ViewAssociateProfile() {
-   const [listOfAssociateProfiles, setListOfAssociateProfiles] = useState([]);   
-   
+    
     const apiURL = config.API_URL;
     let history = useNavigate();
 
+    const [listOfAssociateProfiles, setListOfAssociateProfiles] = useState([]); 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalUpdateIsOpen, setUpdateIsOpen] = useState(false);
     const [associatepaginatedPosts,setAssociatePaginatedPosts] = useState();
+    const [autosearchname,setAutoSearchName] = useState([])
 
     function openModal() {
         setIsOpen(true);
@@ -47,6 +48,20 @@ function ViewAssociateProfile() {
         });
         notify(true);
     };
+    useEffect(() => {
+        axios.get(`${apiURL}/associateprofile/findname`)
+            .then((response) => {
+                setAutoSearchName(response.data);
+            })
+    }, [])
+    // const FindAssociateProfile = (e) => {
+    //     axios.get(`${apiURL}/associateprofile/findname`,
+    //     {
+    //         autosearchname : autosearchname
+    //     }).then((response) => {
+    //     });
+    //     alert(`${autosearchname}`)
+    // };
     useEffect(() => {
         axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
@@ -76,6 +91,10 @@ function ViewAssociateProfile() {
                 <div className="associate_title">
                     <h3>AssociateProfile</h3>
                 </div>
+                <div className="associateprofile-feild">
+                    <i><AiIcons.BsSearch className="associateprofile-icons" /></i>                    
+                    <input type="text" className="associateprofile-namesearch" placeholder= " Associate name " name='hscboard' onChange={(e) =>{setAutoSearchName(e.target.value);}} /><br />
+                </div>                
                 <div className="add_profile">
                     <button className="associate_button_click"  onClick={()=>{setIsOpen(true);}}>Add Profile</button>
                 </div>

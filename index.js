@@ -35,6 +35,9 @@ app.use('/project', projectsRouter);
 const associateProfileRouter = require('./routes/AssociateProfile');
 app.use('/associateprofile', associateProfileRouter);
 
+const associateEducationRouter = require('./routes/AssociateEducation');
+app.use('/associateeducation', associateEducationRouter);
+
 const menteeRouter = require('./routes/Mentee');
 app.use('/mentee', menteeRouter);
 

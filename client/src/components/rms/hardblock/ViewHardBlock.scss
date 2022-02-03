@@ -1,3 +1,51 @@
+.viewhardblockcontainer{
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    .viewhardblockhead{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+    .viewhardblock-title{
+        color: rgb(7, 78, 170);
+        font-size: 20px;
+        font-weight: 600;
+        justify-content: space-between;
+        margin: 5% auto; 
+         width: 80%;
+    }
+    .viewhardblockbtn{
+        border: 2px solid rgb(7, 78, 170);
+        background-color: #ffff;
+        color: rgb(7, 78, 170);
+        padding: 7px 30px 9px 30px;
+        text-align: center;
+        border-radius: 10px;
+       font-size: 15px;
+       font-weight: bolder;
+                   
+       }
+    .viewhardblockbtn:hover{
+      background-color: rgb(7, 78, 170);
+      color: rgb(255, 255, 255);
+     }
+    .ant-table-thead > tr >th{
+        background-color: rgb(7, 78, 170);
+        color: #fff;
+    }
+	.ant-table-tbody > tr > td{
+	border: 1.5px solid #2424;	
+}
+.ant-table-tbody > tr:hover{
+	background-color: #f3f3f3;
+    border-left: 3px solid rgb(7, 78, 170);
+     border-right: 3px solid rgb(7, 78, 170);	
+}
+}
+
+
 // .viewhardblockoverallcontainer{
 //    // border: 1px solid red;
 //     width: 100%;
@@ -5,9 +53,9 @@
 //     overflow: hidden;
 //     .viewhardblockheader{
 //         //border: 1px solid blue;
-//         // display: flex;
+//         display: flex;
 //         justify-content: space-between;
-//         margin: 5% auto;
+//         margin: 5% auto; 
 //         width: 80%;
 //         height: 40px;
 //         .viewhardblocktext{
@@ -16,20 +64,20 @@
 //             font-size: 20px;
 //             font-weight: 600;
 //         }
-//         .viewhardblockbtn{
-//             border: 2px solid rgb(7, 78, 170);
-//             background-color: #ffff;
-//             color: rgb(7, 78, 170);
-//             padding: 7px 30px 9px 30px;
-//             text-align: center;
-//             border-radius: 10px;
-//           font-size: 15px;
-//            font-weight: bolder;
-//         }
-//         .viewhardblockbtn:hover{
-//             background-color: rgb(7, 78, 170);
-//             color: rgb(255, 255, 255);
-//         }
+        // .viewhardblockbtn{
+        //     border: 2px solid rgb(7, 78, 170);
+        //     background-color: #ffff;
+        //     color: rgb(7, 78, 170);
+        //     padding: 7px 30px 9px 30px;
+        //     text-align: center;
+        //     border-radius: 10px;
+        //   font-size: 15px;
+        //    font-weight: bolder;
+        // }
+        // .viewhardblockbtn:hover{
+        //     background-color: rgb(7, 78, 170);
+        //     color: rgb(255, 255, 255);
+        // }
       
 //     }
 //     .hardblockcontainer{

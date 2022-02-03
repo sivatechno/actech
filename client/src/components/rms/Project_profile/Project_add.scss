@@ -1,92 +1,47 @@
 @import '../../assets/stylesheets/common.scss';
-.addprof_overall_div{
-    //border: 1px solid green;
-    background-color: white;
-    backface-visibility: hidden;
-    height: 481px;
-    width: 98%;
-    // margin: -37% 0 0 17%;
-    border-radius:20px;
-    box-shadow: rgba(44, 44, 44, 0.452) 0px 2px 8px 2px;
 
-    //background: white;
-.add_project_overall{
-    background: white;
-    background-color:white;
-    height: 100%;
+    .add_project_overall{
+    height: calc(100vh - 90px);
     width: 100%;
-    border-radius:20px;
     //border: 1px solid red;
-   
-    //overflow-y:scroll;
     overflow-x: hidden;
     
-    .add_project_inner{
-        background-color: white;
-        //border: 1px solid blue;
-        //justify-content: space-even;
-        margin: 20px;
-        font-weight: bolder;
-        background:white;
-        enable-background: white;
         .add_project_head{
-            border-bottom: 2px solid rgba(223, 223, 223, 0.418);
-            height: 5%;
+            border-top-left-radius: 8px;
+            border: 2px solid rgb(7, 78, 170);
+            height: 8%;
+            width: 100%;
+            color:white;
+            background-color:rgb(7, 78, 170) ;
             display: flex;
-            padding-bottom: 2%;
-            background-color: white;
-            color: rgb(7, 78, 170);
+            justify-content: space-between;
+            .add_project_header_back_icon{
+                font-size: 30px;
+                margin: 20% 0 0 50%;
+                cursor: pointer;
+                color: white;
+             }
             .add_project_header{
                 font-size: 18px;
                 font-weight: bold;
-                background-color: white;
+                margin: 0.6% 3% 0 0;
                 cursor: default;
             }
-            .close{
-                // //border: 1px solid red;
-                 margin:0.8% 0 0 75%;
-                // font-weight: bolder;
-                // font-size: 18px;
-                // color: red;
-                // background-color: white;
-                cursor: pointer;
-                margin-right: 25px;
-                width: 20px;
-                margin-top: 20px;
-                color:red;
-                font-weight: bold;
-                 border-radius: 50%;
-                 padding: 0.1rem;
-                 width: 25px;
-                 height: 25px;
-                border: 2px solid RED;
-                 color: white;
-                // position: center;  
-                 background-color: RED;
-               //  font-size: 25px;
-            }
-            // .close:hover{
-            //     border: 1px solid red;
-            //     background-color: red;
-            //     color: white;
-            //     border-radius: 5px;
-            // }
+            
         }
         .add_project_inner_body{
-           // border: 1px solid blue;
             margin: 3% 0 0 0%;
             display: flex;
             width:100%;
-            justify-content: space-around;
-            background-color: white;
+            justify-content: space-between;
+            //border: 1px solid blue;
 
             .add_project_content{
-                background-color: white;
-                //border: 1px solid green;
-                padding:0 48px 0 48px;
+               //border: 1px solid green;
+                width: 40%;
+                margin: 0 0 0 5%;
                 .add_project_text{
                     margin-bottom:2% ;
-                    background-color: white;
                     //border: 1px solid red;
                     text-align: left;
                     font-size: 15px;
@@ -96,7 +51,6 @@
                    
                 }
                 .add_project_field_contain{
-                    background-color: white;
                     //border: 1px solid red;
                     margin-top: -6%;
                 .add_project_feild{
@@ -104,7 +58,7 @@
                     border-radius: 20px;
                     display: inline-block;
                     height: 50px;
-                    width: 300px;
+                    width: 90%;
                     background-color:white;
                     margin-top: 0%;
                     input[type=text],input[type=date],input[type=password],input[type=email],input[type=name]{
@@ -126,18 +80,23 @@
          }
                   .proj_add_status_contain{
                       //border: 1px solid red;
-                      padding:0 127px 0  127px;
+                      width: 40%;
+                      height: 100%;
 
                       .add_project_status_text{
                           //border: 1px solid yellow;
-                          margin: 6% 0 0 0;
+                          width: 150px;
+                          font-size: 15px;
+                          font-weight:600;
+                        
                       }
 
                       .add_project_status_radio_btn{
                           display: flex;
-                          margin: 11% 0 0 0 ;
                           //border: 1px solid green;
                           justify-content: space-evenly;
+                          width: 200px;
+                          margin: 3% 0 0 0;
 
                           input[type=radio]{
                               margin: 4% 0 0 8%;
@@ -152,23 +111,24 @@
 
         .proj_add_bill_contain{
             //border: 1px solid red;
-            width: 50%;
-            //padding: 0 0 0 100px;
-            margin: 3% 50% 0 0;
+            width: 40%;
+            margin: 0 0 0 5%;
 
             .add_project_bill_text{
-                border: 1px solid transparent;
-                margin: 0 0 0 2%;
+                //border: 1px solid green;
+                font-size: 15px;
+                font-weight:600;
             }
 
             .add_project_bill_radio_btn{
                 //border: 1px solid green;
                 display: flex;
-                margin: 5% 10% 0 0;
-                //justify-content: space-around;
+                justify-content: space-evenly;
+                width: 245px;
+                margin: 3% 0 0 0;
 
                 input[type=radio]{
-                    margin: 2% 0 0 3%;
+                    margin: 3% 0 0 0;
                     cursor: pointer;
                 }
             }
@@ -182,7 +142,7 @@
         .add_project_buttons{
             background-color:white;
             //border: 1px solid greenyellow;
-            margin: 5% 0 0 10%;
+            margin: 2% 0 0 0%;
             //padding: 0 0 0 40%;
             height: 50px;
             width: 100%;
@@ -191,12 +151,12 @@
             .cncl_bttn{
                 //border: 1px solid red;
                // margin: 0 30px 0 371px;
-                width: 130px;
+                width: 150px;
             }
             .add_bttn{
                  //border: 1px solid red;
-                 margin: 0 10px 0 10px;
-                 width: 130px;
+                 margin: 0 50px 0 40px;
+                 width: 150px;
              }
             .cancel_btn,.add_btn{
                 font-size: 15px;
@@ -227,7 +187,6 @@
                 //margin: 0 0 0 5%;
             }
         }
-    }
     .errormsg{
         font-size: 11px;
         color: red;
@@ -239,7 +198,7 @@
         //border: 1px solid pink;
         width: 100%;
     }
-}
+
 i{
     background-color: none;
 }
@@ -247,6 +206,7 @@ i{
     margin: 0 0 0 3%;
     border-color: none;
     background: none;
+}
 }
 
 // ::-webkit-scrollbar{
@@ -260,4 +220,3 @@ i{
 // ::-webkit-scrollbar-button {
 //     height: 30px;
 //   }
-}

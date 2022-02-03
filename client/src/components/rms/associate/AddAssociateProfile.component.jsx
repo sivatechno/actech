@@ -155,6 +155,7 @@ export default function AddAssociateprofile({closeModel}) {
     projectduration:"",
     secondaryskill:"",
     primaryskill:"",
+    setEducationInputList:"",
 });
 const handleChangeCapture = (event) =>{
     setValues({
@@ -174,31 +175,31 @@ function cancel(e) {
   }
   function focus2(){     
     setErrors(AssociateProfileValidate(values));
-    if(values.firstname && values.lastname && values.email && 
-        values.country && values.city && values.address && values.state && values.phonenumber &&
-        values.postalcode && values.dob){
+    if(/^[A-Za-z]+$/.test(values.firstname) && /^[A-Za-z]+$/.test(values.lastname) && /\S+@\S+\.\S+/.test(values.email) && 
+    /^[A-Za-z]+$/.test(values.country) && /^[A-Za-z]+$/.test(values.city) && (values.address)  && /^[A-Za-z]+$/.test(values.state) && /^[0-9\b]+$/.test(values.phonenumber) &&
+    /^[0-9\b]+$/.test(values.postalcode) && values.dob){
         EducationTabFunc()
     } 
     }
   function focus3(){
     setErrors(AssociateEducationValidate(values));
-    if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && 
-        values.sslcmark && values.hscboard && values.hscschoolname && values.hscyearpassedout && values.hscmark &&
-        values.university && values.college && values.passedoutyear && values.cgpa && values.qualification){
+    if(/^[A-Za-z]+$/.test(values.sslcboard) &&/^[A-Za-z]+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && 
+    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[A-Za-z]+$/.test(values.hscboard) && /^[A-Za-z]+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
+    /^[A-Za-z]+$/.test(values.university) && /^[A-Za-z]+$/.test(values.college) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) &&  /^[A-Za-z]+$/.test(values.qualification)){
         ExperienceTabFunc()
     }  
   }
   function focus4(){
     setErrors(AssociateCompanyValidate(values))
-    if(values.company && values.designation && values.companyaddress && 
-        values.yearsofexp && values.currentsalary && values.expectsalary){
+    if(/^[A-Za-z]+$/.test(values.company) && /^[A-Za-z]+$/.test(values.designation) && /^[A-Za-z]+$/.test(values.companyaddress) && 
+    /^[0-9\b]+$/.test(values.yearsofexp) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.currentsalary) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.expectsalary)){
         CertficateTabFunc()
     }     
   } 
   function submitform(){
     setErrors(AssociateCertificateValidate(values));
-    if(values.institutename && values.instituteaddress && values.coursename && 
-        values.duration && values.project && values.projectduration && values.primaryskill && values.secondaryskill){
+    if(/^[A-Za-z]+$/.test(values.institutename) && /^[A-Za-z]+$/.test(values.instituteaddress) && /^[A-Za-z]+$/.test(values.coursename) && 
+    /^[0-9\b]+$/.test(values.duration) &&  /^[A-Za-z]+$/.test(values.project) &&  /^[0-9\b]+$/.test(values.projectduration) &&  /^[A-Za-z]+$/.test(values.primaryskill) &&  /^[A-Za-z]+$/.test(values.secondaryskill)){
         addAssociateProfile()
     } 
   }
@@ -217,7 +218,6 @@ function cancel(e) {
    }
   const addAssociateProfile = (e) =>{
     upload();
-    //console.log(`${}`)
     axios.post("http://localhost:5000/associateprofile/create",
     {
       firstname:firstname,
@@ -247,12 +247,6 @@ function cancel(e) {
       hscschoolname:hscschoolname,
       hscmark:hscmark,
       educationinputList:educationinputList,
-      university : university,
-      college:college,
-      passedoutyear:passedoutyear,
-      degree:degree,
-      cgpa:cgpa,
-      qualification:qualification,
       company:company,
       designation:designation,
       currentsalary:currentsalary,
@@ -272,7 +266,20 @@ function cancel(e) {
     }).then((response) =>{  
 
     })
-  }   
+  } 
+  const addEducation = (e) =>{
+    axios.post("http://localhost:5000/associateeducation/createeducation",
+    {
+      university : university,
+      college:college,
+      passedoutyear:passedoutyear,
+      degree:degree,
+      cgpa:cgpa,
+      qualification:qualification
+    }).then((response) =>{  
+
+    })
+  }     
  const imageHandler = (event) => {
       const selectedImage = event.target.files[0]
       setUploadimage(selectedImage)
@@ -295,12 +302,17 @@ function cancel(e) {
     setCertificateInputList(certificatelist);
   };
   const handleExperienceAddClick = () => {
+    if(values.company && values.companyaddress && values.yearsofexp && values.expectsalary && values.currentsalary && values.designation)
     setExperienceInputList([...experienceinputList, { company:company,companyaddress:companyaddress, designation:designation,currentsalary:currentsalary , expectsalary:expectsalary, yearsofexp:yearsofexp  }]);
   };
   const handleEducationAddClick = () => {
-    setEducationInputList([...educationinputList, { university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
+      addEducation();
+     if(values.university && values.college && values.passedoutyear && values.cgpa && values.qualification)
+    setEducationInputList([...educationinputList,{ university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
   };
   const handleCertificateAddClick = () => {
+    if(values.institutename && values.instituteaddress && values.coursename && 
+        values.duration && values.project && values.projectduration && values.primaryskill && values.secondaryskill)
     setCertificateInputList([...certificateinputList, {  institutename:institutename, instituteaddress:instituteaddress,coursename:coursename,duration:duration, project:project,projectduration:projectduration,primaryskill:primaryskill,secondaryskill:secondaryskill }]);
   };
    function proifleTabfunc()
@@ -319,23 +331,8 @@ function cancel(e) {
    {
     setIndex(3)
    }
-   const alphacheck= (e) =>{
-    const regex = /[A-Za-z]/;
-    const chars = e.target.value.split('');
-    const char = chars.pop();
-    console.log(char);
-    if (!regex.test(char)) {
-      e.target.value = chars.join('');
-      alert("Please enter only alphabets");
-      e.preventDefault();
-      return false;
-     
-    }
-    else {
-      return true;
-    }
-  }
-    return (
+   
+   return (
       <div>
         <div className="addassociate">
            <i >< AiIcons.IoMdClose className="closeIcon" onClick={()=>closeModel(false)}/></i>
@@ -569,7 +566,7 @@ function cancel(e) {
                         <div className='Universitypart'>
                         <div className="btn-box">
                            {educationinputList.length !== 1 && <button  className="removeeducation"  onClick={() => handleEducationRemoveClick(i)}>-</button>}
-                           {educationinputList.length  -1 === i && <button onClick={handleEducationAddClick} className='addeducation'>+</button>}
+                           {educationinputList.length  -1 === i && educationinputList.length<5 &&<button onClick={handleEducationAddClick} className='addeducation'>+</button>}
                         </div><br /><br /><br />                
                       <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -593,6 +590,7 @@ function cancel(e) {
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Year of Passed out</label><br />
                             <div className="associateprofile-feild">
+                            <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
                             <input type="text" className="associateprofile-textfield" maxLength={4} placeholder=" Year of Passed out" name='passedoutyear' onChange={(e)=>{setPassedoutyear(e.target.value);}} values={setValues.passedoutyear} onChangeCapture={handleChangeCapture} required />
                             {errors.passedoutyear && <p className='errormsg'>{errors.passedoutyear}</p>}
                             </div>
@@ -645,7 +643,7 @@ function cancel(e) {
                 <div className='AddExperiencepart'>
                 <div className="btn-box">
                     {experienceinputList.length !== 1 && <button  className="removeexperience"  onClick={() => handleExperienceRemoveClick(i)}>-</button>}
-                    {experienceinputList.length - 1 === i && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
+                    {experienceinputList.length -1 === i && educationinputList.length<5 && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
                 </div><br /><br /><br />
                 <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -720,7 +718,7 @@ function cancel(e) {
                 <div className='associateprofile-adddcertificatepart'>
                      <div className="btn-box">
                             {certificateinputList.length !== 1 && <button  className="removecertificate"  onClick={() => handleCertificateRemoveClick(i)}>-</button>}
-                            {certificateinputList.length - 1 === i && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
+                            {certificateinputList.length - 1 === i && educationinputList.length < 10 && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
                     </div><br /><br /><br /> 
                    <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
