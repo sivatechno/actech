@@ -157,19 +157,11 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
 
             },
-            female: {
+            gender: {
                 type: DataTypes.STRING,
 
             },
-            male: {
-                type: DataTypes.STRING,
-
-            },
-            experience: {
-                type: DataTypes.STRING,
-
-            },
-            fresher: {
+            qualify: {
                 type: DataTypes.STRING,
 
             },
