@@ -10,6 +10,7 @@ import config from '../../config/config'
 import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+
 toast.configure()
 
 
@@ -32,10 +33,13 @@ const customStyles = {
     },
 };
 
+
+
 function Project_profile_view() {
     const apiURL = config.API_URL;
     const [listOfProject, setListOfProject] = useState([]);
     const [paginatedPosts,setpaginatedPosts] = useState();
+    const [searchTerm,setsearchTerm] = useState("");
 
     const deleteProject = (id,e) => {
         //alert(id)
@@ -50,14 +54,13 @@ function Project_profile_view() {
         axios.get(`${apiURL}/project/viewproject`).then((response) => {
             setListOfProject(response.data);
             setpaginatedPosts(_(response.data).slice(0).take(pageSize).value());
-            // console.log(response.data);
             
         });
 
     }, []);
 
     const [popup, popupcome] = useState(false)
-    const [Editpopup, EditpopupCome] = useState(false)
+   
 
     const notify = ()=>{toast.error('Deleted',{position: toast.POSITION.TOP_CENTER})}
 
@@ -76,6 +79,8 @@ function Project_profile_view() {
         const paginatedPosts = _(listOfProject).slice(startIndex).take(pageSize).value();
         setpaginatedPosts(paginatedPosts);
     }
+
+   
    
 
     return (
@@ -84,8 +89,15 @@ function Project_profile_view() {
             <div className='project_profile_overall_contain'>
                <div className="project_profile_top">
                    <p className="project_profile_headind_text">PROJECT PROFILE VIEW</p>
-                   <button className="add_proj_btn"  onClick={()=>{popupcome(true);}}>ADD PROJECT</button>
+                   <div className="project_profile_headind_search_contain avtive">
+                   <input type="text" className="project_profile_headind_search"  placeholder='Search'  onChange={(e)=> setsearchTerm(e.target.value)} />
+                   <AiIcons.FaSearch className="project_profile_headind_search_icon"/>
+                   </div>
+                   <Link to={`/Project_add`}>   
+                    <button className="add_proj_btn" >ADD PROJECT</button>
+                </Link>
                </div>
+
 
                 <Modal 
                     isOpen={popup}
@@ -112,7 +124,16 @@ function Project_profile_view() {
 
                             <tbody>
 
-                                {paginatedPosts&&paginatedPosts.map((value,key)=>{
+                                {paginatedPosts&&paginatedPosts.filter((val) => {
+                                    if(searchTerm === ""){
+                                        return val;
+                                    } else if(
+                                        val.Client_Name.toLowerCase().includes(searchTerm.toLowerCase())||
+                                        val.Project_Name.toLowerCase().includes(searchTerm.toLowerCase())
+                                    ){
+                                        return val;
+                                    }
+                                }).map((value,key)=>{
                                     console.log(value.id);
                                     
                                     return(
@@ -122,8 +143,8 @@ function Project_profile_view() {
                                             <td>{value.Start_Date}</td>
                                             <td >{value.End_Date}</td> 
                                             
-                                            <td style={{color:((value.Project_Status === 'Enable' && '#03FC15')) || ((value.Project_Status === 'Disable' && 'red'))}} >
-                                                <AiIcons.FaCircle className='proj_table_status' style={{color:((value.Project_Status === 'Enable' && '#03FC15')) || ((value.Project_Status === 'Disable' && 'red'))}}/>
+                                            <td style={{color:((value.Project_Status === 'Active' && '#03FC15')) || ((value.Project_Status === 'In-Active' && 'red'))}} >
+                                                <AiIcons.FaCircle className='proj_table_status' style={{color:((value.Project_Status === 'Active' && '#03FC15')) || ((value.Project_Status === 'In-Active' && 'red'))}}/>
                                                 {value.Project_Status}
                                             </td> 
                                             <td>{value.Billing_Status}</td> 

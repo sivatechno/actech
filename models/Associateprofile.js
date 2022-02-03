@@ -175,7 +175,7 @@ module.exports = (sequelize, DataTypes) => {
             },
             isproject: {
                 type: DataTypes.BOOLEAN,
-                defaultValue: true,
+                defaultValue: false,
             }
         })
 

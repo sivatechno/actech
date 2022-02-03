@@ -117,6 +117,17 @@ async (req, res) => {
         res.json(error)
     }
 });
+
+
+
+//coounting of data
+// router.get('/count', (req, res) => {
+//     Mentors.findAndCountAll({})
+//   .then(result => {
+//     res.json(result.count);
+//   });
+//   });
+  
 router.put('/update/:id', async (req, res) => {
     try {
         const id = req.params.id;
