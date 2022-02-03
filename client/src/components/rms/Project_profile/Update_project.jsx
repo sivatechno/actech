@@ -33,9 +33,6 @@ export default  function Update_project() {
 
     return (
         <div>
-
-                
-
             <div className="update_proj_over_all">
                 <div className='update_proj_head_div'>
                     <div className='update_proj_head_inner_div'>

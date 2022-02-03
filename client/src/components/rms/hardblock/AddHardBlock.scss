@@ -5,7 +5,7 @@
     //background-color: white;
     //background-color:red;
 }
-.addclient_overall_div{
+.addhard_overall_div{
     //border: 2px solid green;
     background-color: white;
     backface-visibility: hidden;
@@ -16,7 +16,7 @@
     box-shadow: rgba(54, 54, 54, 0.37) 0px 2px 8px 2px;
 
     //background: white;
-.add_client_overall{
+.add_hard_overall{
     background: white;
     background-color:white;
     height: 100%;
@@ -26,7 +26,7 @@
     //overflow-y:scroll;
     overflow-x: hidden;
     
-    .add_client_inner{
+    .add_hard_inner{
         background-color: white;
         //border: 1px solid blue;
         justify-content: space-between;
@@ -34,7 +34,7 @@
         font-weight: bolder;
         background:white;
         enable-background: white;
-        .add_client_head{
+        .add_hard_head{
             border-bottom: 2px solid rgba(223, 223, 223, 0.418);
             height: 5%;
             display: flex;
@@ -47,37 +47,23 @@
                 cursor: default;
                 color:  rgb(7, 78, 170);
             }
-            .add_client_close{
+            .add_hard_close{
                 //border: 1px solid red;
-                 margin:0.8% 0 0 80%;
-                // font-weight: bolder;
-                // font-size: 18px;
-                // color: red;
-                // background-color: white;
+                margin:0.8% 0 0 80%;
+                font-weight: bolder;
+                font-size: 18px;
+                color: red;
+                background-color: white;
                 cursor: pointer;
-               // margin-right: 25px;
-                width: 20px;
-                margin-top: 20px;
-                color:red;
-                font-weight: bold;
-                 border-radius: 50%;
-                 padding: 0.1rem;
-                 width: 25px;
-                 height: 25px;
-                border: 2px solid RED;
-                 color: white;
-                // position: center;  
-                 background-color: RED;
-               //  font-size: 25px;
             }
-            // .add_client_close:hover{
-            //     border: 1px solid red;
-            //     background-color: red;
-            //     color: white;
-            //     border-radius: 5px;
-            // }
+            .add_hard_close:hover{
+                border: 1px solid red;
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+            }
         }
-        .add_client_inner_body{
+        .add_hard_inner_body{
            // border: 1px solid blue;
             margin: 3% 0 0 0;
             display: flex;
@@ -89,13 +75,13 @@
                 // height: 200px;
             }
 
-            .add_client_content{
+            .add_hard_content{
                 background-color: white;
                 //border: 1px solid green;
                 padding:0 10px 0 30px;
                 
               
-                .add_client_text{
+                .add_hard_text{
                     background-color: white;
                     //border: 1px solid red;
                     text-align: left;
@@ -104,11 +90,11 @@
                     cursor: default;
                    
                 }
-                .add_client_field_contain{
+                .add_hard_field_contain{
                     background-color: white;
                    // border: 1px solid red;
                     margin-top: -6%;
-                .add_client_feild{
+                .add_hard_feild{
                     border:solid 2px #2424;
                     border-radius: 20px;
                     display: inline-block;
@@ -131,7 +117,7 @@
             }
          }
         }
-        .add_client_buttons{
+        .add_hard_buttons{
             background-color: white;
             //border: 1px solid greenyellow;
             margin: 6% 0 0 0;
@@ -139,14 +125,14 @@
             height: 10%;
             display: flex;
             width: 100%;
-            .client_cancel_btn,.client_add_btn{
+            .hard_cancel_btn,.hard_add_btn{
                 font-size: 15px;
                 font-weight: 500;
                 border-radius: 10px;
                 width: 40%;
                 height: 45px;
             }
-            .client_cancel_btn{
+            .hard_cancel_btn{
                 border: 2px solid rgb(7, 78, 170);
                 background-color: white;
                 //padding: 1.5% 6% 1.5% 6%;
@@ -155,7 +141,7 @@
                 cursor: pointer;          
              }
         
-            .client_add_btn{
+            .hard_add_btn{
                 border: 2px solid white;
                // padding: 1.5% 6% 1.5% 6%;
                 background-color: rgb(7, 78, 170);
@@ -165,7 +151,7 @@
             }
         }
     }
-    .add_client_errormsg{
+    .add_hard_errormsg{
         font-size: 11px;
         color: red;
         font-weight: 600;
@@ -183,15 +169,6 @@ form{
     background-color: white;
     //border:1px solid blue;
 }
-// ::-webkit-scrollbar{
-//     width: 3px;
-// }
-// ::-webkit-scrollbar-thumb{
-//     border-radius: 10px;
-//     background-color:rgb(7, 78, 170);
-// }
-// ::-webkit-scrollbar-button {
-//     height: 20px;
-//   }
+
   
 }

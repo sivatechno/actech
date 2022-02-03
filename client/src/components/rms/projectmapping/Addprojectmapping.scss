@@ -14,30 +14,27 @@
         .addproject_mapping_topheader{
             height: 10%;
             width: 100%;
-            border: solid 2px #0e98d8;
-            background-color: #0e98d8;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            margin: 1px 0 0 1px;
+            border: solid 2px rgb(7, 78, 170);
+            background-color: rgb(7, 78, 170);
+            border-top-left-radius: 10px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             .top_icon{
                 height: 40px;
-                width: 40px;
-             //   border: solid 2px red;
-                margin: 0.5% 0 0 4%;
+                width: 50px;
+              //  border: solid 2px red;
+                margin: 0.5% 0 0 1%;
                 text-align: center;
                 .arrow_icon{
-                    font-size: 25px;
-                    font-weight: bold;
+                    font-size: 2.5rem;
                     color: white;
-                    margin-top: 5px;
                 }
             }
             .mapping_top_header{
                 height: 40px;
                 width: 20%;
-               // border: solid 2px black;
+              //  border: solid 2px black;
                 margin: 0.5% 0 0 0;
                 h4{
                     text-align: center;
@@ -70,7 +67,7 @@
                         height: 50px;
                         width: 70%;
                         margin: 1% 0  0 0;
-                        border: solid 2px #242424;
+                        border: solid 1px #242424;
                         border-radius: 20px;
                         .usericons{
                             font-size: 18px;
@@ -101,7 +98,7 @@
                         height: 50px;
                         width: 70%;
                         margin: 1% 0  0 0;
-                        border: solid 2px #242424;
+                        border: solid 1px #242424;
                         border-radius: 20px;
                         .usericons{
                             font-size: 18px;

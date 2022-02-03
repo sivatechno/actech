@@ -51,7 +51,7 @@ toast.configure()
               clientname:clientname,
               projectname:projectname,
               clientemail:clientemail,
-              startdate:startdate,
+              startdate:startdate, 
               enddate:enddate,
               status:status,
               billing:billing,

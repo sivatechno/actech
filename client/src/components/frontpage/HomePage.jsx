@@ -8,7 +8,7 @@ export default function HomePage() {
         <div className='main_card' >
 
             <div className='homepage'>
-                <Link className='card' to="/viewmentor">
+                <Link className='card' to="/lmsdashboard">
                     <div className='img_lms'>
                         <img src={img1} alt='' />
                         <div className='title_lms'>
@@ -17,7 +17,7 @@ export default function HomePage() {
                         <div className='desc'>
                             <p>Learning Management System</p>
                             <button className='lmsbutton' >
-                                <Link className='link-lms' to="/viewmentor">LMS</Link>
+                                <Link className='link-lms' to="/lmsdashboard">LMS</Link>
                             </button>
                         </div>
                     </div>
