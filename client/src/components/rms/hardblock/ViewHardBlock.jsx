@@ -1,7 +1,7 @@
 import React,{ useEffect,useState } from 'react';
 import './ViewHardBlock.scss';
 import { useDispatch,useSelector } from "react-redux"
-import { viewDefaultProject } from '../../../store/actions/hardBlockActions'
+import { viewHardBlock } from '../../../store/actions/hardBlockActions'
 import {Table, Input,Button} from "antd";
 import {SearchOutlined } from '@ant-design/icons';
 import Modal from 'react-modal';
@@ -34,13 +34,13 @@ function ViewHardBlock(users) {
   const dispatch = useDispatch();
  
   useEffect(() =>{ 
-    dispatch(viewDefaultProject())
+    dispatch(viewHardBlock())
   },[dispatch])
 
 
   // const usersData = useSelector((state) => state.usersData)
-  const usersData = useSelector(function(state){
-    return state.hardblock  })
+  const hardblockdata = useSelector(function(state){
+    return state.hardblock.data  })
 
   console.log("state",usersData);
 

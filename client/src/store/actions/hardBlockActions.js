@@ -15,14 +15,14 @@ export const viewHardBlock = () => {
     }
 }
 
-export const viewDefaultProject = () => {
-    const apiURL = config.API_URL;
-    return(dispatch) => {
-        axios.get(`${apiURL}/blocks/getproject`).then((hardblock) => {
-            dispatch({
-                type:"VIEW_PROJECT",
-                hardblock
-            })
-        })
-    }
-}
+// export const viewDefaultProject = () => {
+//     const apiURL = config.API_URL;
+//     return(dispatch) => {
+//         axios.get(`${apiURL}/blocks/getproject`).then((project) => {
+//             dispatch({
+//                 type:"VIEW_PROJECT",
+//                 project
+//             })
+//         })
+//     }
+// }

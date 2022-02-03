@@ -101,10 +101,12 @@
 }
 .Associativenav{
    height: 45px;  
+   overflow-y: hidden;
+   
     .Associatepagination{
       display: flex;
       justify-content: center; 
-      margin: 20px 0 0 0px; 
+      margin: 20px 150px 0 0; 
       li{
         list-style-type: none;
         padding: 0 10px 0 10px;

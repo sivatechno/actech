@@ -1,3 +1,5 @@
+// import { NUMERIC } from "sequelize";
+
 const Validate = (values) => {
     let errors={};
     

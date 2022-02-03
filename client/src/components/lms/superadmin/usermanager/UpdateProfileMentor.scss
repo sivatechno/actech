@@ -91,10 +91,31 @@
         margin: 13px 15px;
     }
     .close{   
-            margin-right: 25px;
-            height:4%;
-            width:4%;
-            color:red;           
+            // margin-right: 25px;
+            // height:4%;
+            // width:4%;
+            // color:red;  
+            cursor: pointer;
+        margin-right: 25px;
+        width: 20px;
+        margin-top: 20px;
+        color:red;
+        font-weight: bold;
+         border-radius: 50%;
+         padding: 0.1rem;
+         width: 30px;
+         height: 30px;
+        border: 2px solid RED;
+         color:whitesmoke;
+        // position: center;  
+         background-color: RED;
+       //font-size: 25px;
+
+       .close:hover {
+        border: 2px solid RED;
+        background-color: red;
+        color: #ffffff;
+      }         
         
     }
     .notes{
