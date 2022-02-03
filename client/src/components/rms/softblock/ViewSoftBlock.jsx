@@ -1,9 +1,33 @@
-import React from 'react';
+import React,{ useEffect,useState } from 'react';
 import './ViewSoftBlock.scss';
 import {Table, Input,Button} from "antd";
 import {SearchOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import Modal from 'react-modal';
+import AddSoftBlock from './AddSoftBlock';
+
+const customStyles = {
+  content: {
+      top: '54%',
+      left: '58%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      height:'80%',
+      width:'70%',
+      background:'transparent',
+      border:'none',
+      outline:'none',
+      overflow:'hidden',
+  },
+
+};
+
+
+
+
 function ViewSoftBlock() {
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [dataSource,setDataSource] = useState([
     {
       name:"Naresh",
@@ -36,51 +60,11 @@ function ViewSoftBlock() {
       startdate:"12/01/2021",
       enddate:"31/01/2022"
 
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-
+    }
   ]);
   const columns = [
     {
+      
       title:"Name",
       dataIndex:'name',
       filterDropdown:({setSelectedKeys, selectedKeys,confirm, clearFilters }) => {
@@ -137,8 +121,12 @@ function ViewSoftBlock() {
       dataIndex:'email',
     },
     {
+      title:"Project",
+      dataIndex:'project',
+    },
+    {
       title:"Start Date",
-      dataIndex:'startdate'
+      dataIndex:'startdate',
 
     },
     {
@@ -150,10 +138,23 @@ function ViewSoftBlock() {
   <>
    <div className='viewsoftblockcontainer'> 
       <div className='viewsoftblockheader'>
-        <Table style={{display:"flex", flex:1, margin:'40px auto',backgroundColor:'#3253e2',textAlign:'center' }}columns={columns} dataSource={dataSource}>
+        <div className='viewsoftblockhead'>
+         <p className='viewsoftblock-title'>View Soft Block</p>
+         <button className='viewsoftblockbtn'onClick={()=>{setIsOpen(true);}}>Soft Block </button>
+
+        </div>
+       
+        <Table style={{width:"80%", margin:"0 auto"}} columns={columns} dataSource={dataSource}>
           
 
         </Table>
+        <Modal
+          isOpen={modalIsOpen}
+          style={customStyles}
+          contentLabel="Example Modal">
+          {<AddSoftBlock closeModule={setIsOpen}/>}
+
+        </Modal>
 
 
 

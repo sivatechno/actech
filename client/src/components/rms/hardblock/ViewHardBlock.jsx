@@ -4,12 +4,36 @@ import { useDispatch,useSelector } from "react-redux"
 import { viewDefaultProject } from '../../../store/actions/hardBlockActions'
 import {Table, Input,Button} from "antd";
 import {SearchOutlined } from '@ant-design/icons';
+import Modal from 'react-modal';
+import AddHardBlock from './AddHardBlock';
+
+
+const customStyles = {
+  content: {
+      top: '54%',
+      left: '58%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      height:'80%',
+      width:'70%',
+      background:'transparent',
+      border:'none',
+      outline:'none',
+      overflow:'hidden',
+  },
+
+};
+
+
 
 function ViewHardBlock(users) {
 
+  const [modalIsOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
  
-  useEffect(() =>{
+  useEffect(() =>{ 
     dispatch(viewDefaultProject())
   },[dispatch])
 
@@ -70,31 +94,7 @@ function ViewHardBlock(users) {
       startdate:"12/01/2021",
       enddate:"31/01/2022"
 
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"ram",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
-    {
-      name:"guna",
-      technology:"website",
-      email:"naresh@gmail.com",
-      startdate:"12/01/2021",
-      enddate:"31/01/2022"
-
-    },
+    }
 
   ]);
   const columns = [
@@ -152,6 +152,10 @@ function ViewHardBlock(users) {
       dataIndex:'email',
     },
     {
+      title:"Project",
+      dataIndex:'project',
+    },
+    {
       title:"Start Date",
       dataIndex:'startdate'
 
@@ -164,21 +168,26 @@ function ViewHardBlock(users) {
 
 
   return( 
-  <div>
-   <div className='viewhardblockoverallcontainer'> 
+  <>
+    <div className='viewhardblockcontainer'> 
       <div className='viewhardblockheader'>
+        <div className='viewhardblockhead'>
+         <p className='viewhardblock-title'>View Hard Block</p>
+         <button className='viewhardblockbtn'onClick={()=>{setIsOpen(true);}}>Hard Block </button>
 
+        </div>
+        <Modal
+          isOpen={modalIsOpen}
+          style={customStyles}
+          contentLabel="Example Modal">
+          {<AddHardBlock closeModule={setIsOpen}/>}
 
-      <Table style={{display:"flex", flex:1,textAlign:'center' }}columns={columns} dataSource={dataSource}>
+        </Modal>
+
+      <Table style={{width:"80%", margin:"0 auto "}}columns={columns} dataSource={dataSource}>
           
 
           </Table>
-
-
-
-
-
-
 
 
 
@@ -217,7 +226,7 @@ function ViewHardBlock(users) {
       </table> */}
     </div>
    </div>
-  </div>
+  </>
   );
 }
 
