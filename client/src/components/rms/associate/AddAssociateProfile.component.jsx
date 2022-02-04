@@ -182,10 +182,15 @@ function cancel(e) {
     }
   function focus3(){
     setErrors(AssociateEducationValidate(values));
-    if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && 
+    if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && qualify=='fresher' &&
         values.sslcmark && values.hscboard && values.hscschoolname && values.hscyearpassedout && values.hscmark &&
         values.university && values.college && values.passedoutyear && values.cgpa && values.qualification){
-        ExperienceTabFunc()
+        CertficateTabFunc()
+    }  
+    else if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && qualify=='experience' &&
+    values.sslcmark && values.hscboard && values.hscschoolname && values.hscyearpassedout && values.hscmark &&
+    values.university && values.college && values.passedoutyear && values.cgpa && values.qualification){
+    ExperienceTabFunc()
     }  
   }
   function focus4(){
@@ -351,7 +356,7 @@ function cancel(e) {
            <div className="Tabitems">
                 <button className={index != 0 ? "profiletab":"profiletabbg"} onClick={()=>{proifleTabfunc()}}>Profile</button>
                 <button className={index != 1 ? "Educationtab":"Educationtabbg"} onClick={()=>{EducationTabFunc()}}>Education</button>
-                <button className={index != 2 ? "Experiencetab":"Experiencetabbg"}  onClick={()=>{ExperienceTabFunc()}}>Experience</button>
+                <button className={index != 2 ? "Experiencetab":"Experiencetabbg"} onClick={()=>{ExperienceTabFunc()}}>Experience</button>
                 <button className={index != 3 ? "Certificatetab":"Certificatetabbg"}  onClick={()=>{CertficateTabFunc()}}>Certificate</button>   
             </div> <hr />
                 <div className="associateprofile-textfeild-container" hidden={index != 0}>
@@ -453,9 +458,9 @@ function cancel(e) {
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
                             <div>
-                            <input type="checkbox"  className="checkfresherbtn"  value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
+                            <input type="radio"  className="checkfresherbtn" value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
                             <label className="checkbtn-txt">Fresher</label>
-                            <input type="checkbox" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
+                            <input type="radio" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
                             <label className="checkbtn-txt">Experience</label>
                             </div>
                         </div> 

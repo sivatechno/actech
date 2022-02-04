@@ -292,9 +292,9 @@ export default function UpdateProfileViewMentor() {
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
                             <div>
-                            <input type="checkbox"  className="checkfresherbtn"  value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("fresher")}}   />
+                            <input type="radio"  className="checkfresherbtn"  value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("fresher")}}   />
                             <label className="checkbtn-txt">Fresher</label>
-                            <input type="checkbox" className="checkexperiencebtn" value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("experience")}} />
+                            <input type="radio" className="checkexperiencebtn" value={values.qualify} name="qualify"   onClick={()=> {setNewQualify("experience")}} />
                             <label className="checkbtn-txt">Experience</label>
                             </div>
                         </div> 
