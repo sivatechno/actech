@@ -26,7 +26,7 @@ function ViewAssociateProfile() {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalUpdateIsOpen, setUpdateIsOpen] = useState(false);
     const [associatepaginatedPosts,setAssociatePaginatedPosts] = useState();
-    const [autosearchname,setAutoSearchName] = useState([])
+    const [searchTerm,setsearchTerm] = useState("");
 
     function openModal() {
         setIsOpen(true);
@@ -48,20 +48,7 @@ function ViewAssociateProfile() {
         });
         notify(true);
     };
-    useEffect(() => {
-        axios.get(`${apiURL}/associateprofile/findname`)
-            .then((response) => {
-                setAutoSearchName(response.data);
-            })
-    }, [])
-    // const FindAssociateProfile = (e) => {
-    //     axios.get(`${apiURL}/associateprofile/findname`,
-    //     {
-    //         autosearchname : autosearchname
-    //     }).then((response) => {
-    //     });
-    //     alert(`${autosearchname}`)
-    // };
+    
     useEffect(() => {
         axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
@@ -93,7 +80,7 @@ function ViewAssociateProfile() {
                 </div>
                 <div className="associateprofile-feild">
                     <i><AiIcons.BsSearch className="associateprofile-icons" /></i>                    
-                    <input type="text" className="associateprofile-namesearch" placeholder= " Associate name " name='hscboard' onChange={(e) =>{setAutoSearchName(e.target.value);}} /><br />
+                    <input type="text" className="associateprofile-namesearch" placeholder= " Associate name " name='hscboard' onChange={(e)=> setsearchTerm(e.target.value)} /><br />
                 </div>                
                 <div className="add_profile">
                     <button className="associate_button_click"  onClick={()=>{setIsOpen(true);}}>Add Profile</button>
@@ -122,7 +109,17 @@ function ViewAssociateProfile() {
                     {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
-                    {associatepaginatedPosts&&associatepaginatedPosts.map((value,key)=>{
+                    {associatepaginatedPosts&&associatepaginatedPosts.filter((val) => {
+                            if(searchTerm === ""){
+                                return val;
+                            } else if(
+                                val.firstname.toLowerCase().includes(searchTerm.toLowerCase())||
+                                val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
+                            ){
+                                return val;
+                            }
+                             }).map((value,key)=>{
+                            console.log(value.id); 
                     return (
                             <tr className="associate_table_row">
                                  <td className="associate_namecol">{value.firstname} {value.lastname}</td>

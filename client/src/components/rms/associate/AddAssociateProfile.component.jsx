@@ -175,31 +175,31 @@ function cancel(e) {
   }
   function focus2(){     
     setErrors(AssociateProfileValidate(values));
-    if(/^[A-Za-z]+$/.test(values.firstname) && /^[A-Za-z]+$/.test(values.lastname) && /\S+@\S+\.\S+/.test(values.email) && 
-    /^[A-Za-z]+$/.test(values.country) && /^[A-Za-z]+$/.test(values.city) && (values.address)  && /^[A-Za-z]+$/.test(values.state) && /^[0-9\b]+$/.test(values.phonenumber) &&
+    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.firstname) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.lastname) && /\S+@\S+\.\S+/.test(values.email) && 
+    /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.country) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.city) && (values.address)  && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.state) && /^[0-9\b]+$/.test(values.phonenumber) &&
     /^[0-9\b]+$/.test(values.postalcode) && values.dob){
         EducationTabFunc()
     } 
     }
   function focus3(){
     setErrors(AssociateEducationValidate(values));
-    if(/^[A-Za-z]+$/.test(values.sslcboard) &&/^[A-Za-z]+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && 
-    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[A-Za-z]+$/.test(values.hscboard) && /^[A-Za-z]+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
-    /^[A-Za-z]+$/.test(values.university) && /^[A-Za-z]+$/.test(values.college) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) &&  /^[A-Za-z]+$/.test(values.qualification)){
+    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && 
+    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
+    /^([\s\.]?[a-zA-Z]+)+$/.test(values.university) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.college)&&/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
         ExperienceTabFunc()
     }  
   }
   function focus4(){
     setErrors(AssociateCompanyValidate(values))
-    if(/^[A-Za-z]+$/.test(values.company) && /^[A-Za-z]+$/.test(values.designation) && /^[A-Za-z]+$/.test(values.companyaddress) && 
+    if(/^([\s\.]?[a-zA-Z]+)+$/.test(values.company) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.designation) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.companyaddress) && 
     /^[0-9\b]+$/.test(values.yearsofexp) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.currentsalary) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.expectsalary)){
         CertficateTabFunc()
     }     
   } 
   function submitform(){
     setErrors(AssociateCertificateValidate(values));
-    if(/^[A-Za-z]+$/.test(values.institutename) && /^[A-Za-z]+$/.test(values.instituteaddress) && /^[A-Za-z]+$/.test(values.coursename) && 
-    /^[0-9\b]+$/.test(values.duration) &&  /^[A-Za-z]+$/.test(values.project) &&  /^[0-9\b]+$/.test(values.projectduration) &&  /^[A-Za-z]+$/.test(values.primaryskill) &&  /^[A-Za-z]+$/.test(values.secondaryskill)){
+    if(/^([\s\.]?[a-zA-Z]+)+$/.test(values.institutename) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.instituteaddress) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.coursename) && 
+    /^[0-9\b]+$/.test(values.duration) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.project) &&  /^[0-9\b]+$/.test(values.projectduration) &&  /^([\s\.]?[a-zA-Z]+)+$/.test(values.primaryskill) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.secondaryskill)){
         addAssociateProfile()
     } 
   }
