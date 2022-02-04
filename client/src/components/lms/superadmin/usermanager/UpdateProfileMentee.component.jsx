@@ -76,7 +76,7 @@ export default  function UpdateProfileViewMentee({closeModule}) {
                 state: newState
             }).then((response) => {
                 setNewProfileData(response.data);
-                 alert("Submitted")
+                
             });
     };
 
@@ -111,7 +111,7 @@ export default  function UpdateProfileViewMentee({closeModule}) {
                             <div className="headercontent">
                             <img src={image} alt="" className="profile_align" />
                             <p className="member_align">Member Information</p>
-                            < AiIcons.VscChromeClose className="close" onClick={()=>closeModule(false)}/>   
+                            < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)}/>   
                             
                 </div> <hr />
                
@@ -245,26 +245,13 @@ export default  function UpdateProfileViewMentee({closeModule}) {
                         <div className="buttons">
                             <input type="button" className="cancel" value="cancel" onClick={()=>closeModule(false)}/>
                             
-                             <input type="submit" className="editstaff" value= "submit" onClick={ (e) => update( e) } />
-                             
+                             <input type="submit" className="editstaff" value= "submit" onClick={ (e) => update( e) } />                        
                             
                        </div> 
                    </div>
                 </div>
-               
                 </div>
-                
-               
                 </div>
-               
-                    
-                 {/* ) */}
-                {/* }
-            )}  */}
         </div>
-        
-        
     )
-
-
 }

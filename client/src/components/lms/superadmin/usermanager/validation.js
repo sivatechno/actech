@@ -1,3 +1,5 @@
+// import { NUMERIC } from "sequelize";
+
 const Validate = (values) => {
     let errors={};
     
@@ -6,6 +8,9 @@ const Validate = (values) => {
     }
     if(!values.phonenumber){
         errors.phonenumber="* Please Enter phonenumber"
+    }
+    else if( !/^[0-9\b]+$/.test(values.phonenumber)){
+        errors.phonenumber="* Please enter the integer values"
     }
     if(!values.Email){
         errors.Email="* Please Enter Email"
@@ -37,6 +42,9 @@ const Validate = (values) => {
     }
     if(!values.postalcode){
         errors.postalcode="* Please Enter postalcode"
+    }
+    else if( !/^[0-9\b]+$/.test(values.postalcode)){
+        errors.postalcode="* Please enter the integer values"
     }
     if(!values.uploadimage){
         errors.uploadimage="* Please Enter uploadimage"

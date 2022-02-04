@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+.profileviewmentee_container{
+  
+    width: 100%;
+    //border: solid 2px red;
+    height: 100vh;
+    margin: 0 0 0 0;
+    border-top-left-radius:10px ;
+    overflow-y: hidden;
+    .toprofileviewcontainer{
+       //border: solid 2px green;
+        width: 90%;
+        height: 280px;
+        border-radius: 20px;
+        margin-left:16px;
+        margin-top: 15px;
+        background-color: white;
+        box-shadow:20px 20px 50px grey;  
+        display: flex;
+        .profile_viewmentee{
+            //border: solid 2px black;
+            width: 160px;
+            height: 160px;
+            border-radius: 10rem;
+            margin: 10px 0 0 30px;
+            .profile_alignmentee{
+               // border: solid 2px red;
+                width: 155px;
+                height: 155px;
+                border-radius: 9rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: center;
+            }
+        }
+        .aboutprofileviewmentee{
+            //border:solid 2px purple;
+            width: 450px;
+            height: 170px;
+            margin: 10px 0 0 250px;
+            display: inline;
+            .aboutprofilebox1{
+                //border: solid 2px blue;
+                height: 50px;
+                    .aboutvaluesprofile{
+                       // border: solid 2px green;
+                        display: inline;
+                        //margin-left: 65px;
+                        font-size: 16px;
+                    }         
+            }
+        }
+
+    }
+    .bottomprofileviewMenteecontainer{
+        //border: solid 2px blue;
+        box-shadow:20px 20px 50px grey;
+        margin-top: 20px;
+        margin-left:16px;
+        width :90%;
+        height: 340px;
+        background-color: white;
+        border-radius: 20px;
+        .viewtitle{
+            width: 100px;
+            color: royalblue;
+            margin-left: 400px;
+            margin-bottom: 15px;
+        }
+        .profiledetails{
+            //border: solid 2px green;
+            width: 100%;
+            height: 320px;
+            border-radius: 20px;
+            .wholeprofileboxes{
+               // border: solid 2px orange;
+                height: 50px;
+                // float: left;
+                display: flex;
+                .aboutprofilebox1{
+                    //border: solid 2px navy;
+                    float: left;
+                    margin-right: 330px;
+                    margin-left: 40px;
+                    margin-top: 10px;
+                    .label{
+                        //border: solid 2px black;
+                        width: 60px;
+                    }
+                    .aboutvaluesprofile{
+                      // border: solid 2px green;
+                        display: inline;
+                        margin-left: 5px;
+                        font-size: 16px;
+                    }     
+                }
+            }
+        }
+    }
+}

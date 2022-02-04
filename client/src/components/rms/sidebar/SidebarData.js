@@ -46,6 +46,11 @@ export const SidebarData = [
       ]
     },
     {
+      title: 'Release Associate',
+      path:'',
+      icon:<AiIcons.GrUnlock/>,
+    },
+    {
       title: 'Report',
       path:'',
       icon:<AiIcons.GoReport/>,

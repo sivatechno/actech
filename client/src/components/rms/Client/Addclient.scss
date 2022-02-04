@@ -49,19 +49,33 @@
             }
             .add_client_close{
                 //border: 1px solid red;
-                margin:0.8% 0 0 80%;
-                font-weight: bolder;
-                font-size: 18px;
-                color: red;
-                background-color: white;
+                 margin:0.8% 0 0 80%;
+                // font-weight: bolder;
+                // font-size: 18px;
+                // color: red;
+                // background-color: white;
                 cursor: pointer;
+               // margin-right: 25px;
+                width: 20px;
+                margin-top: 20px;
+                color:red;
+                font-weight: bold;
+                 border-radius: 50%;
+                 padding: 0.1rem;
+                 width: 25px;
+                 height: 25px;
+                border: 2px solid RED;
+                 color: white;
+                // position: center;  
+                 background-color: RED;
+               //  font-size: 25px;
             }
-            .add_client_close:hover{
-                border: 1px solid red;
-                background-color: red;
-                color: white;
-                border-radius: 5px;
-            }
+            // .add_client_close:hover{
+            //     border: 1px solid red;
+            //     background-color: red;
+            //     color: white;
+            //     border-radius: 5px;
+            // }
         }
         .add_client_inner_body{
            // border: 1px solid blue;
@@ -169,15 +183,15 @@ form{
     background-color: white;
     //border:1px solid blue;
 }
-::-webkit-scrollbar{
-    width: 3px;
-}
-::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background-color:rgb(7, 78, 170);
-}
-::-webkit-scrollbar-button {
-    height: 20px;
-  }
+// ::-webkit-scrollbar{
+//     width: 3px;
+// }
+// ::-webkit-scrollbar-thumb{
+//     border-radius: 10px;
+//     background-color:rgb(7, 78, 170);
+// }
+// ::-webkit-scrollbar-button {
+//     height: 20px;
+//   }
   
 }

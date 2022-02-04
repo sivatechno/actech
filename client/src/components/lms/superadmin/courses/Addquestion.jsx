@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import './AddQuestion.scss';
+import './Addquestion.scss';
 import Accordian from '../../coursespages/Accordian';
-
-
-
 
 const Addquestion = (props) => {
       

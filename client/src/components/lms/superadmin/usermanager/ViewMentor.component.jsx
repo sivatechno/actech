@@ -111,12 +111,12 @@ function ViewMentor() {
     return (
         <div className="viewmentor_container">
             {console.log(token)}
-            <div className="view_header">
-                <div className="view_title">
+            <div className="viewmentor_header">
+                <div className="viewmentor_title">
                     <h3>View Mentor</h3>
                 </div>
-                <div className="add_staff">
-                    <button className="button_click" onClick={openModal}>Add Mentor</button>
+                <div className="viewmentoradd_staff">
+                    <button className="viewmentorbutton_clicks" onClick={openModal}>Add Mentor</button>
                 </div>
             </div>
             <Modal
@@ -127,8 +127,8 @@ function ViewMentor() {
 
                 {listOfMentors && <AddMentor closeModule={setIsOpen} />}
             </Modal>
-            <div className="table_container">
-                <table cellSpacing="10px" >
+            <div className="viewmentortable_container">
+                <table className='table_adjust' cellSpacing="10px" >
                     <tr className="table_row_head">
                         <th className="avatar">Avatar</th>
                         <th className="namehead">Name</th>
@@ -154,17 +154,17 @@ function ViewMentor() {
                                 <td>{value.phonenumber}</td>
                                 
                                 <td>
-                                    {/* <Link to={`/editprofileviewmentor/${value.id}`}>  */}
+                                     <Link to={`/editprofileviewmentor/${value.id}`}>  
                                         <div className="table_icons"><AiIcons.GrEdit className="icons_align" onClick={()=>{setEditpopup(true);}}  /></div>
-                                        <Modal
+                                        {/* <Modal
                                              isOpen={editpopup}
                                             onRequestClose={closeModal}
                                             style={Styles}
                                             contentLabel="Example Modal"
                                             >                
-                                            {  <UpdateProfileViewMentor closeModule={setEditpopup} />}
-                                        </Modal>
-                                    {/* </Link> */}
+                                            {  <UpdateProfileViewMentor closeModule={setEditpopup} />
+                                        </Modal> */}
+                                     </Link> 
                                     {/* <Link to={"/"}> */}
                                         {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
                                             

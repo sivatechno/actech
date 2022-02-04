@@ -82,6 +82,7 @@ body('firstname').isLength({min:2}),
 body('lastname').isLength({min:2}),
 body('password').isLength({min:5}),
 
+
 async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -116,6 +117,17 @@ async (req, res) => {
         res.json(error)
     }
 });
+
+
+
+//coounting of data
+// router.get('/count', (req, res) => {
+//     Mentors.findAndCountAll({})
+//   .then(result => {
+//     res.json(result.count);
+//   });
+//   });
+  
 router.put('/update/:id', async (req, res) => {
     try {
         const id = req.params.id;

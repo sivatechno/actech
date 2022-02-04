@@ -4,13 +4,13 @@ export const AssociateProfileValidate = (values) => {
 
     if(!values.firstname){
         errors.firstname="* Please Enter FirstName"
-    }else if(!/^[A-Za-z]+$/.test(values.firstname)){
-        errors.firstname="* Characters only accept in the feild"
+    }else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.firstname)){
+        errors.firstname="* Characters only accept in the field"
     }
     if(!values.lastname){
         errors.lastname="* Please Enter Lastname"
-    } else if(!/^[A-Za-z]+$/.test(values.lastname)){
-        errors.lastname="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.lastname)){
+        errors.lastname="* Characters only accept in the field"
     }
     if(!values.email){
         errors.email="* Please Enter email"
@@ -19,21 +19,21 @@ export const AssociateProfileValidate = (values) => {
     }
     if(!values.country){
         errors.country="* Please enter the Country"
-    } else if(!/^[A-Za-z]+$/.test(values.country)){
-        errors.country="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.country)){
+        errors.country="* Characters only accept in the field"
     }
     if(!values.city){
         errors.city="* Please enter the city"
-    } else if(!/^[A-Za-z]+$/.test(values.city)){
-        errors.city="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.city)){
+        errors.city="* Characters only accept in the field"
     }
     if(!values.address){
         errors.address="* Please enter the Address"
     }
     if(!values.state){
         errors.state="* Please enter the State"
-    } else if(!/^[A-Za-z]+$/.test(values.state)){
-        errors.state="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.state)){
+        errors.state="* Characters only accept in the field"
     }
     if(!values.phonenumber){
         errors.phonenumber="* Please enter the Phone Number"
@@ -56,13 +56,13 @@ export const AssociateEducationValidate = (values) => {
 
     if(!values.sslcboard){
         errors.sslcboard="* Please Enter SSLC Board"
-    } else if(!/^[A-Za-z]+$/.test(values.sslcboard)){
-        errors.sslcboard="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard)){
+        errors.sslcboard="* Characters only accept in the field"
     }
     if(!values.sslcschoolname){
         errors.sslcschoolname="* Please Enter School Name"
-    } else if(!/^[A-Za-z]+$/.test(values.sslcschoolname)){
-        errors.sslcschoolname="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname)){
+        errors.sslcschoolname="* Characters only accept in the field"
     }
     if(!values.sslcyearpassedout){
         errors.sslcyearpassedout="* Please Enter year passed out"
@@ -71,18 +71,18 @@ export const AssociateEducationValidate = (values) => {
     }
     if(!values.sslcmark){
         errors.sslcmark="* Please enter the Mark"
-    }else if( !/^[0-9\b]+$/.test(values.sslcmark) || !/^\d{1,}(\.\d{0,4})?$/.test(values.sslcmark)){
+    }else if( !/^\d{1,}(\.\d{0,4})?$/.test(values.sslcmark)){
         errors.sslcmark="* Please Enter Integer value"
     }
     if(!values.hscboard){
         errors.hscboard="* Please Enter Board"
-    } else if(!/^[A-Za-z]+$/.test(values.hscboard)){
-        errors.hscboard="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard)){
+        errors.hscboard="* Characters only accept in the field"
     }
     if(!values.hscschoolname){
         errors.hscschoolname="* Please Enter School Name"
-    } else if(!/^[A-Za-z]+$/.test(values.hscschoolname)){
-        errors.hscschoolname="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname)){
+        errors.hscschoolname="* Characters only accept in the field"
     }
     if(!values.hscyearpassedout){
         errors.hscyearpassedout="* Please Enter Passed out year"
@@ -96,13 +96,13 @@ export const AssociateEducationValidate = (values) => {
     }
     if(!values.university){
         errors.university="* Please enter the University"
-    } else if(!/^[A-Za-z]+$/.test(values.university)){
-        errors.university="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.university)){
+        errors.university="* Characters only accept in the field"
     }
     if(!values.college){
         errors.college="* Please enter the College"
-    } else if(!/^[A-Za-z]+$/.test(values.college)){
-        errors.college="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.college)){
+        errors.college="* Characters only accept in the field"
     }
     if(!values.passedoutyear){
         errors.passedoutyear="* Please enter the Address"
@@ -111,8 +111,8 @@ export const AssociateEducationValidate = (values) => {
     }
     if(!values.degree){
         errors.degree="* Please enter the Degree"
-    } else if(!/^[A-Za-z]+$/.test(values.degree)){
-        errors.degree="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree)){
+        errors.degree="* Characters only accept in the field"
     }
     if(!values.cgpa){
         errors.cgpa="* Please enter the CGPA"
@@ -121,8 +121,8 @@ export const AssociateEducationValidate = (values) => {
     }
     if(!values.qualification){
         errors.qualification="* Please enter the Qualification"
-    } else if(!/^[A-Za-z]+$/.test(values.qualification)){
-        errors.qualification="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
+        errors.qualification="* Characters only accept in the field"
     }
     return errors;
 };
@@ -132,18 +132,18 @@ export const AssociateCompanyValidate = (values) => {
 
     if(!values.company){
         errors.company="* Please Enter Company Name"
-    } else if(!/^[A-Za-z]+$/.test(values.company)){
-        errors.company="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.company)){
+        errors.company="* Characters only accept in the field"
     }
     if(!values.designation){
         errors.designation="* Please Enter Designation"
-    } else if(!/^[A-Za-z]+$/.test(values.designation)){
-        errors.designation="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.designation)){
+        errors.designation="* Characters only accept in the field"
     }
     if(!values.companyaddress){
         errors.companyaddress="* Please Enter Company Address"
-    } else if(!/^[A-Za-z]+$/.test(values.companyaddress)){
-        errors.companyaddress="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.companyaddress)){
+        errors.companyaddress="* Characters only accept in the field"
     }
     if(!values.yearsofexp){
         errors.yearsofexp="* Please Enter years Of Experience"
@@ -168,18 +168,18 @@ export const AssociateCertificateValidate = (values) => {
 
     if(!values.institutename){
         errors.institutename="* Please Enter Institute Name"
-    }else if(!/^[A-Za-z]+$/.test(values.institutename)){
-        errors.institutename="* Characters only accept in the feild"
+    }else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.institutename)){
+        errors.institutename="* Characters only accept in the field"
     }
     if(!values.instituteaddress){
         errors.instituteaddress="* Please enter the Country"
-    } else if(!/^[A-Za-z]+$/.test(values.instituteaddress)){
-        errors.instituteaddress="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.instituteaddress)){
+        errors.instituteaddress="* Characters only accept in the field"
     }
     if(!values.coursename){
         errors.coursename="* Please Enter Course name"
-    } else if(!/^[A-Za-z]+$/.test(values.coursename)){
-        errors.coursename="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.coursename)){
+        errors.coursename="* Characters only accept in the field"
     }
     if(!values.duration){
         errors.duration="* Please Enter Duration"
@@ -188,8 +188,8 @@ export const AssociateCertificateValidate = (values) => {
     }
     if(!values.project){
         errors.project="* Please enter the Country"
-    } else if(!/^[A-Za-z]+$/.test(values.project)){
-        errors.project="* Characters only accept in the feild"
+    } else if(!/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.project)){
+        errors.project="* Characters only accept in the field"
     }
     if(!values.projectduration){
         errors.projectduration="* Please Enter Project Duration"
@@ -198,13 +198,13 @@ export const AssociateCertificateValidate = (values) => {
     }
     if(!values.primaryskill){
         errors.primaryskill="* Please enter the Country"
-    } else if(!/^[A-Za-z]+$/.test(values.primaryskill)){
-        errors.primaryskill="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.primaryskill)){
+        errors.primaryskill="* Characters only accept in the field"
     }
     if(!values.secondaryskill){
         errors.secondaryskill="* Please enter the Country"
-    } else if(!/^[A-Za-z]+$/.test(values.secondaryskill)){
-        errors.secondaryskill="* Characters only accept in the feild"
+    } else if(!/^([\s\.]?[a-zA-Z]+)+$/.test(values.secondaryskill)){
+        errors.secondaryskill="* Characters only accept in the field"
     }
     return errors;
 };

@@ -3,7 +3,7 @@
   padding:0px;
   box-sizing: border-box;
 }
-.parent_container{
+.viewmentee_container{
 margin: 30px 30px;
 height: 80%;
 width: 90%;
@@ -11,14 +11,14 @@ position: fixed;
 background-color: #fff;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 border-radius: 25px;
-.view_header{
+.viewmentee_header{
   height: 60px;
   display:flex;
   justify-content:space-between;
   margin-right: 145px;
   position: relative;
   align-self: center;
- .view_title{
+ .viewmentee_title{
     height: 60px;
     width:180px;
     float:left;
@@ -29,12 +29,12 @@ border-radius: 25px;
       padding-top: 18px;
     }
   }
-  .add_staff{
+  .viewmenteeadd_staff{
     height: 60px;
     width: 180px;
     float: right;
    }
-   .button_click{
+   .viewmenteebutton_click{
        padding: 10px 15px;
        font-size: 16px;
        border: blue;
@@ -44,13 +44,14 @@ border-radius: 25px;
        margin: 0px auto;
        margin-top: 0.5rem;
    }
-   .button_click:hover{
+   .viewmenteebutton_click:hover{
       background-color:#fff;
       color: #0C50A3;
       border: solid 2px #0C50A3;
       transition: 0.4s;
    }
 }
+.viewmenteetable_container{
 table{
   //background-color: red;
   width: 87%;
@@ -96,11 +97,25 @@ th{padding: 12px;}
     }
   }
 }
+}
 @media only screen and (min-width:1200px) and (max-width:1500px)
 {
-table{
-  width:80% !important;
-  //background-color:red;
+ .viewmenteetable_adjust{
+   width:80% !important;
+   //background-color:red;
 }
- 
+   
+}
+@media only screen and (min-width:1395px) and (max-width:1500px)
+{
+ .viewmenteebutton_click{
+   margin-left:100px;
+ }
+}
+@media only screen and (min-width:1501px) and (max-width:1920px)
+{
+ .viewmenteebutton_click{
+   margin-left:200px;
+   float: right;
+ }
 }

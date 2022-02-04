@@ -15,6 +15,25 @@
     width: 93%;
     position: relative;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    .associateprofile-feild{
+        position: relative;
+        margin-top: 10px;
+    }
+    .associateprofile-icons{
+        margin: 13px 15px;
+        position: absolute;
+    }
+    .associateprofile-namesearch{
+            height:50px;
+            width: 300px;
+            border: solid 2px #0C50A3;
+            border-radius: 20px;
+            padding-left: 40px;
+            font-size: 16px; 
+            margin-bottom: 20px;
+    }
     .associate_title{
         height: 60px;
         width: 23%;     
@@ -100,41 +119,43 @@
    }
 }
 .Associativenav{
-   height: 45px;  
-    .Associatepagination{
-      display: flex;
-      justify-content: center; 
-      margin: 20px 0 0 0px; 
-      li{
-        list-style-type: none;
-        padding: 0 10px 0 10px;
-        cursor: pointer;
-      }      
-      .associatepage-link{
-        text-align: center;
-        margin-top: 30%;
-      }  
-      .associatepage-item.active{
-        background-color:rgb(7, 78, 170);
-        color: white;
-        border-radius: 5px;
-      }      
-    }  
-  } 
-
-@media only screen and (max-width : 1570px) {
-    .associate_table{
-        width: 84% !important; 
-    }
-    .associate_header{
-        width: 88% !important;
-    }
-}
-@media only screen and (max-width : 1285px) {
-        .associate_table{
-            width: 79% !important; 
-        }
-        .associate_header{
-            width: 86% !important;
-        }
-}
+    height: 45px; 
+    overflow-y: hidden; 
+     .Associatepagination{
+       display: flex;
+       justify-content: center; 
+       margin: 20px 150px 0 0px; 
+       li{
+         list-style-type: none;
+         padding: 0 10px 0 10px;
+         cursor: pointer;
+       }      
+       .associatepage-link{
+         text-align: center;
+         margin-top: 30%;
+       }  
+       .associatepage-item.active{
+         background-color:rgb(7, 78, 170);
+         color: white;
+         border-radius: 5px;
+       }      
+     }  
+   } 
+ 
+ @media only screen and (max-width : 1570px) {
+     .associate_table{
+         width: 84% !important; 
+     }
+     .associate_header{
+         width: 88% !important;
+     }
+ }
+ @media only screen and (max-width : 1285px) {
+         .associate_table{
+             width: 79% !important; 
+         }
+         .associate_header{
+             width: 86% !important;
+         }
+ }
+ 
