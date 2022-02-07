@@ -34,7 +34,7 @@ router.post('/create',
         }
 
         try {
-            const { postalcode, phonenumber, username, password, company, technology, email, firstname, lastname, country, city, address, state } = req.body;
+            const { postalcode, phonenumber, username, password, company,role, technology, email, firstname, lastname, country, city, address, state } = req.body;
             const userAlreadyExist = await Mentee.findOne({ where: { username: username } });
             const passwordHash = await bcrypt.hash(password, 10);
             if (!userAlreadyExist) {
@@ -44,6 +44,7 @@ router.post('/create',
                     company: company,
                     technology: technology,
                     email: email,
+                    role:role,
                     phonenumber: phonenumber,
                     firstname: firstname,
                     lastname: lastname,
