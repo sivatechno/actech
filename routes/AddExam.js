@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //import mysql from 'mysql';
-const { AddExam,Courses } = require("../models");
+const { AddExam, Courses } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
@@ -26,31 +26,31 @@ const Promise = require('promise');
 //   }
 
 router.post('/create',
-async (req, res) => {
-    try {
-        const { coursename, courseid, examdesc, examduration, examstartdate,examenddate,status} = req.body;
-        // AddExam.belongsTo(Courses ,{foreignKey: 'courseid', targetKey: 'coursename'});
-        
-        // let examcoursename = db.AddExam.coursename
-        // let coursename = db.Courses.coursename
-        // if(examcoursename == coursename){
-        //     db.AddExam.courseid = db.Courses.courseid
-        // }
+    async (req, res) => {
+        try {
+            const { coursename, courseid, examdesc, examduration, examstartdate, examenddate, status } = req.body;
+            // AddExam.belongsTo(Courses ,{foreignKey: 'courseid', targetKey: 'coursename'});
 
-      
+            // let examcoursename = db.AddExam.coursename
+            // let coursename = db.Courses.coursename
+            // if(examcoursename == coursename){
+            //     db.AddExam.courseid = db.Courses.courseid
+            // }
+
+
             await AddExam.create({
-                coursename:coursename, 
-                courseid: courseid, 
-                examdesc:examdesc,
-                examduration:examduration, 
-                examstartdate:examstartdate,
-                examenddate,examenddate,
-                status:status
+                coursename: coursename,
+                courseid: courseid,
+                examdesc: examdesc,
+                examduration: examduration,
+                examstartdate: examstartdate,
+                examenddate, examenddate,
+                status: status
             });
             res.json("success");
-    } catch (error) {
-        res.json(error)
-    }
-});
+        } catch (error) {
+            res.json(error)
+        }
+    });
 //
 module.exports = router;

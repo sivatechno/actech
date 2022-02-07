@@ -20,6 +20,23 @@ router.get("/hardblockview", async (req, res) => {
     }
 });
 
+router.get("/addhardblockuser", async (req, res) => {
+    try {
+        const listOfHardBlockUser = await AssociateProfile.findAll(
+            { where: { isproject: false }, include: [HardBlock] }
+        );
+        if (listOfHardBlockUser) {
+            res.send(listOfHardBlockUser);
+        }
+        else {
+            res.send("nothin")
+        }   
+        // console.log(listOfHardBlock)
+    } catch (error) {
+
+    }
+});
+
 router.get('/getproject',async (req,res) => {
     try {
         const projects = await DefaultProject.findAll();
