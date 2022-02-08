@@ -120,6 +120,7 @@
 }
 .Associativenav{
     height: 45px; 
+    margin-top: 250px;
     overflow-y: hidden; 
      .Associatepagination{
        display: flex;
@@ -137,7 +138,7 @@
        .associatepage-item.active{
          background-color:rgb(7, 78, 170);
          color: white;
-         border-radius: 5px;
+         //border-radius: 10px;
        }      
      }  
    } 

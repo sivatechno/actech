@@ -183,7 +183,12 @@ function cancel(e) {
     }
   function focus3(){
     setErrors(AssociateEducationValidate(values));
-    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && 
+    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && qualify == "fresher" &&
+    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
+    /^([\s\.]?[a-zA-Z]+)+$/.test(values.university) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.college)&&/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
+        CertficateTabFunc()
+    } 
+     if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && qualify == "experience" &&
     /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
     /^([\s\.]?[a-zA-Z]+)+$/.test(values.university) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.college)&&/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
         ExperienceTabFunc()
@@ -450,9 +455,9 @@ function cancel(e) {
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
                             <div>
-                            <input type="checkbox"  className="checkfresherbtn"  value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
+                            <input type="radio"  className="checkfresherbtn"  value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
                             <label className="checkbtn-txt">Fresher</label>
-                            <input type="checkbox" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
+                            <input type="radio" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
                             <label className="checkbtn-txt">Experience</label>
                             </div>
                         </div> 
