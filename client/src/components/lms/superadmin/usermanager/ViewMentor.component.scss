@@ -53,8 +53,9 @@
         transition: 0.4s;
      }
   }
+  .viewmentortable_container{
   table{
-    width: 90%;
+    width: 85%;
     margin-left: 30px;
     margin-top: 10px;
     border-collapse: collapse;
@@ -96,6 +97,33 @@
       }
     }
  }
+}
+ .Viewmentornav{
+  height: 45px; 
+  margin-top: 250px;
+  overflow-y: hidden; 
+   .Viewmentorpagination{
+     display: flex;
+     justify-content: center; 
+     margin: 20px 150px 0 0px; 
+     li{
+       list-style-type: none;
+       padding: 0 10px 0 10px;
+       cursor: pointer;
+     }      
+     .Viewmentorpage-link{
+       text-align: center;
+       margin-top: 30%;
+     }  
+     .Viewmentorpage-item.active{
+       background-color:rgb(7, 78, 170);
+       color: white;
+       //border-radius: 10px;
+     }      
+   }  
+ } 
+
+
  @media only screen and (min-width:1200px) and (max-width:1500px)
  {
   .table_adjust{

@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewMentor.component.scss'
+import _, { ceil, set } from 'lodash';
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -73,6 +74,8 @@ function ViewMentor() {
 
     const [listOfMentors, setListOfMentors] = useState([]);
 
+    const [viewmentorpaginatedPosts,setviewmentorpaginatedPosts] = useState();
+
     const [token,setToken] = useState("")
 
     let history = useNavigate();
@@ -99,14 +102,37 @@ function ViewMentor() {
         notify(true);
     };
 
+    // useEffect(() => {
+    //     setToken(localStorage.getItem("auth"))
+    //     axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
+    //         setListOfMentors(response.data);
+    //         // console.log(response.data);
+    //         console.log(token)
+    //     });
+    // }, []);
+
+    const [currentViewMentorPage,setcurrentViewMentorPage] = useState(1);
+
     useEffect(() => {
-        setToken(localStorage.getItem("auth"))
         axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
             setListOfMentors(response.data);
-            // console.log(response.data);
-            console.log(token)
+            setviewmentorpaginatedPosts(_(response.data).slice(0).take(viewmentorpageSize).value());
         });
     }, []);
+
+    const viewmentorpageSize=7;
+    console.log(Math)
+    const viewmentorpageCount=listOfMentors?Math.ceil(listOfMentors.length/viewmentorpageSize):1;
+
+    const viewmentorpages = _.range(1, viewmentorpageCount+1);
+
+    const Viewmentorpagination =(pageNo)=>{
+        setcurrentViewMentorPage(pageNo);
+        const startIndex = (pageNo-1)* viewmentorpageSize;
+        const viewmentorpaginatedPosts = _(listOfMentors).slice(startIndex).take(viewmentorpageSize).value();
+        setviewmentorpaginatedPosts(viewmentorpaginatedPosts);
+        }
+
 
     return (
         <div className="viewmentor_container">
@@ -188,9 +214,18 @@ function ViewMentor() {
                     })}
                 </table>
             </div>
-
+            <nav className='Viewmentornav'>
+                <ul className='Viewmentorpagination'>
+                    {
+                        viewmentorpages.map((Viewmentorpage)=>(
+                            <li className={Viewmentorpage === currentViewMentorPage ? "Viewmentorpage-item active" : "Viewmentorpage-item"} onClick={()=>Viewmentorpagination(Viewmentorpage)}>
+                                <p className='Viewmentorpage-link' onClick={()=>Viewmentorpagination(Viewmentorpage)}>{Viewmentorpage}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
             {/* {editpopup &&<UpdateProfileViewMentor  closeModule={setEditpopup}/>} */}
-
         </div>
     )
 }
