@@ -1,33 +1,121 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 
 .addcourses_container
 {
-     display: flex;   
-       flex-direction: column;
-       justify-content: center;
-       background-color: rgb(255, 255, 255);
-       width: 500px;
-       margin: 20px 20px 20px 20px;             
-       height: 350px;
+    width: 760px;
+    height: 450px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    
+    .addcourses_title{
+        display: flex;
+        justify-content: space-between;
+        .addcourses_heading
+        {
+            font-weight: 600;
+            color: #1F618D;
+        }
+        .titleCloseBtn
+        {
+        //  display: flex;
+        //  justify-content: flex-end;
+        //  background-color: transparent;
+        //  border: none;
+        //  font-size: 25px;
+         
+        //  cursor: pointer;
+        //  color: #000;
+        //  margin-bottom: 20px;
+        cursor: pointer;
+        margin-right: 25px;
+        width: 20px;
+        margin-top: 20px;
+        color:red;
+        font-weight: bold;
+         border-radius: 50%;
+         padding: 0.1rem;
+         width: 25px;
+         height: 25px;
+        border: 2px solid RED;
+         color: white;
+        // position: center;  
+         background-color: RED;
+       //  font-size: 25px;
+         
+        }
+
+    }
        
     
     
-    .main, input{
-        margin: 10px;
-        padding: 10px;
-        border: 2px solid lightslategrey;
-        color: black;
-        border-radius: 10px;
+    .addCourses-InputFields{
+       
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 500;
+        .error
+        {
+            color: crimson;
+            font-size: 13px;
+        }
+        
+        
+        input{
+            margin: 5px;
+            padding: 10px;
+            border: 2px solid lightslategrey;
+            color: black;
+            border-radius: 10px;
+        }
+        .addCourses-CourseDesc,.addCourses-CourseName{
+            
+            width: 400px;
+            
+
+        }
+        .status-inputFields{
+            margin-top: 20px;
+            .status-inputdiv{
+                margin-top: 10px;
+            }
+        }
+
         
     }
-    .Courses-btn
+    .Courses-btns
     {
-        margin: 10px;
-        padding: 10px;
-        border: 2px solid #1F618D;
-        color: #FFF;
-        border-radius: 10px;
-        background-color: #1B4F72;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        .Courses-btn1
+        {
+        
+                margin: 10px;
+                padding: 10px 30px;
+                border: 2px solid #1F618D;
+                color: #FFF;
+                border-radius: 10px;
+                background-color: #1B4F72;
+        }
+        .Courses-btn2
+        {
+        
+                margin: 10px;
+                padding: 10px 30px;
+                border: 2px solid #1F618D;
+                color: #FFF;
+                border-radius: 10px;
+                background-color: #1B4F72;
+        }
     }
+    
 
 }

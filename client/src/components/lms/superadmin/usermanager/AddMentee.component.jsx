@@ -6,8 +6,17 @@ import axios from 'axios';
 import config from '../../../config/config';
 import validate from './validation.js';
 import image from '../../../assets/images/addmentor.png';
+import placeholder from '../../../assets/images/avatar placeholder.png'
+
 
 export default function AddMentee({closeModule}) {
+
+    const imageHandler = (event) => {
+        const selectedImage = event.target.files[0]
+        setUploadimage(selectedImage)
+        const imagePreview = URL.createObjectURL(selectedImage)
+        setPreview(imagePreview)
+    }
 
     const apiURL=config.API_URL;
 
@@ -38,6 +47,13 @@ export default function AddMentee({closeModule}) {
    const [postalcode,setPostalcode] = useState("");
  
    const [phonenumber,setPhonenumber] = useState("");
+
+   const [uploadimage, setUploadimage] = useState(placeholder);
+
+    const [preview, setPreview] = useState(placeholder);
+
+    const [role,setRole]=useState("Role");
+
  
  const addMentee = (e) =>{
      e.preventDefault();
@@ -54,6 +70,7 @@ export default function AddMentee({closeModule}) {
      lastname:lastname,
      country:country,
      city:city,
+     role:role,
      address:address,
      state:state,
      phonenumber:phonenumber,
@@ -92,7 +109,7 @@ export default function AddMentee({closeModule}) {
             <div className="headercontent">
                          <img src={image} className="logoalign" alt="logo"/>
                          <p>Member Information</p>
-                        < AiIcons.IoMdClose className="close" onClick={()=>closeModule(false)} />        
+                        < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)} />        
                  </div> <hr />
                  <div className="textfeild-container">
                      <div className="inputfeilds">
@@ -205,40 +222,46 @@ export default function AddMentee({closeModule}) {
                              </div>
                          </div>
                     </div>
-                    <div className="inputfeilds-postalfeild">
-                         <div className="left-inputfeilds" >
-                             <label>Postal Code</label><br />
-                             <div className="feild">
-                             <i><AiIcons.BiMapPin className="icons"/></i>
-                             <input type="text" className="textfield" placeholder="Postal Code" required name="postalcode" values={setValues.postalcode}  onChangeCapture={handleChangeCapture} onChange={(e)=>{setPostalcode(e.target.value);}}/>
-                             {errors.postalcode &&<p className="error">{errors.postalcode}</p>}
-                           </div>
-                         </div>
-                     </div><hr />
-                    <div className="accesslvl-container">
-                        <p className="accesslvltxt">ACCESS LEVEL</p>
-                        <div className="radiobutton">
-                         <input type="radio"  className="radiobtnstaff" name="radio"  />
-                         <label className="checkbox-label">ADMIN</label><br />
-                         <input type="radio" className="radiobtnadmin" name="radio"/>
-                         <label className="checkbox-label">STAFF</label>
-                     </div>
-                     <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
-                         <input type="checkbox" className="checkbox"/>
-                         <label className="notify">NOTIFY USER</label>
-                         <p>Sent welcome  mail to this user</p>
-                         <br/>
-                         <div className="notes">
-                             <textarea placeholder="notes" col="5" row="5"/>
-                         </div>
-                         <div className="buttons">
-                             <input type="button" className="cancel" value="cancel" onClick={()=>closeModule(false)} />
-                             <input type="button" className="Addstaff" value="Add student" onClick={addMentee}/>
-                        </div> 
-                    </div>
-                 </div>
-                 </div>
+                        <div className="inputfeilds">
+                             <div className="left-inputfeilds" >
+                                <label>Postal Code</label><br />
+                                <div className="feild">
+                                     <i><AiIcons.BiMapPin className="icons" /></i>
+                                     <input type="text" className="textfield" placeholder="Postal code" required name="postalcode" values={setValues.postalcode} onChangeCapture={handleChangeCapture} onChange={(e) => { setPostalcode(e.target.value); }} /><br />
+                                    {errors.postalcode && <p className="error">{errors.postalcode}</p>}
+                                </div>
+                             </div>
+                             <div className="right-inputfeilds" >
+                                 <label>Avatar</label><br />
+                                 <div className="feild">
+                                     {uploadimage && <img alt={uploadimage.name} src={preview} className="avatar_box" />}<br />
+                                     <input type="file" placeholder='Upload' required values={setValues.uploadimage} name="uploadimage" onChangeCapture={handleChangeCapture} onChange={(e) => imageHandler(e)} accept="image/*" />
+                                     {errors.uploadimage && <p className="error">{errors.uploadimage}</p>}
+                                 </div>
+                             </div>
+
+                         </div><hr />
+                         <div className="accesslvl-container">
+                             <p className="accesslvltxt">ACCESS LEVEL</p>
+                             <div className="radiobutton">
+                                
+                                 <input type="radio" value={role} name="role"checked={role == "admin"}className="radio-btn"onClick={() => {setRole("admin");}}/>   ADMIN <br/>
+                                 <input type="radio"  value={role} name="role" checked={role == "staff"} className="radio-btn"onClick={() => {setRole("staff");}}/>   STAFF
+                            </div>
+                             <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
+                             <input type="checkbox" className="checkbox" />
+                             <label className="notify">NOTIFY USER</label>
+                             <p>Sent welcome  mail to this user</p><br />
+                             <div className="notes">
+                                 <textarea placeholder="notes" col="5" row="5" />
+                             </div>
+                             <div className="buttons">
+                                 <input type="button" className="cancel" value="cancel" onClick={() => closeModule(false)} />
+                                 <input type="button" className="Addstaff" value="Addstaff" onClick={addMentee} />
+                             </div>
+                            </div>
+                  </div>
+                  </div>
        </div>
      )
- }
- 
+  } 

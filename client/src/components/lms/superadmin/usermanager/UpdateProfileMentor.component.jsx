@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './UpdateProfileMentor.scss'
 import * as AiIcons from 'react-icons/all';
 import image from '../../../assets/images/updatementor.png';
-
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import config from '../../../config/config';
@@ -74,14 +73,14 @@ export default function UpdateProfileViewMentor({closeModule}) {
                 state: newState
             }).then((response) => {
                 setNewProfileData(response.data);
-                alert("Submitted")
+                
             });
     };
 
 
 
     return (
-        <div className="profileviewmentor_container">
+        <div className="updateprofilementor">
             {/* {newProfileData.length > 0 && newProfileData.map((values, key) => {
                 return ( */}
             <div>
@@ -109,7 +108,7 @@ export default function UpdateProfileViewMentor({closeModule}) {
                     <div className="headercontent">
                         <img src={image} alt="" className="profile_align" />
                         <p className="member_align">Member Information</p>
-                        < AiIcons.VscChromeClose className="close" onClick={() => closeModule(false)} />
+                        < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)}/>
 
                     </div> <hr />
 
@@ -234,16 +233,8 @@ export default function UpdateProfileViewMentor({closeModule}) {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-
-
-            {/* ) */}
-            {/* }
-            )}  */}
         </div>
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewAssociateProfile.component.scss'
+import _, { ceil } from 'lodash';
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import AddAssociateProfile from  './AddAssociateProfile.component'
 import UpdateAssociateProfile from './UpdateAssociateProfile.component';
+import { toast } from 'react-toastify'
 import config from '../../config/config'
 
 const customStyles = {
@@ -16,13 +18,15 @@ const customStyles = {
     },
 };
 function ViewAssociateProfile() {
-   const [listOfAssociateProfiles, setListOfAssociateProfiles] = useState([]);   
-   
+    
     const apiURL = config.API_URL;
     let history = useNavigate();
 
+    const [listOfAssociateProfiles, setListOfAssociateProfiles] = useState([]); 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalUpdateIsOpen, setUpdateIsOpen] = useState(false);
+    const [associatepaginatedPosts,setAssociatePaginatedPosts] = useState();
+    const [searchTerm,setsearchTerm] = useState("");
 
     function openModal() {
         setIsOpen(true);
@@ -41,30 +45,49 @@ function ViewAssociateProfile() {
     const deleteAssociateProfile = (id, e) => {
         console.log(id);
         axios.delete(`${apiURL}/associateprofile/delete/${id}`).then((response) => {
-            //response.json("deleted successfully");
-            history.push("/viewassociateprofile")
         });
+        notify(true);
     };
+    
     useEffect(() => {
         axios.get(`${apiURL}/associateprofile/viewassociateprofile`).then((response) => {
             setListOfAssociateProfiles(response.data);
-            // console.log(response.data);
+            setAssociatePaginatedPosts(_(response.data).slice(0).take(associatepageSize).value());
         });
     }, []);
-    console.log(listOfAssociateProfiles);
+
+    const notify = () => { toast.error('Deleted', { position: toast.POSITION.BOTTOM_CENTER }) }
+    const [currentAssociatePage,setcurrentAssociatePage] = useState(1);
+
+    const associatepageSize=7;
+    console.log(Math)
+    const associatepageCount=listOfAssociateProfiles?Math.ceil(listOfAssociateProfiles.length/associatepageSize):1;
+
+    const associatepages = _.range(1, associatepageCount+1);
+
+    const Associatepagination =(pageNo)=>{
+        setcurrentAssociatePage(pageNo);
+        const startIndex = (pageNo-1)* associatepageSize;
+        const associatepaginatedPosts = _(listOfAssociateProfiles).slice(startIndex).take(associatepageSize).value();
+        setAssociatePaginatedPosts(associatepaginatedPosts);
+        }
+
     return (
         <div className="associateprofile_container">
             <div className="associate_header">
                 <div className="associate_title">
                     <h3>AssociateProfile</h3>
                 </div>
+                <div className="associateprofile-feild">
+                    <i><AiIcons.BsSearch className="associateprofile-icons" /></i>                    
+                    <input type="text" className="associateprofile-namesearch" placeholder= " Associate name " name='hscboard' onChange={(e)=> setsearchTerm(e.target.value)} /><br />
+                </div>                
                 <div className="add_profile">
                     <button className="associate_button_click"  onClick={()=>{setIsOpen(true);}}>Add Profile</button>
                 </div>
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Example Modal"
@@ -86,7 +109,17 @@ function ViewAssociateProfile() {
                     {/* {listOfMentors.map((value,key) =>{
                     return <div>{value.username}</div>
                 })} */}
-                    {listOfAssociateProfiles.length > 0 && listOfAssociateProfiles.map((value, key)=> {
+                    {associatepaginatedPosts&&associatepaginatedPosts.filter((val) => {
+                            if(searchTerm === ""){
+                                return val;
+                            } else if(
+                                val.firstname.toLowerCase().includes(searchTerm.toLowerCase())||
+                                val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
+                            ){
+                                return val;
+                            }
+                             }).map((value,key)=>{
+                            console.log(value.id); 
                     return (
                             <tr className="associate_table_row">
                                  <td className="associate_namecol">{value.firstname} {value.lastname}</td>
@@ -119,7 +152,18 @@ function ViewAssociateProfile() {
                         )
                     })}
                 </table>
-            </div>
+            </div>            
+            <nav className='Associativenav'>
+                <ul className='Associatepagination'>
+                    {
+                        associatepages.map((Associatepage)=>(
+                            <li className={Associatepage === currentAssociatePage ? "associatepage-item active" : "associatepage-item"} onClick={()=>Associatepagination(Associatepage)}>
+                                <p className='associatepage-link' onClick={()=>Associatepagination(Associatepage)}>{Associatepage}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
         </div>
     )
 }

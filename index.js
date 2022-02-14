@@ -24,21 +24,33 @@ app.use('/auth', userRouter);
 
 const clientRouter = require('./routes/Clientprofile');
 app.use('/client',clientRouter);
+const hardBlockRouter = require('./routes/HardBlock');
+app.use('/blocks', hardBlockRouter);
 
 const projectsRouter = require('./routes/Project');
 app.use('/project', projectsRouter);
 
  app.delete(`/projects/:id`, projectsRouter);
+ app.put(`/projects/:id`, projectsRouter);
  //app.use(`/project/getid/:id`, projectsRouter);
 
 const associateProfileRouter = require('./routes/AssociateProfile');
 app.use('/associateprofile', associateProfileRouter);
+
+const associateEducationRouter = require('./routes/AssociateEducation');
+app.use('/associateeducation', associateEducationRouter);
 
 const menteeRouter = require('./routes/Mentee');
 app.use('/mentee', menteeRouter);
 
 const mentorRouter = require('./routes/Mentors');
 app.use('/mentorsOne', mentorRouter);
+
+const coursesRouter = require('./routes/Courses');
+app.use('/courses', coursesRouter);
+
+const examRouter = require('./routes/AddExam');
+app.use('/exam', examRouter);
 
 app.delete(`/mentors/:id`, mentorRouter);
 db.sequelize.sync().then(() => {

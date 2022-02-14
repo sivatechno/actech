@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
+import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/form/SuperAdminLogin';
 import Projectprofileview from './pages/rms/ProjectProfileView';
@@ -20,14 +21,17 @@ import Viewassociateprofile from './pages/rms/ViewAssociate';
 import SoftBlock from './pages/rms/SoftBlock';
 import ClientView from './pages/rms/Clientview';
 import EditClient from './components/rms/Client/Editclient';
-import UpdateAssociateProfile from './components/rms/associate/UpdateAssociateProfile.component';
+import UpdateAssociateProfile from './pages/rms/UpdateAssociate';
 import ProjectMappingView from './pages/rms/ProjectMappingView';
+import AddProjectMapping from './components/rms/projectmapping/Addprojectmapping';
 import Exam from './pages/lms/exam';
 import ViewQuestion from './pages/lms/ViewQuestion';
 import Result from './pages/lms/Result';
 import AddQuestion from './pages/lms/AddQuestion';
 import Update_Proj from './pages/rms/Update_proj'
+import Project_add from './pages/rms/Project_add'
 import { LmsRoutes } from './components/layout/LmsRoutes';
+import LmsDashboard from './pages/lms/LmsDashboard';
 
 
 function App({ children }) {
@@ -97,13 +101,27 @@ function App({ children }) {
             <Route exact path="/SoftBlock" element={<ProtectedRoute />}>
               <Route exact path="/SoftBlock" element={<SoftBlock />} />
             </Route>
-            <Route exact path="/Update_proj" element={<Update_Proj/>}>
-              <Route exact path="/Update_proj" element={<Update_Proj/>} />
-            </Route>    
+            <Route exact path="/Update_proj" element={<Update_Proj />}>
+              <Route exact path="/Update_proj/:id" element={<Update_Proj />} />
+            </Route>
+
+            <Route exact path="/Project_add" element={<ProtectedRoute />}>
+              <Route exact path="/Project_add" element={<Project_add />} />
+            </Route>
 
             <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
               <Route exact path="/ViewAssociate" element={<Viewassociateprofile />} />
             </Route>
+
+            {/* <Route exact path="/ViewAssociate" element={<ProtectedRoute />}>
+              <Route exact path="/ViewAssociate" element={<Viewassociateprofile />} />
+            </Route> */}
+
+
+            <Route exact path="/lmsdashboard" element={<ProtectedRoute />}>
+              <Route exact path="/lmsdashboard" element={<LmsDashboard />} />
+            </Route>
+
             <Route exact path="/ClientView" element={<ProtectedRoute />}>
               <Route exact path="/ClientView" element={<ClientView />} />
             </Route>
@@ -111,13 +129,17 @@ function App({ children }) {
             <Route exact path="/Editclient" element={<ProtectedRoute />}>
               <Route exact path="/Editclient" element={<EditClient />} />
             </Route>
-            
+
             <Route exact path="/HardBlock" element={<ProtectedRoute />}>
               <Route exact path="/HardBlock" element={<HardBlock />} />
             </Route>
 
             <Route exact path="/ProjectMappingView" element={<ProtectedRoute />}>
               <Route exact path="/ProjectMappingView" element={<ProjectMappingView />} />
+            </Route>
+
+            <Route exact path="/Addprojectmapping" element={<ProtectedRoute />}>
+              <Route exact path="/Addprojectmapping" element={<AddProjectMapping />} />
             </Route>
 
             {/* <Route exact path="/editprofileviewmentee/:id" element={<ProtectedRoute />}>

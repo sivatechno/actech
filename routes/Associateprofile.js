@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { Users, AssociateProfile } = require("../models");
+const { AssociateProfile } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const path = require('path');
-//const expressFileUpload = require ('express-fileupload')
-//const expressFileUpload = require('express-fileupload')
-//router.use(expressFileUpload())
+const expressFileUpload = require('express-fileupload')
+router.use(expressFileUpload())
 
 router.get('/viewassociateprofile', async (req, res) => {
     try {
@@ -23,10 +22,8 @@ router.get('/viewassociateprofile', async (req, res) => {
 });
 
 router.post('/upload', (req, res) => {
-    //console.log(req.uploadimage);
     const image = req.files.myuploadimage
-    const imagepath = path.join(__dirname, '...', 'public', 'Storedimages')
-    //console.log(imagepath)
+    const imagepath = path.join(__dirname, '..', 'client', 'public', 'images')
     return image.mv(`${imagepath}/${image.name}`, (err) => {
         if (err) console.log('file was not uploaded')
         return res.send({ message: 'file was successfully uploaded' })
@@ -42,17 +39,15 @@ router.delete('/delete/:id', async (req, res) => {
         res.send(error)
     }
 });
-
 router.post('/create', async (req, res) => {
-
     try {
-        const { firstname, lastname, email, country, city, address, state, phonenumber,
-            postalcode, university, college, passedoutyear, degree, cgpa, qualification, company, designation,
+        const { firstname, lastname, email, country, city, address, state, phonenumber, dob,
+            postalcode, university, college, passedoutyear, degree, cgpa, qualification,
+            sslcboard, sslcyearpassedout, sslcschoolname, sslcmark, hscboard, hscschoolname,
+            hscyearpassedout, hscmark, educationinputlist, company, designation,
             currentsalary, expectsalary, yearsofexp, expcertificate, companyaddress, institutename,
-            coursename, duration, coursecertificate, instituteaddress, project, female, male,
-            experience, fresher, primaryskill, secondaryskill } = req.body;
-        //const userAlreadyExist = await Associateprofile.findOne({ where: { firstname: firstname } });
-        //const passwordHash = await bcrypt.hash(password, 10);
+            coursename, duration, coursecertificate, instituteaddress, project, gender,
+            qualify, primaryskill, secondaryskill, projectduration } = req.body;
         if (true) {
             await AssociateProfile.create({
                 firstname: firstname,
@@ -63,6 +58,7 @@ router.post('/create', async (req, res) => {
                 address: address,
                 state: state,
                 phonenumber: phonenumber,
+                dob: dob,
                 postalcode: postalcode,
                 university: university,
                 college: college,
@@ -70,6 +66,15 @@ router.post('/create', async (req, res) => {
                 degree: degree,
                 cgpa: cgpa,
                 qualification: qualification,
+                sslcboard: sslcboard,
+                sslcyearpassedout: sslcyearpassedout,
+                sslcschoolname: sslcschoolname,
+                sslcmark: sslcmark,
+                hscboard: hscboard,
+                hscyearpassedout: hscyearpassedout,
+                hscschoolname: hscschoolname,
+                hscmark: hscmark,
+                educationinputlist: educationinputlist,
                 company: company,
                 designation: designation,
                 currentsalary: currentsalary,
@@ -83,12 +88,11 @@ router.post('/create', async (req, res) => {
                 coursecertificate: coursecertificate,
                 instituteaddress: instituteaddress,
                 project: project,
-                female: female,
-                male: male,
-                experience: experience,
-                fresher: fresher,
+                projectduration: projectduration,
+                gender: gender,
+                qualify: qualify,
                 secondaryskill: secondaryskill,
-                primaryskill: primaryskill,
+                primaryskill: primaryskill
             });
             res.json("success");
 
@@ -104,11 +108,11 @@ router.post('/create', async (req, res) => {
 router.put('/update/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const { newFirstname, newLastname, newEmail, newCountry, newCity, newAddress, newState, newPhonenumber,
-            newPostalcode, newUniversity, newCollege, newPassedoutyear, newDegree, newCgpa, newQualification, newCompany, newDesignation,
+        const { newFirstname, newLastname, newEmail, newCountry, newCity, newAddress, newState, newPhonenumber, newDob,
+            newPostalcode, newSslcboard, newSslcyearpassedout, newSslcschoolname, newSslcmark, newHscboard, newHscschoolname, newHscyearpassedout, newHscmark, newUniversity, newCollege, newPassedoutyear, newDegree, newCgpa, newQualification, newCompany, newDesignation,
             newCurrentsalary, newExpectsalary, newYearsofexp, newExpcertificate, newCompanyaddress, newInstitutename,
-            newCoursename, newDuration, newCoursecertificate, newInstituteaddress, newProject, newFemale, newMale,
-            newExperience, newFresher, newPrimaryskill, newSecondaryskill } = req.body;
+            newCoursename, newDuration, newCoursecertificate, newInstituteaddress, newProject, newProjectDuration,
+            newGender, newQualify, newPrimaryskill, newSecondaryskill } = req.body;
         const user = await AssociateProfile.findByPk(id);
         if (user) {
             await AssociateProfile.update({
@@ -120,7 +124,16 @@ router.put('/update/:id', async (req, res) => {
                 address: newAddress,
                 state: newState,
                 phonenumber: newPhonenumber,
+                dob: newDob,
                 postalcode: newPostalcode,
+                sslcboard: newSslcboard,
+                sslcschoolname: newSslcschoolname,
+                sslcyearpassedout: newSslcyearpassedout,
+                sslcmark: newSslcmark,
+                hscboard: newHscboard,
+                hscschoolname: newHscschoolname,
+                hscyearpassedout: newHscyearpassedout,
+                hscmark: newHscmark,
                 university: newUniversity,
                 college: newCollege,
                 passedoutyear: newPassedoutyear,
@@ -140,10 +153,9 @@ router.put('/update/:id', async (req, res) => {
                 coursecertificate: newCoursecertificate,
                 instituteaddress: newInstituteaddress,
                 project: newProject,
-                female: newFemale,
-                male: newMale,
-                experience: newExperience,
-                fresher: newFresher,
+                projectduration: newProjectDuration,
+                gender: newGender,
+                qualify: newQualify,
                 secondaryskill: newSecondaryskill,
                 primaryskill: newPrimaryskill,
             });
@@ -168,10 +180,6 @@ router.get('/count', (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        // const id = req.params.id;
-        // const profile = await Mentors.findByPk(id);
-        // res.send(profile);
-        // console.log(profile);
         const id = req.params.id;
         let data = []
         let vals = {}
@@ -190,7 +198,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//counting of data
 router.get('/count', (req, res) => {
     Associateprofile.findAndCountAll({})
         .then(result => {

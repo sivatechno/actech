@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewMentor.component.scss'
+import _, { ceil, set } from 'lodash';
 import * as AiIcons from 'react-icons/all';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -73,6 +74,8 @@ function ViewMentor() {
 
     const [listOfMentors, setListOfMentors] = useState([]);
 
+    const [viewmentorpaginatedPosts,setviewmentorpaginatedPosts] = useState();
+
     const [token,setToken] = useState("")
 
     let history = useNavigate();
@@ -99,24 +102,47 @@ function ViewMentor() {
         notify(true);
     };
 
+    // useEffect(() => {
+    //     setToken(localStorage.getItem("auth"))
+    //     axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
+    //         setListOfMentors(response.data);
+    //         // console.log(response.data);
+    //         console.log(token)
+    //     });
+    // }, []);
+
+    const [currentViewMentorPage,setcurrentViewMentorPage] = useState(1);
+
     useEffect(() => {
-        setToken(localStorage.getItem("auth"))
         axios.get(`${apiURL}/mentorsOne/viewmentors`).then((response) => {
             setListOfMentors(response.data);
-            // console.log(response.data);
-            console.log(token)
+            setviewmentorpaginatedPosts(_(response.data).slice(0).take(viewmentorpageSize).value());
         });
     }, []);
+
+    const viewmentorpageSize=7;
+    console.log(Math)
+    const viewmentorpageCount=listOfMentors?Math.ceil(listOfMentors.length/viewmentorpageSize):1;
+
+    const viewmentorpages = _.range(1, viewmentorpageCount+1);
+
+    const Viewmentorpagination =(pageNo)=>{
+        setcurrentViewMentorPage(pageNo);
+        const startIndex = (pageNo-1)* viewmentorpageSize;
+        const viewmentorpaginatedPosts = _(listOfMentors).slice(startIndex).take(viewmentorpageSize).value();
+        setviewmentorpaginatedPosts(viewmentorpaginatedPosts);
+        }
+
 
     return (
         <div className="viewmentor_container">
             {console.log(token)}
-            <div className="view_header">
-                <div className="view_title">
+            <div className="viewmentor_header">
+                <div className="viewmentor_title">
                     <h3>View Mentor</h3>
                 </div>
-                <div className="add_staff">
-                    <button className="button_click" onClick={openModal}>Add Mentor</button>
+                <div className="viewmentoradd_staff">
+                    <button className="viewmentorbutton_clicks" onClick={openModal}>Add Mentor</button>
                 </div>
             </div>
             <Modal
@@ -127,8 +153,8 @@ function ViewMentor() {
 
                 {listOfMentors && <AddMentor closeModule={setIsOpen} />}
             </Modal>
-            <div className="table_container">
-                <table cellSpacing="10px" >
+            <div className="viewmentortable_container">
+                <table className='table_adjust' cellSpacing="10px" >
                     <tr className="table_row_head">
                         <th className="avatar">Avatar</th>
                         <th className="namehead">Name</th>
@@ -154,17 +180,17 @@ function ViewMentor() {
                                 <td>{value.phonenumber}</td>
                                 
                                 <td>
-                                    {/* <Link to={`/editprofileviewmentor/${value.id}`}>  */}
+                                     <Link to={`/editprofileviewmentor/${value.id}`}>  
                                         <div className="table_icons"><AiIcons.GrEdit className="icons_align" onClick={()=>{setEditpopup(true);}}  /></div>
-                                        <Modal
+                                        {/* <Modal
                                              isOpen={editpopup}
                                             onRequestClose={closeModal}
                                             style={Styles}
                                             contentLabel="Example Modal"
                                             >                
-                                            {  <UpdateProfileViewMentor closeModule={setEditpopup} />}
-                                        </Modal>
-                                    {/* </Link> */}
+                                            {  <UpdateProfileViewMentor closeModule={setEditpopup} />
+                                        </Modal> */}
+                                     </Link> 
                                     {/* <Link to={"/"}> */}
                                         {/* <div className="table_icons"><AiIcons.MdDelete className="icons_align_delete" onClick={()=>{setDeletepopup(true);}}
                                             
@@ -188,9 +214,18 @@ function ViewMentor() {
                     })}
                 </table>
             </div>
-
+            <nav className='Viewmentornav'>
+                <ul className='Viewmentorpagination'>
+                    {
+                        viewmentorpages.map((Viewmentorpage)=>(
+                            <li className={Viewmentorpage === currentViewMentorPage ? "Viewmentorpage-item active" : "Viewmentorpage-item"} onClick={()=>Viewmentorpagination(Viewmentorpage)}>
+                                <p className='Viewmentorpage-link' onClick={()=>Viewmentorpagination(Viewmentorpage)}>{Viewmentorpage}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
             {/* {editpopup &&<UpdateProfileViewMentor  closeModule={setEditpopup}/>} */}
-
         </div>
     )
 }

@@ -1,0 +1,105 @@
+.proj_mapping_overall_contain{
+    border: 1px solid transparent;
+    width: 100%;
+    height:  calc(100vh - 80px);
+
+    .proj_mapping_table_head_contain{
+      //  border: 1px solid blue;
+        height: 10%;
+        width: 90%;
+        margin: 3% auto;
+        display: flex;
+        justify-content: space-between;
+
+        .proj_mapping_table_head_text{
+            font-size: 18px;
+            font-weight: 600;
+           // border: 1px solid yellow;
+            height: 60%;
+            margin: 1% 0 0 0 ;
+            color: rgb(15, 95, 201);
+            cursor: default;
+        }
+
+        .proj_mapping_table_head_button{
+            padding: 5px;
+            margin: 10px 10px 0 0;
+            //  height: 60%;
+          //  width: 70%;
+            font-size: 15px;
+            font-weight: bold;
+            border: 2px solid rgb(7, 78, 170);
+            color: rgb(7, 78, 170);
+            background-color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .proj_mapping_table_head_button:hover{
+            color: white;
+            background-color: rgb(7, 78, 170);
+        }
+
+    }
+
+    .proj_mapping_table_body_contain{
+       // border: 1px solid blue;
+        width: 90%;
+        height: 70%;
+        margin: -2% auto;
+
+        .proj_mapping_table{
+            //border: 1px solid red;
+            border-collapse: collapse;
+            width: 100%;
+
+            .proj_mapping_table_thead{
+                //border: 1px solid blue;
+                
+                .proj_mapping_table_head{
+                    //border: 1px solid black;
+                    background-color:rgb(7, 78, 170) ;
+                    cursor: default;
+                   
+
+                    th{
+                        color: white;
+                        padding: 2% 0 2% 2%;
+                        text-align: left;
+                        font-size: 15px;
+                    }
+
+                }
+                
+            }
+
+        }
+
+        .proj_mapping_table_tbody{
+            //border: 1px solid red;
+
+            .proj_mapping_table_body{
+                border-bottom: 1px solid #2424;
+                border-left: 1px solid #2424;
+                border-right: 1px solid #2424;
+                cursor: default;
+
+                td{
+                    text-align:left;
+                    //border: 1px solid black;
+                    padding: 1% 0 1% 2%;
+                }
+
+            }
+
+            .proj_mapping_table_body:hover{
+                background-color: rgba(148, 151, 148, 0.185);
+                border-left: 2px solid rgb(7, 78, 170);
+                border-right: 2px solid rgb(7, 78, 170);
+            }
+
+        }
+
+    }
+    
+}

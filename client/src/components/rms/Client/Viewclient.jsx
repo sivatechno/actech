@@ -42,10 +42,13 @@ function ViewClient(){
    
     return (
         <div>
+            <div className='client_profile_overall_contain'>
 
             <div className="client_profile_top">
+                <div className="client_profile_inner_top">
                 <p className="client_profile_headind_text">Client View</p>
                 <button className="add_client_btn" onClick={()=>{setIsOpen(true);}} >ADD Client</button>
+                </div>
             </div>
 
             <Modal
@@ -55,7 +58,7 @@ function ViewClient(){
                 {<Addclient  closeModule={setIsOpen} />}
             </Modal>
 
-            <div>
+            
                 
                 <div className="client_profile_table_container">
 
@@ -97,9 +100,10 @@ function ViewClient(){
 
                 </div>
 
+                </div>
+
             </div>
 
-        </div>
         
     )
 };

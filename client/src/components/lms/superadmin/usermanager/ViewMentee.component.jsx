@@ -102,13 +102,13 @@ function ViewMentee() {
     }, []);
     console.log(listofMentees);
     return (
-        <div className="parent_container">
-            <div className="view_header">
-                <div className="view_title">
+        <div className="viewmentee_container">
+            <div className="viewmentee_header">
+                <div className="viewmentee_title">
                     <h3>View Mentee</h3>
                 </div>
-                <div className="add_staff">
-                    <button className="button_click" onClick={openModal}>Add Mentee</button>
+                <div className="viewmenteeadd_staff">
+                    <button className="viewmenteebutton_click" onClick={openModal}>Add Mentee</button>
                 </div>
             </div>
             <Modal
@@ -118,10 +118,9 @@ function ViewMentee() {
             >
                 {listofMentees  && <AddMentee closeModule={setIsOpen} />}
             </Modal>
-            <div className="table_container">
-                <table cellSpacing="10px" >
+            <div className="viewmenteetable_container">
+                <table className='viewmenteetable_adjust' cellSpacing="10px" >
                     <tr className="table_row_head">
-                        {/* <th>Avatar</th> */}
                         <th>Name</th>
                         <th>Email</th>
                         <th>Company</th>
@@ -134,7 +133,7 @@ function ViewMentee() {
                         return (
 
                             <tr className="table_row">
-                                {/* <td className="avatarcol"></td> */}
+                               
                                 <td className="namecol">{value.firstname} {value.lastname}</td>
                                 <td className="emailcol">{value.email}</td>
                                 <td>{value.company}</td>

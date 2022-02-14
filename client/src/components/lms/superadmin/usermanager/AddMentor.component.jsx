@@ -86,6 +86,7 @@ export default function AddMentor({ closeModule }) {
                 city: city,
                 address: address,
                 state: state,
+                role:role,
                 phonenumber: phonenumber,
                 postalcode: postalcode,
                 role:role,
@@ -118,13 +119,12 @@ export default function AddMentor({ closeModule }) {
     return (
 
         <div>
-            <div className="addmentor">
-                <div className="headercontent">
-                    <img src={image} className="logoalign" alt="logo" />
-                    <p>Member Information</p>
-                    {/* <AiIcons.IoMdClose className="close"/> */}
-                    < AiIcons.VscChromeClose className="close" onClick={() => closeModule(false)} />
-                </div> <hr />
+            <div className="addmentee">
+            <div className="headercontent">
+                         <img src={image} className="logoalign" alt="logo"/>
+                         <p>Member Information</p>
+                        < AiIcons.IoCloseSharp className="close" onClick={()=>closeModule(false)} />        
+                 </div> <hr />
                 <form>
                     <div className="textfeild-container">
                         <div className="inputfeilds">
