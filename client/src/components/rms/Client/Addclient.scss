@@ -152,12 +152,14 @@
         }
     }
     .add_client_errormsg{
+        //border:1px solid blue;
+        width:100%;
         font-size: 11px;
         color: red;
         font-weight: 600;
         font-family: Arial, Helvetica, sans-serif;
         margin: 1% 50% 0 0;
-        background-color: white;
+        //background-color: white;
     }
 }
 .add_client_icons{
