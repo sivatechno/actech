@@ -1,10 +1,12 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/all';
 import "./Viewclient.scss";
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import Modal from 'react-modal';
 import Addclient from './Addclient';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import  config from '../../config/config';
 
 const customStyles = {
     content: {
@@ -26,7 +28,16 @@ const customStyles = {
 
 
 function ViewClient(){
+    const apiURL = config.API_URL;
+    const [listofClientprofile, setListofClientprofile] = useState([]);
+    useEffect(() =>{
+        axios.get(`${apiURL}/client/viewclient`).then((response)=>{
+            setListofClientprofile(response.data);
+        });
+        
 
+    },[]);
+    console.log(listofClientprofile);
     const [modalIsOpen, setIsOpen] = useState(false);
    
     return (

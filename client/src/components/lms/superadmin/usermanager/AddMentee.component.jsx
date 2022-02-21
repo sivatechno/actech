@@ -70,6 +70,7 @@ export default function AddMentee({closeModule}) {
      lastname:lastname,
      country:country,
      city:city,
+     role:role,
      address:address,
      state:state,
      phonenumber:phonenumber,
@@ -221,52 +222,6 @@ export default function AddMentee({closeModule}) {
                              </div>
                          </div>
                     </div>
-                    {/* <div className="inputfeilds-postalfeild">
-                         <div className="left-inputfeilds" >
-                             <label>Postal Code</label><br />
-                             <div className="feild">
-                             <i><AiIcons.BiMapPin className="icons"/></i>
-                             <input type="text" className="textfield" placeholder="Postal Code" required name="postalcode" values={setValues.postalcode}  onChangeCapture={handleChangeCapture} onChange={(e)=>{setPostalcode(e.target.value);}}/>
-                             {errors.postalcode &&<p className="error">{errors.postalcode}</p>}
-                           </div>
-                         </div>
-                     
-                     <div className="right-inputfeilds" >
-                                <label>Avatar</label><br />
-                                <div className="feild">
-                                    {uploadimage && <img alt={uploadimage.name} src={preview} className="avatar_box" />}<br />
-                                    <input type="file" placeholder='Upload' required values={setValues.uploadimage} name="uploadimage" onChangeCapture={handleChangeCapture} onChange={(e) => imageHandler(e)} accept="image/*" />
-                                    {errors.uploadimage && <p className="error">{errors.uploadimage}</p>}
-                                </div>
-                            </div><hr />
-                    
-                    <div className="accesslvl-container">
-                        <p className="accesslvltxt">ACCESS LEVEL</p>
-                        <div className="radiobutton">
-                         <input type="radio"  className="radiobtnstaff" name="radio"  />
-                         <label className="checkbox-label">ADMIN</label><br />
-                         <input type="radio" className="radiobtnadmin" name="radio"/>
-                         <label className="checkbox-label">STAFF</label>
-                     </div>
-                     <p>Admin has full rights.Staff has accessed to whatever is assigned to them</p>
-                         <input type="checkbox" className="checkbox"/>
-                         <label className="notify">NOTIFY USER</label>
-                         <p>Sent welcome  mail to this user</p>
-                         <br/>
-                         <div className="notes">
-                             <textarea placeholder="notes" col="5" row="5"/>
-                         </div>
-                         <div className="buttons">
-                             <input type="button" className="cancel" value="cancel" onClick={()=>closeModule(false)} />
-                             <input type="button" className="Addstaff" value="Add student" onClick={addMentee}/>
-                        </div> 
-                    </div>
-                 </div>
-                 </div>
-                 </div>
-       </div>
-     )
- } */}
                         <div className="inputfeilds">
                              <div className="left-inputfeilds" >
                                 <label>Postal Code</label><br />

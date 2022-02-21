@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) =>{
     const Clientprofile = sequelize.define("Clientprofile",
     {
         user_id:{
-            type:DataTypes.STRING,
+            type: DataTypes.STRING,
         },
         Client_Name:{
             type:DataTypes.STRING,
@@ -34,10 +34,12 @@ module.exports = (sequelize, DataTypes) =>{
         End_Date:{
             type:DataTypes.STRING,
         },
+        Pin_code:{
+             type:DataTypes.STRING,
+        },
 
 
     })
-
     return Clientprofile;
         
 }

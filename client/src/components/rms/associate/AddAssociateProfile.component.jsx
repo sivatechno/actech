@@ -155,6 +155,7 @@ export default function AddAssociateprofile({closeModel}) {
     projectduration:"",
     secondaryskill:"",
     primaryskill:"",
+    setEducationInputList:"",
 });
 const handleChangeCapture = (event) =>{
     setValues({
@@ -174,31 +175,36 @@ function cancel(e) {
   }
   function focus2(){     
     setErrors(AssociateProfileValidate(values));
-    if(values.firstname && values.lastname && values.email && 
-        values.country && values.city && values.address && values.state && values.phonenumber &&
-        values.postalcode && values.dob){
+    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.firstname) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.lastname) && /\S+@\S+\.\S+/.test(values.email) && 
+    /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.country) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.city) && (values.address)  && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.state) && /^[0-9\b]+$/.test(values.phonenumber) &&
+    /^[0-9\b]+$/.test(values.postalcode) && values.dob){
         EducationTabFunc()
     } 
     }
   function focus3(){
     setErrors(AssociateEducationValidate(values));
-    if(values.sslcboard && values.sslcschoolname && values.sslcyearpassedout && 
-        values.sslcmark && values.hscboard && values.hscschoolname && values.hscyearpassedout && values.hscmark &&
-        values.university && values.college && values.passedoutyear && values.cgpa && values.qualification){
+    if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && qualify == "fresher" &&
+    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
+    /^([\s\.]?[a-zA-Z]+)+$/.test(values.university) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.college)&&/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
+        CertficateTabFunc()
+    } 
+     if(/^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.sslcboard) &&/^([\s\.]?[a-zA-Z]+)+$/.test(values.sslcschoolname) && /^[0-9\b]+$/.test(values.sslcyearpassedout) && qualify == "experience" &&
+    /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.sslcmark) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.hscboard) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.hscschoolname) && /^[0-9\b]+$/.test(values.hscyearpassedout) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.hscmark) &&
+    /^([\s\.]?[a-zA-Z]+)+$/.test(values.university) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.college)&&/^([\s\.]?[a-zA-Z]+)+$/.test(values.degree) && /^[0-9\b]+$/.test(values.passedoutyear) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.cgpa) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.qualification)){
         ExperienceTabFunc()
     }  
   }
   function focus4(){
     setErrors(AssociateCompanyValidate(values))
-    if(values.company && values.designation && values.companyaddress && 
-        values.yearsofexp && values.currentsalary && values.expectsalary){
+    if(/^([\s\.]?[a-zA-Z]+)+$/.test(values.company) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.designation) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.companyaddress) && 
+    /^[0-9\b]+$/.test(values.yearsofexp) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.currentsalary) && /^[1-9]\d*(?:\.\d{0,2})?$/.test(values.expectsalary)){
         CertficateTabFunc()
     }     
   } 
   function submitform(){
     setErrors(AssociateCertificateValidate(values));
-    if(values.institutename && values.instituteaddress && values.coursename && 
-        values.duration && values.project && values.projectduration && values.primaryskill && values.secondaryskill){
+    if(/^([\s\.]?[a-zA-Z]+)+$/.test(values.institutename) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.instituteaddress) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.coursename) && 
+    /^[0-9\b]+$/.test(values.duration) && /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/.test(values.project) &&  /^[0-9\b]+$/.test(values.projectduration) &&  /^([\s\.]?[a-zA-Z]+)+$/.test(values.primaryskill) && /^([\s\.]?[a-zA-Z]+)+$/.test(values.secondaryskill)){
         addAssociateProfile()
     } 
   }
@@ -217,7 +223,6 @@ function cancel(e) {
    }
   const addAssociateProfile = (e) =>{
     upload();
-    //console.log(`${}`)
     axios.post("http://localhost:5000/associateprofile/create",
     {
       firstname:firstname,
@@ -247,12 +252,6 @@ function cancel(e) {
       hscschoolname:hscschoolname,
       hscmark:hscmark,
       educationinputList:educationinputList,
-      university : university,
-      college:college,
-      passedoutyear:passedoutyear,
-      degree:degree,
-      cgpa:cgpa,
-      qualification:qualification,
       company:company,
       designation:designation,
       currentsalary:currentsalary,
@@ -272,7 +271,20 @@ function cancel(e) {
     }).then((response) =>{  
 
     })
-  }   
+  } 
+  const addEducation = (e) =>{
+    axios.post("http://localhost:5000/associateeducation/createeducation",
+    {
+      university : university,
+      college:college,
+      passedoutyear:passedoutyear,
+      degree:degree,
+      cgpa:cgpa,
+      qualification:qualification
+    }).then((response) =>{  
+
+    })
+  }     
  const imageHandler = (event) => {
       const selectedImage = event.target.files[0]
       setUploadimage(selectedImage)
@@ -295,12 +307,17 @@ function cancel(e) {
     setCertificateInputList(certificatelist);
   };
   const handleExperienceAddClick = () => {
+    if(values.company && values.companyaddress && values.yearsofexp && values.expectsalary && values.currentsalary && values.designation)
     setExperienceInputList([...experienceinputList, { company:company,companyaddress:companyaddress, designation:designation,currentsalary:currentsalary , expectsalary:expectsalary, yearsofexp:yearsofexp  }]);
   };
   const handleEducationAddClick = () => {
-    setEducationInputList([...educationinputList, { university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
+      addEducation();
+     if(values.university && values.college && values.passedoutyear && values.cgpa && values.qualification)
+    setEducationInputList([...educationinputList,{ university:university, college:college,passedoutyear:passedoutyear,cgpa:cgpa,qualification:qualification }]);
   };
   const handleCertificateAddClick = () => {
+    if(values.institutename && values.instituteaddress && values.coursename && 
+        values.duration && values.project && values.projectduration && values.primaryskill && values.secondaryskill)
     setCertificateInputList([...certificateinputList, {  institutename:institutename, instituteaddress:instituteaddress,coursename:coursename,duration:duration, project:project,projectduration:projectduration,primaryskill:primaryskill,secondaryskill:secondaryskill }]);
   };
    function proifleTabfunc()
@@ -319,23 +336,8 @@ function cancel(e) {
    {
     setIndex(3)
    }
-   const alphacheck= (e) =>{
-    const regex = /[A-Za-z]/;
-    const chars = e.target.value.split('');
-    const char = chars.pop();
-    console.log(char);
-    if (!regex.test(char)) {
-      e.target.value = chars.join('');
-      alert("Please enter only alphabets");
-      e.preventDefault();
-      return false;
-     
-    }
-    else {
-      return true;
-    }
-  }
-    return (
+   
+   return (
       <div>
         <div className="addassociate">
            <i >< AiIcons.IoMdClose className="closeIcon" onClick={()=>closeModel(false)}/></i>
@@ -453,9 +455,9 @@ function cancel(e) {
                       <div className="associateprofile-left-inputfeilds-checkboxselective">
                             <label className="Qualificationlbl">Qualify</label><br />
                             <div>
-                            <input type="checkbox"  className="checkfresherbtn"  value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
+                            <input type="radio"  className="checkfresherbtn"  value={qualify} name="qualify" checked={qualify == "fresher"}  onClick={()=> {setQualify("fresher")}}   />
                             <label className="checkbtn-txt">Fresher</label>
-                            <input type="checkbox" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
+                            <input type="radio" className="checkexperiencebtn" value={qualify} name="qualify" checked={qualify == "experience"}  onClick={()=> {setQualify("experience")}} />
                             <label className="checkbtn-txt">Experience</label>
                             </div>
                         </div> 
@@ -569,7 +571,7 @@ function cancel(e) {
                         <div className='Universitypart'>
                         <div className="btn-box">
                            {educationinputList.length !== 1 && <button  className="removeeducation"  onClick={() => handleEducationRemoveClick(i)}>-</button>}
-                           {educationinputList.length  -1 === i && <button onClick={handleEducationAddClick} className='addeducation'>+</button>}
+                           {educationinputList.length  -1 === i && educationinputList.length<5 &&<button onClick={handleEducationAddClick} className='addeducation'>+</button>}
                         </div><br /><br /><br />                
                       <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -593,6 +595,7 @@ function cancel(e) {
                         <div className="associateprofile-left-inputfeilds" >
                             <label>Year of Passed out</label><br />
                             <div className="associateprofile-feild">
+                            <i><AiIcons.MdOutlineBusiness className="associateprofile-icons"/></i>
                             <input type="text" className="associateprofile-textfield" maxLength={4} placeholder=" Year of Passed out" name='passedoutyear' onChange={(e)=>{setPassedoutyear(e.target.value);}} values={setValues.passedoutyear} onChangeCapture={handleChangeCapture} required />
                             {errors.passedoutyear && <p className='errormsg'>{errors.passedoutyear}</p>}
                             </div>
@@ -645,7 +648,7 @@ function cancel(e) {
                 <div className='AddExperiencepart'>
                 <div className="btn-box">
                     {experienceinputList.length !== 1 && <button  className="removeexperience"  onClick={() => handleExperienceRemoveClick(i)}>-</button>}
-                    {experienceinputList.length - 1 === i && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
+                    {experienceinputList.length -1 === i && educationinputList.length<5 && <button onClick={handleExperienceAddClick} className='addexperience'>+</button>}
                 </div><br /><br /><br />
                 <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -699,8 +702,19 @@ function cancel(e) {
                             <input type="text" className="associateprofile-textfield" placeholder=" Expectation Salary" name='expectsalary' onChange={(e)=>{setExpectsalary(e.target.value);}} values={setValues.expectsalary} onChangeCapture={handleChangeCapture} required/><br/>
                             {errors.expectsalary && <p className='errormsg'>{errors.expectsalary}</p>}
                             </div>
-                        </div>
+                        </div>                       
                    </div> 
+                   {/* <div className="associateprofile-inputfeilds"> */}
+                       <div className="associateprofile-left-inputfeilds-certifyuploadfeildleft" >
+                            <label>Experience Certificate</label><br />
+                            <div className="associateprofile-feild">
+                            <input type="file" name="file" className="textfield"  id='exp_certify'/>
+                            <label htmlFor='exp_certify' className='fileupload'>
+                            <i>< AiIcons.FcAddImage/> Choose an file</i>
+                            </label>
+                         </div>                            
+                        </div>
+                    {/* </div>    */}
                    </div>
                     );
                   })}
@@ -720,7 +734,7 @@ function cancel(e) {
                 <div className='associateprofile-adddcertificatepart'>
                      <div className="btn-box">
                             {certificateinputList.length !== 1 && <button  className="removecertificate"  onClick={() => handleCertificateRemoveClick(i)}>-</button>}
-                            {certificateinputList.length - 1 === i && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
+                            {certificateinputList.length - 1 === i && educationinputList.length < 10 && <button onClick={handleCertificateAddClick} className='addcertificate'>+</button>}
                     </div><br /><br /><br /> 
                    <div className="associateprofile-inputfeilds">
                         <div className="associateprofile-left-inputfeilds" >
@@ -774,7 +788,7 @@ function cancel(e) {
                             <input type="text" className="associateprofile-textfield" name='projectduration' placeholder=" Project Duration" onChange={(e)=>{setProjectDuration(e.target.value);}} values={setValues.projectduration} onChangeCapture={handleChangeCapture} required/><br/>
                             {errors.projectduration && <p className='errormsg'>{errors.projectduration}</p>}
                             </div>
-                        </div>                        
+                        </div>                    
                    </div> 
                    <div className="associateprofile-inputfeilds">
                    <div className="associateprofile-left-inputfeilds" >
@@ -794,16 +808,6 @@ function cancel(e) {
                             </div>
                         </div>
                    </div> 
-                   <div className="associateprofile-inputfeilds">
-                       <div className="associateprofile-left-inputfeilds-certifyuploadfeildleft" >
-                            <label>Experience Certificate</label><br />
-                            <div className="associateprofile-feild">
-                            <input type="file" name="file" className="textfield"  id='exp_certify'/>
-                            <label htmlFor='exp_certify' className='fileupload'>
-                            <i>< AiIcons.FcAddImage/> Choose an file</i>
-                            </label>
-                            </div>
-                        </div> 
                         <div className="associateprofile-right-inputfeilds-certifyuploadfeildright" >
                             <label>Course Certificate</label><br />
                             <div className="associateprofile-feild">
@@ -813,7 +817,6 @@ function cancel(e) {
                             </label>
                             </div><br />
                         </div>   
-                     </div>
                     </div>
                     );
                 })}
