@@ -6,30 +6,33 @@
   overflow: hidden;
   
   .project_profile_top{
-    //border: 1px solid #2424;
-    width: 85%;
-    height: 50px;
-    margin: 2.5% auto;
+    border: 1px solid rgb(7, 78, 170);
+    width: 100%;
+    height: 60px;
+    border-top-left-radius: 7px;
+    background-color: rgb(7, 78, 170);
+    // margin: 2.5% auto;
     display: flex;
     justify-content: space-between;
 
     .project_profile_headind_text{
       font-size: 18px;
       font-weight: 700;
-      margin-top: 1.7%;
+      margin: 1.3% 0 0 2%;
       //display:flex;
-      color: #3253e2;
+      color: white;
       cursor: default;
      // border: 1px solid red;
     }
 
     .project_profile_headind_search_contain{
-      border: 2px solid #2424;
-      height: 75%;
+      //border: 2px solid #2424;
+      height: 35px;
       width: 35%;
       display: flex;
       border-radius: 20px;
-      margin: 1% 2% 0 0;
+      margin: 1% 2.5% 0 0;
+      background-color: white;
       .project_profile_headind_search{
         height: 100%;
         outline: none;
@@ -46,32 +49,19 @@
         color: rgba(15, 15, 15, 0.527);
       }
     }
-    .project_profile_headind_search_contain:hover{
-      border:2px solid rgb(7, 78, 170);
-      .project_profile_headind_search_icon:hover{
-        color: rgb(7, 78, 170);
-      }
-    }
-
+    
     .add_proj_btn{
       //padding: 0.5% 2.5% 0.5% 2.5% ;
       border: 2px solid rgb(7, 78, 170);
       border-radius: 10px;
       background-color: white;
       color: rgb(7, 78, 170);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       width: 150px;
-      height: 80%;
-      margin: 5% 2% 0 0;
+      height: 40px;
+      margin: 5.5% 0% 0 -10%;
       cursor: pointer;
-    }
-
-    .add_proj_btn:hover{
-      box-shadow: rgba(109, 109, 109, 0.411) 2px 2px 3px 1px;
-      border: 2px solid rgb(7, 78, 170);
-      background-color: rgb(7, 78, 170);
-      color: white;
     }
 
   }
@@ -83,14 +73,14 @@
     border-top-right-radius: 0px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin: 0 auto;
+    margin: 3% auto;
     box-shadow: white 0px 2px 8px 0px;
    
     .project_profile_table{
-      //border: 1px solid red;
+     // border: 1px solid red;
       border-collapse: collapse;
       text-align: center;
-      width: 90%;
+      width: 95%;
       margin:0 auto ;
 
       .project_profile_table_head{
@@ -170,21 +160,25 @@
 
 .proj_profile_view_pagination_overall{
   //border: 1px solid red;
- height: 39px;
- width: calc(100vh - 60vh);
+ height: 38px;
+ width: calc(100vh - 62vh);
  display: inline-block;
  overflow-x:scroll;
- margin: 0 0 0 43%;
+ //overflow-y: hidden;
+ margin: 1% 0 0 43%;
 
 
   .proj_profile_view_pagination_inner_contain{
    // border: 1px solid blue;
     display: flex;
+    //height: 100%;
     //justify-content: center;
     //margin-left: 10%;
     width: 100%;
+    height: 90%;
+    margin: 0 0 0 0%;
 
-    li{
+    .page-item{
       //border: 1px solid green;
       list-style-type: none;
       margin: 0% 0 0 5px;
@@ -195,7 +189,8 @@
     .page-link{
       //border: 1px solid green;
       text-align: center;
-      margin-top: 30%;
+      margin-top: 70%;
+      font-weight: 600;
       //width: 20%;
     }
 

@@ -19,33 +19,33 @@ function Addprojectmapping() {
                             <div className="addproject_mapping_formbody">
                                 <div className="addproject_mapping_form_row">
                                     <div className="addproject_mapping_col1">
-                                        <label className='label'>Associative name</label>
+                                        <label className='label'>Associative name *</label>
                                         <div className="addproject_mapping_input_container">
                                             <AiIcons.FaRegUserCircle className='usericons'/>
-                                            <input type='text' className='input_name_textboxes' />
+                                            <input type='text' className='input_name_textboxes' placeholder='Associative name' />
                                         </div>
                                     </div>
                                     <div className="addproject_mapping_col2">
-                                        <label className='label'>Project Name</label>
+                                        <label className='label'>Project Name *</label>
                                         <div className="addproject_mapping_input_container">
                                             <AiIcons.FaRegUserCircle className='usericons'/>
-                                            <input type='text' className='input_name_textboxes' />
+                                            <input type='text' className='input_name_textboxes' placeholder='Project Name'/>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div className="addproject_mapping_form_row">
                                     <div className="addproject_mapping_col1">
-                                        <label className='label'>start Date</label>
+                                        <label className='label'>start Date *</label>
                                         <div className="addproject_mapping_input_container">
-                                            <AiIcons.BsCalendarDate className='usericons'/>
+                                            {/* <AiIcons.BsCalendarDate className='usericons'/> */}
                                             <input type='Date' className='input_date_textboxes' />
                                         </div>
                                     </div>
                                     <div className="addproject_mapping_col2">
-                                        <label className='label'>End Date</label>
+                                        <label className='label'>End Date *</label>
                                         <div className="addproject_mapping_input_container">
-                                            <AiIcons.BsCalendarDate className='usericons'/>
+                                            {/* <AiIcons.BsCalendarDate className='usericons'/> */}
                                             <input type='date' className='input_date_textboxes' />
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@ function Addprojectmapping() {
                                 </div>
                                 <div className="addproject_mapping_form_row">
                                     <div className="addproject_mapping_col1">
-                                        <label className='label'>Status</label>
+                                        <label className='label'>Status *</label>
                                         <div className="addproject_mapping_radio_container">
                                             <input type='radio' className='rbtn1' name='radio'  />Enable
                                             <input type= 'radio' className='rbtn2'name='radio' />Disable
@@ -63,13 +63,15 @@ function Addprojectmapping() {
 
                                 </div>
                                 <div className="addproject_mapping_submittingpart">
-                                    <div className="addproject_mapping_submittingpart_cancelbtns_body">
+                                    <div className='project_mapping_btn_inner'>
+                                    
                                         <input type='button' value='Cancel' className='cnclebtn'/>
-                                    </div>
-                                    <div className="addproject_mapping_submittingpart_addbtns_body">
+                                   
+                                   
                                         <input type='button' value='Save' className='addbtn' />
+                                        </div>
 
-                                    </div>
+                                   
 
                                 </div>
                                                     

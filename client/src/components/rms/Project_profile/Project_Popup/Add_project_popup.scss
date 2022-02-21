@@ -1,0 +1,46 @@
+.add_proj_popup_overall_contain{
+    border: 2px solid #2424;
+    height: 55vh;
+    width: 35%;
+    margin: 6% auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: #2424 0px 1px 8px 3px;
+
+    .add_proj_popup_check_img{
+        //border: 1px solid green;
+        border-radius: 50%;
+        height: 27%;
+        width: 35%;
+        margin:15% 0 0 32%;
+    }
+
+    .add_proj_popup_text{
+        //border: 1px solid black;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 15% auto;
+        text-align: center;
+        color: #4bae4f;
+        cursor: default;
+        //text-shadow: #000000 2px 0px;
+    }
+    .add_proj_popup_btn{
+        //border: 1px solid blue;
+        width: 100%;
+        margin: 15% 0 0 0;
+        .add_proj_popup_ok_btn{
+            border: 2.5px solid #4bae4f;
+            width: 45%;
+            height: 50px;
+            margin: 0 0 0 29%;
+            background-color:#4bae4f ;
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    }
+}

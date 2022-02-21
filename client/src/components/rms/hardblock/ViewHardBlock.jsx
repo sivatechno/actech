@@ -3,7 +3,7 @@ import './ViewHardBlock.scss';
 import { useDispatch,useSelector } from "react-redux"
 import { viewHardBlock } from '../../../store/actions/hardBlockActions'
 import {Table, Input,Button} from "antd";
-import {SearchOutlined } from '@ant-design/icons';
+ import {SearchOutlined } from '@ant-design/icons';
 import Modal from 'react-modal';
 import AddHardBlock from './AddHardBlock';
 
@@ -42,7 +42,7 @@ function ViewHardBlock(users) {
   const hardblockdata = useSelector(function(state){
     return state.hardblock.data  })
 
-  console.log("state",usersData);
+  //console.log("state",usersData);
 
 
 

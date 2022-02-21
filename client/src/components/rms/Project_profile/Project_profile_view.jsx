@@ -25,9 +25,8 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
         height:'83%',
         width:'60%',
-        background:'transparent',
-        border:'1px solid transparent',
-        outline:'none',
+        //background:'transparent',
+        border:'1px solid #2424',
         overflow:'hidden',
 
     },
@@ -128,8 +127,8 @@ function Project_profile_view() {
                                     if(searchTerm === ""){
                                         return val;
                                     } else if(
-                                        val.Client_Name.toLowerCase().includes(searchTerm.toLowerCase())||
-                                        val.Project_Name.toLowerCase().includes(searchTerm.toLowerCase())
+                                        val.Client_Name.toLowerCase().includes(searchTerm.toLowerCase())
+                                        // val.Project_Name.toLowerCase().includes(searchTerm.toLowerCase())
                                     ){
                                         return val;
                                     }

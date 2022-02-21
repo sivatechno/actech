@@ -37,7 +37,7 @@ export default  function Update_project() {
                 <div className='update_proj_head_div'>
                     <div className='update_proj_head_inner_div'>
                         <Link to={'/Projectprofileview'}>
-                            <AiIcons.MdOutlineKeyboardBackspace className="update_proj_head_icon"/>
+                            <AiIcons.HiArrowNarrowLeft className="update_proj_head_icon"/>
                         </Link>
                         <p className='update_proj_head_text'>Update project</p>
                     </div>
@@ -116,8 +116,8 @@ export default  function Update_project() {
                             <div className='update_proj_content'>
                                 <p className="update_project_text">Billing Status</p>
                                 <div className='update_project_bill_radio_btn'>
-                                     <input type="radio" /> <p>Billable</p>
-                                    <input type="radio" /> <p>Non-Billable</p>
+                                     <input type="radio" value="billing" name='billing'/> <p>Billable</p>
+                                    <input type="radio" value="billing" name='billing'/> <p>Non-Billable</p>
                                 </div>
                             </div>
                          </div>

@@ -4,20 +4,35 @@ import * as AiIcons from 'react-icons/all'
 import {useState} from 'react';
 import Validate from './Validate';
 import axios from 'axios';
+import Modal from 'react-modal'
+import Add_proj_popup from './Project_Popup/Add_project_popup';
 import config from '../../config/config'
 import {toast} from 'react-toastify'
 import { Link} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
-// import { useForm } from 'react-hook-form';
-// import { yupResolver } from '@hookform/resolvers/yup';
-// import * as yup from 'yup';
 
-// const schema = yup.object().shape({
-//     client_name:yup.string().required,
-// });
 
-// export default function Project_add() {
+const customStyles = {
+    content: {
+        top: '56%',
+        left: '58%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        height:'83%',
+        width:'60%',
+        background:'transparent',
+        border:'1px solid transparent',
+        outline:'none',
+        overflow:'hidden',
+
+    },
+};
+
+
+
     function  Project_add ({closeModel}) {
         const apiURL = config.API_URL;
         const[errors,setErrors]=useState({});
@@ -56,7 +71,8 @@ toast.configure()
               status:status,
               billing:billing,
             }).then((response) =>{ 
-                notify(true);   
+                //notify(true); 
+                setpopup(true);  
             })
 
            
@@ -87,12 +103,21 @@ toast.configure()
             //   console.log(values);
           };
 
-          const notify = ()=>{toast.success('Success',{position: toast.POSITION.TOP_CENTER})}
+          //const notify = ()=>{toast.success('Success',{position: toast.POSITION.TOP_CENTER})}
+
+          const [popup,setpopup] = useState(false);
         
         
 
     return (
         <div>
+
+                <Modal 
+                    isOpen={popup}
+                    style={customStyles}
+                    contentLabel="Example Modal">
+                   {<Add_proj_popup close={setpopup}/>}
+                </Modal>
         
         <div className="add_project_overall"> 
                 <div className="add_project_head">

@@ -10,7 +10,7 @@
     .addproject_mapping_inner_container{
         height: calc(100vh - 80px);
         width: 100%;
-    //    border: solid 2px green;
+      // border: solid 2px green;
         .addproject_mapping_topheader{
             height: 10%;
             width: 100%;
@@ -21,13 +21,13 @@
             align-items: center;
             justify-content: space-between;
             .top_icon{
-                height: 40px;
-                width: 50px;
-              //  border: solid 2px red;
+                
+               // border: solid 2px red;
                 margin: 0.5% 0 0 1%;
                 text-align: center;
                 .arrow_icon{
-                    font-size: 2.5rem;
+                    font-size: 30px;
+                    font-weight: 600;
                     color: white;
                 }
             }
@@ -46,78 +46,90 @@
             }           
         }
         .addproject_mapping_formbody{
-            height: 400px;
-            width: 95%;
-          //  border: solid 2px yellowgreen;
+            height: 450px;
+            width: 98%;
+            //border: solid 2px yellowgreen;
             margin: 5% auto;
             .addproject_mapping_form_row{
-                height: 100px;
+                height: 110px;
                 width: 100%;
-             //   border: solid 2px black;
+               //border: solid 2px blue;
+               justify-content: space-between;
+               margin: 2% 0 0 0;
                 display: flex;
                 .label{
                     font-size: 16px;
                     color: #242424;
+                    font-weight: bold;
                 }
                 .addproject_mapping_col1{
                     height: 100%;
-                    width: 50%;
-                //    border: solid 2px red;
+                    width: 40%;
+               // border: solid 2px red;
+                margin: 0% 0 0 0;
                     .addproject_mapping_input_container{
                         height: 50px;
-                        width: 70%;
-                        margin: 1% 0  0 0;
-                        border: solid 1px #242424;
+                        width: 100%;
+                        margin: 2% 0  0 0;
+                        border: solid 1px #2424;
                         border-radius: 20px;
+                        display: flex;
                         .usericons{
-                            font-size: 18px;
-                            margin: 5% 0 0 3%;
-                            color: #2424;
+                            font-size: 20px;
+                            margin: 3% 0 0 3%;
                         }
                         .input_name_textboxes{
-                            padding: 2% 8% 0 0;
-                            margin: 0 0 0 2% ;
+                            border: none;
+                            height: 80%;
+                            width: 80%;
+                            margin: 1% 0 0 4%;
                             font-size: 16px;
                             outline: none;
-                            border: none;
                         }
                         .input_date_textboxes{
-                            padding: 2% 10% 0 0;
-                            margin: 0 0 -5% 3% ;
-                            font-size: 15px;
-                            outline: none;
                             border: none;
+                            height: 80%;
+                            width: 80%;
+                            margin: 1% 0 0 10%;
+                            font-size: 16px;
+                            outline: none;
+                            cursor: pointer;
                         }
                     }
                 }
                 .addproject_mapping_col2{
                     height: 100%;
-                    width: 50%;
-                //    border: solid 2px red;
+                    width: 40%;
+                   //border: solid 2px red;
+                   //margin: 0 0 0 8%;
                     .addproject_mapping_input_container{
                         height: 50px;
-                        width: 70%;
-                        margin: 1% 0  0 0;
-                        border: solid 1px #242424;
+                        width: 100%;
+                        margin: 2% 0  0 0;
+                        border: solid 1px #2424;
                         border-radius: 20px;
+                        display: flex;
                         .usericons{
-                            font-size: 18px;
-                            margin: 5% 0 0 3%;
-                            color: #2424;
+                            font-size: 20px;
+                            margin: 4% 0 0 3%;
+                           // color: #2424;
                         }
                         .input_name_textboxes{
-                            padding: 2% 8% 0 0;
-                            margin: 0 0 0 2% ;
+                            border: none;
+                            height: 80%;
+                            width: 80%;
+                            margin: 1% 0 0 4%;
                             font-size: 16px;
                             outline: none;
-                            border: none;
                         }
                         .input_date_textboxes{
-                            padding: 2% 10% 0 0;
-                            margin: 0 0 -5% 3% ;
-                            font-size: 15px;
-                            outline: none;
                             border: none;
+                            height: 80%;
+                            width: 80%;
+                            margin: 1% 0 0 10%;
+                            font-size: 16px;
+                            outline: none;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -128,51 +140,51 @@
                   //  border: solid 2px #242424;
                     .rbtn1,.rbtn2{
                         margin: 5% 3% 0 4%;
+                        cursor: pointer;
                     }
                 }
             }
             .addproject_mapping_submittingpart{
-                height: 80px;
-                width: 40%;
-              //  border: solid 2px green;
-                float: right;
-                display: flex;
-                justify-content: right;
-                margin-right: 15%;
-                .addproject_mapping_submittingpart_cancelbtns_body{
-                    height: 50px;
+                height: 15%;
+                width: 100%;
+               // border: solid 2px green;
+                margin: 3% 0 0 0;
+               // margin-right: 15%;
+               .project_mapping_btn_inner{
+                  // border: 1px solid red;
+                   height: 80%;
+                   width: 30%;
+                   float: right;
+                   display: flex;
+                   justify-content: space-between;
+                   .addbtn{
+                       height: 80%;
+                       width: 40%;
+                       border-radius: 10px;
+                       color: white;
+                       background-color: rgb(7, 78, 170);
+                       border: 1px solid rgb(7, 78, 170);
+                       font-size: 16px;
+                       font-weight: bold;
+                       cursor: pointer;
+                       //margin: 0 0 0 80%;
+                   }
+                   .cnclebtn{
+                    height: 80%;
                     width: 40%;
-                    border: solid 2px #0e98d8;
-                    border-radius: 15px;
-                    margin: 5% 2% 0 5%;
-                    .cnclebtn{
-                        padding: 3% 25%;
-                        font-size: 16px;
-                        margin: 5px 0 2px 3px;
-                        background-color: white;
-                        color: #242424;
-                        border: none;
-                        outline: none;
-                    }
-                }
-                .addproject_mapping_submittingpart_addbtns_body{
-                    height: 50px;
-                    width: 40%;
-                    border: solid 2px #0e98d8;
-                    background-color: #0e98d8;
-                    border-radius: 15px;
-                    margin: 5% 2% 0 5%;
-                    .addbtn{
-                        padding: 3% 30%;
-                        font-size: 16px;
-                        margin: 5px 0 2px 8px;
-                        background-color: #0e98d8;
-                        color: white;
-                        border: none;
-                        outline: none;
-                    }
+                    border-radius: 10px;
+                    border: 2px solid rgb(7, 78, 170);
+                    color: rgb(7, 78, 170);
+                    font-size: 16px;
+                    font-weight: bold;
+                    background-color: white;
+                    cursor: pointer;
+                   }
+
+               }
+               
+               
                 }
             }
         }
     }
-}
